@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zielsteuerfrei — Steuern sparen ohne Steuerberater</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background: #f5f5f5; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .hero { background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%); color: white; padding: 60px 20px; text-align: center; border-radius: 0 0 30px 30px; }
+        .hero h1 { font-size: 2.2em; margin-bottom: 15px; font-weight: 700; }
+        .hero p { font-size: 1.2em; opacity: 0.9; margin-bottom: 30px; }
+        .badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px; font-size: 0.85em; margin-bottom: 20px; }
+        .calculator { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); margin: -40px auto 40px; position: relative; z-index: 10; }
+        .form-group { margin-bottom: 25px; }
+        label { display: block; font-weight: 600; margin-bottom: 8px; color: #1e3a5f; }
+        input, select { width: 100%; padding: 15px; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 16px; transition: border-color 0.3s; }
+        input:focus, select:focus { outline: none; border-color: #2d5a87; }
+        .btn { display: block; width: 100%; padding: 18px; background: #e74c3c; color: white; border: none; border-radius: 10px; font-size: 1.1em; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+        .btn:hover { background: #c0392b; transform: translateY(-2px); }
+        .trust { text-align: center; padding: 40px 20px; color: #666; }
+        .trust-items { display: flex; justify-content: center; gap: 30px; margin-top: 20px; flex-wrap: wrap; }
+        .trust-item { display: flex; align-items: center; gap: 8px; }
+        .checkbox { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 20px; font-size: 0.9em; color: #666; }
+        .checkbox input { width: auto; margin-top: 3px; }
+        .features { background: white; padding: 40px 20px; border-radius: 20px; margin-bottom: 20px; }
+        .features h2 { text-align: center; margin-bottom: 30px; color: #1e3a5f; }
+        .feature { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; }
+        .feature-icon { width: 40px; height: 40px; background: #e8f4f8; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .feature-text h3 { color: #1e3a5f; margin-bottom: 5px; font-size: 1.1em; }
+        .feature-text p { color: #666; font-size: 0.95em; }
+        #result { display: none; background: #d4edda; border: 2px solid #28a745; padding: 30px; border-radius: 15px; margin-top: 20px; text-align: center; }
+        #result h2 { color: #155724; margin-bottom: 10px; }
+        #result .amount { font-size: 2.5em; font-weight: 700; color: #28a745; }
+        #result p { color: #155724; margin: 10px 0; }
+        .loading { display: none; text-align: center; padding: 20px; }
+        .spinner { border: 3px solid #f3f3f3; border-top: 3px solid #e74c3c; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto 10px; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .footer { text-align: center; padding: 40px 20px; color: #999; font-size: 0.9em; }
+        .footer a { color: #2d5a87; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <div class="badge">🎯 2025 aktualisiert</div>
+            <h1>Zahlst du ZU VIEL Steuer?</h1>
+            <p>94% der Selbstständigen verlieren Geld — in 60 Sekunden weißt du, wie viel du sparen kannst</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="calculator">
+            <form id="taxForm">
+                <div class="form-group">
+                    <label for="type">Ich bin...</label>
+                    <select id="type" required>
+                        <option value="">Bitte wählen</option>
+                        <option value="kleinunternehmer">Kleinunternehmer</option>
+                        <option value="freiberufler">Freiberufler</option>
+                        <option value="kapitalanleger">Kapitalanleger</option>
+                        <option value="gruender">Gründer (erstes Jahr)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="income">Jahreseinkommen (€)</label>
+                    <input type="number" id="income" placeholder="z.B. 45000" required min="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email für deinen persönlichen Report</label>
+                    <input type="email" id="email" placeholder="deine@email.de" required>
+                </div>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="agb" required>
+                    <label for="agb" style="display: inline; font-weight: normal;">Ich stimme zu, meinen kostenlosen Steuer-Report zu erhalten (Abmeldung jederzeit möglich)</label>
+                </div>
+
+                <button type="submit" class="btn">Mein Steuer-Potenzial berechnen →</button>
+            </form>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Analysiere deine optimale Steuerstrategie...</p>
+            </div>
+
+            <div id="result">
+                <h2>🎉 Dein Sparpotenzial</h2>
+                <div class="amount" id="savings">2.847 €</div>
+                <p>pro Jahr steuerfrei möglich</p>
+                <p style="margin-top: 15px; font-size: 0.9em;">Dein detaillierter Report ist unterwegs!</p>
+            </div>
+        </div>
+
+        <div class="features">
+            <h2>Was du erhältst</h2>
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <div class="feature-text">
+                    <h3>Persönliche Berechnung</h3>
+                    <p>Kein allgemeiner Quatsch — nur deine relevanten Zahlen und Freibeträge</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">✅</div>
+                <div class="feature-text">
+                    <h3>Steuerberater-getestet</h3>
+                    <p>Alle Tipps rechtskonform und nachvollziehbar dokumentiert</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <div class="feature-text">
+                    <h3>Sofortiger Report</h3>
+                    <p>Per Email als PDF — direkt für deine Unterlagen speicherbar</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <div class="feature-text">
+                    <h3>100% kostenlos</h3>
+                    <p>Keine Kreditkarte, kein Spam, keine versteckten Kosten</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="trust">
+            <p>Bereits von über 2.000 Selbstständigen genutzt</p>
+            <div class="trust-items">
+                <div class="trust-item">
+                    <span>⭐⭐⭐⭐⭐</span>
+                    <span>4.8/5 Bewertung</span>
+                </div>
+                <div class="trust-item">
+                    <span>🔒</span>
+                    <span>DSGVO-konform</span>
+                </div>
+                <div class="trust-item">
+                    <span>🇩🇪</span>
+                    <span>Deutsches Recht</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 Zielsteuerfrei.de | <a href="#">Impressum</a> | <a href="#">Datenschutz</a></p>
+        <p style="margin-top: 10px; font-size: 0.85em;">Hinweis: Keine Steuerberatung im Sinne des StBerG. Für individuelle Beratung konsultieren Sie einen Steuerberater.</p>
+    </div>
+
+    <script>
+        document.getElementById('taxForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const income = parseFloat(document.getElementById('income').value) || 0;
+            const type = document.getElementById('type').value;
+            
+            // Berechnung (vereinfachte Logik für Demo)
+            let savings = 0;
+            const grundfreibetrag = 12096;
+            const sparerpausch = 1000;
+            
+            if (type === 'kleinunternehmer') {
+                savings = Math.min(income * 0.15, 3000) + sparerpausch;
+            } else if (type === 'freiberufler') {
+                savings = Math.min((income - grundfreibetrag) * 0.14, 4000) + 1260; // Homeoffice
+            } else if (type === 'kapitalanleger') {
+                savings = sparerpausch + 840; // Teilfreistellung
+            } else if (type === 'gruender') {
+                savings = 24500; // Gewerbestuerfreibetrag
+            }
+            
+            savings = Math.max(savings, 500).toFixed(0);
+            
+            // Loading anzeigen
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('taxForm').style.display = 'none';
+            
+            // Nach 2 Sekunden Ergebnis anzeigen
+            setTimeout(function() {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('result').style.display = 'block';
+                document.getElementById('savings').textContent = parseInt(savings).toLocaleString('de-DE') + ' €';
+                
+                // Hier würde normalerweise der POST an Backend/Email-Service erfolgen
+                console.log('Lead captured:', { type, income, email: document.getElementById('email').value });
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
