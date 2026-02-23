@@ -124,4 +124,12 @@ Last updated: 2026-02-23 14:42 GMT+1 (OpenClaw Videos Session)
 ### Living Files Theory
 **Kernkonzept:** Wissen in statischen Formaten (PDFs, lokale Docs) ist "tot". 
 Nur AI-modifizierbare Markdown-Dateien auf
---- Last updated: 2026-02-23 16:22 GMT+1 (Heartbeat sync, gateway OK, disk OK)
+--- Last updated: 2026-02-23 18:46 GMT+01:00 (Heartbeat 15min check)
+
+## OpenClaw Deployment Erkenntnisse (2026-02-23)
+### Living Files Theory
+**Kernkonzept:** Wissen in statischen Formaten (PDFs, lokale Docs) ist "tot". Nur AI-modifizierbare Markdown-Dateien auf
+
+---
+
+Last updated: 2026-02-23 22:50 GMT+01:00 (Heartbeat 15min check)

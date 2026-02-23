@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "skills": {
+    "wordpress": {
+      "version": "1.0.0",
+      "installedAt": 1771865902121
+    },
+    "wordpress-publishing-skill-for-claude": {
+      "version": "0.1.0",
+      "installedAt": 1771866028101
+    }
+  }
+}
