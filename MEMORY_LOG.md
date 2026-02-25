@@ -157,3 +157,5 @@ HEARTBEAT | 2026-02-25 00:36 | Memory sync complete
 2026-02-25 09:50:03 | heartbeat | memory-sync | OK
 2026-02-25 10:02:52 | TC-1772010172 | heartbeat | memory-sync | OK
 2026-02-25 10:18 | HEARTBEAT | memory-sync | 0 subagents, business/* sync OK
+2026-02-25 10:33:43 | heartbeat | check-15min | memory-sync-ok, no-subagents, timestamp-updated | OK
+2026-02-25 10:51:34 | TC-1772013094 | heartbeat | memory-sync | 0 subagents, HEARTBEAT.md updated
