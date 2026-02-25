@@ -1,17 +1,21 @@
 # MEMORY.md - Long-Term Memory
 
+> ⚠️ **Diese Datei ist READ-ONLY.**  
+> Updates gehören in MEMORY_LOG.md (append-only via `echo >>`)
+
 ## Setup & Configuration
 
 ### Gateway
 - **Port:** 18789 (loopback)
-- **Startup:** ALWAYS use `systemctl --user restart openclaw-gateway.service` - never multiple mechanisms at once
+- **Startup:** ALWAYS use `systemctl --user restart openclaw-gateway.service` — never multiple mechanisms at once
 - **Restart-Loop-Fix:** If gateway crashes in a loop → `kill -9 <PIDs>`, check port is free, single restart
 - **Status:** Can be checked with `openclaw status` or `systemctl --user status openclaw-gateway.service`
+- ⚠️ **Niemals Gateway-Restart aus laufendem Run aufrufen — timeout guaranteed**
 
 ### Telegram Integration ✓ DONE
 - **Bot:** martinsclawd_bot (https://t.me/martinsclawd_bot)
 - **Token:** 8200860488:AAHqnKfXNowCcDZn75e6aLulEvqmIAkNreg
-- **Pairing:** User 5372415590 - already approved
+- **Pairing:** User 5372415590 — already approved
 - **Features:** All slash commands work (/new, /model, /status, /reasoning)
 - **Setup Date:** 2026-02-23
 
@@ -30,44 +34,40 @@
 
 ### Important Commands
 ```bash
-openclaw status              # Full system status
-openclaw pairing list X      # List pending pairings for channel X
-openclaw pairing approve X Y  # Approve code Y for channel X
+openclaw status                    # Full system status
+openclaw pairing list X            # List pending pairings for channel X
+openclaw pairing approve X Y       # Approve code Y for channel X
 systemctl --user restart openclaw-gateway.service  # Restart gateway (single mechanism)
 ```
 
 ## Preferences & Notes
-
 - Martin prefers direct, practical communication
 - Timezone: Europe/Berlin (GMT+1)
 - Workspace: /root/.openclaw/workspace
 - Platform: alemán / German for most context
 
----
-
-Last updated: 2026-02-23 06:12 GMT+1
-
-### Subagent Workaround (2026-02-23)
+### Subagent Workaround
 - **Script:** `./subagent-runner.sh` (Shell-basierter Workaround)
 - **Mechanismus:** `openclaw agent --local` (embedded, no gateway)
 - **Status:** ✅ Funktioniert für Research-Tasks
 - **Limitation:** Kein nativer Rückkanal, nur sequentiell
+- ⚠️ **session_status auf eigene sessionId schlägt immer fehl**
 
-### Workspace Struktur (2026-02-23)
+### Workspace Struktur
 ```
 /root/.openclaw/workspace/
 ├── business/
-│   ├── niemieckieubezpieczenia/  ← SEO-Keywords-Research etc.
-│   └── zielsteuerfrei.de/        ← Bestehende HTML/Content
+│   ├── niemieckieubezpieczenia/ ← SEO-Keywords-Research etc.
+│   └── zielsteuerfrei.de/       ← Bestehende HTML/Content
 ├── personal/
-│   └── MARTIN-PROFILE.md         ← User-Profil
+│   └── MARTIN-PROFILE.md        ← User-Profil
 ├── memory/
-├── SKILLS.md                     ← Subagent-Doku
-├── HEARTBEAT.md                  ← 15min Checks
-└── ...
+├── SKILLS.md                    ← Subagent-Doku
+├── HEARTBEAT.md                 ← 15min Checks
+└── MEMORY_LOG.md                ← Append-only Updates
 ```
 
-### Heartbeat (2026-02-23)
+### Heartbeat
 - **Intervall:** 15 Minuten
 - **Model:** ollama 3.2:3b (kleiner, effizient)
 - **Command:** `/savedata` (manueller Trigger)
@@ -81,7 +81,7 @@ Last updated: 2026-02-23 06:12 GMT+1
 - **Default:** perplexity/sonar-pro-search
 - **Deep Research:** Nur auf explizite Anfrage
 
-### Config-Cleanup Workflow (2026-02-23) ✓ DONE
+### Config-Cleanup Workflow
 **Beim Bereinigen von Konfigdateien verwenden:**
 1. Draft schreiben → `.draft` extension
 2. JSON syntax validieren
@@ -91,16 +91,10 @@ Last updated: 2026-02-23 06:12 GMT+1
 
 **Dateien betroffen:**
 - `/root/.openclaw/agents/main/agent/models.json` ✓ (NVIDIA Llama-Modelle entfernt)
-  - Backup: `models.json.bak`
-  - Behalten: Kimi K2.5 (NVIDIA) + llama3.2:3b (Ollama lokal)
+- Backup: `models.json.bak`
+- Behalten: Kimi K2.5 (NVIDIA) + llama3.2:3b (Ollama lokal)
 
-**Aktueller Stand (2026-02-23 12:42):**
-- `/savedata` ist Telegram Slash-Command, nicht Shell-Befehl
-- Heartbeat läuft automatisch alle 15 Min (ollama 3.2:3b)
-- Ollama API direkt nutzbar für Lightweight-Tasks: `curl http://127.0.0.1:11434/api/generate`
-- Subagents funktionieren NICHT mit Telegram-Config aktiv (known limitation)
-
-### Models (Aktuell)
+### Models
 | Modell | Provider | Kontext | Use-Case |
 |--------|----------|---------|----------|
 | **Kimi K2.5** | `nvidia/moonshotai/kimi-k2.5` | ~50K tokens | Default, Research, komplexe Aufgaben |
@@ -116,20 +110,11 @@ Last updated: 2026-02-23 06:12 GMT+1
 - **Fehler:** `500 model requires more system memory` = zu großer Kontext
 - **Lösung:** Kürzeren Prompt schicken oder auf Kimi/Sonnet wechseln
 
----
-Last updated: 2026-02-23 14:42 GMT+1 (OpenClaw Videos Session)
-
-## OpenClaw Deployment Erkenntnisse (2026-02-23)
+## OpenClaw Deployment Erkenntnisse
 
 ### Living Files Theory
-**Kernkonzept:** Wissen in statischen Formaten (PDFs, lokale Docs) ist "tot". 
-Nur AI-modifizierbare Markdown-Dateien auf
---- Last updated: 2026-02-23 18:46 GMT+01:00 (Heartbeat 15min check)
-
-## OpenClaw Deployment Erkenntnisse (2026-02-23)
-### Living Files Theory
-**Kernkonzept:** Wissen in statischen Formaten (PDFs, lokale Docs) ist "tot". Nur AI-modifizierbare Markdown-Dateien auf
+**Kernkonzept:** Wissen in statischen Formaten (PDFs, lokale Docs) ist "tot". Nur AI-modifizierbare Markdown-Dateien auf dem Filesystem sind "lebend" und iterierbar.
 
 ---
 
-Last updated: 2026-02-23 22:50 GMT+01:00 (Heartbeat 15min check)
+Last updated: 2026-02-25 04:47 GMT+01:00 (Heartbeat 15min check)

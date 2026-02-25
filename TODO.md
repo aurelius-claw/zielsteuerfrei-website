@@ -1,57 +1,38 @@
-# TODO - OpenClaw & Business Automation
+# TODO & TASKS — AURELIUS
 
-## 🔥 Aktive Projekte
-
-### approvalRequired Config
-**Status:** Research | **Priorität:** Hoch
-- [ ] OpenClaw-Doku zu `approvalRequired` für exec/file prüfen
-- [ ] Config-Mechanismus verstehen (agent/auth.json vs openclaw.json?)
-- [ ] `approvalRequired` für `sudo`, `rm`, `dd`, `mkfs`, `iptables` aktivieren
-- [ ] `approvalRequired` für Writes nach `/etc/`, `/usr/`, `/root/.openclaw/` aktivieren
-- [ ] Testen: Nicht-destruktive Commands sollen weiterhin auto-allowed sein
-
-### WordPress REST API Setup
-**Status:** Blockiert | **Priorität:** Hoch  
-*Blocked: Martin muss Application Password in WP-Admin erstellen*
-- [ ] Application Password in WP-Admin erstellen (Martin)
-- [ ] Credentials in `/root/.openclaw/credentials/wordpress.json` speichern
-- [ ] Verbindung testen (lesender Zugriff auf Posts)
-- [ ] Skill `wordpress-rest` erstellen
-- [ ] Ersten autonomen Post als Draft testen
+## Format
+[PRIO] [PROJEKT] Aufgabe — Kontext
 
 ---
 
-## ✅ Abgeschlossen
+## 🔴 Kritisch (sofort)
 
-### 2026-02-23
-- [x] Dashboard aktiviert
-- [x] Config-Cleanup (NVIDIA Modelle entfernt)
-- [x] Telegram Integration verifiziert
-- [x] Heartbeat auf 15min optimiert (mit Llama)
-- [x] Ollama für lokale LLMs eingerichtet
-- [x] Research-Ordner angelegt
-- [x] YouTube-Video-Zusammenfassungen erstellt
+## 🟡 Diese Woche
+- [niemieckieubezpieczenia] Domain-Auktionen Topical Authority — 8 Domains gescoutet, Auktionen laufen (Ingrid van Dijk, Rian de Jong, Sjoerd van Eetc.)
+- [system] API-Keys für Kasia eintragen nach Martin-Setup — Blotato, ElevenLabs, FAL.ai
+- [niemieckieubezpieczenia] Statische HTML-Seite Formular mit Formspree verbinden
 
-### 2026-02-24 (Session)
-- [x] Living Files Struktur komplett angelegt:
-  - [x] `playbooks/`, `journals/`, `content/`, `research/` Ordner
-  - [x] `business_priorities.md`, `highest_leverage_moves.md`
-  - [x] `mistakes_log.md`, `content_calendar.md`
-  - [x] `playbooks/wordpress-api-setup.md`
-- [x] USER.md: Security Preferences Section
-- [x] TODO-SECURITY.md: Immediate Aufgaben abgehakt
-- [x] Git Commit `44ce99a` mit allen Änderungen
-- [x] Subagent-Timeout-Grund identifiziert & gefixt
+## 🟢 Backlog
+- [zielsteuerfrei.de] Larry Skill installieren + für Steuer-Content anpassen
+- [niemieckieubezpieczenia] TikTok/Social-Automatisierung aufbauen (nach API-Key Setup)
+- [beide] RevenueCat-Integration wenn App live geht
+- [system] youtube-transcript-api + yt-dlp installieren
+- [system] Twitter/X API einrichten für Research-Agent
+- [system] Telegram Topics mit Martin einrichten ✅ DONE 2026-02-25
+- [system] Telegram Topics → alle Cron-Jobs auf Topics umstellen
 
----
-
-## 📝 Session-Kill Checklist (Jede Session)
-
-- [x] TODOS aktualisiert (erledigt abhaken, neue hinzufügen)
-- [x] MEMORY.md Timestamp geprüft
-- [x] Git Status geprüft (uncommitted changes?)
-- [x] Subagents terminated?
-- [x] Fertig für `/new`
+## ✅ Zuletzt erledigt (max 10)
+- [niemieckieubezpieczenia] Update 02: Kasia Content Machine deployed — 2026-02-25
+- [system] Telegram Topics erstellt und aktiviert — 2026-02-25
+- [system] Update 01 durchgeführt (Mission Control, Sub-Agenten) — 2026-02-25
+- [system] Sub-Agenten Team aufgesetzt (content/analytics/dev/research/ops) — 2026-02-24
+- [system] 6 Cron-Jobs aktiv — 2026-02-24
+- [system] Living Files Struktur komplett angelegt — 2026-02-24
+- [niemieckieubezpieczenia] HTML statische Seite erstellt — 2026-02-25
 
 ---
-*Zuletzt aktualisiert: 2026-02-24*
+
+## Wie ich TODO pflege
+- Neuer Task von Martin → sofort eintragen mit Prio
+- Task abgeschlossen → in "✅ Zuletzt erledigt" verschieben (max 10)
+- Jeden Montag: TODO.md durchgehen und Prios anpassen

@@ -71,23 +71,3 @@ cat /tmp/task*.log
 
 ---
 Last updated: 2026-02-23
-
----
-## OpenClaw Skills Marketplace
-
-OpenClaw hat einen Skills-Marketplace mit installierbaren Erweiterungen.
-Ich kann Martin auf relevante Skills hinweisen oder sie auf Anfrage installieren.
-
-Skills anzeigen: `openclaw skills list`
-Skill installieren: `openclaw skills install <name>`
-
-### Bekannte relevante Skills (Stand Feb 2026)
-
-| Skill | Nutzen für uns | Status |
-|-------|----------------|--------|
-| Larry Skill | Automatisiertes TikTok/Social-Marketing mit Funnel-Tracking | 📋 Backlog |
-| RevenueCat | App-Subscription-Analytics | 📋 Backlog (wenn App live) |
-| Posters | Social-Media-Posting (TikTok, Instagram) | 📋 Backlog |
-
-**Regel:** Wenn Martin fragt ob etwas möglich ist → erst `openclaw skills list` prüfen bevor ich selbst baue.
-Wenn ein Skill das Problem löst: Martins Erlaubnis einholen und installieren.

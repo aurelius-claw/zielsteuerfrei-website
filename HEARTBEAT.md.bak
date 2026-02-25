@@ -1,0 +1,53 @@
+# Heartbeat Checklist
+
+**Model:** ollama 3.2:3b
+**Last Run:** 2026-02-25 00:30 GMT+01:00
+**Next Run:** 2026-02-25 00:45 GMT+01:00
+
+## Checklist
+
+### 1. Memory Sync
+- [ ] Write current task state to memory/YYYY-MM-DD.md
+- [ ] Update MEMORY.md if long-term decisions made
+- [ ] Check if SKILLS.md / TOOLS.md updates needed
+
+### 2. Project Data
+- [ ] Save research data to /business/*/
+- [ ] Update /business/niemieckieubezpieczenia/ with new insights
+- [ ] Update /business/zielsteuerfrei.de/ if applicable
+
+### 3. Personal Data
+- [ ] Check /personal/MARTIN-PROFILE.md for updates
+- [ ] Sync USER.md
+
+### 4. Session Health
+- [ ] Check subagent-runner.sh functionality
+- [ ] Verify OpenClaw gateway status
+- [ ] Check disk space /tmp cleanup
+
+## Manual Trigger
+
+Use command `/savedata` to run this heartbeat immediately.
+
+## Notes
+
+- Small context model (3.2:3b) for efficiency
+- Focus on persistence, not complex analysis
+- Always confirm writes successful
+
+---
+
+## Sub-Agenten Status (NEU — ab 2026-02-24)
+
+**sessions_spawn funktioniert.** Gelegentlich prüfen:
+- Gibt es hängende Sub-Agenten aus früherem Task? (`/subagents list`)
+  → Ja seit >15min: killen und Martin informieren
+- Gibt es Announce-Ergebnisse von Sub-Agenten die noch nicht übermittelt wurden?
+  → Ja: zusammenfassen und an Martin senden
+- Laufen mehr als 4 Sub-Agenten parallel?
+  → Ja: Warnung an Martin
+
+## Modell-Schutz Check
+
+- Laufen Sub-Agenten auf Kimi K2.5? (nicht Anthropic/OpenRouter)
+  → Falls nicht: sofort Martin informieren, das ist ein Config-Problem
