@@ -61,37 +61,3 @@ Nach Änderung:
 ```bash
 openclaw gateway restart
 ```
-
----
-
-## [2026-02-25] Update 04 — Stabilisierung
-
-### Secrets in TOOLS.md (Fix)
-Tokens gehören nicht in Workspace-Dateien die potenziell committed werden.
-GitHub-Token → ~/.openclaw/credentials/github-token (chmod 600)
-Telegram-Token → openclaw.json (channels.telegram.botToken)
-
-### Tool-Call Logging deaktiviert
-Granulares Logging nach jedem Tool-Call (MEMORY_LOG.md) verursachte Loops.
-Deaktiviert in Update 04. Alternative: tägliche Summary in memory/YYYY-MM-DD.md.
-
-### MEMORY.md zu groß = Token-Verschwendung
-MEMORY.md wird bei jedem Session-Start injiziert. Max ~200 Zeilen.
-Alles andere in daily memory files (werden NICHT auto-injiziert).
-
-### Compaction statt Pruning für Kimi K2.5
-Session Pruning (contextPruning) gilt in OpenClaw NUR für Anthropic-Modelle.
-Für Kimi K2.5 (NVIDIA) funktioniert nur Compaction (mode: "safeguard" bereits aktiv).
-Bei voller Session: /compact (fasst zusammen) oder /new (frischer Start).
-session.pruning mit maxMessages/strategy existiert nicht in der OpenClaw-Doku — niemals verwenden.
-
-### MEMORY.md darf per Atomic Swap editiert werden
-Die selbsterfundene "READ ONLY → nur MEMORY_LOG.md"-Regel war falsch.
-Laut OpenClaw-Doku: MEMORY.md kann in der Main Session frei gelesen und editiert werden.
-Korrekte Methode: Atomic Swap (cp → edit draft → mv) um Edit-Fehler zu vermeiden.
-MEMORY_LOG.md ist nicht nötig und wird nicht mehr verwendet.
-
-### Cron-Jobs: Kurze Prompts sind zuverlässiger
-Lange komplexe Cron-Prompts mit sessions_spawn schlagen öfter fehl.
-Status-Check Crons: simpel halten, kein spawning.
-Spawning: lieber manuell triggern oder via einfachem Cron + kurzer Task.

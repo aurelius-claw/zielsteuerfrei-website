@@ -52,6 +52,21 @@ Things like:
 - Device nicknames
 - Anything environment-specific
 
+## Examples
+
+```markdown
+### Cameras
+- living-room → Main area, 180° wide angle
+- front-door → Entrance, motion-triggered
+
+### SSH
+- home-server → 192.168.1.100, user: admin
+
+### TTS
+- Preferred voice: "Nova" (warm, slightly British)
+- Default speaker: Kitchen HomePod
+```
+
 ## Why Separate?
 
 Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
@@ -68,11 +83,11 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 - **Falls kein Transkript:** Informieren + Metadaten trotzdem nutzen
 - **Rate Limit:** YouTube-Extraktion zählt als "web operation" → 10s Pause danach
 
-### Subagents (✅ sessions_spawn funktioniert)
-- **Status:** REPARIERT in Version 2026.2.23
-- **Nativ:** via sessions_spawn Tool
-- **Team:** content, analytics, dev, research, ops
-- **Modell-Schutz:** Kimi K2.5 Standard, kein Anthropic ohne Martin-Freigabe
+### Subagents (⚠️ Limitiert)
+- **Status:** Funktionieren NICHT mit aktiver Telegram-Config
+- **Grund:** OpenClaw initialisiert alle Channels für alle Agents
+- **Limitation:** Kein echter Headless-Mode verfügbar
+- **Workaround:** Shell-basierte Isolation (siehe SUBAGENT-WORKAROUND.md)
 
 ### Models
 - `/model kimi` → **Kimi K2.5** via NVIDIA (default, großer Kontext ~50K tokens)
@@ -108,12 +123,15 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 - **OS:** Ubuntu 24.04 LTS
 
 ### Telegram ✓ DONE
-- **Bot:** martinsclawd_bot → https://t.me/martinsclawd_bot
-- **Token:** → gespeichert in ~/.openclaw/openclaw.json (channels.telegram.botToken)
+- **Bot:** `martinsclawd_bot` → https://t.me/martinsclawd_bot
+- **Token:** `8200860488:AAHqnKfXNowCcDZn75e6aLulEvqmIAkNreg`
 - **User ID:** 5372415590 (Martin)
-- **Status:** Active
+- **Pairing Code:** G3RV6NHF (approved 2026-02-23 06:12)
+- **Status:** Active, ready to use
 
 ---
+
+Add whatever helps you do your job. This is your cheat sheet.
 
 ### Commands
 
@@ -137,9 +155,13 @@ Manueller Trigger für sofortigen Heartbeat (Memory-Sync + Data-Save).
   3. `mv TOOLS.draft.md TOOLS.md`
 - **Oder** append: `cat >> TOOLS.md << 'EOF'`
 
-### MEMORY.md — Atomic Swap in Main Session
-- Atomic Swap erlaubt: cp → edit draft → mv
-- Tägliche Logs: append nach memory/YYYY-MM-DD.md
+### MEMORY.md = READ ONLY
+- **Niemals** edit/write auf MEMORY.md
+- **Immer** append nach MEMORY_LOG.md:
+
+```bash
+echo "$(date '+%Y-%m-%d %H:%M') | [Kategorie] | [Inhalt]" >> /root/.openclaw/workspace/MEMORY_LOG.md
+```
 
 ### memory/YYYY-MM-DD.md = NUR APPEND
 - **Niemals** edit auf memory/-Dateien (Text wiederholt sich)
@@ -157,21 +179,30 @@ echo "$(date '+%Y-%m-%d %H:%M') | [Inhalt]" >> /root/.openclaw/workspace/memory/
 - Timeout nach 60s guaranteed
 - Nur manuell oder via separatem Cron außerhalb eines Runs
 
+## Tool-Call Logging
+
+> **Ab 2026-02-24:** Nach jedem Tool-Call muss eine Zeile in MEMORY_LOG.md:
+
+```bash
+echo "$(date '+%Y-%m-%d %H:%M:%S') | TC-$ | [TOOL] | [DATEI/AKTION] | [OK/FEHLER]" >> /root/.openclaw/workspace/MEMORY_LOG.md
+```
+
+**Beispiele:**
+- `TC-12345 | read | SOUL.md | OK`
+- `TC-12346 | edit | TOOLS.md | FEHLER: text not found`
+- `TC-12347 | exec | mv draft.md | OK`
+
 ---
 
 ## GitHub
 - **Username:** aurelius-claw
-- **Token:** → gespeichert in ~/.openclaw/credentials/github-token (NICHT im Workspace)
+- **Token:** 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
+- **Passwort:** !?!Aurelius123123 (für HTTPS Auth)
 - **Config:**
   ```bash
   git config --global user.name "Aurelius"
   git config --global user.email "aurelius@openclaw.ai"
   ```
-- **Push:** Siehe Referenz-Abschnitt unten (Token-Push mit Remote-Check)
-
-> ⚠️ Hinweis: Falls der Remote bereits `git@github.com:` (SSH) statt `https://` ist,
-> muss der Remote-URL zuerst auf HTTPS umgestellt werden:
-> `git remote set-url origin https://github.com/aurelius-claw/[REPO].git`
 
 ---
 
@@ -179,12 +210,21 @@ echo "$(date '+%Y-%m-%d %H:%M') | [Inhalt]" >> /root/.openclaw/workspace/memory/
 
 ### Read-Tool Safety
 - **Niemals `read` auf Verzeichnisse** → Ergibt `EISDIR`
+  - ❌ `read path="/some/directory/"` 
+  - ✅ `exec ls -la /some/directory/`
 - **Niemals `read` auf nicht-existierende Files** → Ergibt `ENOENT`
   - ✅ Vorher prüfen: `exec test -f /path/file && echo exists`
+  - ✅ Oder: `exec cat /path/file 2>/dev/null || echo "NOT_FOUND"`
 
 ### Edit-Tool Safety
 - **Niemals `edit` auf HEARTBEAT.md oder TOOLS.md** → Ergibt "text not found"
-  - ✅ **Atomic Swap**: `cp DATEI.md DATEI.draft.md` → edit draft → `mv DATEI.draft.md DATEI.md`
+  - ❌ `edit` auf HEARTBEAT.md (wie TOOLS.md - living file)
+  - ✅ **Atomic Swap**: `cp HEARTBEAT.md HEARTBEAT.draft.md` → edit draft → `mv HEARTBEAT.draft.md HEARTBEAT.md`
+
+### Before Any File Operation
+1. Ist es ein File oder Directory? `exec file /path`
+2. Existiert es? `exec test -e /path && echo yes`
+3. Für `edit`: Ist es ein "living file"? → Dann Atomic Swap statt edit
 
 ### Gateway-Status Checks
 - **Nie `session_status` auf eigene Session** → guaranteed error
@@ -192,6 +232,44 @@ echo "$(date '+%Y-%m-%d %H:%M') | [Inhalt]" >> /root/.openclaw/workspace/memory/
 
 ---
 
+## ⚡ Sub-Agenten UPDATE (2026-02-24)
+
+### ✅ sessions_spawn — JETZT FUNKTIONIEREND
+**Status:** REPARIERT in Version 2026.2.23
+**Fehler war:** `gateway closed (1008): pairing required`
+**Jetzt:** Nativ via sessions_spawn Tool
+
+**Team:**
+- `content` — Content Agent (Kimi K2.5) → workspace-content
+- `analytics` — Analytics Agent (Kimi K2.5) → workspace-analytics
+- `dev` — Dev Agent (Kimi K2.5) → workspace-dev
+- `research` — Research Agent (Kimi K2.5 + Perplexity) → workspace-research
+- `ops` — Ops Agent (Kimi K2.5) → workspace-ops
+
+**Modell-Schutz:** `agents.defaults.subagents.model = nvidia/moonshotai/kimi-k2.5`
+Sub-Agenten nutzen KEIN Anthropic/OpenRouter ohne Martin's Freigabe.
+
+**subagent-runner.sh:** Weiterhin vorhanden als Fallback, nicht mehr primär nötig.
+
+### Spawn-Syntax
+```json
+{
+  "task": "Deine Aufgabe hier",
+  "label": "kurze-beschreibung",
+  "agentId": "content"
+}
+```
+
+### Modell explizit überschreiben (NUR bei Martin-Freigabe)
+```json
+{
+  "task": "...",
+  "agentId": "dev",
+  "model": "anthropic/claude-sonnet-4-6"
+}
+```
+
+---
 ## Telegram Topics (aktiv seit 2026-02-25)
 Gruppe: @martinsclawd_bot / Aurelius Mission Control
 | Topic | ID | Nutzung |
@@ -204,16 +282,3 @@ Gruppe: @martinsclawd_bot / Aurelius Mission Control
 | System & Cron | 10 | Heartbeats, Orchestrierung, Sub-Agenten |
 
 **Regel:** Cron-Jobs posten ins passende Topic (z.B. Kasia Daily → Content #7, Analytics → #8, System-Health → #10)
-
----
-
-## 📚 Referenz: Git Push mit Token (sicher)
-```bash
-CURRENT=$(git remote get-url origin)
-if echo "$CURRENT" | grep -q "git@"; then
-  git remote set-url origin https://github.com/aurelius-claw/[REPO].git
-fi
-GITHUB_TOKEN=$(cat /root/.openclaw/credentials/github-token)
-REPO_URL=$(git remote get-url origin | sed 's|https://github.com|https://aurelius-claw:'$GITHUB_TOKEN'@github.com|')
-git push "$REPO_URL" master
-```

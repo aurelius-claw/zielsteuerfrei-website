@@ -1,122 +1,53 @@
-# MEMORY.md - Long-Term Memory
+# MEMORY.md — Curated Long-Term Memory
+**Last Updated:** 2026-02-26 00:17 CET
 
-> ⚠️ **Diese Datei ist READ-ONLY.**  
-> Updates gehören in MEMORY_LOG.md (append-only via `echo >>`)
+> MAX 200 ZEILEN. Nur Facts die bei JEDEM Session-Start relevant sind.
+> Updates: Atomic Swap in Main Session erlaubt (cp → edit draft → mv).
+> Tägliche Logs gehören in memory/YYYY-MM-DD.md (werden on-demand geladen, kein Token-Verbrauch).
 
-## Setup & Configuration
+## Infrastruktur
+- Gateway Port: 18789 (loopback), systemctl --user restart openclaw-gateway.service
+- VPS: Contabo 161.97.118.140, Ubuntu 24.04
+- Tailscale: Gateway 100.93.92.52 | Martin PC 100.79.159.102
+- GitHub Token: ~/.openclaw/credentials/github-token
+- ⚠️ NIE Gateway-Restart aus laufendem Run
 
-### Gateway
-- **Port:** 18789 (loopback)
-- **Startup:** ALWAYS use `systemctl --user restart openclaw-gateway.service` — never multiple mechanisms at once
-- **Restart-Loop-Fix:** If gateway crashes in a loop → `kill -9 <PIDs>`, check port is free, single restart
-- **Status:** Can be checked with `openclaw status` or `systemctl --user status openclaw-gateway.service`
-- ⚠️ **Niemals Gateway-Restart aus laufendem Run aufrufen — timeout guaranteed**
+## Telegram
+- Bot: martinsclawd_bot, User-ID: 5372415590
+- Token: in openclaw.json (channels.telegram.botToken)
+- Topics: General=2, Research=6, Content=7, Analytics=8, Dev=9, System=10
 
-### Telegram Integration ✓ DONE
-- **Bot:** martinsclawd_bot (https://t.me/martinsclawd_bot)
-- **Token:** 8200860488:AAHqnKfXNowCcDZn75e6aLulEvqmIAkNreg
-- **Pairing:** User 5372415590 — already approved
-- **Features:** All slash commands work (/new, /model, /status, /reasoning)
-- **Setup Date:** 2026-02-23
+## Modelle
+- Standard: nvidia/moonshotai/kimi-k2.5 (alias: kimi, gratis, 131k ctx)
+- Anthropic: nur auf Martin-Freigabe
+- Heartbeat: ollama/llama3.2:3b (max ~1600 Token Input)
 
-### Infrastructure
-- **Tailscale:** Running (PID 10324), connected
-  - Gateway IP: 100.93.92.52
-  - Martin's PC: 100.79.159.102
-- **ollama serve:** Running in background (part of gateway)
+## Projekte
+- niemieckieubezpieczenia: SEO-Fokus, Kasia KI-Influencerin (Polnisch, GKV)
+- zielsteuerfrei.de: Steuerfreiheits-Plattform, Ajman vs Dubai
 
-## Working Patterns
+## Sub-Agenten (sessions_spawn ✅ funktioniert)
+- allowAgents: content, analytics, dev, research, ops
+- Kasia-Regeln stehen in AGENTS.md der Sub-Agent-Workspaces (nicht SOUL.md)
+- content + dev Agenten: agent/-Verzeichnis manuell angelegt
 
-### Token Management
-- When Martin provides a token/secret → **Save immediately to a file**, don't rely on memory
-- Tokens in openclaw.json are persistent and survive restarts
-- Always confirm token is in place before proceeding
+## Kritische Regeln
+- TOOLS.md: nur Atomic Swap oder Append (edit → "text not found")
+- MEMORY.md: Atomic Swap in Main Session — niemals direkt per edit-Tool
+- memory/YYYY-MM-DD.md: nur Append
+- session_status: nie auf eigene Session aufrufen
+- Tool-Call Logging: DEAKTIVIERT (verursacht Loops)
 
-### Important Commands
-```bash
-openclaw status                    # Full system status
-openclaw pairing list X            # List pending pairings for channel X
-openclaw pairing approve X Y       # Approve code Y for channel X
-systemctl --user restart openclaw-gateway.service  # Restart gateway (single mechanism)
-```
+## Dashboard
+- URL: http://161.97.118.140:3001/
+- NEXT_PUBLIC_API_URL muss VOR npm run build in .env.local stehen
+- Nach .env.local Änderung: immer neu bauen
 
-## Preferences & Notes
-- Martin prefers direct, practical communication
-- Timezone: Europe/Berlin (GMT+1)
-- Workspace: /root/.openclaw/workspace
-- Platform: alemán / German for most context
+## Compaction (Kimi K2.5)
+- Bei voller Session: /compact oder /new — kein automatisches Pruning für Kimi
+- compaction.mode: "safeguard" ist bereits aktiv in openclaw.json
+- Session Pruning (contextPruning) gilt nur für Anthropic-Modelle
 
-### Subagent Workaround
-- **Script:** `./subagent-runner.sh` (Shell-basierter Workaround)
-- **Mechanismus:** `openclaw agent --local` (embedded, no gateway)
-- **Status:** ✅ Funktioniert für Research-Tasks
-- **Limitation:** Kein nativer Rückkanal, nur sequentiell
-- ⚠️ **session_status auf eigene sessionId schlägt immer fehl**
-
-### Workspace Struktur
-```
-/root/.openclaw/workspace/
-├── business/
-│   ├── niemieckieubezpieczenia/ ← SEO-Keywords-Research etc.
-│   └── zielsteuerfrei.de/       ← Bestehende HTML/Content
-├── personal/
-│   └── MARTIN-PROFILE.md        ← User-Profil
-├── memory/
-├── SKILLS.md                    ← Subagent-Doku
-├── HEARTBEAT.md                 ← 15min Checks
-└── MEMORY_LOG.md                ← Append-only Updates
-```
-
-### Heartbeat
-- **Intervall:** 15 Minuten
-- **Model:** ollama 3.2:3b (kleiner, effizient)
-- **Command:** `/savedata` (manueller Trigger)
-- **Aufgaben:** Memory-Sync, Project-Data, Session-Health
-
-### Projekte
-- **niemieckieubezpieczenia:** SEO-Fokus, organisches Wachstum
-- **zielsteuerfrei.de:** Steuerfreiheits-Plattform (bestehend)
-
-### Search Models (Aktuell)
-- **Default:** perplexity/sonar-pro-search
-- **Deep Research:** Nur auf explizite Anfrage
-
-### Config-Cleanup Workflow
-**Beim Bereinigen von Konfigdateien verwenden:**
-1. Draft schreiben → `.draft` extension
-2. JSON syntax validieren
-3. Backup erstellen → `.bak`
-4. Draft → Original (atomer Swap)
-5. Verify (Gateway restart, kurz testen)
-
-**Dateien betroffen:**
-- `/root/.openclaw/agents/main/agent/models.json` ✓ (NVIDIA Llama-Modelle entfernt)
-- Backup: `models.json.bak`
-- Behalten: Kimi K2.5 (NVIDIA) + llama3.2:3b (Ollama lokal)
-
-### Models
-| Modell | Provider | Kontext | Use-Case |
-|--------|----------|---------|----------|
-| **Kimi K2.5** | `nvidia/moonshotai/kimi-k2.5` | ~50K tokens | Default, Research, komplexe Aufgaben |
-| **Sonnet 4.6** | `anthropic/claude-sonnet-4-6` | ~50K tokens | Starker Reasoning, Code, Analyse |
-| **Haiku 4.5** | `anthropic/claude-haiku-4-5` | ~50K tokens | Schnell, günstig, einfache Tasks |
-| **Llama 3.2:3b** | `ollama/llama3.2:3b` | **~1600 In / ~600 Out** | Alltags-Chats, kurze Zusammenfassungen, Heartbeats |
-| **Perplexity** | `perplexity/*` | - | Web-Search/Research nur |
-
-#### ⚠️ Llama 3.2:3b Grenzen
-- **Input:** Max ~1000-1600 Tokens (inkl. System-Prompt + History)
-- **Output:** Max ~600 Tokens
-- **RAM:** Server hat nur 6.4 GiB, Llama braucht max ~4 GiB
-- **Fehler:** `500 model requires more system memory` = zu großer Kontext
-- **Lösung:** Kürzeren Prompt schicken oder auf Kimi/Sonnet wechseln
-
-## OpenClaw Deployment Erkenntnisse
-
-### Living Files Theory
-**Kernkonzept:** Wissen in statischen Formaten (PDFs, lokale Docs) ist "tot". Nur AI-modifizierbare Markdown-Dateien auf dem Filesystem sind "lebend" und iterierbar.
-
----
-
-Last updated: 2026-02-25 11:47 GMT+01:00 (Heartbeat 15min check) (Heartbeat 15min check)
-2026-02-25 12:38
-Update 03: Sub-Agenten fix (AGENTS.md), Dashboard API-URL fix, Kasia = Projekt
+## Search
+- Default: perplexity/sonar-pro-search
+- Deep Research: nur auf explizite Martin-Anfrage
