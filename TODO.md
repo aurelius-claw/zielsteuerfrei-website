@@ -5,30 +5,24 @@
 
 ---
 
-## 🔴 Kritisch (sofort)
+## 🔴 Kritisch (heute)
+- [zielsteuerfrei.de] Website fertigstellen — Deployment, fehlende Seiten, Mobile-Optimierung, Repo-Push (heute abend live)
 
 ## 🟡 Diese Woche
-- [niemieckieubezpieczenia] Domain-Auktionen Topical Authority — 8 Domains gescoutet, Auktionen laufen (Ingrid van Dijk, Rian de Jong, Sjoerd van Eetc.)
-- [system] API-Keys für Kasia eintragen nach Martin-Setup — Blotato, ElevenLabs, FAL.ai
-- [niemieckieubezpieczenia] Statische HTML-Seite Formular mit Formspree verbinden
+- [niemieckieubezpieczenia] Mailcow-Formularbau — HTML/JS Formular mit Webhook zu mail.praedurion.com (statt Formspree)
+- [niemieckieubezpieczenia] Kasia Content Produktion — Script #1 (SCHOCK) generieren lassen
+- [niemieckieubezpieczenia] HTML statische Seite finalisieren — Assets verlinken, Mobile-Check
 
 ## 🟢 Backlog
 - [zielsteuerfrei.de] Larry Skill installieren + für Steuer-Content anpassen
 - [niemieckieubezpieczenia] TikTok/Social-Automatisierung aufbauen (nach API-Key Setup)
-- [beide] RevenueCat-Integration wenn App live geht
-- [system] youtube-transcript-api + yt-dlp installieren
-- [system] Twitter/X API einrichten für Research-Agent
-- [system] Telegram Topics mit Martin einrichten ✅ DONE 2026-02-25
-- [system] Telegram Topics → alle Cron-Jobs auf Topics umstellen
+- [niemieckieubezpieczenia] Domain-Auktionen — STORNIER'T, keine neuen Domains nötig
 
 ## ✅ Zuletzt erledigt (max 10)
 - [niemieckieubezpieczenia] Update 02: Kasia Content Machine deployed — 2026-02-25
 - [system] Telegram Topics erstellt und aktiviert — 2026-02-25
 - [system] Update 01 durchgeführt (Mission Control, Sub-Agenten) — 2026-02-25
 - [system] Sub-Agenten Team aufgesetzt (content/analytics/dev/research/ops) — 2026-02-24
-- [system] 6 Cron-Jobs aktiv — 2026-02-24
-- [system] Living Files Struktur komplett angelegt — 2026-02-24
-- [niemieckieubezpieczenia] HTML statische Seite erstellt — 2026-02-25
 
 ---
 

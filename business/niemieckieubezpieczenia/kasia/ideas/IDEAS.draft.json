@@ -1,0 +1,52 @@
+{
+  "ideas": [
+    {
+      "id": 1,
+      "status": "ready",
+      "category": "SCHOCK",
+      "hook": "Jeśli jesteś z Polski w Niemczech, MUSISZ to wiedzieć o ubezpieczeniu...",
+      "topic": "Pflichtversicherung ab dem ersten Arbeitstag",
+      "keypoints": ["Ab Tag 1 Arbeit Pflicht", "Arbeitgeber zahlt 50%", "Strafe bei Verzug"],
+      "cta": "Więcej na niemieckieubezpieczenia.de"
+    },
+    {
+      "id": 2,
+      "status": "ready",
+      "category": "HACK",
+      "hook": "Ten błąd kosztuje Polaków setki euro rocznie...",
+      "topic": "Zusatzbeitrag Vergleich — Kassenwechsel spart Geld",
+      "keypoints": ["Zusatzbeitrag variiert 0,5-2%", "Jährlich wechselbar", "Gleiche Leistungen"],
+      "cta": "Bezpłatne porównanie na niemieckieubezpieczenia.de"
+    },
+    {
+      "id": 3,
+      "status": "ready",
+      "category": "FAQ",
+      "hook": "Często pytacie: GKV czy PKV — co wybrać jako Polak?",
+      "topic": "GKV vs PKV für Polen erklärt",
+      "keypoints": ["GKV für Angestellte meist besser", "PKV erst ab 69.300€", "Familie kostenlos mitversichert"],
+      "cta": "Indywidualna porada na niemieckieubezpieczenia.de"
+    },
+    {
+      "id": 4,
+      "status": "ready",
+      "category": "VERGLEICH",
+      "hook": "TK vs AOK vs Barmer — która kasa jest najlepsza dla Polaków?",
+      "topic": "Die 3 besten Krankenkassen für Polen",
+      "keypoints": ["TK: beste App + englischer Service", "AOK: regional stark", "Barmer: guter Service"],
+      "cta": "Pełne porównanie: niemieckieubezpieczenia.de"
+    },
+    {
+      "id": 5,
+      "status": "ready",
+      "category": "FRIST",
+      "hook": "UWAGA! Masz tylko 3 miesiące po przyjeździe do Niemiec na to...",
+      "topic": "Anmeldung Krankenkasse — Fristen und Konsequenzen",
+      "keypoints": ["3 Monate Frist", "Rückwirkende Beiträge möglich", "Kein Schutz ohne Anmeldung"],
+      "cta": "Zarejestruj się teraz: niemieckieubezpieczenia.de"
+    }
+  ],
+  "last_updated": "2026-02-24",
+  "next_id": 6,
+  "pipeline_stats": {"ready": 5, "scripted": 0, "produced": 0, "posted": 0}
+}

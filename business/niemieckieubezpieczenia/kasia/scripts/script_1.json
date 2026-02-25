@@ -1,0 +1,49 @@
+{
+  "id": 1,
+  "title": "Ubezpieczenie od pierwszego dnia pracy w Niemczech",
+  "hook": "Jeśli jesteś z Polski w Niemczech, MUSISZ to wiedzieć o ubezpieczeniu...",
+  "segments": [
+    {
+      "time": "0-3s",
+      "text": "Jeśli jesteś z Polski w Niemczech, MUSISZ to wiedzieć o ubezpieczeniu...",
+      "emotion": "dringend/überrascht",
+      "visual": "Kasia schaut direkt in Kamera, ernster Gesichtsausdruck"
+    },
+    {
+      "time": "3-15s",
+      "text": "Kiedy zacząłem pracę w Monachium, myślałem że mam czas. Że ubezpieczenie? To przecież nie pilne, zrobię to za tydzień, za miesiąc...",
+      "emotion": "nachdenklich/erzählerisch",
+      "visual": "Kasia leicht zur Seite schauend, als würde sie erinnern"
+    },
+    {
+      "time": "15-35s",
+      "text": "Ale w Niemczech to nie działa tak jak w Polsce. Tu Krankenversicherung to obowiązek ustawowy. Od pierwszego dnia pracy. Nie od drugiego, nie od końca miesiąca. Od DNIA PIERWSZEGO.",
+      "emotion": "bestimmend/betonend",
+      "visual": "Text-Overlay: 'OD DNIA PIERWSZEGO'"
+    },
+    {
+      "time": "35-50s",
+      "text": "I jest dobra wiadomość: pracodawca płaci POŁOWĘ! Tak, 50 procent składki płaci firma, 50 procent Ty. W zależności od wybranej kasy, to około 400-500 euro miesięcznie z Twojej kieszeni.",
+      "emotion": "auflockernd/beruhigend",
+      "visual": "Animation: 50/50 Split, Zahlen einblenden"
+    },
+    {
+      "time": "50-65s",
+      "text": "Ale ostrzegam: jeśli zignorujesz tę zasadę, czekają Cię problemy. Czekają Cię kary, czekają Cię dopłaty wsteczne. I najgorsze: nie będziesz miał dostępu do lekarza. Nie ryzykuj.",
+      "emotion": "warnend/ernst",
+      "visual": "Kasia wieder direkt in Kamera, ernst"
+    },
+    {
+      "time": "65-75s",
+      "text": "Nie czekaj. Zarejestruj się w kasie chorych TERAZ. Więcej info w linku w bio — doradzimy Ci bezpłatnie. Do zobaczenia!",
+      "emotion": "motivierend/freundlich",
+      "visual": "Kasia lächelnd, animierter Pfeil auf 'link w bio'"
+    }
+  ],
+  "total_duration": "~75s",
+  "cta": "Zarejestruj się w kasie chorych TERAZ. Więcej info bezpłatnie na niemieckieubezpieczenia.de — link w bio!",
+  "hashtags": ["#PracaWNiemczech", "#PolacywNiemczech", "#Krankenversicherung", "#UbezpieczenieZdrowotne", "#PierwszaPraca", "#NiemcyZycie", "#KasiaRadczy"],
+  "category": "SCHOCK",
+  "language": "Polnisch",
+  "status": "scripted"
+}
