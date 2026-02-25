@@ -118,5 +118,3 @@ systemctl --user restart openclaw-gateway.service  # Restart gateway (single mec
 ---
 
 Last updated: 2026-02-25 11:47 GMT+01:00 (Heartbeat 15min check) (Heartbeat 15min check)
-2026-02-25 12:38
-Update 03: Sub-Agenten fix (AGENTS.md), Dashboard API-URL fix, Kasia = Projekt

@@ -101,12 +101,3 @@ Heartbeat 15min check | 2026-02-25 12:20 | Memory synced, 0 subagents, Gateway O
 2026-02-25 12:50:29 | HEARTBEAT | Status: OK, No alerts, Memory synced
 2026-02-25 13:13
 | Heartbeat check - 13:11 CET | Status: OK | Memory synced | 0 subagents |
-
-## Heartbeat — 13:11 CET
-- Status: OK
-- Memory: Synced to memory/2026-02-25.md
-- Business: No new data to sync
-- Subagents: 0 running
-- Next: 13:26 CET
-2026-02-25 13:48 | Heartbeat check — Memory synced, subagents: 0, gateway: OK
-2026-02-25 14:33 | HEARTBEAT | Heartbeat check: Memory synced, 0 subagents, next run in 15min
