@@ -102,8 +102,8 @@ export default function Layout({ children }: LayoutProps) {
 
       {/* ── Navigation ──────────────────────────────────── */}
       <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-cream/90 dark:bg-navy-950/90 backdrop-blur-nav border-b border-ink-100/60 dark:border-navy-800/60 shadow-sm'
+        scrolled || mobileOpen
+          ? 'bg-cream/95 dark:bg-navy-950/95 backdrop-blur-nav border-b border-ink-100/60 dark:border-navy-800/60 shadow-sm'
           : 'bg-transparent'
       }`}>
         <div className="max-w-wide mx-auto px-4 md:px-6">

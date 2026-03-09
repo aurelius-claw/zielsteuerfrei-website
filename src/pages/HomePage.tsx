@@ -43,6 +43,13 @@ export default function HomePage() {
       {/* ── Hero ─────────────────────────────────────────── */}
       <section className="relative pt-28 pb-28 overflow-hidden bg-cream dark:bg-navy-950">
         <div className="absolute inset-0 bg-hero-gradient dark:bg-hero-gradient-dark pointer-events-none" />
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/pages/hero-home.png"
+            alt=""
+            className="w-full h-full object-cover opacity-[0.06] dark:opacity-[0.09]"
+          />
+        </div>
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/[0.04] rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/[0.03] rounded-full blur-3xl pointer-events-none" />
 
