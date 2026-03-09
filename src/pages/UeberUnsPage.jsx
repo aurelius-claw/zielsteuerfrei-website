@@ -1,218 +1,226 @@
-import React, { useEffect, useRef } from 'react';
-import { Helmet } from 'react-helmet-async';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Team from '../components/Team';
+import { Link } from 'react-router-dom'
 
-gsap.registerPlugin(ScrollTrigger);
+function openCalendly() {
+  // @ts-ignore
+  if (typeof Calendly !== 'undefined') {
+    // @ts-ignore
+    Calendly.initPopupWidget({ url: 'https://calendly.com/zielsteuerfrei/strategie-call' })
+  } else {
+    window.open('https://calendly.com/zielsteuerfrei/strategie-call', '_blank')
+  }
+}
 
-const UeberUnsPage = () => {
-  const heroRef = useRef(null);
-  const contentRef = useRef(null);
+const team = [
+  {
+    name: 'Martin',
+    role: 'Strategie & Struktur',
+    desc: 'Hat selbst den Weg von Deutschland nach Ajman gemacht — und dabei jeden Fehler gemacht, den man machen kann. Heute hilft er anderen, dieselben Fehler zu vermeiden.',
+    icon: '🎯',
+  },
+  {
+    name: 'Neno',
+    role: 'Operations Ajman',
+    desc: 'Lebt in Ajman und kennt jede Behörde, jeden Schalter, jeden Sachbearbeiter. Er sorgt dafür, dass vor Ort nichts schiefgeht.',
+    icon: '🇦🇪',
+  },
+  {
+    name: 'Juljana',
+    role: 'Behörden & Compliance',
+    desc: 'Spezialisiert auf Emirates ID, Medical Check und Compliance. Sie begleitet jeden Kunden durch den bürokratischen Teil — lückenlos.',
+    icon: '📋',
+  },
+]
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Hero animation
-      gsap.from('.hero-title', {
-        y: 80,
-        opacity: 0,
-        duration: 1.2,
-        ease: 'power3.out',
-        delay: 0.2
-      });
+const values = [
+  {
+    icon: '🎯',
+    title: 'Kein Hype',
+    desc: 'Wir versprechen, was wir liefern können. Keine Guaranteed-Returns, keine "steuerfreien Geheimtipps". Nur einen klar strukturierten, legal wasserdichten Weg.',
+  },
+  {
+    icon: '💬',
+    title: 'Echte Menschen',
+    desc: 'Du bekommst Handynummern, keine Ticket-Nummer. WhatsApp-Support direkt von uns — nicht von einem Callcenter.',
+  },
+  {
+    icon: '📋',
+    title: 'Transparente Preise',
+    desc: '€6.990 steht auf der Website. Nicht "auf Anfrage", nicht "je nach Situation". Was du siehst, ist was du zahlst.',
+  },
+  {
+    icon: '⚖️',
+    title: 'Ehrliche Einschätzung',
+    desc: 'Wenn Ajman für dich keinen Sinn ergibt, sagen wir das im Erstgespräch — bevor du einen Cent ausgibst.',
+  },
+]
 
-      gsap.from('.hero-subtitle', {
-        y: 60,
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        delay: 0.4
-      });
-
-      // Content animation
-      gsap.from('.content-card', {
-        scrollTrigger: {
-          trigger: contentRef.current,
-          start: 'top 75%',
-        },
-        y: 60,
-        opacity: 0,
-        stagger: 0.2,
-        duration: 1,
-        ease: 'power3.out'
-      });
-    });
-
-    return () => ctx.revert();
-  }, []);
-
+export default function UeberUnsPage() {
   return (
-    <>
-      <Helmet>
-        <title>Über Uns - Ziel:steuerfrei Team & Expertise</title>
-        <meta name="description" content="Deutsches Team mit lokaler Expertise in Ajman/Dubai Firmengründungen. Transparent, legal, persönlich. Steueroptimierung für Unternehmer." />
-        <meta property="og:title" content="Über Uns - Ziel:steuerfrei Team & Expertise" />
-        <meta property="og:description" content="Deutsches Team mit lokaler Expertise in Ajman/Dubai Firmengründungen." />
-        <meta property="og:type" content="website" />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Ziel:steuerfrei",
-            "description": "Steueroptimierung und Firmengründung in Ajman/Dubai",
-            "url": "https://zielsteuerfrei.de",
-            "logo": "https://zielsteuerfrei.de/logo.png",
-            "founder": [
-              {
-                "@type": "Person",
-                "name": "Martin",
-                "jobTitle": "Strategie & Struktur"
-              },
-              {
-                "@type": "Person",
-                "name": "Neno",
-                "jobTitle": "Lokale Expertise"
-              },
-              {
-                "@type": "Person",
-                "name": "Juljana",
-                "jobTitle": "Steuerrecht & Compliance"
-              }
-            ],
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Ajman",
-              "addressRegion": "Vereinigte Arabische Emirate"
-            }
-          })}
-        </script>
-      </Helmet>
+    <div className="animate-fade-in">
 
-      {/* Hero Section with Image */}
-      <section ref={heroRef} className="relative min-h-[80vh] flex items-center justify-center px-6 py-32 dark:bg-dark-bg bg-light-bg overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/pages/ueber-uns.png" 
-            alt="Ziel:steuerfrei Team - Deutsche Expertise für Ajman Firmengründung"
-            className="w-full h-full object-cover opacity-20 dark:opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/50 to-white/70 dark:from-black-950/70 dark:via-black-950/50 dark:to-black-950/70" />
-        </div>
-        
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-900/20 via-transparent to-champagne/5 dark:from-navy-900/40 dark:to-champagne/10 z-[1]"></div>
-        
-        <div className="relative z-10 max-w-[1400px] mx-auto text-center">
-          <h1 className="hero-title text-5xl md:text-7xl lg:text-8xl font-playfair italic text-champagne mb-6 leading-tight">
-            Unser Team
+      {/* Hero */}
+      <section className="relative pt-28 pb-24 overflow-hidden bg-cream dark:bg-navy-950">
+        <div className="absolute inset-0 bg-hero-gradient dark:bg-hero-gradient-dark pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/[0.04] rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-wide mx-auto px-4 md:px-6 relative text-center">
+          <div className="eyebrow mb-5 justify-center animate-fade-up">
+            Das Team hinter Ziel:steuerfrei
+          </div>
+          <h1 className="font-display text-display-xl text-ink-900 dark:text-cream mb-6 text-balance animate-fade-up animation-delay-100">
+            Wir sind selbst<br />
+            <span className="text-highlight">den Weg gegangen</span>
           </h1>
-          <p className="hero-subtitle text-xl md:text-2xl dark:text-gray-accessible text-gray-600 max-w-3xl mx-auto mb-12">
-            Deutsche Präzision, lokale Expertise. Drei Persönlichkeiten, eine Mission: Ihre Steueroptimierung in Ajman.
+          <p className="text-lg text-ink-600 dark:text-ink-300 max-w-2xl mx-auto leading-relaxed animate-fade-up animation-delay-200">
+            Kein Berater-Team, das Ajman aus dem Lehrbuch kennt. 
+            Wir haben es selbst durchlebt — und helfen jetzt anderen, es besser zu machen.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#team" className="inline-flex items-center justify-center px-8 py-4 bg-champagne text-obsidian font-bold rounded-full hover:bg-champagne/90 transition-colors">
-              Team kennenlernen
-            </a>
-            <a href="/philosophie" className="inline-flex items-center justify-center px-8 py-4 border-2 border-champagne text-champagne font-bold rounded-full hover:bg-champagne/10 transition-colors">
-              Unsere Philosophie
-            </a>
+        </div>
+      </section>
+
+      {/* Story */}
+      <section className="section bg-white dark:bg-navy-900">
+        <div className="max-w-content mx-auto px-4 md:px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            <div>
+              <div className="eyebrow mb-4">Die Geschichte</div>
+              <h2 className="font-display text-display-md text-ink-900 dark:text-cream mb-6">
+                Entstanden aus eigener Erfahrung
+              </h2>
+              <div className="space-y-4 text-ink-600 dark:text-ink-300 leading-relaxed text-sm">
+                <p>
+                  Martin zahlte jahrelang über 40% seines Einkommens in Deutschland — 
+                  als Unternehmer mit komplett remote Business. 
+                  Irgendwann wurde die Frage unvermeidlich: Warum eigentlich?
+                </p>
+                <p>
+                  Der erste Versuch, das selbst zu lösen, war chaotisch. 
+                  Falsche Berater, unklare Informationen, verpasste Fristen. 
+                  Am Ende hat es funktioniert — aber mit doppelt so viel Aufwand wie nötig.
+                </p>
+                <p>
+                  Neno war der lokale Anker in Ajman, der den Unterschied gemacht hat. 
+                  Juljana hat den bürokratischen Teil am Laufen gehalten. 
+                  Daraus ist Ziel:steuerfrei entstanden: Der Weg, den sich Martin 
+                  von Anfang an gewünscht hätte.
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <div className="insight-box">
+                <h3 className="font-sans text-sm font-bold uppercase tracking-wider text-gold mb-4">
+                  Was wir nicht sind
+                </h3>
+                <ul className="space-y-3">
+                  {[
+                    'Keine Steuerberater (wir vermitteln sie)',
+                    'Keine Anwälte (wir vermitteln sie)',
+                    'Keine Dubai-Marketer mit Hochglanz-Broschüren',
+                    'Kein Remote-Team, das Ajman nie gesehen hat',
+                    'Kein Abo-Modell mit versteckten Jahreskosten',
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-sm text-ink-700 dark:text-ink-300">
+                      <span className="text-ink-400 mt-0.5 flex-shrink-0">✗</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="card p-6 border-gold/20">
+                <p className="text-sm text-ink-600 dark:text-ink-300 italic leading-relaxed">
+                  "Wir nehmen keine Kunden an, für die wir nicht ehrlich sagen können: 
+                  Ajman wird deinen finanziellen Stress reduzieren — nicht erhöhen."
+                </p>
+                <p className="text-xs font-semibold text-gold mt-3">— Martin, Gründer</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
-      <section id="team" className="py-20 px-6 dark:bg-dark-bg bg-light-bg">
-        <div className="max-w-[1400px] mx-auto">
-          <Team />
+      {/* Team */}
+      <section className="section bg-cream dark:bg-navy-950">
+        <div className="max-w-wide mx-auto px-4 md:px-6">
+          <div className="text-center mb-14">
+            <div className="eyebrow mb-3">Das Team</div>
+            <h2 className="font-display text-display-md text-ink-900 dark:text-cream">
+              Drei Menschen, ein Prozess
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {team.map((member, i) => (
+              <div key={i} className="card p-8 text-center group">
+                <div className="w-16 h-16 rounded-2xl bg-gold/10 flex items-center justify-center text-3xl mx-auto mb-5 group-hover:scale-110 transition-transform duration-200">
+                  {member.icon}
+                </div>
+                <h3 className="font-display text-2xl font-bold text-ink-900 dark:text-cream mb-1">
+                  {member.name}
+                </h3>
+                <p className="text-xs font-bold uppercase tracking-wider text-gold mb-4">
+                  {member.role}
+                </p>
+                <p className="text-sm text-ink-600 dark:text-ink-300 leading-relaxed">
+                  {member.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Philosophy & Values */}
-      <section ref={contentRef} className="py-32 px-6 dark:bg-dark-card bg-light-card">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Philosophy */}
-            <div className="content-card">
-              <h2 className="text-4xl font-playfair italic text-champagne mb-6">Unsere Philosophie</h2>
-              <div className="space-y-6">
-                <p className="text-lg dark:text-gray-accessible text-gray-600">
-                  Steueroptimierung ist mehr als Zahlen – es ist strategische Freiheit. Wir kombinieren deutsche Gründlichkeit mit lokaler Marktkenntnis, um Ihnen legale, nachhaltige Lösungen zu bieten.
-                </p>
-                <div className="pl-6 border-l-2 border-champagne/30">
-                  <h3 className="text-2xl font-bold mb-3 dark:text-ivory text-dark-text">Warum Ajman?</h3>
-                  <p className="dark:text-gray-accessible text-gray-600">
-                    Ajman bietet als eines der sieben Emirate der VAE einzigartige Vorteile: 0% Körperschaftssteuer, 100% ausländisches Eigentum, und strategische Lage zwischen Dubai und Sharjah.
+      {/* Values */}
+      <section className="section bg-white dark:bg-navy-900">
+        <div className="max-w-wide mx-auto px-4 md:px-6">
+          <div className="text-center mb-14">
+            <div className="eyebrow mb-3">Unsere Werte</div>
+            <h2 className="font-display text-display-md text-ink-900 dark:text-cream">
+              Wie wir arbeiten
+            </h2>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-5">
+            {values.map((v, i) => (
+              <div key={i} className="card p-6 flex gap-4">
+                <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center text-2xl flex-shrink-0">
+                  {v.icon}
+                </div>
+                <div>
+                  <h3 className="font-display text-lg font-semibold text-ink-900 dark:text-cream mb-2">
+                    {v.title}
+                  </h3>
+                  <p className="text-sm text-ink-600 dark:text-ink-300 leading-relaxed">
+                    {v.desc}
                   </p>
                 </div>
               </div>
-            </div>
-
-            {/* Values */}
-            <div className="content-card">
-              <h2 className="text-4xl font-playfair italic text-champagne mb-6">Unsere Werte</h2>
-              <div className="space-y-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-champagne/10 flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">⚖️</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2 dark:text-ivory text-dark-text">Transparenz & Legalität</h3>
-                    <p className="dark:text-gray-accessible text-gray-600">
-                      Jede Lösung ist 100% legal und vollständig transparent dokumentiert. Keine Grauzonen, keine Überraschungen.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-champagne/10 flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">🎯</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2 dark:text-ivory text-dark-text">Deutsche Beratungsqualität</h3>
-                    <p className="dark:text-gray-accessible text-gray-600">
-                      Gründlichkeit, Präzision und langfristige Partnerschaft – deutsche Werte in internationalem Kontext.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-full bg-champagne/10 flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">🤝</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-2 dark:text-ivory text-dark-text">Persönliche Betreuung</h3>
-                    <p className="dark:text-gray-accessible text-gray-600">
-                      Sie sprechen direkt mit dem Team – keine Callcenter, keine Vermittler. Wir begleiten Sie von der ersten Beratung bis zur erfolgreichen Umsetzung.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-32 px-6 dark:bg-dark-bg bg-light-bg">
-        <div className="max-w-[1400px] mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-playfair italic text-champagne mb-8">
-            Bereit für den nächsten Schritt?
+      {/* CTA */}
+      <section className="section bg-navy-900 dark:bg-navy-950 border-t border-gold/10">
+        <div className="max-w-content mx-auto px-4 md:px-6 text-center">
+          <h2 className="font-display text-display-lg text-cream mb-5">
+            Lern uns persönlich kennen
           </h2>
-          <p className="text-xl dark:text-gray-accessible text-gray-600 max-w-3xl mx-auto mb-12">
-            Vereinbaren Sie eine kostenfreie Erstberatung und erfahren Sie, wie Sie Ihre Steuerlast legal optimieren können.
+          <p className="text-ink-300 text-lg mb-8 max-w-lg mx-auto">
+            20 Minuten kostenloser Call. Kein Druck, keine Agenda — 
+            wir klären ehrlich, ob wir dir helfen können.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <a href="/kontakt" className="inline-flex items-center justify-center px-10 py-5 bg-champagne text-obsidian font-bold text-lg rounded-full hover:bg-champagne/90 transition-colors shadow-xl">
-              Kostenfreie Beratung buchen
-            </a>
-            <a href="/ajman-guide" className="inline-flex items-center justify-center px-10 py-5 border-2 border-champagne text-champagne font-bold text-lg rounded-full hover:bg-champagne/10 transition-colors">
-              Ajman-Guide lesen
-            </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button onClick={openCalendly} className="btn-primary">
+              🗓 Kostenlosen Call buchen
+            </button>
+            <Link to="/prozess" className="btn-secondary">
+              Den Prozess ansehen →
+            </Link>
           </div>
         </div>
       </section>
-    </>
-  );
-};
-
-export default UeberUnsPage;
+    </div>
+  )
+}
