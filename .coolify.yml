@@ -4,7 +4,7 @@
 build:
   install-command: npm ci
   command: npm run build
-  path: public
+  path: dist
 
 # Environment variables (optional)
 env:
