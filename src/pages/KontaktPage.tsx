@@ -1,142 +1,192 @@
+import React from 'react'
+
+function openCalendly() {
+  if (typeof (window as any).Calendly !== 'undefined') {
+    (window as any).Calendly.initPopupWidget({ url: 'https://calendly.com/zielsteuerfrei/strategie-call' })
+  } else {
+    window.open('https://calendly.com/zielsteuerfrei/strategie-call', '_blank')
+  }
+}
+
 export default function KontaktPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // In a real app, you would submit to an API
     alert('Nachricht gesendet! Wir melden uns innerhalb von 24 Stunden.')
   }
-  
+
   return (
     <div className="animate-fade-in">
-      {/* Hero with Background Image */}
-      <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 gradient-bg overflow-hidden">
-        {/* Background Image */}
+
+      {/* Hero */}
+      <section className="relative pt-28 pb-20 bg-cream dark:bg-navy-950 overflow-hidden">
+        <div className="absolute inset-0 bg-hero-gradient dark:bg-hero-gradient-dark pointer-events-none" />
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/pages/kontakt.png" 
-            alt="Kontakt - Wir sind für dich da"
-            className="w-full h-full object-cover opacity-15 dark:opacity-25"
+          <img
+            src="/images/pages/kontakt.png"
+            alt="Kontakt"
+            className="w-full h-full object-cover opacity-[0.06] dark:opacity-[0.08]"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black-950/70 via-black-950/50 to-black-950/70" />
         </div>
-        
-        <div className="container-narrow px-6 md:px-12 text-center relative z-10">
-          <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-6">
-            <span className="w-2 h-2 bg-brand-teal rounded-full animate-pulse"></span>
-            <span className="text-sm font-medium text-silver-300">Wir sind für dich da</span>
+
+        <div className="max-w-content mx-auto px-4 md:px-6 text-center relative z-10">
+          <div className="eyebrow mb-5 justify-center animate-fade-up">
+            Wir sind für dich da
           </div>
-          
-          <h1 className="text-5xl md:text-display-lg font-display font-bold text-silver-100 mb-6 leading-tight">
+          <h1 className="font-display text-display-xl text-ink-900 dark:text-cream mb-6 text-balance animate-fade-up animation-delay-100">
             Kontakt &<br />
-            <span className="bg-gradient-to-r from-brand-teal to-brand-cyan bg-clip-text text-transparent">
-              Beratungstermin
-            </span>
+            <span className="text-highlight">Beratungstermin</span>
           </h1>
-          
-          <p className="text-xl text-silver-200 max-w-3xl mx-auto mb-8">
+          <p className="text-lg text-ink-600 dark:text-ink-300 max-w-2xl mx-auto leading-relaxed animate-fade-up animation-delay-200">
             Du hast Fragen zum Prozess, zu Ajman oder zur Steuerfreiheit? Wir antworten innerhalb von 24 Stunden.
           </p>
         </div>
       </section>
 
       {/* Contact Grid */}
-      <section className="py-24">
-        <div className="container-wide px-6 md:px-12 lg:px-24">
-          <div className="grid md:grid-cols-2 gap-12">
+      <section className="section bg-white dark:bg-navy-900">
+        <div className="max-w-wide mx-auto px-4 md:px-6">
+          <div className="grid md:grid-cols-2 gap-10">
+
             {/* Contact Methods */}
-            <div className="space-y-8">
-              <div className="card-hover p-8">
-                <h3 className="text-2xl font-display font-bold text-silver-100 mb-6">
-                  📞 Direkter Kontakt
+            <div className="space-y-6">
+              <div className="card p-8">
+                <h3 className="font-display text-2xl font-bold text-ink-900 dark:text-cream mb-6">
+                  Direkter Kontakt
                 </h3>
                 <ul className="space-y-6">
                   <li className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-purple to-brand-pink flex items-center justify-center flex-shrink-0">
-                      <span className="text-white">🗓️</span>
+                    <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center text-xl flex-shrink-0">
+                      🗓️
                     </div>
                     <div>
-                      <h4 className="font-bold text-silver-200">Strategie‑Call</h4>
-                      <p className="text-silver-200 text-sm">
+                      <h4 className="font-semibold text-ink-900 dark:text-cream mb-1">Strategie‑Call</h4>
+                      <p className="text-ink-600 dark:text-ink-300 text-sm leading-relaxed">
                         20 Minuten kostenlos. Kein Verkaufsgespräch, nur Klärung deiner Situation.
                       </p>
-                      <button className="mt-2 btn btn-ghost text-sm px-4 py-2" data-calendly="zielsteuerfrei/strategie-call">
-                        Termin buchen →
+                      <button
+                        onClick={openCalendly}
+                        className="mt-3 btn-primary text-sm px-5 py-2.5"
+                      >
+                        🗓 Termin buchen
                       </button>
                     </div>
                   </li>
+
                   <li className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-blue to-brand-cyan flex items-center justify-center flex-shrink-0">
-                      <span className="text-white">✉️</span>
+                    <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center text-xl flex-shrink-0">
+                      ✉️
                     </div>
                     <div>
-                      <h4 className="font-bold text-silver-200">E‑Mail</h4>
-                      <p className="text-silver-200 text-sm">
+                      <h4 className="font-semibold text-ink-900 dark:text-cream mb-1">E‑Mail</h4>
+                      <p className="text-ink-600 dark:text-ink-300 text-sm leading-relaxed">
                         Anfragen, Dokumente, allgemeine Fragen.
                       </p>
-                      <a href="mailto:info@zielsteuerfrei.de" className="mt-2 text-brand-400 hover:text-brand-300 text-sm block">
+                      <a
+                        href="mailto:info@zielsteuerfrei.de"
+                        className="mt-2 text-gold hover:underline text-sm block font-semibold"
+                      >
                         info@zielsteuerfrei.de
                       </a>
                     </div>
                   </li>
+
                   <li className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-teal to-brand-blue flex items-center justify-center flex-shrink-0">
-                      <span className="text-white">💬</span>
+                    <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center text-xl flex-shrink-0">
+                      💬
                     </div>
                     <div>
-                      <h4 className="font-bold text-silver-200">WhatsApp‑Gruppe</h4>
-                      <p className="text-silver-200 text-sm">
-                        Für Kunden: Direkter Draht zu Steuerberater + Juliana.
+                      <h4 className="font-semibold text-ink-900 dark:text-cream mb-1">WhatsApp‑Support</h4>
+                      <p className="text-ink-600 dark:text-ink-300 text-sm leading-relaxed">
+                        Für Kunden: Direkter Draht zu uns – keine Ticket-Nummer, kein Callcenter.
                       </p>
-                      <span className="mt-2 text-silver-300 text-sm block">
+                      <span className="mt-2 text-ink-500 dark:text-ink-300 text-xs block">
                         Nur für Paket‑Kunden
                       </span>
                     </div>
                   </li>
                 </ul>
               </div>
+
+              {/* Info box */}
+              <div className="insight-box">
+                <p className="font-bold text-ink-900 dark:text-cream mb-2">Typische Antwortzeiten</p>
+                <ul className="space-y-2 text-sm text-ink-600 dark:text-ink-300">
+                  <li className="flex items-center gap-2">
+                    <span className="text-gold">✓</span> E-Mail: innerhalb von 24h (werktags)
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-gold">✓</span> Strategie-Call: Termine meist in 2-3 Tagen verfügbar
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-gold">✓</span> WhatsApp (Kunden): direkt erreichbar
+                  </li>
+                </ul>
+              </div>
             </div>
-            
+
             {/* Contact Form */}
-            <div className="card-hover p-8">
-              <h3 className="text-2xl font-display font-bold text-silver-100 mb-6">
+            <div className="card p-8">
+              <h3 className="font-display text-2xl font-bold text-ink-900 dark:text-cream mb-6">
                 Nachricht senden
               </h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                  <label className="block text-silver-300 mb-2">Name</label>
+                  <label className="block text-sm font-semibold text-ink-700 dark:text-ink-300 mb-2">
+                    Name
+                  </label>
                   <input
                     type="text"
-                    className="w-full glass px-4 py-3 rounded-lg text-silver-100 placeholder-silver-600 focus:outline-none focus:ring-2 focus:ring-brand-purple"
+                    className="w-full px-4 py-3 rounded-xl bg-cream dark:bg-navy-800 border border-ink-100 dark:border-navy-700 text-ink-900 dark:text-cream placeholder-ink-400 dark:placeholder-ink-300 focus:outline-none focus:ring-2 focus:ring-gold/50"
                     placeholder="Max Mustermann"
                     required
                   />
                 </div>
                 <div>
-                  <label className="block text-silver-300 mb-2">E‑Mail</label>
+                  <label className="block text-sm font-semibold text-ink-700 dark:text-ink-300 mb-2">
+                    E‑Mail
+                  </label>
                   <input
                     type="email"
-                    className="w-full glass px-4 py-3 rounded-lg text-silver-100 placeholder-silver-600 focus:outline-none focus:ring-2 focus:ring-brand-purple"
+                    className="w-full px-4 py-3 rounded-xl bg-cream dark:bg-navy-800 border border-ink-100 dark:border-navy-700 text-ink-900 dark:text-cream placeholder-ink-400 dark:placeholder-ink-300 focus:outline-none focus:ring-2 focus:ring-gold/50"
                     placeholder="max@beispiel.de"
                     required
                   />
                 </div>
                 <div>
-                  <label className="block text-silver-300 mb-2">Nachricht</label>
+                  <label className="block text-sm font-semibold text-ink-700 dark:text-ink-300 mb-2">
+                    Deine Frage / Situation
+                  </label>
                   <textarea
-                    rows={4}
-                    className="w-full glass px-4 py-3 rounded-lg text-silver-100 placeholder-silver-600 focus:outline-none focus:ring-2 focus:ring-brand-purple"
+                    rows={5}
+                    className="w-full px-4 py-3 rounded-xl bg-cream dark:bg-navy-800 border border-ink-100 dark:border-navy-700 text-ink-900 dark:text-cream placeholder-ink-400 dark:placeholder-ink-300 focus:outline-none focus:ring-2 focus:ring-gold/50 resize-none"
                     placeholder="Hallo, ich interessiere mich für Ajman und habe folgende Fragen..."
                     required
-                  ></textarea>
+                  />
                 </div>
-                <button
-                  type="submit"
-                  className="btn btn-primary w-full py-4"
-                >
-                  Nachricht senden
+                <button type="submit" className="btn-primary w-full py-4">
+                  Nachricht senden →
                 </button>
+                <p className="text-xs text-ink-500 dark:text-ink-300 text-center">
+                  Deine Daten werden vertraulich behandelt. Kein Spam.
+                </p>
               </form>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section bg-navy-900 dark:bg-navy-950 border-t border-gold/10">
+        <div className="max-w-content mx-auto px-4 md:px-6 text-center">
+          <h2 className="font-display text-display-md text-cream mb-4">
+            Lieber direkt reden?
+          </h2>
+          <p className="text-ink-300 mb-8 max-w-lg mx-auto leading-relaxed">
+            Im kostenlosen Strategie-Call klären wir in 20 Minuten, ob Ajman für dich sinnvoll ist – ohne Druck.
+          </p>
+          <button onClick={openCalendly} className="btn-primary">
+            🗓 Kostenlosen Call buchen
+          </button>
         </div>
       </section>
     </div>
