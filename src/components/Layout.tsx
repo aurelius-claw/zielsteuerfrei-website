@@ -51,9 +51,9 @@ function openCalendly() {
   // @ts-ignore
   if (typeof Calendly !== 'undefined') {
     // @ts-ignore
-    Calendly.initPopupWidget({ url: 'https://calendly.com/zielsteuerfrei/strategie-call' })
+    Calendly.initPopupWidget({ url: 'https://calendly.com/nenope82/30min' })
   } else {
-    window.open('https://calendly.com/zielsteuerfrei/strategie-call', '_blank')
+    window.open('https://calendly.com/nenope82/30min', '_blank')
   }
 }
 
@@ -94,7 +94,7 @@ export default function Layout({ children }: LayoutProps) {
     `px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${
       isActive
         ? 'text-gold bg-gold/[0.08]'
-        : 'text-ink-700 dark:text-ink-300 hover:text-ink-900 dark:hover:text-cream hover:bg-ink-100/50 dark:hover:bg-navy-800/60'
+        : 'text-ink-900 dark:text-ink-300 hover:text-gold dark:hover:text-cream hover:bg-ink-100/50 dark:hover:bg-navy-800/60'
     }`
 
   return (
@@ -138,7 +138,7 @@ export default function Layout({ children }: LayoutProps) {
                   className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${
                     menuOpen
                       ? 'text-gold bg-gold/[0.08]'
-                      : 'text-ink-700 dark:text-ink-300 hover:text-ink-900 dark:hover:text-cream hover:bg-ink-100/50 dark:hover:bg-navy-800/60'
+                      : 'text-ink-900 dark:text-ink-300 hover:text-gold dark:hover:text-cream hover:bg-ink-100/50 dark:hover:bg-navy-800/60'
                   }`}
                 >
                   Menü
@@ -163,7 +163,7 @@ export default function Layout({ children }: LayoutProps) {
                           `block px-3.5 py-2.5 rounded-xl text-sm font-medium transition-colors ${
                             isActive
                               ? 'text-gold bg-gold/[0.08]'
-                              : 'text-ink-700 dark:text-ink-300 hover:text-ink-900 dark:hover:text-cream hover:bg-ink-100/60 dark:hover:bg-navy-800'
+                              : 'text-ink-900 dark:text-ink-300 hover:text-gold dark:hover:text-cream hover:bg-ink-100/60 dark:hover:bg-navy-800'
                           }`
                         }
                       >
@@ -186,7 +186,7 @@ export default function Layout({ children }: LayoutProps) {
               <button
                 onClick={toggleTheme}
                 aria-label="Farbmodus wechseln"
-                className="ml-1 w-9 h-9 rounded-lg flex items-center justify-center text-ink-500 dark:text-ink-300 hover:text-ink-900 dark:hover:text-cream hover:bg-ink-100/60 dark:hover:bg-navy-800 transition-all duration-150"
+                className="ml-1 w-9 h-9 rounded-lg flex items-center justify-center text-ink-700 dark:text-ink-300 hover:text-ink-900 dark:hover:text-cream hover:bg-ink-100/60 dark:hover:bg-navy-800 transition-all duration-150"
               >
                 {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
               </button>
@@ -197,7 +197,7 @@ export default function Layout({ children }: LayoutProps) {
               <button
                 onClick={toggleTheme}
                 aria-label="Farbmodus wechseln"
-                className="w-9 h-9 rounded-lg flex items-center justify-center text-ink-500 dark:text-ink-300 hover:bg-ink-100/60 dark:hover:bg-navy-800 transition-colors"
+                className="w-9 h-9 rounded-lg flex items-center justify-center text-ink-700 dark:text-ink-300 hover:bg-ink-100/60 dark:hover:bg-navy-800 transition-colors"
               >
                 {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
               </button>
@@ -230,7 +230,7 @@ export default function Layout({ children }: LayoutProps) {
                     `px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
                       isActive
                         ? 'text-gold bg-gold/[0.08]'
-                        : 'text-ink-700 dark:text-ink-300 hover:text-ink-900 dark:hover:text-cream hover:bg-ink-100/50 dark:hover:bg-navy-800/60'
+                        : 'text-ink-900 dark:text-ink-300 hover:text-gold dark:hover:text-cream hover:bg-ink-100/50 dark:hover:bg-navy-800/60'
                     }`
                   }
                 >
