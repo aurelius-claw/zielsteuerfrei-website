@@ -12,22 +12,22 @@ function openCalendly() {
 
 const team = [
   {
-    name: 'Martin',
-    role: 'Strategie & Struktur',
-    desc: 'Hat selbst den Weg von Deutschland nach Ajman gemacht — und dabei jeden Fehler gemacht, den man machen kann. Heute hilft er anderen, dieselben Fehler zu vermeiden.',
-    icon: '🎯',
-  },
-  {
     name: 'Neno',
-    role: 'Operations Ajman',
-    desc: 'Lebt in Ajman und kennt jede Behörde, jeden Schalter, jeden Sachbearbeiter. Er sorgt dafür, dass vor Ort nichts schiefgeht.',
-    icon: '🇦🇪',
+    role: 'Gründer & Operations Ajman',
+    desc: 'Nenos Idee. Sein eigener Weg als Auswanderer in Dubai war der Startpunkt – heute hat er die richtigen Connections direkt in Ajman: Steuerberater, Behörden, Netzwerk.',
+    photo: '/images/pages/team-neno.png',
   },
   {
     name: 'Juljana',
     role: 'Behörden & Compliance',
-    desc: 'Spezialisiert auf Emirates ID, Medical Check und Compliance. Sie begleitet jeden Kunden durch den bürokratischen Teil — lückenlos.',
-    icon: '📋',
+    desc: 'Juljana begleitet persönlich bei allen Behördengängen und Medical Checks vor Ort in Ajman – damit nichts verloren geht und alles reibungslos läuft.',
+    photo: '/images/pages/team-juljana.png',
+  },
+  {
+    name: 'Martin',
+    role: 'IT & Versicherung',
+    desc: 'IT-Experte und IHK-zugelassener Versicherungsmakler. Martin berät zur internationalen Krankenversicherung – dem Thema, das bei der Auswanderung oft unterschätzt wird.',
+    photo: null,
   },
 ]
 
@@ -152,19 +152,33 @@ export default function UeberUnsPage() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {team.map((member, i) => (
-              <div key={i} className="card p-8 text-center group">
-                <div className="w-16 h-16 rounded-2xl bg-gold/10 flex items-center justify-center text-3xl mx-auto mb-5 group-hover:scale-110 transition-transform duration-200">
-                  {member.icon}
+              <div key={i} className="card overflow-hidden text-center group">
+                <div className="aspect-[3/4] relative bg-navy-800 overflow-hidden">
+                  {member.photo ? (
+                    <img
+                      src={member.photo}
+                      alt={member.name}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-navy-800 to-navy-950">
+                      <span className="text-6xl font-display font-bold text-gold/30 select-none">M</span>
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-transparent to-transparent" />
                 </div>
-                <h3 className="font-display text-2xl font-bold text-ink-900 dark:text-cream mb-1">
-                  {member.name}
-                </h3>
-                <p className="text-xs font-bold uppercase tracking-wider text-gold mb-4">
-                  {member.role}
-                </p>
-                <p className="text-sm text-ink-600 dark:text-ink-300 leading-relaxed">
-                  {member.desc}
-                </p>
+                <div className="p-6">
+                  <h3 className="font-display text-2xl font-bold text-ink-900 dark:text-cream mb-1">
+                    {member.name}
+                  </h3>
+                  <p className="text-xs font-bold uppercase tracking-wider text-gold mb-4">
+                    {member.role}
+                  </p>
+                  <p className="text-sm text-ink-600 dark:text-ink-300 leading-relaxed">
+                    {member.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
