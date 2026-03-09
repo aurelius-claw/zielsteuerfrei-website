@@ -36,7 +36,7 @@ const Team = () => {
             <div className="aspect-[3/4] rounded-[2rem] overflow-hidden dark:bg-dark-card bg-light-card mb-6 relative shadow-xl">
               <div className="absolute inset-0 dark:bg-gradient-to-t dark:from-obsidian dark:via-transparent dark:to-transparent bg-gradient-to-t from-light-bg via-transparent to-transparent opacity-80 z-10"></div>
               <img
-                src="/images/pages/team-neno.png"
+                src="/images/pages/team-neno.jpeg"
                 alt="Neno - Gründer & Operations Ajman"
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
@@ -55,7 +55,7 @@ const Team = () => {
             <div className="aspect-[3/4] rounded-[2rem] overflow-hidden dark:bg-dark-card bg-light-card mb-6 relative shadow-xl">
               <div className="absolute inset-0 dark:bg-gradient-to-t dark:from-obsidian dark:via-transparent dark:to-transparent bg-gradient-to-t from-light-bg via-transparent to-transparent opacity-80 z-10"></div>
               <img
-                src="/images/pages/team-juljana.png"
+                src="/images/pages/team-juljana.jpeg"
                 alt="Juljana - Behörden & Compliance"
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"

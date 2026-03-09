@@ -15,13 +15,13 @@ const team = [
     name: 'Neno',
     role: 'Gründer & Operations Ajman',
     desc: 'Nenos Idee. Sein eigener Weg als Auswanderer in Dubai war der Startpunkt – heute hat er die richtigen Connections direkt in Ajman: Steuerberater, Behörden, Netzwerk.',
-    photo: '/images/pages/team-neno.png',
+    photo: '/images/pages/team-neno.jpeg',
   },
   {
     name: 'Juljana',
     role: 'Behörden & Compliance',
     desc: 'Juljana begleitet persönlich bei allen Behördengängen und Medical Checks vor Ort in Ajman – damit nichts verloren geht und alles reibungslos läuft.',
-    photo: '/images/pages/team-juljana.png',
+    photo: '/images/pages/team-juljana.jpeg',
   },
   {
     name: 'Martin',
