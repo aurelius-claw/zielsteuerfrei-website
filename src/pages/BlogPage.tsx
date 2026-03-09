@@ -99,42 +99,39 @@ const BlogPage: React.FC = () => {
 
   return (
     <div className="animate-fade-in">
-      {/* Hero with Background Image */}
-      <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-b from-white to-black-50 dark:from-black-950 dark:to-black-900 overflow-hidden">
-        {/* Background Image */}
+
+      {/* Hero */}
+      <section className="relative pt-28 pb-20 overflow-hidden bg-cream dark:bg-navy-950">
+        <div className="absolute inset-0 bg-hero-gradient dark:bg-hero-gradient-dark pointer-events-none" />
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/pages/blog.png" 
+          <img
+            src="/images/pages/blog.png"
             alt="Blog - Steuer-Wissen und Praxis für Ajman Firmengründung"
-            className="w-full h-full object-cover opacity-10 dark:opacity-20"
+            className="w-full h-full object-cover opacity-[0.06] dark:opacity-[0.08]"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white/80 dark:from-black-950/80 dark:via-black-950/60 dark:to-black-950/80" />
         </div>
-        
-        <div className="container-narrow px-4 text-center relative z-10">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-purple/10 to-brand-pink/10 px-4 py-2 rounded-full mb-6">
-            <span className="w-2 h-2 bg-brand-purple rounded-full animate-pulse"></span>
-            <span className="text-sm font-medium text-black-800 dark:text-silver-300">Steuer‑Wissen & Praxis</span>
+
+        <div className="max-w-wide mx-auto px-4 md:px-6 text-center relative z-10">
+          <div className="eyebrow mb-5 justify-center animate-fade-up">
+            Steuer‑Wissen & Praxis
           </div>
-          
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-black-900 dark:text-silver-100 mb-6 leading-tight">
+
+          <h1 className="font-display text-display-xl text-ink-900 dark:text-cream mb-6 text-balance animate-fade-up animation-delay-100">
             Blog –<br />
-            <span className="bg-gradient-to-r from-brand-purple via-brand-pink to-brand-blue bg-clip-text text-transparent">
-              Steuerfrei leben lernen
-            </span>
+            <span className="text-highlight">Steuerfrei leben lernen</span>
           </h1>
-          
-          <p className="text-xl text-black-800 dark:text-silver-200 max-w-3xl mx-auto mb-8">
-            Tiefgehende Artikel zu Steuern, Auswanderung, Ajman Free Zone und rechtlichen Updates. 
+
+          <p className="text-lg text-ink-600 dark:text-ink-300 max-w-2xl mx-auto leading-relaxed mb-10 animate-fade-up animation-delay-200">
+            Tiefgehende Artikel zu Steuern, Auswanderung, Ajman Free Zone und rechtlichen Updates.
             Kein Marketing-Hype, nur Fakten, die du brauchst.
           </p>
-          
+
           {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <div className="flex flex-wrap justify-center gap-3 animate-fade-up animation-delay-300">
             {categories.map((cat) => (
               <button
                 key={cat}
-                className="px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 bg-black-200 dark:bg-black-800 text-black-800 dark:text-silver-200 hover:bg-black-200 dark:hover:bg-black-700 hover:text-black-900 dark:hover:text-silver-100"
+                className="px-5 py-2 rounded-full text-sm font-semibold border border-gold/30 text-ink-700 dark:text-ink-300 hover:border-gold hover:text-gold dark:hover:text-gold transition-all duration-200"
               >
                 {cat}
               </button>
@@ -144,44 +141,41 @@ const BlogPage: React.FC = () => {
       </section>
 
       {/* Featured Articles */}
-      <section className="py-12">
-        <div className="container-wide px-4">
-          <h2 className="text-3xl font-display font-bold text-black-900 dark:text-silver-100 mb-8">
-            Ausgewählte Artikel
+      <section className="section bg-white dark:bg-navy-900">
+        <div className="max-w-wide mx-auto px-4 md:px-6">
+          <div className="eyebrow mb-3">Ausgewählt</div>
+          <h2 className="font-display text-display-md text-ink-900 dark:text-cream mb-10">
+            Empfohlene Artikel
           </h2>
-          
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
+
+          <div className="grid md:grid-cols-2 gap-8">
             {articles.filter(a => a.featured).map((article) => (
               <Link
                 key={article.slug}
                 to={`/blog/${article.slug}`}
-                className="group block bg-white dark:bg-black-900 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-black-100 dark:border-black-800 hover:scale-[1.02]"
+                className="group card p-8 hover:border-gold/30"
               >
-                <div className="p-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="px-3 py-1 bg-gradient-to-r from-brand-purple/10 to-brand-pink/10 text-brand-purple dark:text-brand-pink text-xs font-semibold rounded-full">
-                      {article.category}
-                    </span>
-                    <span className="text-sm text-black-500 dark:text-silver-400">
-                      {article.date} · {article.readTime}
-                    </span>
-                  </div>
-                  
-                  <h3 className="text-2xl font-display font-bold text-black-900 dark:text-silver-100 mb-4 group-hover:text-brand-purple dark:group-hover:text-brand-pink transition-colors">
-                    {article.title}
-                  </h3>
-                  
-                  <p className="text-black-800 dark:text-silver-200 mb-6">
-                    {article.excerpt}
-                  </p>
-                  
-                  <span className="inline-flex items-center gap-2 text-brand-purple dark:text-brand-pink font-medium group-hover:gap-3 transition-all">
-                    Weiterlesen
-                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
+                <div className="flex items-center gap-3 mb-5">
+                  <span className="badge-gold">{article.category}</span>
+                  <span className="text-sm text-ink-500 dark:text-ink-300">
+                    {article.date} · {article.readTime}
                   </span>
                 </div>
+
+                <h3 className="font-display text-2xl font-bold text-ink-900 dark:text-cream mb-4 group-hover:text-gold transition-colors">
+                  {article.title}
+                </h3>
+
+                <p className="text-ink-600 dark:text-ink-300 mb-6 leading-relaxed">
+                  {article.excerpt}
+                </p>
+
+                <span className="inline-flex items-center gap-2 text-gold font-semibold group-hover:gap-3 transition-all duration-200">
+                  Weiterlesen
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </span>
               </Link>
             ))}
           </div>
@@ -189,75 +183,66 @@ const BlogPage: React.FC = () => {
       </section>
 
       {/* All Articles Grid */}
-      <section className="py-12 bg-gradient-to-b from-black-50 to-white dark:from-black-900 dark:to-black-950">
-        <div className="container-wide px-4">
-          <h2 className="text-3xl font-display font-bold text-black-900 dark:text-silver-100 mb-8">
-            Alle Artikel
+      <section className="section bg-cream dark:bg-navy-950">
+        <div className="max-w-wide mx-auto px-4 md:px-6">
+          <div className="eyebrow mb-3">Alle {articles.length} Artikel</div>
+          <h2 className="font-display text-display-md text-ink-900 dark:text-cream mb-10">
+            Gesamtes Archiv
           </h2>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-child">
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {articles.map((article) => (
               <Link
                 key={article.slug}
                 to={`/blog/${article.slug}`}
-                className="group block bg-white dark:bg-black-900 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-black-100 dark:border-black-800 hover:border-brand-purple/30"
+                className="group card p-6 hover:border-gold/30"
               >
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="px-3 py-1 bg-gradient-to-r from-brand-purple/10 to-brand-pink/10 text-brand-purple dark:text-brand-pink text-xs font-semibold rounded-full">
-                      {article.category}
-                    </span>
-                    <span className="text-sm text-black-500 dark:text-silver-400">
-                      {article.readTime}
-                    </span>
-                  </div>
-                  
-                  <h3 className="text-lg font-display font-bold text-black-900 dark:text-silver-100 mb-3 group-hover:text-brand-purple dark:group-hover:text-brand-pink transition-colors line-clamp-2">
-                    {article.title}
-                  </h3>
-                  
-                  <p className="text-sm text-black-800 dark:text-silver-200 mb-4 line-clamp-2">
-                    {article.excerpt}
-                  </p>
-                  
-                  <div className="flex items-center justify-between pt-4 border-t border-black-100 dark:border-black-800">
-                    <span className="text-sm text-black-500 dark:text-silver-400">
-                      {article.date}
-                    </span>
-                    <span className="text-brand-purple dark:text-brand-pink text-sm font-medium">
-                      Lesen →
-                    </span>
-                  </div>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="badge-gold">{article.category}</span>
+                  <span className="text-xs text-ink-500 dark:text-ink-300">{article.readTime}</span>
+                </div>
+
+                <h3 className="font-display text-lg font-bold text-ink-900 dark:text-cream mb-3 group-hover:text-gold transition-colors line-clamp-2">
+                  {article.title}
+                </h3>
+
+                <p className="text-sm text-ink-600 dark:text-ink-300 mb-4 line-clamp-2 leading-relaxed">
+                  {article.excerpt}
+                </p>
+
+                <div className="flex items-center justify-between pt-4 border-t border-ink-100 dark:border-navy-800">
+                  <span className="text-xs text-ink-500 dark:text-ink-300">{article.date}</span>
+                  <span className="text-gold text-sm font-semibold group-hover:gap-2 transition-all">
+                    Lesen →
+                  </span>
                 </div>
               </Link>
             ))}
           </div>
-          
+
           {/* Newsletter CTA */}
-          <div className="mt-16 pt-12 border-t border-black-100 dark:border-black-800">
+          <div className="mt-16 pt-12 border-t border-ink-100 dark:border-navy-800">
             <div className="max-w-2xl mx-auto text-center">
-              <h3 className="text-2xl font-display font-bold text-black-900 dark:text-silver-100 mb-4">
+              <div className="eyebrow mb-3 justify-center">Newsletter</div>
+              <h3 className="font-display text-display-md text-ink-900 dark:text-cream mb-4">
                 Neue Artikel direkt ins Postfach
               </h3>
-              <p className="text-black-800 dark:text-silver-200 mb-8">
+              <p className="text-ink-600 dark:text-ink-300 mb-8 leading-relaxed">
                 Erhalte monatlich die wichtigsten Updates zu Steuern, Ajman und Auswanderung – ohne Spam.
               </p>
-              
+
               <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                 <input
                   type="email"
                   placeholder="Deine E-Mail-Adresse"
-                  className="flex-1 px-5 py-3 rounded-lg bg-white dark:bg-black-800 border border-black-200 dark:border-black-700 text-black-900 dark:text-silver-100 placeholder-black-400 dark:placeholder-silver-600 focus:outline-none focus:ring-2 focus:ring-brand-purple"
+                  className="flex-1 px-5 py-3 rounded-xl bg-white dark:bg-navy-800 border border-ink-100 dark:border-navy-700 text-ink-900 dark:text-cream placeholder-ink-500 dark:placeholder-ink-300 focus:outline-none focus:ring-2 focus:ring-gold/50"
                 />
-                <button
-                  type="submit"
-                  className="px-6 py-3 bg-gradient-to-r from-brand-purple to-brand-pink text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-300"
-                >
+                <button type="submit" className="btn-primary whitespace-nowrap">
                   Anmelden
                 </button>
               </form>
-              
-              <p className="text-sm text-black-500 dark:text-silver-400 mt-4">
+
+              <p className="text-sm text-ink-500 dark:text-ink-300 mt-4">
                 Kein Spam. Jederzeit abbestellbar. DSGVO-konform.
               </p>
             </div>

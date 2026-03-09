@@ -10,6 +10,7 @@ import ProzessPage from './pages/ProzessPage'
 import PreisRechnerPage from './pages/PreisRechnerPage'
 import UeberUnsPage from './pages/UeberUnsPage'
 import BlogPage from './pages/BlogPage'
+import BlogArticlePage from './pages/BlogArticlePage'
 import KontaktPage from './pages/KontaktPage'
 import ImpressumPage from './pages/ImpressumPage'
 import DatenschutzPage from './pages/DatenschutzPage'
@@ -28,6 +29,7 @@ export default function App() {
             <Route path="/preis-rechner" element={<PreisRechnerPage />} />
             <Route path="/ueber-uns" element={<UeberUnsPage />} />
             <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:slug" element={<BlogArticlePage />} />
             <Route path="/kontakt" element={<KontaktPage />} />
             <Route path="/impressum" element={<ImpressumPage />} />
             <Route path="/datenschutz" element={<DatenschutzPage />} />
