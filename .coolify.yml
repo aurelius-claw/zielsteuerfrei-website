@@ -1,0 +1,26 @@
+# Coolify Build Configuration
+# Automatically detected as a Node.js project
+
+build:
+  install-command: npm ci
+  command: npm run build
+  path: public
+
+# Environment variables (optional)
+env:
+  NODE_ENV: production
+
+# Deployment settings
+deploy:
+  # Branch to deploy
+  branch: main
+  # Auto-deploy on push
+  auto_deploy: true
+  # Preview deployments (optional)
+  preview: false
+
+# Health check (optional)
+health:
+  path: /
+  timeout: 10
+  interval: 30
