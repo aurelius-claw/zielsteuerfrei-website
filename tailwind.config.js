@@ -35,6 +35,32 @@ export default {
           300: '#A8AFBF',
           100: '#DDE0E8',
         },
+        // Near-black scale (used in BlogPage dark mode)
+        black: {
+          50:  '#F9F9F9',
+          100: '#F0F0F0',
+          200: '#E4E4E4',
+          400: '#A3A3A3',
+          500: '#737373',
+          700: '#404040',
+          800: '#262626',
+          900: '#171717',
+          950: '#0A0A0A',
+        },
+        // Silver / light-gray scale (dark-mode text)
+        silver: {
+          100: '#F5F5F5',
+          200: '#E5E5E5',
+          300: '#D4D4D4',
+          400: '#A3A3A3',
+          600: '#737373',
+        },
+        // Brand gradient colors
+        brand: {
+          purple: '#8B5CF6',
+          pink:   '#EC4899',
+          blue:   '#3B82F6',
+        },
       },
       fontFamily: {
         display: ['Cormorant Garamond', 'Georgia', 'serif'],

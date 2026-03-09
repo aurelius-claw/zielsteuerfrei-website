@@ -31,47 +31,31 @@ const Team = () => {
         <p className="font-mono text-sm dark:text-gray-accessible text-gray-600 uppercase tracking-widest mb-16">Deutsche Präzision. Lokale Expertise.</p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Martin */}
-          <div className="team-card relative group cursor-pointer">
-            <div className="aspect-[3/4] rounded-[2rem] overflow-hidden dark:bg-dark-card bg-light-card mb-6 relative shadow-xl">
-              <div className="absolute inset-0 dark:bg-gradient-to-t dark:from-obsidian dark:via-transparent dark:to-transparent bg-gradient-to-t from-light-bg via-transparent to-transparent opacity-80 z-10"></div>
-              {/* Martin Bild */}
-              <img 
-                src="/images/pages/team-martin.png" 
-                alt="Martin - Strategie & Struktur"
-                className="absolute inset-0 w-full h-full object-cover"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 border border-champagne/0 group-hover:border-champagne/50 transition-colors z-20"></div>
-            </div>
-            <h3 className="text-2xl font-inter font-bold mb-1 group-hover:text-champagne transition-colors">Martin</h3>
-            <p className="font-mono text-xs dark:text-gray-accessible text-gray-600 uppercase">Strategie & Struktur</p>
-          </div>
-
           {/* Neno */}
           <div className="team-card relative group cursor-pointer">
             <div className="aspect-[3/4] rounded-[2rem] overflow-hidden dark:bg-dark-card bg-light-card mb-6 relative shadow-xl">
               <div className="absolute inset-0 dark:bg-gradient-to-t dark:from-obsidian dark:via-transparent dark:to-transparent bg-gradient-to-t from-light-bg via-transparent to-transparent opacity-80 z-10"></div>
-              {/* Neno Bild */}
-              <img 
-                src="/images/pages/team-neno.png" 
-                alt="Neno - Operations Ajman"
+              <img
+                src="/images/pages/team-neno.png"
+                alt="Neno - Gründer & Operations Ajman"
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
               />
               <div className="absolute inset-0 border border-champagne/0 group-hover:border-champagne/50 transition-colors z-20"></div>
             </div>
             <h3 className="text-2xl font-inter font-bold mb-1 group-hover:text-champagne transition-colors">Neno</h3>
-            <p className="font-mono text-xs dark:text-gray-accessible text-gray-600 uppercase">Operations Ajman</p>
+            <p className="font-mono text-xs dark:text-gray-accessible text-gray-600 uppercase mb-3">Gründer & Operations Ajman</p>
+            <p className="text-sm dark:text-gray-accessible text-gray-600 leading-relaxed">
+              Nenos Idee. Sein eigener Weg als Auswanderer in Dubai war der Startpunkt – heute hat er die richtigen Connections direkt in Ajman: Steuerberater, Behörden, Netzwerk.
+            </p>
           </div>
 
           {/* Juljana */}
           <div className="team-card relative group cursor-pointer">
             <div className="aspect-[3/4] rounded-[2rem] overflow-hidden dark:bg-dark-card bg-light-card mb-6 relative shadow-xl">
               <div className="absolute inset-0 dark:bg-gradient-to-t dark:from-obsidian dark:via-transparent dark:to-transparent bg-gradient-to-t from-light-bg via-transparent to-transparent opacity-80 z-10"></div>
-              {/* Juljana Bild */}
-              <img 
-                src="/images/pages/team-juljana.png" 
+              <img
+                src="/images/pages/team-juljana.png"
                 alt="Juljana - Behörden & Compliance"
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
@@ -79,7 +63,27 @@ const Team = () => {
               <div className="absolute inset-0 border border-champagne/0 group-hover:border-champagne/50 transition-colors z-20"></div>
             </div>
             <h3 className="text-2xl font-inter font-bold mb-1 group-hover:text-champagne transition-colors">Juljana</h3>
-            <p className="font-mono text-xs dark:text-gray-accessible text-gray-600 uppercase">Behörden & Compliance</p>
+            <p className="font-mono text-xs dark:text-gray-accessible text-gray-600 uppercase mb-3">Behörden & Compliance</p>
+            <p className="text-sm dark:text-gray-accessible text-gray-600 leading-relaxed">
+              Juljana begleitet persönlich bei allen Behördengängen und Medical Checks vor Ort in Ajman – damit nichts verloren geht und alles reibungslos läuft.
+            </p>
+          </div>
+
+          {/* Martin */}
+          <div className="team-card relative group cursor-pointer">
+            <div className="aspect-[3/4] rounded-[2rem] overflow-hidden dark:bg-dark-card bg-light-card mb-6 relative shadow-xl">
+              <div className="absolute inset-0 dark:bg-gradient-to-t dark:from-obsidian dark:via-transparent dark:to-transparent bg-gradient-to-t from-light-bg via-transparent to-transparent opacity-80 z-10"></div>
+              {/* Platzhalter bis echtes Foto vorliegt */}
+              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-navy-800 to-navy-950">
+                <span className="text-6xl font-playfair font-bold text-champagne/40 select-none">M</span>
+              </div>
+              <div className="absolute inset-0 border border-champagne/0 group-hover:border-champagne/50 transition-colors z-20"></div>
+            </div>
+            <h3 className="text-2xl font-inter font-bold mb-1 group-hover:text-champagne transition-colors">Martin</h3>
+            <p className="font-mono text-xs dark:text-gray-accessible text-gray-600 uppercase mb-3">IT & Versicherung</p>
+            <p className="text-sm dark:text-gray-accessible text-gray-600 leading-relaxed">
+              IT-Experte und IHK-zugelassener Versicherungsmakler. Martin berät zur internationalen Krankenversicherung – dem Thema, das bei der Auswanderung oft unterschätzt wird.
+            </p>
           </div>
         </div>
       </div>
