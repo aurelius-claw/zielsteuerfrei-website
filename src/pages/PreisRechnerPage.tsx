@@ -55,7 +55,7 @@ export default function PreisRechnerPage() {
         <meta name="description" content="Berechne live, wie viel du mit einer Ajman Free Zone Firma gegenüber Deutschland sparst. Komplettpaket ab €6.990 – Amortisation oft in unter 8 Wochen." />
         <meta property="og:title" content="Steuerersparnis-Rechner Ajman | Ziel:steuerfrei" />
         <meta property="og:description" content="Wie viel sparst du mit Ajman? Rechne deinen Vorteil gegenüber der deutschen GmbH – live und kostenlos." />
-        <meta property="og:url" content="https://zielsteuerfrei.de/#/preis-rechner" />
+        <meta property="og:url" content="https://zielsteuerfrei.de/preis-rechner" />
         <meta property="og:type" content="website" />
       </Helmet>
 

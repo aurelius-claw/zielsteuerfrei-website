@@ -104,7 +104,7 @@ export default function SteuerWissenPage() {
         <meta name="description" content="Alles zu deutschen & VAE-Steuern: 183-Tage-Regel, Wegzugsbesteuerung, Double Tax Agreement, Corporate Tax – klar und verständlich erklärt." />
         <meta property="og:title" content="Steuer-Wissen: 183-Tage-Regel, Wegzug & VAE-Steuern erklärt" />
         <meta property="og:description" content="Die wichtigsten Steuerthemen für Auswanderer und VAE-Gründer. Ohne Fachchinesisch, mit echten Beispielen." />
-        <meta property="og:url" content="https://zielsteuerfrei.de/#/steuer-wissen" />
+        <meta property="og:url" content="https://zielsteuerfrei.de/steuer-wissen" />
       </Helmet>
 
       {/* Hero */}

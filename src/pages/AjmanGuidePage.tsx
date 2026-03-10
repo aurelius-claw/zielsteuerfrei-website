@@ -47,7 +47,7 @@ export default function AjmanGuidePage() {
         <meta name="description" content="Ajman Free Zone kostet 60% weniger als Dubai – bei gleicher Legalität und 0% Einkommensteuer. Alle echten Zahlen im Vergleich: Setup-Kosten, Zeitaufwand, Visas." />
         <meta property="og:title" content="Ajman vs Dubai: Firma gründen Vergleich 2026" />
         <meta property="og:description" content="Ajman kostet 60% weniger als Dubai – gleiche Steuerfreiheit, weniger Bürokratie. Ehrlicher Vergleich für deutsche Unternehmer." />
-        <meta property="og:url" content="https://zielsteuerfrei.de/#/ajman-guide" />
+        <meta property="og:url" content="https://zielsteuerfrei.de/ajman-guide" />
       </Helmet>
 
       {/* Hero */}

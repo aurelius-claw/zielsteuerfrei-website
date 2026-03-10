@@ -63,7 +63,7 @@ export default function UeberUnsPage() {
         <meta name="description" content="Das Team hinter Ziel:steuerfrei: Neno und Juljana begleiten dich persönlich durch deine Ajman-Gründung. Deutsche Beratung, direkte Kommunikation, echte Erfahrung." />
         <meta property="og:title" content="Unser Team | Ziel:steuerfrei" />
         <meta property="og:description" content="Neno und Juljana – die Gesichter hinter Ziel:steuerfrei. Persönliche Begleitung bei jeder Ajman-Gründung." />
-        <meta property="og:url" content="https://zielsteuerfrei.de/#/ueber-uns" />
+        <meta property="og:url" content="https://zielsteuerfrei.de/ueber-uns" />
       </Helmet>
 
       {/* Hero */}

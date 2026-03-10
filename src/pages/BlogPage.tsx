@@ -105,7 +105,7 @@ const BlogPage: React.FC = () => {
         <meta name="description" content="Steuer-Know-how für Auswanderer und Unternehmer: 183-Tage-Regel, Wegzugssteuer, Ajman vs Dubai und mehr. Ehrlich, verständlich, praxisnah." />
         <meta property="og:title" content="Blog | VAE Steuerwissen & Ajman-Guides" />
         <meta property="og:description" content="Aktuelle Artikel zu Steuern, Ajman, Dubai und VAE-Firmengründung für deutsche Unternehmer." />
-        <meta property="og:url" content="https://zielsteuerfrei.de/#/blog" />
+        <meta property="og:url" content="https://zielsteuerfrei.de/blog" />
       </Helmet>
 
       {/* Hero */}

@@ -1301,7 +1301,7 @@ const BlogArticlePage: React.FC = () => {
         <meta name="description" content={article.excerpt} />
         <meta property="og:title" content={`${article.title} | Ziel:steuerfrei`} />
         <meta property="og:description" content={article.excerpt} />
-        <meta property="og:url" content={`https://zielsteuerfrei.de/#/blog/${slug}`} />
+        <meta property="og:url" content={`https://zielsteuerfrei.de/blog/${slug}`} />
         <meta property="og:type" content="article" />
         <meta name="article:published_time" content={article.date} />
       </Helmet>
