@@ -2,6 +2,20 @@ import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 
+// Converts German date "15. Februar 2026" → "2026-02-15" for schema.org
+function germanDateToISO(date: string): string {
+  const months: Record<string, string> = {
+    'Januar': '01', 'Februar': '02', 'März': '03', 'April': '04',
+    'Mai': '05', 'Juni': '06', 'Juli': '07', 'August': '08',
+    'September': '09', 'Oktober': '10', 'November': '11', 'Dezember': '12',
+  }
+  const parts = date.replace('.', '').split(' ')
+  const day = (parts[0] || '01').padStart(2, '0')
+  const month = months[parts[1]] || '01'
+  const year = parts[2] || '2026'
+  return `${year}-${month}-${day}`
+}
+
 function openCalendly() {
   // @ts-ignore
   if (typeof Calendly !== 'undefined') {
@@ -1268,18 +1282,28 @@ const BlogArticlePage: React.FC = () => {
     )
   }
 
+  const isoDate = germanDateToISO(article.date)
+
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": article.title,
     "description": article.excerpt,
-    "datePublished": article.date,
-    "dateModified": article.date,
-    "author": { "@type": "Organization", "name": "Ziel:steuerfrei" },
+    "image": "https://zielsteuerfrei.de/images/pages/blog.png",
+    "datePublished": isoDate,
+    "dateModified": isoDate,
+    "inLanguage": "de",
+    "url": `https://zielsteuerfrei.de/blog/${slug}`,
+    "keywords": article.category,
+    "author": {
+      "@type": "Organization",
+      "name": "Ziel:steuerfrei",
+      "url": "https://zielsteuerfrei.de"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "Ziel:steuerfrei",
-      "logo": { "@type": "ImageObject", "url": "https://zielsteuerfrei.de/logo.png" }
+      "logo": { "@type": "ImageObject", "url": "https://zielsteuerfrei.de/images/pages/hero-home.png" }
     },
     "mainEntityOfPage": { "@type": "WebPage", "@id": `https://zielsteuerfrei.de/blog/${slug}` }
   }
@@ -1299,11 +1323,36 @@ const BlogArticlePage: React.FC = () => {
       <Helmet>
         <title>{article.title} | Ziel:steuerfrei</title>
         <meta name="description" content={article.excerpt} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={`https://zielsteuerfrei.de/blog/${slug}`} />
+        {/* Open Graph */}
         <meta property="og:title" content={`${article.title} | Ziel:steuerfrei`} />
         <meta property="og:description" content={article.excerpt} />
         <meta property="og:url" content={`https://zielsteuerfrei.de/blog/${slug}`} />
         <meta property="og:type" content="article" />
-        <meta name="article:published_time" content={article.date} />
+        <meta property="og:image" content="https://zielsteuerfrei.de/images/pages/blog.png" />
+        <meta property="og:site_name" content="Ziel:steuerfrei" />
+        <meta property="og:locale" content="de_DE" />
+        {/* Article-specific */}
+        <meta property="article:published_time" content={isoDate} />
+        <meta property="article:modified_time" content={isoDate} />
+        <meta property="article:section" content={article.category} />
+        <meta property="article:author" content="Ziel:steuerfrei" />
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${article.title} | Ziel:steuerfrei`} />
+        <meta name="twitter:description" content={article.excerpt} />
+        <meta name="twitter:image" content="https://zielsteuerfrei.de/images/pages/blog.png" />
+        {/* BreadcrumbList schema */}
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zielsteuerfrei.de" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://zielsteuerfrei.de/blog" },
+            { "@type": "ListItem", "position": 3, "name": article.title, "item": `https://zielsteuerfrei.de/blog/${slug}` }
+          ]
+        })}</script>
       </Helmet>
 
       {/* Hero */}

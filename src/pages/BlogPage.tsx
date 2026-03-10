@@ -103,9 +103,25 @@ const BlogPage: React.FC = () => {
       <Helmet>
         <title>Blog | VAE Steuerwissen & Ajman-Guides | Ziel:steuerfrei</title>
         <meta name="description" content="Steuer-Know-how für Auswanderer und Unternehmer: 183-Tage-Regel, Wegzugssteuer, Ajman vs Dubai und mehr. Ehrlich, verständlich, praxisnah." />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://zielsteuerfrei.de/blog" />
         <meta property="og:title" content="Blog | VAE Steuerwissen & Ajman-Guides" />
         <meta property="og:description" content="Aktuelle Artikel zu Steuern, Ajman, Dubai und VAE-Firmengründung für deutsche Unternehmer." />
         <meta property="og:url" content="https://zielsteuerfrei.de/blog" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://zielsteuerfrei.de/images/pages/blog.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Blog | VAE Steuerwissen & Ajman-Guides | Ziel:steuerfrei" />
+        <meta name="twitter:description" content="Steuer-Know-how für Auswanderer: 183-Tage-Regel, Wegzugssteuer, Ajman vs Dubai." />
+        <meta name="twitter:image" content="https://zielsteuerfrei.de/images/pages/blog.png" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zielsteuerfrei.de" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://zielsteuerfrei.de/blog" }
+          ]
+        })}</script>
       </Helmet>
 
       {/* Hero */}
