@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 
 const BlogPage: React.FC = () => {
   const articles = [
@@ -99,6 +100,13 @@ const BlogPage: React.FC = () => {
 
   return (
     <div className="animate-fade-in">
+      <Helmet>
+        <title>Blog | VAE Steuerwissen & Ajman-Guides | Ziel:steuerfrei</title>
+        <meta name="description" content="Steuer-Know-how für Auswanderer und Unternehmer: 183-Tage-Regel, Wegzugssteuer, Ajman vs Dubai und mehr. Ehrlich, verständlich, praxisnah." />
+        <meta property="og:title" content="Blog | VAE Steuerwissen & Ajman-Guides" />
+        <meta property="og:description" content="Aktuelle Artikel zu Steuern, Ajman, Dubai und VAE-Firmengründung für deutsche Unternehmer." />
+        <meta property="og:url" content="https://zielsteuerfrei.de/#/blog" />
+      </Helmet>
 
       {/* Hero */}
       <section className="relative pt-28 pb-20 overflow-hidden bg-cream dark:bg-navy-950">

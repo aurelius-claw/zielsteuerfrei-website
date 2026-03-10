@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 
 function openCalendly() {
   // @ts-ignore
@@ -39,6 +40,14 @@ const faqs = [
 export default function HomePage() {
   return (
     <div className="animate-fade-in">
+      <Helmet>
+        <title>Firma Ajman gründen | 0% Steuern ab €6.990 | Ziel:steuerfrei</title>
+        <meta name="description" content="Firmengründung in der Ajman Free Zone – legal steuerfrei. Komplettpaket ab €6.990: Handelslizenz in 4 Tagen, Medical Check, Emirates ID & Bankkonto. Deutsche Begleitung." />
+        <meta property="og:title" content="Firma Ajman gründen | 0% Steuern ab €6.990 | Ziel:steuerfrei" />
+        <meta property="og:description" content="Firmengründung in der Ajman Free Zone – legal steuerfrei. Komplettpaket ab €6.990: Handelslizenz in 4 Tagen, Medical Check, Emirates ID & Bankkonto. Deutsche Begleitung." />
+        <meta property="og:url" content="https://zielsteuerfrei.de/" />
+        <meta property="og:type" content="website" />
+      </Helmet>
 
       {/* ── Hero ─────────────────────────────────────────── */}
       <section className="relative pt-28 pb-28 overflow-hidden bg-cream dark:bg-navy-950">

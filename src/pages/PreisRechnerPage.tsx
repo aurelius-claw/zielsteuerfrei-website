@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 
 function openCalendly() {
   // @ts-ignore
@@ -49,6 +50,14 @@ export default function PreisRechnerPage() {
 
   return (
     <div className="animate-fade-in">
+      <Helmet>
+        <title>Preis-Rechner: Was sparst du mit Ajman? | Ziel:steuerfrei</title>
+        <meta name="description" content="Berechne live, wie viel du mit einer Ajman Free Zone Firma gegenüber Deutschland sparst. Komplettpaket ab €6.990 – Amortisation oft in unter 8 Wochen." />
+        <meta property="og:title" content="Steuerersparnis-Rechner Ajman | Ziel:steuerfrei" />
+        <meta property="og:description" content="Wie viel sparst du mit Ajman? Rechne deinen Vorteil gegenüber der deutschen GmbH – live und kostenlos." />
+        <meta property="og:url" content="https://zielsteuerfrei.de/#/preis-rechner" />
+        <meta property="og:type" content="website" />
+      </Helmet>
 
       {/* Hero */}
       <section className="relative pt-28 pb-16 overflow-hidden bg-cream dark:bg-navy-950">
@@ -245,12 +254,12 @@ export default function PreisRechnerPage() {
           </div>
 
           {/* Pricing block */}
-          <div className="max-w-lg mx-auto bg-navy-900 dark:bg-navy-800 rounded-2xl p-8 text-center border border-gold/20">
+          <div className="max-w-lg mx-auto bg-gold/[0.06] dark:bg-navy-800 rounded-2xl p-8 text-center border border-gold/30">
             <p className="text-xs font-bold uppercase tracking-widest text-gold mb-3">Komplettpaket · Einmalig</p>
             <div className="flex items-baseline justify-center gap-2 mb-2">
-              <span className="font-display text-6xl font-bold text-cream">€6.990</span>
+              <span className="font-display text-6xl font-bold text-ink-900 dark:text-cream">€6.990</span>
             </div>
-            <p className="text-ink-400 text-sm mb-1">Ab Jahr 2: nur Jahreserneuerung</p>
+            <p className="text-ink-600 dark:text-ink-400 text-sm mb-1">Ab Jahr 2: nur Jahreserneuerung</p>
             <p className="text-gold font-bold text-sm mb-6">~€670 / Jahr</p>
             <button onClick={openCalendly} className="btn-primary w-full">
               Jetzt Termin buchen

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 
 function openCalendly() {
   // @ts-ignore
@@ -41,6 +42,13 @@ const forDubai = [
 export default function AjmanGuidePage() {
   return (
     <div className="animate-fade-in">
+      <Helmet>
+        <title>Ajman vs Dubai: Ehrlicher Vergleich für Unternehmer 2026 | Ziel:steuerfrei</title>
+        <meta name="description" content="Ajman Free Zone kostet 60% weniger als Dubai – bei gleicher Legalität und 0% Einkommensteuer. Alle echten Zahlen im Vergleich: Setup-Kosten, Zeitaufwand, Visas." />
+        <meta property="og:title" content="Ajman vs Dubai: Firma gründen Vergleich 2026" />
+        <meta property="og:description" content="Ajman kostet 60% weniger als Dubai – gleiche Steuerfreiheit, weniger Bürokratie. Ehrlicher Vergleich für deutsche Unternehmer." />
+        <meta property="og:url" content="https://zielsteuerfrei.de/#/ajman-guide" />
+      </Helmet>
 
       {/* Hero */}
       <section className="relative pt-28 pb-24 overflow-hidden bg-cream dark:bg-navy-950">

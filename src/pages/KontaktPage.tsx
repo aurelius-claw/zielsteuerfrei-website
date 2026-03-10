@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet-async'
 
 function openCalendly() {
   if (typeof (window as any).Calendly !== 'undefined') {
@@ -16,6 +17,13 @@ export default function KontaktPage() {
 
   return (
     <div className="animate-fade-in">
+      <Helmet>
+        <title>Kontakt | Kostenloser Strategie-Call in 20 Min. | Ziel:steuerfrei</title>
+        <meta name="description" content="Buche jetzt deinen kostenlosen 20-Minuten-Strategie-Call. Wir klären ehrlich, ob Ajman zu dir passt – ohne Druck, ohne Verpflichtung." />
+        <meta property="og:title" content="Kostenloser Strategie-Call | Ziel:steuerfrei" />
+        <meta property="og:description" content="20 Minuten, kostenlos, ohne Verpflichtung. Wir klären, ob Ajman die richtige Lösung für dich ist." />
+        <meta property="og:url" content="https://zielsteuerfrei.de/#/kontakt" />
+      </Helmet>
 
       {/* Hero */}
       <section className="relative pt-28 pb-20 bg-cream dark:bg-navy-950 overflow-hidden">

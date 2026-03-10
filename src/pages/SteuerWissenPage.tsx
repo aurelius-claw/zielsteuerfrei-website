@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 
 function openCalendly() {
   // @ts-ignore
@@ -98,6 +99,13 @@ export default function SteuerWissenPage() {
 
   return (
     <div className="animate-fade-in">
+      <Helmet>
+        <title>Steuer-Wissen für VAE-Gründer | 183-Tage-Regel, Wegzug & Co. | Ziel:steuerfrei</title>
+        <meta name="description" content="Alles zu deutschen & VAE-Steuern: 183-Tage-Regel, Wegzugsbesteuerung, Double Tax Agreement, Corporate Tax – klar und verständlich erklärt." />
+        <meta property="og:title" content="Steuer-Wissen: 183-Tage-Regel, Wegzug & VAE-Steuern erklärt" />
+        <meta property="og:description" content="Die wichtigsten Steuerthemen für Auswanderer und VAE-Gründer. Ohne Fachchinesisch, mit echten Beispielen." />
+        <meta property="og:url" content="https://zielsteuerfrei.de/#/steuer-wissen" />
+      </Helmet>
 
       {/* Hero */}
       <section className="relative pt-28 pb-24 overflow-hidden bg-cream dark:bg-navy-950">

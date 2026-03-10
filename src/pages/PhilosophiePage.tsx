@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 
 function openCalendly() {
   // @ts-ignore
@@ -46,6 +47,13 @@ const values = [
 export default function PhilosophiePage() {
   return (
     <div className="animate-fade-in">
+      <Helmet>
+        <title>Unsere Philosophie | Ehrlich. Transparent. Ajman. | Ziel:steuerfrei</title>
+        <meta name="description" content="Kein Dubai-Hype, keine versteckten Kosten. Wir zeigen dir den echten Weg zur steuerfreien VAE-Firma – mit Ajman als smarte, günstige Alternative." />
+        <meta property="og:title" content="Unsere Philosophie | Ziel:steuerfrei" />
+        <meta property="og:description" content="Ajman ist die ehrliche Alternative zu Dubai: günstiger, schneller, genauso legal. Unsere Werte & unser Versprechen." />
+        <meta property="og:url" content="https://zielsteuerfrei.de/#/philosophie" />
+      </Helmet>
 
       {/* Hero */}
       <section className="relative pt-28 pb-24 overflow-hidden bg-cream dark:bg-navy-950">

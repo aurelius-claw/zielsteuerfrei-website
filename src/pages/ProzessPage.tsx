@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 
 function openCalendly() {
   // @ts-ignore
@@ -87,6 +88,13 @@ const timeline = [
 export default function ProzessPage() {
   return (
     <div className="animate-fade-in">
+      <Helmet>
+        <title>Firmengründung Ajman: Schritt-für-Schritt in 4 Tagen | Ziel:steuerfrei</title>
+        <meta name="description" content="So läuft die Ajman-Gründung ab: Strategie-Call, Dokumente, Vor-Ort-Begleitung, Bankkonto. Alle 4 Schritte transparent und ehrlich erklärt." />
+        <meta property="og:title" content="Firmengründung Ajman in 4 Tagen | Ablauf & Prozess" />
+        <meta property="og:description" content="Von der Erstberatung bis zur Emirates ID: der komplette Gründungsprozess in Ajman erklärt – ohne Überraschungen." />
+        <meta property="og:url" content="https://zielsteuerfrei.de/#/prozess" />
+      </Helmet>
 
       {/* Hero */}
       <section className="relative pt-28 pb-24 overflow-hidden bg-cream dark:bg-navy-950">

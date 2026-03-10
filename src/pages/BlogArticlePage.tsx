@@ -1,5 +1,6 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 
 function openCalendly() {
   // @ts-ignore
@@ -1295,6 +1296,15 @@ const BlogArticlePage: React.FC = () => {
 
   return (
     <div className="animate-fade-in">
+      <Helmet>
+        <title>{article.title} | Ziel:steuerfrei</title>
+        <meta name="description" content={article.excerpt} />
+        <meta property="og:title" content={`${article.title} | Ziel:steuerfrei`} />
+        <meta property="og:description" content={article.excerpt} />
+        <meta property="og:url" content={`https://zielsteuerfrei.de/#/blog/${slug}`} />
+        <meta property="og:type" content="article" />
+        <meta name="article:published_time" content={article.date} />
+      </Helmet>
 
       {/* Hero */}
       <section className="pt-28 pb-16 bg-cream dark:bg-navy-950">
