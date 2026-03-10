@@ -5,9 +5,9 @@ function openCalendly() {
   // @ts-ignore
   if (typeof Calendly !== 'undefined') {
     // @ts-ignore
-    Calendly.initPopupWidget({ url: 'https://calendly.com/zielsteuerfrei/strategie-call' })
+    Calendly.initPopupWidget({ url: 'https://calendly.com/nenope82/30min' })
   } else {
-    window.open('https://calendly.com/zielsteuerfrei/strategie-call', '_blank')
+    window.open('https://calendly.com/nenope82/30min', '_blank')
   }
 }
 

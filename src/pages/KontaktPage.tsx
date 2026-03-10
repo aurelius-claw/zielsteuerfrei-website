@@ -2,9 +2,9 @@ import React from 'react'
 
 function openCalendly() {
   if (typeof (window as any).Calendly !== 'undefined') {
-    (window as any).Calendly.initPopupWidget({ url: 'https://calendly.com/zielsteuerfrei/strategie-call' })
+    (window as any).Calendly.initPopupWidget({ url: 'https://calendly.com/nenope82/30min' })
   } else {
-    window.open('https://calendly.com/zielsteuerfrei/strategie-call', '_blank')
+    window.open('https://calendly.com/nenope82/30min', '_blank')
   }
 }
 

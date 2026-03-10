@@ -4,9 +4,9 @@ function openCalendly() {
   // @ts-ignore
   if (typeof Calendly !== 'undefined') {
     // @ts-ignore
-    Calendly.initPopupWidget({ url: 'https://calendly.com/zielsteuerfrei/strategie-call' })
+    Calendly.initPopupWidget({ url: 'https://calendly.com/nenope82/30min' })
   } else {
-    window.open('https://calendly.com/zielsteuerfrei/strategie-call', '_blank')
+    window.open('https://calendly.com/nenope82/30min', '_blank')
   }
 }
 
@@ -133,10 +133,10 @@ export default function HomePage() {
               <p className="text-xs text-ink-400">0% Einkommensteuer</p>
             </div>
 
-            <div className="bg-navy-900 dark:bg-navy-800 rounded-2xl p-7 text-center border border-gold/20">
+            <div className="bg-gold/[0.08] dark:bg-navy-800 rounded-2xl p-7 text-center border border-gold/30">
               <p className="text-xs font-bold uppercase tracking-wider text-gold mb-3">Jährliche Ersparnis</p>
               <p className="font-display text-5xl font-bold text-gold mb-2">€70.500</p>
-              <p className="text-xs text-ink-400">Setup amortisiert in ~5 Wochen</p>
+              <p className="text-xs text-ink-600 dark:text-ink-400">Setup amortisiert in ~5 Wochen</p>
             </div>
           </div>
         </div>
@@ -173,12 +173,12 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="max-w-xl mx-auto bg-navy-900 dark:bg-navy-800 rounded-2xl p-8 text-center border border-gold/20">
+          <div className="max-w-xl mx-auto bg-gold/[0.06] dark:bg-navy-800 rounded-2xl p-8 text-center border border-gold/30">
             <p className="text-xs font-bold tracking-widest uppercase text-gold mb-2">Komplettpaket · Einmalig</p>
             <div className="flex items-baseline justify-center gap-2 mb-1">
-              <span className="font-display text-5xl font-bold text-cream">€6.990</span>
+              <span className="font-display text-5xl font-bold text-ink-900 dark:text-cream">€6.990</span>
             </div>
-            <p className="text-ink-400 text-sm mb-6">Ab Jahr 2 nur Jahreserneuerung (~€670)</p>
+            <p className="text-ink-600 dark:text-ink-400 text-sm mb-6">Ab Jahr 2 nur Jahreserneuerung (~€670)</p>
             <button onClick={openCalendly} className="btn-primary">
               Jetzt kostenlos beraten lassen
             </button>

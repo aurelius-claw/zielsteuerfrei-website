@@ -1,6 +1,16 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 
+function openCalendly() {
+  // @ts-ignore
+  if (typeof Calendly !== 'undefined') {
+    // @ts-ignore
+    Calendly.initPopupWidget({ url: 'https://calendly.com/nenope82/30min' })
+  } else {
+    window.open('https://calendly.com/nenope82/30min', '_blank')
+  }
+}
+
 const BlogArticlePage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>()
 
@@ -1356,7 +1366,7 @@ const BlogArticlePage: React.FC = () => {
               Jede Situation ist anders. In einem kostenlosen Strategie-Call klären wir, ob Ajman für dich passt – und wie du Steuern legal optimierst.
             </p>
             <button
-              onClick={() => window.open('https://calendly.com/zielsteuerfrei/strategie-call', '_blank')}
+              onClick={openCalendly}
               className="btn-primary"
             >
               🗓 Kostenlosen Termin buchen
