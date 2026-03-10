@@ -149,19 +149,31 @@ const BlogArticlePage: React.FC = () => {
       faq: [
         {
           question: 'Ist Ajman genauso legal wie Dubai?',
-          answer: 'Ja, absolut. Ajman ist ein vollwertiges Emirat der VAE mit eigener Free Zone. Die rechtliche Grundlage ist identisch.'
+          answer: 'Ja, absolut. Ajman ist ein vollwertiges Emirat der VAE mit eigener Free Zone. Die rechtliche Grundlage ist identisch zu Dubai – gleiche Steuervorteile, gleiche internationale Anerkennung.'
         },
         {
-          question: 'Kann ich mit Ajman-Firma in Deutschland arbeiten?',
-          answer: 'Ja, das geht. Du musst nur die deutschen Steuerregeln beachten, insbesondere wenn du in Deutschland lebst und arbeitest.'
+          question: 'Wie weit ist Ajman von Dubai entfernt?',
+          answer: 'Nur ca. 25-30 Kilometer – das sind etwa 30-45 Minuten mit dem Auto, je nach Verkehr. Du kannst jederzeit nach Dubai fahren: zum Networken, für Meetings oder einfach zum Ausgehen. Das Beste aus beiden Welten.'
         },
         {
-          question: 'Wie lange dauert die Gründung in Ajman?',
-          answer: 'Typisch sind 4-7 Werktage für die komplette Gründung inklusive Lizenz. In Dubai sind es oft 2-3 Wochen.'
+          question: 'Kann ich mit einer Ajman-Firma in Dubai wohnen?',
+          answer: 'Ja, das ist möglich. Du brauchst dann ggf. eine separate Aufenthaltsgenehmigung, da das Visum der Ajman Free Zone an das Emirat gebunden ist. Wir klären das individuell mit dir – viele unserer Kunden wohnen in Dubai und haben eine Ajman-Firma.'
         },
         {
           question: 'Bekomme ich mit Ajman-Firma ein Bankkonto?',
-          answer: 'Ja, internationale Banken wie Emirates NBD, Mashreq oder RAKBANK eröffnen Konten für Ajman-Firmen. Wir begleiten dich durch den Prozess.'
+          answer: 'Ja, internationale Banken wie Emirates NBD, Mashreq oder RAKBANK eröffnen Konten für Ajman-Firmen. Wir begleiten dich durch den Prozess. Die Kontoeröffnung ist komplexer als in Deutschland – daher ist unsere Begleitung hier besonders wertvoll.'
+        },
+        {
+          question: 'Kann ich mit Ajman-Firma weiterhin deutsche Kunden betreuen?',
+          answer: 'Ja. Die Herkunft deiner Kunden ist nicht das Problem – entscheidend ist, wo dein Lebensmittelpunkt ist. Wenn du wirklich in den VAE lebst und arbeitest, kannst du problemlos weiterhin für deutsche Kunden tätig sein.'
+        },
+        {
+          question: 'Wie lange dauert die Gründung in Ajman vs. Dubai?',
+          answer: 'In Ajman typisch 4-7 Werktage für die komplette Gründung inklusive Lizenz. In Dubai oft 2-3 Wochen, manchmal länger. Ajman punktet auch bei der Prozessgeschwindigkeit – ein unterschätzter Vorteil.'
+        },
+        {
+          question: 'Ist Ajman Free Zone international anerkannt?',
+          answer: 'Ja, die Ajman Free Zone (AFZA) ist seit 1988 eine etablierte Free Zone und international anerkannt. Banken, Zahlungsdienstleister und internationale Geschäftspartner kennen sie. Für B2B-Geschäfte spielt die genaue Emirat-Adresse kaum eine Rolle.'
         }
       ]
     },
@@ -264,20 +276,32 @@ const BlogArticlePage: React.FC = () => {
       `,
       faq: [
         {
-          question: 'Gilt die Wegzugssteuer für alle Auswanderer?',
-          answer: 'Nein, nur wenn du in den letzten 12 Jahren mindestens 7 Jahre in Deutschland unbeschränkt steuerpflichtig warst und bestimmte Anteile (Beteiligungen, Fonds) im Privatvermögen hältst.'
+          question: 'Gilt die Wegzugssteuer auch für ETF-Anteile?',
+          answer: 'Ja, seit der Reform 2025 werden Investmentfondsanteile (inkl. ETFs) wie Unternehmensanteile behandelt. Die frühere Sonderregelung, die Fonds oft ausnehmen konnte, wurde weitgehend geschlossen. Das macht frühzeitige Planung noch wichtiger.'
         },
         {
-          question: 'Kann ich die Wegzugssteuer vermeiden?',
-          answer: 'Vollständig vermeiden ist schwierig, aber mit frühzeitiger Planung lässt sich viel optimieren. Das hängt stark von deiner individuellen Situation ab – ein spezialisierter Steuerberater ist hier unerlässlich.'
+          question: 'Kann ich die Wegzugssteuer in die VAE verschieben oder stunden?',
+          answer: 'Nein – das ist ein kritischer Punkt. Die Stundungsregelung gilt nur bei Wegzug in EU/EWR-Länder. Die VAE sind ein Drittstaat, daher wird die Wegzugssteuer sofort fällig. Im Gegensatz zu einem Umzug nach Portugal oder Österreich gibt es hier keine Aufschubmöglichkeit.'
+        },
+        {
+          question: 'Ab wann läuft die 12-Jahres-Frist für die Wegzugssteuer?',
+          answer: 'Das Finanzamt schaut zurück: Warst du in den letzten 12 Jahren vor dem Wegzug mindestens 7 Jahre in Deutschland unbeschränkt steuerpflichtig? Wenn ja, greift die Wegzugsbesteuerung. Wer also 2026 auswandert, wird auf Steuerjahre ab 2014 geprüft.'
+        },
+        {
+          question: 'Gilt die Wegzugssteuer für alle Auswanderer?',
+          answer: 'Nein, nur wenn du in den letzten 12 Jahren mindestens 7 Jahre in Deutschland unbeschränkt steuerpflichtig warst und bestimmte Anteile (Beteiligungen, Fonds, GmbH-Anteile) im Privatvermögen hältst. Wer nur Angestellter war und keine Unternehmensanteile hält, ist meist nicht betroffen.'
+        },
+        {
+          question: 'Kann ich die Wegzugssteuer durch Planung reduzieren?',
+          answer: 'Vollständig vermeiden ist schwierig, aber mit frühzeitiger Planung – mindestens 12 Monate vor dem Wegzug – lässt sich oft optimieren. Zum Beispiel durch strategische Realisierung vor dem Wegzug oder Umstrukturierung des Portfolios. Ein spezialisierter Steuerberater ist hier unerlässlich.'
         },
         {
           question: 'Was passiert, wenn ich die Wegzugssteuer nicht zahle?',
-          answer: 'Die Steuer bleibt bestehen und wird mit Zinsen verzinst. Bei Rückkehr nach Deutschland innerhalb von 7 Jahren kann eine Rückabwicklung möglich sein – aber das ist ein komplexes Thema.'
+          answer: 'Die Steuer bleibt bestehen und wird mit Zinsen (aktuell 1,8% p.a.) verzinst. Sie verjährt nicht einfach. Bei Rückkehr nach Deutschland innerhalb von 7 Jahren kann unter Umständen eine Rückabwicklung möglich sein – aber das ist hochkomplex und erfordert steuerliche Beratung.'
         },
         {
           question: 'Helft ihr bei der Wegzugsbesteuerung?',
-          answer: 'Wir sind keine Steuerberater, koordinieren aber den Prozess und vermitteln dir spezialisierte Steuerberater für internationales Recht. Das ist Teil unseres Gesamtpakets.'
+          answer: 'Wir sind keine Steuerberater, koordinieren aber den Prozess und vermitteln dir spezialisierte Steuerberater für internationales Recht. Gerade die Kombination aus Firmengründung und steuerlichem Wegzug erfordert beides. Das ist Teil unseres Gesamtpakets.'
         }
       ]
     },
@@ -348,20 +372,32 @@ const BlogArticlePage: React.FC = () => {
       `,
       faq: [
         {
-          question: 'Muss ich genau 183 Tage weg sein?',
-          answer: 'Nicht zwingend. Entscheidend ist, dass du keinen Wohnsitz oder gewöhnlichen Aufenthalt mehr in Deutschland hast. Die 183-Tage-Grenze ist für den "gewöhnlichen Aufenthalt" relevant, aber ein weiter bestehender Wohnsitz macht sie unwichtig.'
+          question: 'Gilt die 183-Tage-Regel für Selbstständige und Unternehmer?',
+          answer: 'Nicht direkt. Die 183-Tage-Regel stammt aus Doppelbesteuerungsabkommen und gilt primär für Arbeitnehmer. Für Selbstständige und Unternehmer ist entscheidend, ob du noch einen Wohnsitz oder gewöhnlichen Aufenthalt in Deutschland hast – nicht die Tages-Zählung allein.'
         },
         {
-          question: 'Kann ich noch nach Deutschland reisen?',
-          answer: 'Ja, Besuche sind erlaubt. Du solltest aber keine eigene Wohnung mehr haben, nicht dauerhaft bei Familie wohnen, und die 183-Tage-Grenze im Blick behalten, um auf der sicheren Seite zu sein.'
+          question: 'Muss ich genau 183 Tage weg sein?',
+          answer: 'Nicht zwingend. Entscheidend ist, dass du keinen Wohnsitz mehr in Deutschland hast. Wenn du keine eigene Wohnung mehr hast, endet die Steuerpflicht beim Wegzug – unabhängig von den Aufenthaltstagen. 183 Tage ist die Grenze für den "gewöhnlichen Aufenthalt", aber ein aufgegebener Wohnsitz macht das irrelevanter.'
+        },
+        {
+          question: 'Kann ich noch nach Deutschland reisen und bei meinen Eltern übernachten?',
+          answer: 'Ja, Besuche sind erlaubt. Aber: Wenn du bei deinen Eltern ein eigenes Zimmer hast, das dauerhaft für dich bereitsteht, kann das Finanzamt das als Wohnsitz werten. Kein eigenes Zimmer, kein eigener Schlüssel – oder dokumentiere, dass das Zimmer auch anderweitig genutzt wird.'
         },
         {
           question: 'Was ist mit meiner Familie in Deutschland?',
-          answer: 'Wenn dein Ehepartner und Kinder weiter in Deutschland leben, kann das Finanzamt einen Lebensmittelpunkt in Deutschland unterstellen. Das ist ein komplexes Thema, das individuelle Beratung erfordert.'
+          answer: 'Wenn dein Ehepartner und minderjährige Kinder weiterhin in Deutschland leben, unterstellt das Finanzamt häufig einen Lebensmittelpunkt in Deutschland – unabhängig von deinen Aufenthaltstagen. Das ist ein Sonderfall, der intensive individuelle Beratung erfordert.'
         },
         {
-          question: 'Wie beweise ich meinen neuen Lebensmittelpunkt?',
-          answer: 'Durch Mietvertrag in den VAE, VAE-Bankkonto, Mitgliedschaften vor Ort, Fotos, Reisedokumente, soziale Kontakte. Wir helfen dir, das sauber zu dokumentieren.'
+          question: 'Wie beweise ich meinen neuen Lebensmittelpunkt in den VAE?',
+          answer: 'Durch Mietvertrag in den VAE, VAE-Bankkonto mit regelmäßigen lokalen Transaktionen, Mitgliedschaften vor Ort, Reisedokumente (Ein-/Ausreisestempel), Emirates ID, UAE Residence Visa. Wir helfen dir, das sauber zu dokumentieren – und das sollte von Tag 1 an passieren.'
+        },
+        {
+          question: 'Was passiert, wenn das Finanzamt meinen Wegzug anzweifelt?',
+          answer: 'Du musst beweisen, dass dein Lebensmittelpunkt wirklich in den VAE ist. Das gelingt mit Nachweisen: Mietvertrag, Emirates ID, Kontoauszüge, Flugtickets. Wer gut dokumentiert ist, muss keine Prüfung fürchten. Schlechte Dokumentation kann teuer werden – das Finanzamt kann bis zu 10 Jahre rückwirkend prüfen.'
+        },
+        {
+          question: 'Gibt es ein Doppelbesteuerungsabkommen zwischen Deutschland und den VAE?',
+          answer: 'Kein vollständiges DBA. Es gibt nur ein begrenztes Abkommen zu bestimmten Einkunftsarten. Das bedeutet: Du musst wirklich steuerlich aus Deutschland austreten – Halbheiten funktionieren nicht. Das ist ein häufiges Missverständnis, das teuer werden kann.'
         }
       ]
     },
@@ -462,19 +498,31 @@ const BlogArticlePage: React.FC = () => {
       faq: [
         {
           question: 'Kann ich meinen deutschen Stripe-Account behalten?',
-          answer: 'Technisch möglich, aber steuerlich problematisch, wenn du eine VAE-Firma hast. Zahlungen auf ein deutsches Stripe-Konto können als deutsche Einkünfte gewertet werden. Besser: VAE-Stripe-Konto.'
+          answer: 'Technisch möglich, aber steuerlich problematisch. Zahlungen auf ein deutsches Stripe-Konto können als deutsche Einkünfte gewertet werden. Besser: Ein VAE-Stripe-Konto auf deine Ajman-Firma einrichten. Das ist der saubere Weg.'
+        },
+        {
+          question: 'Ist Stripe in den VAE vollständig verfügbar?',
+          answer: 'Stripe ist in den VAE verfügbar, aber eingeschränkter als in Deutschland. SEPA-Lastschriften und einige europäische Zahlungsmethoden fehlen. Kartenakzeptanz funktioniert gut. Für deutsche Kunden, die SEPA bevorzugen, ist Wise Business als Ergänzung empfehlenswert.'
+        },
+        {
+          question: 'Kann ich SEPA-Zahlungen von deutschen Kunden empfangen?',
+          answer: 'Mit einem VAE-Stripe-Account nicht direkt. Die Lösung: Wise Business gibt dir eine europäische IBAN, über die du SEPA-Überweisungen empfangen kannst. Das Geld landet in deinem Wise-Konto und kann weiter transferiert werden. Funktioniert gut für deutsche B2B-Kunden.'
         },
         {
           question: 'Welche Bank empfehlt ihr für das VAE-Konto?',
-          answer: 'Emirates NBD und RAKBANK sind für Ajman-Firmen gut zugänglich. Mashreq ist eine Alternative. Die Kontoeröffnung begleiten wir – das ist Teil unseres Pakets.'
+          answer: 'Emirates NBD und RAKBANK sind für Ajman-Firmen gut zugänglich. Mashreq ist eine Alternative. Die Kontoeröffnung begleiten wir persönlich – das ist Teil unseres Pakets. Banken in den VAE prüfen sorgfältig, daher ist Vorbereitung entscheidend.'
         },
         {
-          question: 'Geht das auch ohne physische Präsenz?',
-          answer: 'Für die Bankkonten in den VAE musst du einmalig persönlich erscheinen – das ist gesetzlich vorgeschrieben. Stripe und PayPal kannst du online einrichten.'
+          question: 'Geht die Kontoeröffnung auch ohne physische Präsenz?',
+          answer: 'Für Bankkonten in den VAE musst du einmalig persönlich erscheinen – das ist gesetzlich vorgeschrieben (Know Your Customer). Stripe und PayPal kannst du online einrichten. Die Bankkonteröffnung ist Teil unserer Gründungsreise vor Ort.'
         },
         {
-          question: 'Was ist mit Krypto-Zahlungen?',
-          answer: 'Die VAE sind sehr krypto-freundlich. Für B2B-Zahlungen in Krypto gibt es keine rechtlichen Hindernisse. Für Verbraucher-Zahlungen empfehlen wir, das mit einem Steuerberater abzuklären.'
+          question: 'Was ist mit Krypto-Zahlungen in den VAE?',
+          answer: 'Die VAE sind sehr krypto-freundlich. Dubai hat mit VARA eine eigene Krypto-Regulierungsbehörde, und für B2B-Zahlungen in Krypto gibt es keine grundlegenden Hindernisse. Für steuerliche Behandlung empfehlen wir, das mit einem spezialisierten Steuerberater abzuklären.'
+        },
+        {
+          question: 'Welche Zahlungsabwicklung nutzen eure Kunden am häufigsten?',
+          answer: 'Die meisten setzen auf eine Kombination: Stripe VAE für Kreditkarten, Wise Business für EUR/SEPA-Empfang, VAE-Bankkonto (z.B. Emirates NBD) als Hauptkonto, PayPal Business als Ergänzung. Diese Kombination deckt fast alle Szenarien ab.'
         }
       ]
     },
@@ -623,19 +671,31 @@ const BlogArticlePage: React.FC = () => {
       faq: [
         {
           question: 'Was ist im Paket von 6.990 € enthalten?',
-          answer: 'Unsere Servicegebühr für die Gesamtkoordination: Gründung, Visum, Behördengänge, Steuerberater-Vermittlung, Bankkonto-Begleitung, WhatsApp-Support. Die Freezone-Gebühren (Lizenz, Visum etc.) zahlst du direkt an die Ajman Free Zone.'
+          answer: 'Unsere Servicegebühr für die Gesamtkoordination: Gründung, Visum-Begleitung, Behördengänge vor Ort, Steuerberater-Vermittlung, Bankkonto-Begleitung, WhatsApp-Support für 3 Monate. Die Freezone-Gebühren (Lizenz, Visum etc.) zahlst du direkt an die Ajman Free Zone – das nennen wir transparent.'
+        },
+        {
+          question: 'Was sind die tatsächlichen Gesamtkosten im ersten Jahr?',
+          answer: 'Realistisch: €10.000–15.000 im ersten Jahr (alles inklusive). €6.990 unser Paket, ca. €4.000–5.000 Lizenz+Visum an die Freezone, Flug+Hotel für die Gründungsreise (€600–1.500), Krankenversicherung (€1.500–3.000). Ab Jahr 2 deutlich weniger – hauptsächlich Lizenzerneuerung und Buchhaltung.'
+        },
+        {
+          question: 'Was kostet eine Krankenversicherung in den VAE?',
+          answer: 'Eine Krankenversicherung ist in den VAE verpflichtend. Für eine Einzelperson liegen die Kosten bei ca. 1.500–3.000 € pro Jahr, je nach Leistungsumfang. Das ist ein oft vergessener Posten in anderen Angeboten – wir weisen dich frühzeitig darauf hin.'
         },
         {
           question: 'Kann ich die Firma auch ohne eure Hilfe gründen?',
-          answer: 'Ja, technisch möglich. Die Ajman Free Zone nimmt auch Direktanträge an. Du musst aber Arabisch-Kenntnisse mitbringen oder teuer übersetzen lassen, selbst die Behördengänge koordinieren und mit unvorhergesehenen Problemen alleine umgehen.'
+          answer: 'Ja, technisch möglich. Die Ajman Free Zone nimmt auch Direktanträge an. Du musst aber die Behördengänge auf Englisch/Arabisch koordinieren, alle Unterlagen selbst vorbereiten und mit unvorhergesehenen Problemen alleine umgehen. Viele, die das versucht haben, kommen dann doch zu uns.'
         },
         {
-          question: 'Gibt es günstigere Free Zones in den VAE?',
-          answer: 'Ja, z.B. Fujairah oder Umm Al Quwain sind noch günstiger. Aber Ajman bietet das beste Preis-Leistungs-Verhältnis: solide Infrastruktur, gute Bankanbindung, bekannter Name – für weniger als Dubai.'
+          question: 'Gibt es günstigere Free Zones in den VAE als Ajman?',
+          answer: 'Ja, z.B. Fujairah oder Umm Al Quwain sind noch günstiger. Aber Ajman bietet das beste Preis-Leistungs-Verhältnis: solide Infrastruktur, gute internationale Bankanbindung, etablierter Name. Günstigere Alternativen haben oft schlechtere Bankenakzeptanz – ein oft teurer Trade-off.'
         },
         {
           question: 'Was kostet die Erneuerung im Folgejahr?',
-          answer: 'Hauptposten: Lizenzverlängerung ca. 3.500 – 4.500 € plus Buchhaltung. Die Visiumerneuerung ist alle 2-3 Jahre fällig. Gesamt ca. 5.000 – 8.000 € pro Jahr.'
+          answer: 'Hauptposten: Lizenzverlängerung ca. 3.500–4.500 €, Buchhaltungskosten €1.000–3.000 jährlich (jetzt Pflicht), Bankkonto-Gebühren €200–500. Die Visum-Erneuerung ist alle 2-3 Jahre fällig. Gesamt realistisch: €5.000–8.000 pro Jahr ab Jahr 2.'
+        },
+        {
+          question: 'Lohnt sich das finanziell wirklich gegenüber Deutschland?',
+          answer: 'Für jeden, der mehr als €80.000 Jahresgewinn macht: Ja, deutlich. Bei €150.000 Gewinn sparst du gegenüber Deutschland ca. €70.000 Steuern pro Jahr (47% effektiv). Die VAE-Gesamtkosten von €8.000–10.000/Jahr amortisieren sich in unter 8 Wochen. Unser Preis-Rechner zeigt das live für deine Zahlen.'
         }
       ]
     },
@@ -711,19 +771,31 @@ const BlogArticlePage: React.FC = () => {
       faq: [
         {
           question: 'Reicht die Abmeldung in Deutschland aus?',
-          answer: 'Die Abmeldung ist notwendig, aber nicht hinreichend. Entscheidend ist, dass du tatsächlich keinen Wohnsitz mehr hast und deinen Lebensmittelpunkt verlagert hast. Die Abmeldung ist ein Signal, aber kein Beweis.'
+          answer: 'Die Abmeldung ist notwendig, aber nicht hinreichend. Entscheidend ist, dass du tatsächlich keinen Wohnsitz mehr hast und deinen Lebensmittelpunkt verlagert hast. Die Abmeldung ist ein Signal an das Finanzamt – kein rechtlicher Beweis. Der Lebensmittelpunkt muss durch Fakten belegt werden.'
         },
         {
           question: 'Was wenn meine Familie in Deutschland bleibt?',
-          answer: 'Wenn dein Ehepartner und minderjährige Kinder in Deutschland bleiben, unterstellt das Finanzamt oft einen Lebensmittelpunkt in Deutschland – unabhängig von deinen eigenen Aufenthaltstagen. Das ist ein Sonderfall, der intensive Beratung erfordert.'
+          answer: 'Das ist steuerlich der schwierigste Fall. Wenn dein Ehepartner und minderjährige Kinder in Deutschland bleiben, unterstellt das Finanzamt oft einen Lebensmittelpunkt in Deutschland – unabhängig davon, wie viele Tage du selbst weg bist. Das erfordert intensive individuelle Beratung und ist kein Thema für DIY-Lösungen.'
+        },
+        {
+          question: 'Was wenn ich noch eine Immobilie in Deutschland habe?',
+          answer: 'Eine vollständig vermietete Immobilie ist in der Regel kein Problem für den Wohnsitz – solange du keinen eigenen Zugang mehr hast. Problematisch wird es, wenn du die Immobilie selbst nutzt oder ein Zimmer für dich zurückhältst. Eigengenutzte Immobilien solltest du vor dem Wegzug verkaufen oder vollständig vermieten.'
+        },
+        {
+          question: 'Wie oft darf ich Deutschland besuchen?',
+          answer: 'Es gibt keine starre Obergrenze für Besuche – die 183-Tage-Regel ist die praktische Grenze für den "gewöhnlichen Aufenthalt". Entscheidend ist, dass kein Wohnsitz begründet wird. Viele unserer Kunden besuchen Deutschland regelmäßig – wichtig ist, dass sie keine eigene Unterkunft mehr haben und Aufenthalte dokumentieren.'
+        },
+        {
+          question: 'Was bedeutet Lebensmittelpunkt genau für das Finanzamt?',
+          answer: 'Das Finanzamt schaut auf die Gesamtheit der persönlichen und wirtschaftlichen Verhältnisse: Wo ist die Familie? Wo sind die Hauptkunden? Wo bist du am häufigsten? Wo sind deine sozialen Bindungen? Es geht nicht um eine einzelne Variable, sondern um das Gesamtbild. Deshalb ist es so wichtig, das Leben wirklich zu verlagern.'
         },
         {
           question: 'Wie lange sollte ich die Nachweise aufbewahren?',
-          answer: 'Mindestens 10 Jahre. Das deutsche Steuerrecht hat lange Verjährungsfristen, und im Streitfall musst du Nachweise für weit zurückliegende Jahre vorlegen können.'
+          answer: 'Mindestens 10 Jahre. Das deutsche Steuerrecht hat lange Verjährungsfristen, und im Streitfall musst du Nachweise für weit zurückliegende Jahre vorlegen können. Lege von Anfang an ein digitales Dokumentenarchiv an.'
         },
         {
-          question: 'Hilft ihr bei der Dokumentation?',
-          answer: 'Ja, wir gehen mit dir systematisch durch, was du braucht und was du aufbewahren solltest. Für steuerliche Detailfragen vermitteln wir spezialisierte Steuerberater.'
+          question: 'Helft ihr bei der Dokumentation des Lebensmittelpunkts?',
+          answer: 'Ja, wir gehen systematisch durch, was du aufbewahren solltest: Mietverträge, Kontoauszüge, Reisedaten, Mitgliedschaften, Vertragsunterlagen aus den VAE. Für steuerliche Grenzfälle – zum Beispiel wenn Familie in Deutschland bleibt – vermitteln wir spezialisierte Steuerberater.'
         }
       ]
     },
@@ -815,19 +887,31 @@ const BlogArticlePage: React.FC = () => {
       faq: [
         {
           question: 'Schämen sich Ajman-Unternehmer für ihre Adresse?',
-          answer: 'Nein. Wer im VAE-Business-Kontext tätig ist, weiß, was Ajman Free Zone ist. Und internationale Kunden fragen selten, in welchem Emirat du registriert bist – sie fragen, ob du zuverlässig bist.'
+          answer: 'Nein. Wer im VAE-Business-Kontext tätig ist, weiß, was Ajman Free Zone ist. Und internationale Kunden fragen selten, in welchem Emirat du registriert bist – sie fragen, ob du zuverlässig bist und pünktlich lieferst.'
         },
         {
-          question: 'Kann ich trotzdem in Dubai leben?',
-          answer: 'Ja, mit einer Ajman Free Zone-Firma kannst du trotzdem in Dubai wohnen. Du brauchst dann ggf. eine separate Aufenthaltsgenehmigung. Das klären wir im Detail mit dir.'
+          question: 'Kann ich trotzdem in Dubai wohnen?',
+          answer: 'Ja, mit einer Ajman Free Zone-Firma kannst du trotzdem in Dubai wohnen. Du brauchst dann eine separate Aufenthaltsgenehmigung (Residence Visa), die an die Firma gebunden ist. Das koordinieren wir mit dir – viele unserer Kunden wohnen in Dubai bei Ajman-Firma.'
         },
         {
-          question: 'Was wenn mein Geschäft wächst – kann ich später wechseln?',
-          answer: 'Ja. Viele starten in Ajman und wechseln später zu einer Dubai-Lizenz, wenn sich das Geschäft verändert. Das ist kein Problem und kosmtisch relativ überschaubar.'
+          question: 'Ist Dubai wirklich so viel teurer als beworben?',
+          answer: 'Die Lizenzkosten allein sind in Dubai ca. 60-80% höher als in Ajman. Aber das ist nur der Anfang: Wohnkosten, Restaurantpreise, Freizeitaktivitäten – alles kostet in Dubai mehr. Für einen deutschen Unternehmer, der Kosten optimieren will, ist das Gesamtbild noch deutlicher als die Lizenz-Zahlen allein zeigen.'
+        },
+        {
+          question: 'Was wenn mein Geschäft wächst – kann ich später zu Dubai wechseln?',
+          answer: 'Ja. Viele starten in Ajman und wechseln zu einer Dubai-Lizenz, wenn sich das Geschäft verändert – zum Beispiel wenn Prestige oder spezifische Regulierung wichtig wird. Das ist möglich und kostenmäßig überschaubar. Kein Grund, von Anfang an überzubezahlen.'
+        },
+        {
+          question: 'Bekomme ich mit Ajman-Firma ein Konto bei einer deutschen Bank?',
+          answer: 'Nein – das ist auch nicht das Ziel. Du brauchst ein VAE-Konto als Hauptkonto deiner Firma. Für europäische Transaktionen und EUR-Empfang ist Wise Business die beste Ergänzung: du bekommst eine europäische IBAN für SEPA-Zahlungen, ohne ein deutsches Bankkonto zu brauchen.'
+        },
+        {
+          question: 'Für wen ist Dubai wirklich sinnvoller als Ajman?',
+          answer: 'Dubai macht wirklich Sinn für: Finanzdienstleister unter DIFC-Regulierung, Unternehmen mit mehr als 6 Mitarbeiter-Visas, Branchen wo das Prestige der Adresse zum Produkt gehört (Luxury Brands, High-End Consulting). Für B2B-Dienstleister, Online-Unternehmer, Coaches, Berater, Agenturen: Ajman ist die klügere Wahl.'
         },
         {
           question: 'Nehmt ihr auch Dubai-Gründungen an?',
-          answer: 'Wir sind auf Ajman spezialisiert, weil wir es am besten kennen und dort das lokale Netzwerk haben. Für Dubai-Gründungen können wir vermitteln, aber das ist nicht unser Kerngeschäft.'
+          answer: 'Wir sind auf Ajman spezialisiert, weil wir dort das lokale Netzwerk und die tiefste Expertise haben. Für Dubai können wir vermitteln – aber nur, wenn Dubai nach einem ehrlichen Gespräch wirklich die bessere Wahl für dich ist. Dein Erfolg liegt uns mehr am Herzen als der nächste Abschluss.'
         }
       ]
     },
@@ -899,19 +983,31 @@ const BlogArticlePage: React.FC = () => {
       faq: [
         {
           question: 'Ist eine VAE-Firma legal?',
-          answer: 'Absolut ja – wenn du tatsächlich in den VAE lebst und arbeitest. Eine VAE-Firma als Briefkasten ohne echten Lebensmittelpunkt ist illegal. Die Legalität hängt von deiner tatsächlichen Verlagerung ab, nicht von der Firma selbst.'
+          answer: 'Absolut ja – wenn du tatsächlich in den VAE lebst und arbeitest. Eine VAE-Firma als reine Briefkastenstruktur ohne echten Lebensmittelpunkt ist illegal. Die Legalität hängt von deiner tatsächlichen Verlagerung ab, nicht von der Firma selbst. Wir helfen nur Unternehmern, die wirklich auswandern wollen.'
+        },
+        {
+          question: 'Muss ich eine Steuererklärung für das Wegzugsjahr abgeben?',
+          answer: 'Ja. Im Wegzugsjahr bist du für die Zeit bis zum Wegzug noch unbeschränkt steuerpflichtig in Deutschland. Du musst eine Steuererklärung für diesen Zeitraum einreichen. Das unterschätzen viele – ein auf Auswanderung spezialisierter Steuerberater ist hier Pflicht.'
         },
         {
           question: 'Was passiert wenn das Finanzamt mich prüft?',
-          answer: 'Bei korrekter Durchführung: Nichts. Du kannst alle Nachweise vorlegen. Daher ist Dokumentation von Anfang an so wichtig. Wer die Auswanderung sauber durchführt, muss keine Prüfung fürchten.'
+          answer: 'Bei korrekter Durchführung: Nichts. Du kannst alle Nachweise vorlegen. Wer seinen Wegzug sauber durchführt – kein Wohnsitz mehr, echter Lebensmittelpunkt in den VAE, gut dokumentiert – muss keine Prüfung fürchten. Das Finanzamt hat das Recht zu prüfen, aber nicht das Recht, korrekte Steuerpflicht zu erfinden.'
         },
         {
-          question: 'Wie lange bin ich nach Wegzug noch steuerpflichtig?',
-          answer: 'Das hängt vom Einzelfall ab. In der Regel endet die unbeschränkte Steuerpflicht mit dem Wegzug, wenn alle Voraussetzungen erfüllt sind. Aber das Finanzamt kann rückwirkend bis zu 10 Jahre prüfen.'
+          question: 'Kann eine bestehende deutsche GmbH steuerfrei in die VAE überführt werden?',
+          answer: 'Nein – das ist nicht möglich. Eine deutsche GmbH bleibt in Deutschland steuerpflichtig, solange sie dort eingetragen ist und ihre Geschäftsleitung dort ansässig ist. Der Weg ist: Neue Firma in Ajman gründen, GmbH geordnet abwickeln oder weiterführen. Beides erfordert steuerliche Beratung.'
+        },
+        {
+          question: 'Wie lange bin ich nach Wegzug noch steuerpflichtig in Deutschland?',
+          answer: 'Die unbeschränkte Steuerpflicht endet mit dem Wegzug – wenn alle Voraussetzungen erfüllt sind. Aber: Das Finanzamt kann rückwirkend bis zu 10 Jahre prüfen (bei Verdacht auf Hinterziehung bis 15 Jahre). Für in Deutschland erzielte Einkünfte (z.B. Mieteinnahmen) bleibt eine begrenzte Steuerpflicht bestehen.'
+        },
+        {
+          question: 'Was wenn das Finanzamt fragt, warum ich keine Steuern zahle?',
+          answer: 'Das ist eine berechtigte Frage – und du solltest sie beantworten können: Du lebst in den VAE, hast dort deinen Lebensmittelpunkt, deine Firma, dein Visum, deine Emirates ID. Dokumentiere das von Anfang an. Wer sauber auswandert, hat auf diese Frage eine gute Antwort.'
         },
         {
           question: 'Muss ich nach dem Wegzug noch Steuern in Deutschland zahlen?',
-          answer: 'Auf in Deutschland erzielte Einkünfte (z.B. Mieteinkünfte aus deutschem Immobilienbesitz) ja. Auf ausländische Einkünfte, wenn du nicht mehr unbeschränkt steuerpflichtig bist: nein.'
+          answer: 'Auf in Deutschland erzielte Einkünfte (z.B. Mieteinkünfte aus deutschem Immobilienbesitz, manche Renten) ja – das nennt sich beschränkte Steuerpflicht. Auf Einkünfte deiner VAE-Firma: nein, wenn du nicht mehr unbeschränkt steuerpflichtig bist. Die Steuererklärung im Wegzugsjahr ist daher besonders wichtig.'
         }
       ]
     },
@@ -997,19 +1093,31 @@ const BlogArticlePage: React.FC = () => {
       faq: [
         {
           question: 'Brauche ich beglaubigte Übersetzungen?',
-          answer: 'Für die Gründung selbst nicht zwingend. Für bestimmte Folgeprozesse (z.B. wenn du Dokumente aus Deutschland vorlegen musst) können beglaubigte Übersetzungen nötig sein. Wir informieren dich rechtzeitig.'
+          answer: 'Für die Gründung selbst nicht zwingend. Für bestimmte Folgeprozesse – z.B. wenn du Dokumente aus Deutschland für das Visum oder das Bankkonto vorlegen musst – können beglaubigte Übersetzungen ins Englische nötig sein. Wir informieren dich rechtzeitig, was wann gebraucht wird.'
         },
         {
           question: 'Mein Reisepass läuft in 4 Monaten ab – Problem?',
-          answer: 'Ja, das ist ein Problem. Die Ajman Free Zone und das Visum-Prozedere erfordern einen Pass, der mindestens 6 Monate über das Ausstellungsdatum des Visums hinaus gültig ist. Pass zuerst verlängern.'
+          answer: 'Ja, das ist ein Problem. Die Ajman Free Zone und das Visum-Prozedere erfordern einen Pass, der mindestens 6 Monate über das geplante Gründungsdatum hinaus gültig ist. Pass zuerst verlängern – das dauert in Deutschland je nach Amt 2-6 Wochen.'
+        },
+        {
+          question: 'Brauche ich einen Businessplan für die Ajman Free Zone?',
+          answer: 'Für die Lizenzbeantragung selbst reicht eine kurze Beschreibung der Geschäftstätigkeit (2-3 Sätze auf Englisch). Für das Bankkonto wollen manche Banken einen etwas ausführlicheren Businessplan (1-2 Seiten). Wir helfen dir, das entsprechend vorzubereiten.'
+        },
+        {
+          question: 'Was ist die Establishment Card und wozu brauche ich sie?',
+          answer: 'Die Establishment Card ist der "Firmenausweis" der Freezone – ein offizielles Dokument, das bestätigt, dass deine Firma in der Ajman Free Zone registriert ist. Du brauchst sie für Visum-Anträge, Bankkonto-Eröffnung und weitere Government-Transaktionen. Sie wird kurz nach der Lizenzerstellung ausgestellt.'
+        },
+        {
+          question: 'Kann ich die Gründung vollständig online erledigen?',
+          answer: 'Vorab-Koordination und Dokument-Einreichung geht teilweise online. Für das Visum und die Emirates ID musst du jedoch persönlich vor Ort erscheinen – das ist gesetzlich vorgeschrieben. Plane daher mindestens eine Reise von 4-5 Tagen ein. Das Bankkonto ebenfalls nur persönlich.'
         },
         {
           question: 'Wie lange im Voraus sollte ich die Dokumente vorbereiten?',
-          answer: 'Mindestens 2-3 Wochen vor der Gründungsreise. Manche Dokumente (wie beglaubigte Übersetzungen) brauchen Zeit. Wir schicken dir eine konkrete Checkliste, sobald der Termin feststeht.'
+          answer: 'Mindestens 3-4 Wochen vor der Gründungsreise. Manche Dokumente brauchen Zeit (Passverlängerung, beglaubigte Übersetzungen). Wir schicken dir eine personalisierte Checkliste, sobald dein Termin feststeht – so verpasst du keinen Schritt.'
         },
         {
           question: 'Was wenn ich ein Dokument vergesse?',
-          answer: 'Kein Drama – wir haben das schon oft gemanagt. Viele Sachen können nachgereicht oder digital übermittelt werden. Daher unsere Empfehlung: Alles digital immer dabei haben.'
+          answer: 'Kein Drama – wir haben das schon oft gemanagt. Viele Dokumente können nachgereicht oder digital übermittelt werden. Daher unsere Empfehlung: Alles als hochaufgelöster Scan (PDF oder JPG) in der Cloud und auf dem Handy haben. Im Notfall können wir meist improvisieren.'
         }
       ]
     },
@@ -1115,19 +1223,31 @@ const BlogArticlePage: React.FC = () => {
       faq: [
         {
           question: 'Kann ich die Firma gründen ohne selbst hinzufahren?',
-          answer: 'Für das Visum und die Emirates ID musst du persönlich vor Ort sein – das ist Pflicht. Die Vorabarbeiten können wir remote koordinieren, aber der persönliche Behördengang ist unumgehbar.'
+          answer: 'Für das Visum und die Emirates ID musst du persönlich vor Ort sein – das ist Pflicht. Die Vorabarbeiten koordinieren wir remote, aber der persönliche Behördengang ist nicht umgehbar. Plane mindestens 4-5 Tage vor Ort – das ist gut investierte Zeit.'
         },
         {
-          question: 'Was wenn ich keine Zeit für eine 5-tägige Reise habe?',
-          answer: 'In manchen Fällen geht es schneller – wenn alle Dokumente perfekt vorbereitet sind und keine Wartezeiten entstehen. Plane aber mindestens 3-4 Tage für die Kernschritte. Komm am besten am Wochenende an, starte Montag.'
+          question: 'Welche Aktivitätslizenzen gibt es in Ajman und welche brauche ich?',
+          answer: 'Die Ajman Free Zone bietet Hunderte von Aktivitätskategorien: Consulting, IT, E-Commerce, Marketing, Import/Export und viele mehr. Die richtige Auswahl ist wichtig – falsche Kategorien können Probleme bei Banken verursachen. Wir helfen dir dabei, die optimale Lizenzklasse für dein Geschäftsmodell zu wählen.'
         },
         {
-          question: 'Was kostet ein Flug und Hotel?',
-          answer: 'Flug Frankfurt–Dubai: 400-800 € Hin/Rück (je nach Buchungszeitpunkt). Hotel in Ajman: 40-80 €/Nacht. In Dubai: 80-200 €. Kalkuliere für die Gründungsreise 600-1.500 € Gesamtkosten.'
+          question: 'Was ist der Unterschied zwischen Free Zone und Mainland-Firma in den VAE?',
+          answer: 'Free Zone-Firmen (wie Ajman) sind auf internationale Geschäfte ausgerichtet: steuerlich privilegiert, einfacher zu gründen, aber mit Einschränkungen beim Handel innerhalb der VAE. Mainland-Firmen können überall in den VAE tätig sein, sind aber teurer und regulierter. Für die meisten deutschen Unternehmer mit internationalem Geschäft ist eine Free Zone ideal.'
         },
         {
           question: 'Muss ich sofort in die VAE ziehen?',
-          answer: 'Nein. Du kannst die Firma gründen und das Visum haben, ohne sofort umzuziehen. Aber für die steuerliche Wirkung (Deutschland nicht mehr steuerpflichtig) musst du deinen Lebensmittelpunkt wirklich verlagern.'
+          answer: 'Nein. Du kannst die Firma gründen und das Visum haben, ohne sofort umzuziehen. Aber für die steuerliche Wirkung – Deutschland nicht mehr steuerpflichtig – musst du deinen Lebensmittelpunkt wirklich verlagern. Die Firma allein reicht nicht. Das ist wichtig zu verstehen.'
+        },
+        {
+          question: 'Was kostet ein Flug und Hotel für die Gründungsreise?',
+          answer: 'Flug Frankfurt–Dubai: 400-800 € Hin/Rück (je nach Buchungszeitpunkt). Hotel in Ajman: 40-80 €/Nacht. In Dubai: 80-200 €. Kalkuliere für die gesamte Gründungsreise (4-5 Tage): 600-1.500 € Gesamtkosten. Das ist einmalig und gut investiert.'
+        },
+        {
+          question: 'Gibt es ein Doppelbesteuerungsabkommen zwischen Deutschland und den VAE?',
+          answer: 'Kein vollständiges DBA. Es gibt nur ein begrenztes Abkommen zu bestimmten Einkunftsarten (Seeschifffahrt, Luftfahrt). Das bedeutet: Für eine saubere Steuerfreiheit musst du wirklich steuerlich aus Deutschland austreten. Ein halber Wegzug funktioniert nicht – ein häufiges Missverständnis.'
+        },
+        {
+          question: 'Was wenn es nach der Gründung Probleme gibt?',
+          answer: 'Dafür sind wir da. Unser WhatsApp-Support läuft 3 Monate nach der Gründung und wir stehen für alle Fragen zur Verfügung. Nach dem ersten Jahr kennen unsere Kunden den Weg – und viele kommen mit Folgefragen immer noch zu uns. Das Netzwerk bleibt bestehen.'
         }
       ]
     },
@@ -1240,19 +1360,31 @@ const BlogArticlePage: React.FC = () => {
       faq: [
         {
           question: 'Muss ich jetzt Steuern in den VAE zahlen?',
-          answer: 'Wenn du in einer qualifizierten Free Zone tätig bist und überwiegend internationale Kunden hast: wahrscheinlich 0%. Wenn dein Gewinn unter 375.000 AED liegt: 0%. Über dieser Schwelle: 9% auf den übersteigenden Teil. Das ist immer noch deutlich weniger als Deutschland.'
+          answer: 'Wenn du in einer qualifizierten Free Zone tätig bist und überwiegend internationale Kunden hast: wahrscheinlich 0%. Wenn dein Gewinn unter 375.000 AED (ca. 94.000 €) liegt: 0% sowieso. Über dieser Schwelle: 9% nur auf den übersteigenden Teil. Das ist immer noch ein Bruchteil der deutschen 47% Gesamtlast.'
+        },
+        {
+          question: 'Was ist der Small Business Relief und gilt er für mich?',
+          answer: 'Der Small Business Relief erlaubt Firmen mit Umsatz unter 3 Millionen AED (ca. 750.000 €) bis Ende 2026, vereinfachte Regeln zu nutzen und effektiv auf 0% zu kommen. Für die meisten deutschen Gründer gilt das. Ab 2027 könnte sich das ändern – wir halten dich aktuell.'
         },
         {
           question: 'Muss ich eine Steuererklärung einreichen?',
-          answer: 'Ja, grundsätzlich müssen alle VAE-Firmen eine Corporate Tax-Erklärung einreichen – auch bei 0% Steuerschuld. Das ist Teil des Registrierungsprozesses beim FTA.'
-        },
-        {
-          question: 'Was ist mit MwSt / VAT in den VAE?',
-          answer: 'Die VAE haben eine VAT von 5% – aber viele Dienstleistungen, die ins Ausland erbracht werden, sind davon ausgenommen (0% Rate). Das hängt von deiner konkreten Tätigkeit ab. Wir klären das mit dir.'
+          answer: 'Ja, grundsätzlich müssen alle VAE-Firmen eine Corporate Tax-Erklärung einreichen – auch bei 0% Steuerschuld. Das ist administrativer Aufwand, aber kein Deal-Breaker. Du brauchst dafür eine ordentliche Buchhaltung. Wir vermitteln dir die richtigen lokalen Buchhalter.'
         },
         {
           question: 'Wie bleibt man als Free Zone-Firma auf 0%?',
-          answer: 'Durch den Status als "Qualifying Free Zone Person". Du musst bestimmte Substanzanforderungen erfüllen (tatsächliche wirtschaftliche Tätigkeit) und deine Einkünfte müssen überwiegend "qualifizierte Einkünfte" sein. Wir beraten dich dazu.'
+          answer: 'Durch den Status als "Qualifying Free Zone Person" (QFZP). Du musst echte wirtschaftliche Substanz in der Free Zone haben (kein reiner Briefkasten) und deine Einkünfte müssen überwiegend "qualifizierte Einkünfte" sein (internationale Kunden, kein VAE-Mainland-Geschäft). Für die meisten deutschen Online-Unternehmer ist das kein Problem.'
+        },
+        {
+          question: 'Was ist mit VAT / MwSt in den VAE?',
+          answer: 'Die VAE haben eine VAT von 5%. Viele Dienstleistungen, die ins Ausland erbracht werden, sind mit 0% bewertet – also effektiv MwSt-frei. Das gilt für die meisten deutschen Unternehmer mit internationalen Kunden. Inland-Geschäfte in den VAE können 5% VAT auslösen. Wir klären das in Abhängigkeit deines Geschäftsmodells.'
+        },
+        {
+          question: 'Gilt die Corporate Tax auch für persönliches Einkommen aus der Firma?',
+          answer: 'Die UAE Corporate Tax besteuert die Gewinne der VAE-Firma. Wenn du als Inhaber ein Gehalt oder Dividenden aus der Firma ziehst, fällt darauf in den VAE keine persönliche Einkommensteuer an – das ist der große Unterschied zu Deutschland. Da es kein vollständiges DBA gibt, ist aber ein sauberer steuerlicher Wegzug aus Deutschland entscheidend.'
+        },
+        {
+          question: 'Hat sich die VAE steuerlich durch die Corporate Tax verschlechtert?',
+          answer: 'Für die meisten deutschen Unternehmer: kaum. Die effektive Last bleibt bei 0% für qualifizierte Free Zone-Einkünfte. Was sich geändert hat: Buchhaltungspflicht, FTA-Registrierung, mehr Compliance-Aufwand. Aber der Steuervorteil gegenüber Deutschland (0-9% vs. 47%) ist nach wie vor dramatisch.'
         }
       ]
     }
