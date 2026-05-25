@@ -30,7 +30,7 @@ const primaryLinks = [
 
 const menuLinks = [
   { path: '/philosophie', label: 'Die Idee' },
-  { path: '/ajman-guide', label: 'Ajman vs Dubai' },
+  { path: '/free-zone-vergleich', label: 'Free Zone Vergleich' },
   { path: '/steuer-wissen', label: 'Steuer-Wissen' },
   { path: '/prozess', label: 'Der Weg' },
   { path: '/blog', label: 'Blog' },
@@ -39,7 +39,7 @@ const menuLinks = [
 
 const footerLinks = [
   { path: '/philosophie', label: 'Die Idee' },
-  { path: '/ajman-guide', label: 'Ajman vs Dubai' },
+  { path: '/free-zone-vergleich', label: 'Free Zone Vergleich' },
   { path: '/steuer-wissen', label: 'Steuer-Wissen' },
   { path: '/prozess', label: 'Der Weg' },
   { path: '/preis-rechner', label: 'Preis-Rechner' },
@@ -282,7 +282,7 @@ export default function Layout({ children }: LayoutProps) {
                 </span>
               </Link>
               <p className="text-sm text-ink-400 leading-relaxed mb-4">
-                Deutschlands günstigster Weg zur Steuerfreiheit. Fair. Transparent. Ohne Hype.
+                Deutschlands günstigster Weg zur Steuerfreiheit in den VAE. Fair. Transparent. Ohne Hype.
               </p>
               <p className="text-xs text-ink-500">Zuletzt aktualisiert: März 2026</p>
             </div>
@@ -312,7 +312,7 @@ export default function Layout({ children }: LayoutProps) {
             <div>
               <h4 className="font-display text-base font-semibold text-cream mb-4">Strategie-Call</h4>
               <p className="text-sm text-ink-400 leading-relaxed mb-4">
-                20 Minuten. Kostenlos. Wir klären, ob Ajman für dich passt.
+                20 Minuten. Kostenlos. Wir klären, ob eine VAE-Firma für dich passt.
               </p>
               <button onClick={openCalendly} className="btn-primary w-full text-sm py-3">
                 Termin buchen
@@ -324,7 +324,7 @@ export default function Layout({ children }: LayoutProps) {
             <p className="text-xs text-ink-500 leading-relaxed mb-3 max-w-3xl">
               ⚠️ Kein Steuer- oder Rechtsberatungsangebot. Ziel:steuerfrei übernimmt Firmengründung und strategische Begleitung. Für steuerliche Fragen empfehlen wir qualifizierte Steuerberater.
             </p>
-            <p className="text-xs text-ink-600">© 2026 Ziel:steuerfrei. Alle Rechte vorbehalten.</p>
+            <p className="text-xs text-ink-600">© 2026 Happy Sales FZCO. Alle Rechte vorbehalten.</p>
           </div>
         </div>
       </footer>

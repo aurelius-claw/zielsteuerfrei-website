@@ -8,7 +8,7 @@ const Hero = () => {
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 sm:mb-8 leading-tight tracking-tight font-['Playfair_Display',serif]"
           style={{ fontFamily: "'Playfair Display', Georgia, 'Times New Roman', Times, serif" }}
         >
-          Steuerfrei leben mit Ajman Firmengründung
+          Steuerfrei leben mit VAE Firmengründung
         </h1>
         <p 
           className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/90 mb-8 sm:mb-12 max-w-2xl mx-auto font-light tracking-wide font-['Inter',sans-serif]"

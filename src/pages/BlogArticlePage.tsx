@@ -44,7 +44,7 @@ const BlogArticlePage: React.FC = () => {
       date: '15. Februar 2026',
       readTime: '8 Minuten',
       category: 'Kosten',
-      excerpt: 'Ajman kostet 46% weniger als Dubai – mit derselben Legalität. Hier die echten Zahlen, ohne Marketing-Hype.',
+      excerpt: 'Ajman kostet 46% weniger als Dubai – mit derselben Legalität. Firmengründung UAE: Die echten Zahlen im Vergleich, ohne Marketing-Hype.',
       content: `
         <p>Wenn du über eine Firmengründung in den VAE nachdenkst, hörst du wahrscheinlich immer wieder "Dubai". Dabei gibt es eine Alternative, die für viele deutsche Unternehmer besser passt: Ajman.</p>
 
@@ -183,7 +183,7 @@ const BlogArticlePage: React.FC = () => {
       date: '10. Februar 2026',
       readTime: '10 Minuten',
       category: 'Steuern',
-      excerpt: 'Die Reform 2025/2026 ändert, wie Fonds bei Auswanderung besteuert werden. So schützt du dein Vermögen.',
+      excerpt: 'Die Reform 2025/2026 ändert, wie Fonds bei Auswanderung besteuert werden. So schützt du dein Vermögen bei der Auswanderung in die VAE.',
       content: `
         <p>Die Wegzugsbesteuerung ist eines der Themen, das deutsche Auswanderer am meisten unterschätzen – und das am teuersten werden kann. Seit den Reformen 2022 und der Nachschärfung 2025 gelten neue Regeln, besonders für Investmentfonds.</p>
 
@@ -311,7 +311,7 @@ const BlogArticlePage: React.FC = () => {
       date: '5. Februar 2026',
       readTime: '7 Minuten',
       category: 'Steuern',
-      excerpt: 'Die Regel gilt nicht immer. Hier erfährst du, wann sie greift – und wann du sie clever nutzen kannst.',
+      excerpt: 'Die 183-Tage-Regel für die VAE: Wann sie greift, wann nicht – und wie du sie clever für deine Steuerfreiheit nutzt.',
       content: `
         <p>„Ich muss einfach mehr als 183 Tage im Jahr im Ausland sein, dann bin ich steuerfrei." Diesen Satz hören wir regelmäßig – und er ist so nicht richtig. Die 183-Tage-Regel ist komplexer als ihr Ruf.</p>
 
@@ -407,7 +407,7 @@ const BlogArticlePage: React.FC = () => {
       date: '1. Februar 2026',
       readTime: '6 Minuten',
       category: 'Praktisch',
-      excerpt: 'Als Ajman-Unternehmer brauchst du Zahlungsabwicklung. So richtest du sie für internationale Kunden ein.',
+      excerpt: 'Als Unternehmer in den VAE brauchst du Zahlungsabwicklung. So richtest du PayPal & Stripe für internationale Kunden ein.',
       content: `
         <p>Einer der häufigsten praktischen Fragen, die wir bekommen: „Kann ich als Ajman-Unternehmer PayPal und Stripe nutzen?" Die kurze Antwort: Ja – aber mit ein paar wichtigen Details.</p>
 
@@ -532,7 +532,7 @@ const BlogArticlePage: React.FC = () => {
       date: '25. Januar 2026',
       readTime: '9 Minuten',
       category: 'Kosten',
-      excerpt: 'Alle Gebühren aufgeschlüsselt – inklusive der versteckten Posten, die andere nicht nennen.',
+      excerpt: 'Ajman Free Zone Kosten 2026 komplett transparent – alle Gebühren aufgeschlüsselt, inklusive der versteckten Posten, die andere nicht nennen.',
       content: `
         <p>Kostentransparenz ist uns wichtig. Deshalb zeigen wir dir hier alle Kosten für eine Ajman Free Zone Gründung – inklusive der Punkte, die andere in ihrer Kalkulation gerne weglassen.</p>
 
@@ -705,7 +705,7 @@ const BlogArticlePage: React.FC = () => {
       date: '20. Januar 2026',
       readTime: '8 Minuten',
       category: 'Steuern',
-      excerpt: 'Nicht die reine Tag-Zählung entscheidet, sondern wo dein Leben wirklich stattfindet. So beweist du es.',
+      excerpt: 'Steuerfalle 183-Tage-Regel: Nicht die reine Tag-Zählung entscheidet, sondern wo dein Leben wirklich stattfindet. Erkenntnisse für deine VAE-Strategie.',
       content: `
         <p>Die gefährlichste Steuerfalle für deutsche Auswanderer ist nicht die Wegzugsbesteuerung, nicht fehlende Steuererklärungen – es ist das falsche Verständnis davon, was steuerlichen Wohnsitz wirklich begründet.</p>
 
@@ -805,7 +805,7 @@ const BlogArticlePage: React.FC = () => {
       date: '15. Januar 2026',
       readTime: '7 Minuten',
       category: 'Vergleich',
-      excerpt: 'Prestige oder Pragmatismus? Für deutsche Unternehmer ist die Antwort oft klarer als gedacht.',
+      excerpt: 'Dubai-Mythos vs Ajman-Realität: Prestige oder Pragmatismus? Für deutsche Unternehmer ist die Antwort oft klarer als gedacht. Firmengründung UAE im Vergleich.',
       content: `
         <p>„Dubai" ist mehr als ein Ort – es ist eine Marke. Und Marken verkaufen sich gut. Deshalb ist es Zeit, den Mythos Dubai sachlich mit der Realität Ajman zu vergleichen.</p>
 
@@ -921,7 +921,7 @@ const BlogArticlePage: React.FC = () => {
       date: '10. Januar 2026',
       readTime: '11 Minuten',
       category: 'Steuern',
-      excerpt: 'Diese Fehler kosten dich schnell fünfstellige Beträge. So vermeidest du sie von Anfang an.',
+      excerpt: '5 Steuerfallen für deutsche Auswanderer in die VAE: Diese Fehler kosten dich schnell fünfstellige Beträge. So vermeidest du sie von Anfang an.',
       content: `
         <p>Wir haben mit Dutzenden deutschen Unternehmern gearbeitet, die die Auswanderung in die VAE planen oder bereits vollzogen haben. Dabei sehen wir immer wieder dieselben Fehler – und manche davon sind richtig teuer.</p>
 
@@ -1017,7 +1017,7 @@ const BlogArticlePage: React.FC = () => {
       date: '5. Januar 2026',
       readTime: '5 Minuten',
       category: 'Praktisch',
-      excerpt: 'Von der Passkopie bis zur Aktivitätsbeschreibung – hier fehlt nichts. Inklusive Download-PDF.',
+      excerpt: 'Dokumenten-Checkliste für die VAE-Firmengründung: Von der Passkopie bis zur Aktivitätsbeschreibung – hier fehlt nichts.',
       content: `
         <p>Eine der häufigsten Verzögerungen bei VAE-Gründungen: fehlende oder nicht korrekt vorbereitete Dokumente. Diese Liste zeigt dir alles, was du brauchst – sortiert nach Gründungsphase.</p>
 
@@ -1127,7 +1127,7 @@ const BlogArticlePage: React.FC = () => {
       date: '1. Januar 2026',
       readTime: '12 Minuten',
       category: 'Prozess',
-      excerpt: 'Der komplette Prozess von der Idee bis zur aktiven Lizenz – realistisch, ohne Beschönigung.',
+      excerpt: 'VAE Firma gründen: Der komplette Prozess von der Idee bis zur aktiven Lizenz – realistisch, ohne Beschönigung. Firmengründung UAE Schritt für Schritt.',
       content: `
         <p>Wir erklären dir den kompletten Prozess einer Firmengründung in der Ajman Free Zone – so wie er wirklich abläuft, nicht wie ihn Marketingbroschüren beschreiben.</p>
 
@@ -1257,7 +1257,7 @@ const BlogArticlePage: React.FC = () => {
       date: '28. Dezember 2025',
       readTime: '9 Minuten',
       category: 'Steuern',
-      excerpt: 'Seit 2023 gibt es Körperschaftsteuer in den VAE. Aber mit 0% für viele – hier die Details.',
+      excerpt: 'UAE Corporate Tax 2026: Seit 2023 gibt es Körperschaftsteuer – aber mit 0% für viele. Was deutsche Unternehmer für Steuerfreiheit wissen müssen.',
       content: `
         <p>Seit Juni 2023 erheben die VAE eine Körperschaftsteuer (Corporate Tax). Das klingt erst mal nach einer schlechten Nachricht – aber die Details zeigen, warum die VAE für die meisten deutschen Unternehmer immer noch steuerlich sehr attraktiv sind.</p>
 

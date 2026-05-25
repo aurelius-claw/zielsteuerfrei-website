@@ -19,9 +19,9 @@ export default function KontaktPage() {
     <div className="animate-fade-in">
       <Helmet>
         <title>Kontakt | Kostenloser Strategie-Call in 20 Min. | Ziel:steuerfrei</title>
-        <meta name="description" content="Buche jetzt deinen kostenlosen 20-Minuten-Strategie-Call. Wir klären ehrlich, ob Ajman zu dir passt – ohne Druck, ohne Verpflichtung." />
-        <meta property="og:title" content="Kostenloser Strategie-Call | Ziel:steuerfrei" />
-        <meta property="og:description" content="20 Minuten, kostenlos, ohne Verpflichtung. Wir klären, ob Ajman die richtige Lösung für dich ist." />
+        <meta name="description" content="Buche jetzt deinen kostenlosen 20-Minuten-Strategie-Call. Wir klären ehrlich, ob eine VAE-Firmengründung zu dir passt – ohne Druck, ohne Verpflichtung." />
+        <meta property="og:title" content="Kostenloser Strategie-Call | VAE Gründung | Ziel:steuerfrei" />
+        <meta property="og:description" content="20 Minuten, kostenlos, ohne Verpflichtung. Wir klären, ob die VAE die richtige Lösung für deine Firmengründung ist." />
         <meta property="og:url" content="https://zielsteuerfrei.de/kontakt" />
       </Helmet>
 

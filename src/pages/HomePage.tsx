@@ -12,7 +12,7 @@ function openCalendly() {
 }
 
 const leistungen = [
-  { icon: '🏢', title: 'Handelslizenz Ajman Free Zone', desc: 'Offizielle Lizenz in 4 Tagen. Alle Behördengänge inklusive, keine Überraschungen.' },
+  { icon: '🏢', title: 'Handelslizenz VAE Free Zone', desc: 'Offizielle Lizenz in 4 Tagen. Alle Behördengänge inklusive, keine Überraschungen.' },
   { icon: '🏥', title: 'Medical Check & Emirates ID', desc: 'Pflichtuntersuchung und Ausweisantrag — wir begleiten dich persönlich vor Ort.' },
   { icon: '🏦', title: 'Bankkonto-Einrichtung', desc: 'Kontoeröffnung bei Emirates NBD, FAB oder ADIB. Mit Begleitung, nicht Eigenitiative.' },
   { icon: '💬', title: '3 Monate WhatsApp-Support', desc: 'Direkte Nummern zu uns und qualifizierten Steuerberatern. Keine Ticket-Queue.' },
@@ -21,15 +21,15 @@ const leistungen = [
 const faqs = [
   {
     q: 'Lohnt sich das bei meinem Einkommen?',
-    a: 'Ab ca. €80.000 Jahresgewinn spart Ajman spürbar. Bei €150.000 sind das ~€70.000 weniger Steuern pro Jahr gegenüber einer deutschen GmbH.',
+    a: 'Ab ca. €80.000 Jahresgewinn spart eine VAE-Firma spürbar. Bei €150.000 sind das ~€70.000 weniger Steuern pro Jahr gegenüber einer deutschen GmbH.',
   },
   {
-    q: 'Muss ich dauerhaft in Ajman leben?',
+    q: 'Muss ich dauerhaft in den VAE leben?',
     a: 'Nein. Du brauchst eine UAE-Adresse und musst deinen Lebensmittelpunkt verlagern — aber kein dauerhaftes Wohnen. Viele unserer Kunden leben nomadisch.',
   },
   {
-    q: 'Wie unterscheidet sich Ajman von Dubai?',
-    a: 'Steuerlich identisch: beide 0%. Ajman kostet aber ~60% weniger beim Setup. Für Solo-Unternehmer ohne Prestige-Bedarf der eindeutig smartere Weg.',
+    q: 'Welche Free Zone ist die richtige für mich?',
+    a: 'Wir empfehlen Ajman Free Zone als bestes Preis-Leistungs-Verhältnis: ~60% günstiger als Dubai, gleiche 0% Steuern, weniger Bürokratie. Ob Ajman oder eine andere Free Zone ideal ist, klären wir im kostenlosen Erstgespräch.',
   },
   {
     q: 'Was ist mit der Wegzugssteuer?',
@@ -41,10 +41,10 @@ export default function HomePage() {
   return (
     <div className="animate-fade-in">
       <Helmet>
-        <title>Firma Ajman gründen | 0% Steuern ab €6.990 | Ziel:steuerfrei</title>
-        <meta name="description" content="Firmengründung in der Ajman Free Zone – legal steuerfrei. Komplettpaket ab €6.990: Handelslizenz in 4 Tagen, Medical Check, Emirates ID & Bankkonto. Deutsche Begleitung." />
-        <meta property="og:title" content="Firma Ajman gründen | 0% Steuern ab €6.990 | Ziel:steuerfrei" />
-        <meta property="og:description" content="Firmengründung in der Ajman Free Zone – legal steuerfrei. Komplettpaket ab €6.990: Handelslizenz in 4 Tagen, Medical Check, Emirates ID & Bankkonto. Deutsche Begleitung." />
+        <title>VAE Firma gründen | 0% Steuern ab €6.990 | Firmengründung UAE</title>
+        <meta name="description" content="Firmengründung in den VAE (UAE) – legal steuerfrei mit 0% Einkommensteuer. Komplettpaket ab €6.990: Lizenz, Medical, Emirates ID, Bankkonto. Deutsche Begleitung vom ersten Call bis zur fertigen Firma." />
+        <meta property="og:title" content="VAE Firma gründen | 0% Steuern ab €6.990 | Ziel:steuerfrei" />
+        <meta property="og:description" content="Steuerfrei mit einer VAE-Firma: 0% Einkommensteuer, Setup in 4 Tagen, alles aus einer Hand. Für deutsche Unternehmer – ehrlich, transparent, ohne Hype." />
         <meta property="og:url" content="https://zielsteuerfrei.de/" />
         <meta property="og:type" content="website" />
       </Helmet>
@@ -65,17 +65,17 @@ export default function HomePage() {
         <div className="max-w-wide mx-auto px-4 md:px-6 relative text-center">
           <div className="eyebrow mb-6 justify-center animate-fade-up">
             <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-            Für Unternehmer ab €80.000 Jahresgewinn
+            Für Unternehmer in ganz Deutschland
           </div>
 
           <h1 className="font-display text-display-xl text-ink-900 dark:text-cream mb-6 text-balance animate-fade-up animation-delay-100">
             Steuerfrei leben —<br />
-            <span className="text-highlight">mit Ajman</span>
+            <span className="text-highlight">mit deinem VAE Setup</span>
           </h1>
 
           <p className="text-lg md:text-xl text-ink-600 dark:text-ink-300 max-w-2xl mx-auto leading-relaxed mb-8 animate-fade-up animation-delay-200">
             Legal. Fair. Bodenständig. Kein Hype.<br />
-            Firmengründung in der Ajman Free Zone — komplett begleitet, ab{' '}
+            Firmengründung in den VAE — komplett begleitet, ab{' '}
             <strong className="text-ink-900 dark:text-cream font-semibold">€6.990</strong>.
           </p>
 
@@ -94,7 +94,7 @@ export default function HomePage() {
             </Link>
           </div>
           <p className="text-xs text-ink-400 dark:text-ink-500 mt-4">
-            Keine Verpflichtung · 20 Minuten · Wir klären ehrlich, ob Ajman zu dir passt
+            Keine Verpflichtung · 20 Minuten · Wir klären ehrlich, ob eine VAE-Firma zu dir passt
           </p>
         </div>
       </section>
@@ -103,7 +103,7 @@ export default function HomePage() {
       <div className="bg-white dark:bg-navy-900 border-y border-ink-100 dark:border-navy-800">
         <div className="max-w-wide mx-auto px-4 md:px-6">
           <div className="trust-bar">
-            <span className="trust-item"><span className="text-gold">✓</span> Offizielle Ajman-Lizenz</span>
+            <span className="trust-item"><span className="text-gold">✓</span> Offizielle VAE Free Zone Lizenz</span>
             <span className="trust-item"><span className="text-gold">✓</span> Transparenter Festpreis</span>
             <span className="trust-item"><span className="text-gold">✓</span> Deutsche Beratung</span>
             <span className="trust-item"><span className="text-gold">✓</span> Steuerberater-Netzwerk</span>
@@ -116,7 +116,7 @@ export default function HomePage() {
       <section className="section bg-cream dark:bg-navy-950">
         <div className="max-w-content mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
-            <div className="eyebrow mb-3">Warum Ajman</div>
+            <div className="eyebrow mb-3">Warum VAE</div>
             <h2 className="font-display text-display-md text-ink-900 dark:text-cream">
               Was du wirklich sparst
             </h2>
@@ -137,7 +137,7 @@ export default function HomePage() {
 
             <div className="card p-7 text-center border-gold/30 relative overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gold" />
-              <p className="text-xs font-bold uppercase tracking-wider text-gold mb-3">Ajman Free Zone</p>
+              <p className="text-xs font-bold uppercase tracking-wider text-gold mb-3">VAE Free Zone</p>
               <p className="font-display text-5xl font-bold text-green-600 dark:text-green-400 mb-2">€0</p>
               <p className="text-xs text-ink-400">0% Einkommensteuer</p>
             </div>
@@ -207,10 +207,10 @@ export default function HomePage() {
 
           <div className="space-y-4">
             {[
-              { n: '1', title: 'Strategie-Call (kostenlos)', desc: 'Wir klären deine Situation, ob Ajman passt, und welche Schritte konkret nötig sind.', time: '20 Min' },
+              { n: '1', title: 'Strategie-Call (kostenlos)', desc: 'Wir klären deine Situation, welche Free Zone ideal ist, und welche Schritte konkret nötig sind.', time: '20 Min' },
               { n: '2', title: 'Dokumente & Vorbereitung', desc: 'Reisepass, Geburtsurkunde, Aktivitätsbeschreibung. Wir sagen dir genau was du brauchst — kein Rätselraten.', time: '~1 Woche' },
-              { n: '3', title: 'Vor Ort in Ajman', desc: 'Medical Check, Behördengänge, Trade License, Bankkonto. Du wirst an jedem Tag begleitet.', time: '4–5 Tage' },
-              { n: '4', title: 'Firma live — 0% Steuern', desc: 'Offizielle Lizenz, Emirates ID, UAE-Bankkonto. Ab jetzt: 0% Einkommensteuer auf Ajman-Gewinne.', time: 'Fertig ✓' },
+              { n: '3', title: 'Vor Ort in den VAE', desc: 'Medical Check, Behördengänge, Trade License, Bankkonto. Du wirst an jedem Tag begleitet.', time: '4–5 Tage' },
+              { n: '4', title: 'Firma live — 0% Steuern', desc: 'Offizielle Lizenz, Emirates ID, UAE-Bankkonto. Ab jetzt: 0% Einkommensteuer auf deine Gewinne.', time: 'Fertig ✓' },
             ].map((step, i) => (
               <div key={i} className="card flex gap-5 p-6 items-start">
                 <div className="step-number flex-shrink-0">{step.n}</div>

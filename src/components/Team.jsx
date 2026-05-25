@@ -37,14 +37,14 @@ const Team = () => {
               <div className="absolute inset-0 dark:bg-gradient-to-t dark:from-obsidian dark:via-transparent dark:to-transparent bg-gradient-to-t from-light-bg via-transparent to-transparent opacity-80 z-10"></div>
               <img
                 src="/images/pages/team-neno.jpeg"
-                alt="Neno - Gründer & Operations Ajman"
+                alt="Neno - Gründer & Operations VAE (Ajman)"
                 className="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
               />
               <div className="absolute inset-0 border border-champagne/0 group-hover:border-champagne/50 transition-colors z-20"></div>
             </div>
             <h3 className="text-2xl font-inter font-bold mb-1 group-hover:text-champagne transition-colors">Neno</h3>
-            <p className="font-mono text-xs dark:text-gray-accessible text-gray-600 uppercase mb-3">Gründer & Operations Ajman</p>
+            <p className="font-mono text-xs dark:text-gray-accessible text-gray-600 uppercase mb-3">Gründer & Operations VAE (Ajman)</p>
             <p className="text-sm dark:text-gray-accessible text-gray-600 leading-relaxed">
               Nenos Idee. Sein eigener Weg als Auswanderer in Dubai war der Startpunkt – heute hat er die richtigen Connections direkt in Ajman: Steuerberater, Behörden, Netzwerk.
             </p>
@@ -65,7 +65,7 @@ const Team = () => {
             <h3 className="text-2xl font-inter font-bold mb-1 group-hover:text-champagne transition-colors">Juljana</h3>
             <p className="font-mono text-xs dark:text-gray-accessible text-gray-600 uppercase mb-3">Behörden & Compliance</p>
             <p className="text-sm dark:text-gray-accessible text-gray-600 leading-relaxed">
-              Juljana begleitet persönlich bei allen Behördengängen und Medical Checks vor Ort in Ajman – damit nichts verloren geht und alles reibungslos läuft.
+              Juljana begleitet persönlich bei allen Behördengängen und Medical Checks vor Ort in den VAE (Ajman) – damit nichts verloren geht und alles reibungslos läuft.
             </p>
           </div>
 

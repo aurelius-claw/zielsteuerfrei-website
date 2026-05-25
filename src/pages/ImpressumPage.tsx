@@ -26,8 +26,9 @@ export default function ImpressumPage() {
                 Angaben gemäß § 5 TMG
               </h2>
               <div className="text-ink-600 dark:text-ink-300 space-y-2 text-sm leading-relaxed">
-                <p><strong className="text-ink-900 dark:text-cream">Ziel:steuerfrei</strong></p>
-                <p>Inhaber: Martin [Nachname]</p>
+                <p><strong className="text-ink-900 dark:text-cream">Happy Sales FZCO</strong></p>
+                <p>Dubai Silicon Oasis, DDP, Bldg. A1</p>
+                <p>Dubai, United Arab Emirates</p>
                 <p>Kontakt: <a href="mailto:info@zielsteuerfrei.de" className="text-gold hover:underline">info@zielsteuerfrei.de</a></p>
               </div>
             </div>

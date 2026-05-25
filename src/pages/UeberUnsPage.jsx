@@ -59,10 +59,10 @@ export default function UeberUnsPage() {
   return (
     <div className="animate-fade-in">
       <Helmet>
-        <title>Über uns | Neno & Juljana | Ziel:steuerfrei</title>
-        <meta name="description" content="Das Team hinter Ziel:steuerfrei: Neno und Juljana begleiten dich persönlich durch deine Ajman-Gründung. Deutsche Beratung, direkte Kommunikation, echte Erfahrung." />
-        <meta property="og:title" content="Unser Team | Ziel:steuerfrei" />
-        <meta property="og:description" content="Neno und Juljana – die Gesichter hinter Ziel:steuerfrei. Persönliche Begleitung bei jeder Ajman-Gründung." />
+        <title>Über uns | VAE-Firmengründung aus Deutschland | Ziel:steuerfrei</title>
+        <meta name="description" content="Das Team hinter Ziel:steuerfrei: Neno und Juljana begleiten dich persönlich durch deine VAE-Gründung. Deutsche Beratung, direkte Kommunikation, echte Erfahrung mit Firmengründung UAE." />
+        <meta property="og:title" content="Unser Team | VAE Gründungsservice | Ziel:steuerfrei" />
+        <meta property="og:description" content="Neno und Juljana – persönliche Begleitung bei deiner Firmengründung in den VAE. 0% Steuern, transparente Preise, deutsche Beratung." />
         <meta property="og:url" content="https://zielsteuerfrei.de/ueber-uns" />
       </Helmet>
 

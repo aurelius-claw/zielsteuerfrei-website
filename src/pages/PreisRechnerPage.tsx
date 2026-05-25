@@ -51,10 +51,10 @@ export default function PreisRechnerPage() {
   return (
     <div className="animate-fade-in">
       <Helmet>
-        <title>Preis-Rechner: Was sparst du mit Ajman? | Ziel:steuerfrei</title>
-        <meta name="description" content="Berechne live, wie viel du mit einer Ajman Free Zone Firma gegenüber Deutschland sparst. Komplettpaket ab €6.990 – Amortisation oft in unter 8 Wochen." />
-        <meta property="og:title" content="Steuerersparnis-Rechner Ajman | Ziel:steuerfrei" />
-        <meta property="og:description" content="Wie viel sparst du mit Ajman? Rechne deinen Vorteil gegenüber der deutschen GmbH – live und kostenlos." />
+        <title>Preis-Rechner: Was sparst du in der VAE? | Firmengründung UAE</title>
+        <meta name="description" content="Berechne live, wie viel du mit einer Firmengründung in den VAE gegenüber Deutschland sparst. Komplettpaket ab €6.990 – Amortisation oft in unter 8 Wochen." />
+        <meta property="og:title" content="Steuerersparnis-Rechner VAE | Ziel:steuerfrei" />
+        <meta property="og:description" content="Wie viel sparst du in den VAE? Rechne deinen Vorteil gegenüber der deutschen GmbH – live und kostenlos. Ajman als empfohlene Dubai-Alternative." />
         <meta property="og:url" content="https://zielsteuerfrei.de/preis-rechner" />
         <meta property="og:type" content="website" />
       </Helmet>

@@ -43,11 +43,11 @@ export default function AjmanGuidePage() {
   return (
     <div className="animate-fade-in">
       <Helmet>
-        <title>Ajman vs Dubai: Ehrlicher Vergleich für Unternehmer 2026 | Ziel:steuerfrei</title>
-        <meta name="description" content="Ajman Free Zone kostet 60% weniger als Dubai – bei gleicher Legalität und 0% Einkommensteuer. Alle echten Zahlen im Vergleich: Setup-Kosten, Zeitaufwand, Visas." />
-        <meta property="og:title" content="Ajman vs Dubai: Firma gründen Vergleich 2026" />
-        <meta property="og:description" content="Ajman kostet 60% weniger als Dubai – gleiche Steuerfreiheit, weniger Bürokratie. Ehrlicher Vergleich für deutsche Unternehmer." />
-        <meta property="og:url" content="https://zielsteuerfrei.de/ajman-guide" />
+        <title>VAE Free Zone Vergleich 2026: Dubai vs Ajman – Wo gründest du smarter? | Ziel:steuerfrei</title>
+        <meta name="description" content="VAE Free Zone Vergleich: Dubai oder Ajman? Beide 0% Steuern, aber Ajman kostet 60% weniger. Ehrlicher Vergleich mit allen Kosten für deutsche Unternehmer – ohne Marketing-Hype." />
+        <meta property="og:title" content="VAE Free Zone Vergleich 2026: Dubai vs Ajman" />
+        <meta property="og:description" content="Welche Free Zone in den VAE ist die richtige? Dubai vs Ajman im ehrlichen Vergleich: Kosten, Bürokratie, Gründungsdauer – alle Zahlen auf einen Blick." />
+        <meta property="og:url" content="https://zielsteuerfrei.de/free-zone-vergleich" />
       </Helmet>
 
       {/* Hero */}
@@ -66,8 +66,8 @@ export default function AjmanGuidePage() {
             Der detaillierte Vergleich · 2026
           </div>
           <h1 className="font-display text-display-xl text-ink-900 dark:text-cream mb-6 text-balance animate-fade-up animation-delay-100">
-            Ajman vs Dubai —<br />
-            <span className="text-highlight">Was Marketing verschweigt</span>
+            VAE Free Zone Vergleich —<br />
+            <span className="text-highlight">Wo gründest du smarter?</span>
           </h1>
           <p className="text-lg text-ink-600 dark:text-ink-300 max-w-2xl mx-auto leading-relaxed animate-fade-up animation-delay-200">
             Steuerlich identisch. Kosten: Welten auseinander. Warum Smart-Gründer 

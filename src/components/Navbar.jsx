@@ -7,7 +7,7 @@ import { useTheme } from '../context/ThemeContext';
 const MENU_ITEMS = [
   { label: 'Über Uns', to: '/ueber-uns' },
   { label: 'Philosophie', to: '/philosophie' },
-  { label: 'Ajman-Guide', to: '/ajman-guide' },
+  { label: 'VAE-Guide', to: '/free-zone-vergleich' },
   { label: 'Steuer-Wissen', to: '/steuer-wissen' },
   { label: 'Prozess', to: '/prozess' },
   { label: 'Blog', to: '/blog' },

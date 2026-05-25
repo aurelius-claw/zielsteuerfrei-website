@@ -17,12 +17,12 @@ const pillars = [
     icon: '📊',
     n: '01',
     title: 'Einkommensteuer',
-    subtitle: 'Deutschland 42% vs Ajman 0%',
-    content: 'Die Einkommensteuer ist der Hauptgrund, warum Unternehmer die UAE wählen. In Deutschland greift der Spitzensteuersatz ab ~€66.761 (42%), effektiv mit Solidaritätszuschlag sogar 44,3%. In der Ajman Freezone: 0% auf Unternehmenseinkommen.',
+    subtitle: 'Deutschland 42% vs VAE 0%',
+    content: 'Die Einkommensteuer ist der Hauptgrund, warum Unternehmer die VAE wählen. In Deutschland greift der Spitzensteuersatz ab ~€66.761 (42%), effektiv mit Solidaritätszuschlag sogar 44,3%. In der VAE Freezone: 0% auf Unternehmenseinkommen.',
     facts: [
       'Unbeschränkte Steuerpflicht: Ab 6 Monaten Aufenthalt oder Wohnsitz in DE',
       'Welteinkommensprinzip: Deutschland besteuert dein globales Einkommen',
-      'Ajman Freezone: Qualifiziertes Einkommen = 0%',
+      'VAE Freezone: Qualifiziertes Einkommen = 0%',
       'Wichtig: Wohnsitz und Lebensmittelpunkt müssen verlagert werden',
     ],
     link: null,
@@ -64,7 +64,7 @@ const pillars = [
     facts: [
       'Kein DBA DE–UAE bedeutet: Sauberer Wegzug = keine Überschneidung',
       'Vorteil: Kein Quellensteuer-Wirrwarr',
-      'Risiko: Firma in Ajman + Wohnsitz in DE = Doppelbesteuerung',
+      'Risiko: Firma in den VAE + Wohnsitz in DE = Doppelbesteuerung',
       'Lösung: Gründung VOR offiziellem Wegzug',
     ],
     link: null,
@@ -73,7 +73,7 @@ const pillars = [
 
 const faqs = [
   {
-    q: 'Kann ich als GmbH-Inhaber einfach nach Ajman wechseln?',
+    q: 'Kann ich als GmbH-Inhaber einfach in die VAE wechseln?',
     a: 'Nicht ganz. Wenn du eine deutsche GmbH hast, muss geprüft werden, ob Wegzugssteuer auf die Anteile anfällt (§ 6 AStG). Das klärt ein Steuerberater vor dem Wegzug — wir helfen dabei, den richtigen zu finden.',
   },
   {
@@ -188,7 +188,7 @@ export default function SteuerWissenPage() {
           <div className="text-center mb-12">
             <div className="eyebrow mb-3">Kurzübersicht</div>
             <h2 className="font-display text-display-md text-ink-900 dark:text-cream">
-              Deutschland vs Ajman Free Zone
+              Deutschland vs VAE Free Zone
             </h2>
           </div>
 
@@ -198,7 +198,7 @@ export default function SteuerWissenPage() {
                 <tr>
                   <th>Steuerart</th>
                   <th>Deutschland</th>
-                  <th className="text-gold">Ajman Free Zone</th>
+                  <th className="text-gold">VAE Free Zone</th>
                 </tr>
               </thead>
               <tbody>
@@ -221,7 +221,7 @@ export default function SteuerWissenPage() {
           </div>
 
           <p className="text-xs text-ink-400 text-center mt-3">
-            Ajman-Zahlen gelten bei korrekter Struktur und verlagerten Wohnsitz. Individuelle Situation kann abweichen.
+            VAE-Zahlen gelten bei korrekter Struktur und verlagerten Wohnsitz. Individuelle Situation kann abweichen.
           </p>
         </div>
       </section>

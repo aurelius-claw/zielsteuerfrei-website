@@ -41,7 +41,7 @@ const Features = () => {
       <div className="absolute inset-0 z-0">
         <img 
           src="/images/pages/leistungen.png" 
-          alt="Leistungen - Komplettpaket für Ajman Firmengründung"
+          alt="Leistungen - Komplettpaket für VAE Firmengründung"
           className="w-full h-full object-cover opacity-10"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-obsidian/80 via-obsidian/60 to-obsidian/80" />

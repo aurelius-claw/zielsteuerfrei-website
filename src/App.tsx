@@ -1,10 +1,10 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { ThemeProvider } from './context/ThemeContext'
 import Layout from './components/Layout'
 
 import HomePage from './pages/HomePage'
 import PhilosophiePage from './pages/PhilosophiePage'
-import AjmanGuidePage from './pages/AjmanGuidePage'
+import FreeZoneVergleichPage from './pages/AjmanGuidePage'
 import SteuerWissenPage from './pages/SteuerWissenPage'
 import ProzessPage from './pages/ProzessPage'
 import PreisRechnerPage from './pages/PreisRechnerPage'
@@ -23,7 +23,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/philosophie" element={<PhilosophiePage />} />
-            <Route path="/ajman-guide" element={<AjmanGuidePage />} />
+            <Route path="/ajman-guide" element={<Navigate to="/free-zone-vergleich" replace />} />
+            <Route path="/free-zone-vergleich" element={<FreeZoneVergleichPage />} />
             <Route path="/steuer-wissen" element={<SteuerWissenPage />} />
             <Route path="/prozess" element={<ProzessPage />} />
             <Route path="/preis-rechner" element={<PreisRechnerPage />} />

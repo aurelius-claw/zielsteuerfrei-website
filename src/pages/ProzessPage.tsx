@@ -17,7 +17,7 @@ const steps = [
     icon: '🗣️',
     title: 'Strategie-Call',
     duration: '20 Min · Kostenlos',
-    desc: 'Wir klären deine Situation: Welches Einkommen, welche Struktur, welche Risiken (Wegzugssteuer, Betriebsstätte). Und ob Ajman für dich wirklich Sinn ergibt.',
+    desc: 'Wir klären deine Situation: Welches Einkommen, welche Struktur, welche Risiken (Wegzugssteuer, Betriebsstätte). Und ob die VAE – speziell Ajman – für dich wirklich Sinn ergibt.',
     items: [
       'Einkommenssituation besprechen',
       'Risiken aufzeigen (Wegzugssteuer, Lebensmittelpunkt)',
@@ -69,7 +69,7 @@ const steps = [
     icon: '✅',
     title: 'Firma live — 0% Steuern',
     duration: 'Tag 4–5',
-    desc: 'Trade License in der Hand, Emirates ID abgeholt, Bankkonto aktiv. Du bist offiziell UAE-Unternehmer. Ab jetzt: 0% Einkommensteuer auf Ajman-Gewinne.',
+    desc: 'Trade License in der Hand, Emirates ID abgeholt, Bankkonto aktiv. Du bist offiziell VAE-Unternehmer. Ab jetzt: 0% Einkommensteuer auf deine Gewinne in Ajman.',
     items: [
       'Trade License + Certificate of Incorporation',
       'Emirates ID mit Residenz-Stempel',
@@ -89,10 +89,10 @@ export default function ProzessPage() {
   return (
     <div className="animate-fade-in">
       <Helmet>
-        <title>Firmengründung Ajman: Schritt-für-Schritt in 4 Tagen | Ziel:steuerfrei</title>
-        <meta name="description" content="So läuft die Ajman-Gründung ab: Strategie-Call, Dokumente, Vor-Ort-Begleitung, Bankkonto. Alle 4 Schritte transparent und ehrlich erklärt." />
-        <meta property="og:title" content="Firmengründung Ajman in 4 Tagen | Ablauf & Prozess" />
-        <meta property="og:description" content="Von der Erstberatung bis zur Emirates ID: der komplette Gründungsprozess in Ajman erklärt – ohne Überraschungen." />
+        <title>Firmengründung VAE: Schritt-für-Schritt in 4 Tagen | Ziel:steuerfrei</title>
+        <meta name="description" content="So läuft die Firmengründung in der VAE ab: Strategie-Call, Dokumente, Vor-Ort-Begleitung, Bankkonto. Wir empfehlen Ajman als beste Dubai-Alternative." />
+        <meta property="og:title" content="Firmengründung VAE in 4 Tagen | Ablauf & Prozess" />
+        <meta property="og:description" content="Von der Erstberatung bis zur Emirates ID: der komplette Gründungsprozess in den VAE erklärt – ohne Überraschungen. Ajman als Dubai-Alternative." />
         <meta property="og:url" content="https://zielsteuerfrei.de/prozess" />
       </Helmet>
 
@@ -196,8 +196,8 @@ export default function ProzessPage() {
                 Was in Deutschland noch erledigt werden muss
               </h2>
               <p className="text-ink-600 dark:text-ink-300 leading-relaxed mb-2">
-                Die Gründung in Ajman ist nur der erste Teil. 
-                Damit die Steuerfreiheit auch rechtlich greift, 
+                Die Gründung in den VAE (wir empfehlen Ajman als beste Dubai-Alternative) ist nur der erste Teil.
+                Damit die Steuerfreiheit auch rechtlich greift,
                 müssen folgende Schritte in Deutschland erledigt werden:
               </p>
             </div>

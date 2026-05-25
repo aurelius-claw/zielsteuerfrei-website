@@ -33,7 +33,7 @@ const BlogPage: React.FC = () => {
     {
       slug: 'paypal-stripe-uae',
       title: 'PayPal & Stripe in den VAE nutzen – geht das?',
-      excerpt: 'Als Ajman-Unternehmer brauchst du Zahlungsabwicklung. So richtest du sie für internationale Kunden ein.',
+      excerpt: 'Als Unternehmer in den VAE brauchst du Zahlungsabwicklung. So richtest du sie für internationale Kunden ein.',
       date: '01.02.2026',
       readTime: '6 Min',
       category: 'Praktisch'
@@ -101,18 +101,18 @@ const BlogPage: React.FC = () => {
   return (
     <div className="animate-fade-in">
       <Helmet>
-        <title>Blog | VAE Steuerwissen & Ajman-Guides | Ziel:steuerfrei</title>
-        <meta name="description" content="Steuer-Know-how für Auswanderer und Unternehmer: 183-Tage-Regel, Wegzugssteuer, Ajman vs Dubai und mehr. Ehrlich, verständlich, praxisnah." />
+        <title>Blog | VAE Steuerwissen & Firmengründung UAE | Ziel:steuerfrei</title>
+        <meta name="description" content="Steuer-Know-how für Auswanderer und Unternehmer: 183-Tage-Regel, Wegzugssteuer, Firmengründung UAE und mehr. Ehrlich, verständlich, praxisnah." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://zielsteuerfrei.de/blog" />
-        <meta property="og:title" content="Blog | VAE Steuerwissen & Ajman-Guides" />
-        <meta property="og:description" content="Aktuelle Artikel zu Steuern, Ajman, Dubai und VAE-Firmengründung für deutsche Unternehmer." />
+        <meta property="og:title" content="Blog | VAE Steuerwissen & Firmengründung UAE" />
+        <meta property="og:description" content="Aktuelle Artikel zu Steuern, UAE-Firmengründung, Freiverkehrszone und rechtlichen Updates für deutsche Unternehmer." />
         <meta property="og:url" content="https://zielsteuerfrei.de/blog" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://zielsteuerfrei.de/images/pages/blog.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Blog | VAE Steuerwissen & Ajman-Guides | Ziel:steuerfrei" />
-        <meta name="twitter:description" content="Steuer-Know-how für Auswanderer: 183-Tage-Regel, Wegzugssteuer, Ajman vs Dubai." />
+        <meta name="twitter:title" content="Blog | VAE Steuerwissen & Firmengründung UAE | Ziel:steuerfrei" />
+        <meta name="twitter:description" content="Steuer-Know-how für Auswanderer: 183-Tage-Regel, Wegzugssteuer, UAE Free Zone Vergleich." />
         <meta name="twitter:image" content="https://zielsteuerfrei.de/images/pages/blog.png" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -130,7 +130,7 @@ const BlogPage: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <img
             src="/images/pages/blog.png"
-            alt="Blog - Steuer-Wissen und Praxis für Ajman Firmengründung"
+            alt="Blog - Steuer-Wissen und Praxis für VAE Firmengründung"
             className="w-full h-full object-cover opacity-[0.06] dark:opacity-[0.08]"
           />
         </div>
@@ -146,7 +146,7 @@ const BlogPage: React.FC = () => {
           </h1>
 
           <p className="text-lg text-ink-600 dark:text-ink-300 max-w-2xl mx-auto leading-relaxed mb-10 animate-fade-up animation-delay-200">
-            Tiefgehende Artikel zu Steuern, Auswanderung, Ajman Free Zone und rechtlichen Updates.
+            Tiefgehende Artikel zu Steuern, Auswanderung, VAE Free Zone und rechtlichen Updates.
             Kein Marketing-Hype, nur Fakten, die du brauchst.
           </p>
 
@@ -252,7 +252,7 @@ const BlogPage: React.FC = () => {
                 Neue Artikel direkt ins Postfach
               </h3>
               <p className="text-ink-600 dark:text-ink-300 mb-8 leading-relaxed">
-                Erhalte monatlich die wichtigsten Updates zu Steuern, Ajman und Auswanderung – ohne Spam.
+                Erhalte monatlich die wichtigsten Updates zu Steuern, UAE-Firmengründung und Auswanderung – ohne Spam.
               </p>
 
               <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
@@ -280,7 +280,7 @@ const BlogPage: React.FC = () => {
           "@context": "https://schema.org",
           "@type": "Blog",
           "name": "Ziel:steuerfrei Blog",
-          "description": "Tiefgehende Artikel zu Steuern, Auswanderung, Ajman Free Zone und rechtlichen Updates.",
+          "description": "Tiefgehende Artikel zu Steuern, Auswanderung, VAE Free Zone und rechtlichen Updates.",
           "url": "https://zielsteuerfrei.de/blog",
           "publisher": {
             "@type": "Organization",
