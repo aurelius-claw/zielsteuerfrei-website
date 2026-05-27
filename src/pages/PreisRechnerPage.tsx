@@ -31,7 +31,7 @@ export default function PreisRechnerPage() {
 
   const calc = useMemo(() => {
     const deRate = 0.47 // ~47% effective (GmbH KSt+GewSt + ESt ausschüttung)
-    const ajmanRenewal = 670
+    const ajmanRenewal = 3000
     const setupCost = 6990
 
     const taxDE = profit * deRate
