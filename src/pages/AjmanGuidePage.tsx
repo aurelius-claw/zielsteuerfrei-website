@@ -13,13 +13,13 @@ function openCalendly() {
 
 const comparisonRows = [
   { label: 'Lizenz Setup (Jahr 1)', ajman: '€6.990 (All-inclusive)', dubai: '€12.000–18.000', highlight: true },
-  { label: 'Jahreserneuerung', ajman: '~€670', dubai: '€2.000–4.000', highlight: false },
+  { label: 'Jahreserneuerung', ajman: '~€3.000', dubai: 'ab ~€5.000', highlight: false },
   { label: 'Einkommensteuer', ajman: '0%', dubai: '0%', highlight: false },
   { label: 'Körperschaftsteuer', ajman: '0% (Freezone)', dubai: '0% (Freezone)', highlight: false },
   { label: 'Gründungsdauer', ajman: '4–5 Tage', dubai: '2–4 Wochen', highlight: true },
   { label: 'Büro Pflicht', ajman: 'Virtual Office ✓', dubai: 'Eigenes Büro (+€10k/Jahr)', highlight: false },
   { label: 'Bankkonto', ajman: 'Begleitung inklusive', dubai: 'Eigeninitiative, oft schwierig', highlight: false },
-  { label: '5-Jahres Gesamtkosten', ajman: '~€9.670', dubai: '~€27.500–42.000', highlight: true },
+  { label: '5-Jahres Gesamtkosten', ajman: '~€18.990', dubai: 'ab ~€32.000–42.000', highlight: true },
 ]
 
 const forAjman = [
@@ -36,7 +36,7 @@ const forDubai = [
   'Enterprise-Kunden, die Prestige erwarten',
   'Echtes Büro mit festem Team',
   'Manufacturing / physische Produkte',
-  'Die €17.000 Mehrkosten sind irrelevant',
+  'Die Mehrkosten sind für dich irrelevant',
 ]
 
 export default function AjmanGuidePage() {
@@ -71,7 +71,7 @@ export default function AjmanGuidePage() {
           </h1>
           <p className="text-lg text-ink-600 dark:text-ink-300 max-w-2xl mx-auto leading-relaxed animate-fade-up animation-delay-200">
             Steuerlich identisch. Kosten: Welten auseinander. Warum Smart-Gründer 
-            Dubai überspringen und bis zu <strong className="text-ink-900 dark:text-cream">€17.858</strong> sparen.
+            Dubai überspringen und über 5 Jahre rund <strong className="text-ink-900 dark:text-cream">€13.000–23.000</strong> sparen.
           </p>
         </div>
       </section>
@@ -147,7 +147,7 @@ export default function AjmanGuidePage() {
           </div>
 
           <p className="text-xs text-ink-400 dark:text-ink-500 mt-3 text-center">
-            Alle Angaben Richtwerte 2026. Individuelle Situation kann abweichen.
+            Alle Angaben Richtwerte 2026. Ajman-Wert: unser aktueller Renewal-Preis. Dubai variiert je nach Free Zone, Lizenz, Workspace und Visa-Setup.
           </p>
         </div>
       </section>
@@ -233,16 +233,16 @@ export default function AjmanGuidePage() {
                 <div>
                   <div className="flex justify-between text-sm mb-1.5">
                     <span className="font-semibold text-ink-900 dark:text-cream">Ajman</span>
-                    <span className="text-gold font-bold">~€9.670</span>
+                    <span className="text-gold font-bold">~€18.990</span>
                   </div>
                   <div className="h-2.5 bg-ink-100 dark:bg-navy-800 rounded-full overflow-hidden">
-                    <div className="h-full bg-gold rounded-full" style={{ width: '25%' }} />
+                    <div className="h-full bg-gold rounded-full" style={{ width: '45%' }} />
                   </div>
                 </div>
                 <div>
                   <div className="flex justify-between text-sm mb-1.5">
                     <span className="font-semibold text-ink-900 dark:text-cream">Dubai</span>
-                    <span className="text-ink-500">~€27.500–42.000</span>
+                    <span className="text-ink-500">ab ~€32.000–42.000</span>
                   </div>
                   <div className="h-2.5 bg-ink-100 dark:bg-navy-800 rounded-full overflow-hidden">
                     <div className="h-full bg-ink-300 dark:bg-navy-600 rounded-full" style={{ width: '100%' }} />
@@ -250,7 +250,7 @@ export default function AjmanGuidePage() {
                 </div>
                 <div className="pt-4 border-t border-ink-100 dark:border-navy-800">
                   <p className="text-xs text-ink-500">
-                    Ersparnis über 5 Jahre: <span className="text-gold font-bold text-sm">€17.800–32.300</span>
+                    Ersparnis über 5 Jahre: <span className="text-gold font-bold text-sm">~€13.000–23.000</span>
                   </p>
                 </div>
               </div>

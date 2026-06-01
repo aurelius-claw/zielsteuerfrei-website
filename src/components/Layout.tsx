@@ -259,7 +259,7 @@ export default function Layout({ children }: LayoutProps) {
       }`}>
         <div className="bg-navy-900/96 dark:bg-navy-950/96 backdrop-blur-sm border-t border-gold/20 py-3 px-4">
           <div className="max-w-wide mx-auto flex items-center justify-between gap-4">
-            <p className="text-sm text-cream/80 hidden sm:block">
+            <p className="hidden sm:block rounded-full border border-white/10 bg-navy-950/70 px-3 py-1.5 text-sm font-medium text-cream shadow-lg shadow-navy-950/20 backdrop-blur-sm">
               🎯 Komplettpaket ab <span className="text-gold font-bold">€6.990</span> · 0% Steuern · 4 Tage Setup
             </p>
             <button onClick={openCalendly} className="btn-primary text-sm px-5 py-2.5 ml-auto">
