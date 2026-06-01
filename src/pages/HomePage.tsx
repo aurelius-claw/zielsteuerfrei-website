@@ -187,7 +187,7 @@ export default function HomePage() {
             <div className="flex items-baseline justify-center gap-2 mb-1">
               <span className="font-display text-5xl font-bold text-ink-900 dark:text-cream">€6.990</span>
             </div>
-            <p className="text-ink-600 dark:text-ink-400 text-sm mb-6">Ab Jahr 2 nur Jahreserneuerung (~€670)</p>
+            <p className="text-ink-600 dark:text-ink-400 text-sm mb-6">Ab Jahr 2 nur Jahreserneuerung (~€3.000)</p>
             <button onClick={openCalendly} className="btn-primary">
               Jetzt kostenlos beraten lassen
             </button>

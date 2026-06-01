@@ -260,7 +260,7 @@ export default function PreisRechnerPage() {
               <span className="font-display text-6xl font-bold text-ink-900 dark:text-cream">€6.990</span>
             </div>
             <p className="text-ink-600 dark:text-ink-400 text-sm mb-1">Ab Jahr 2: nur Jahreserneuerung</p>
-            <p className="text-gold font-bold text-sm mb-6">~€670 / Jahr</p>
+            <p className="text-gold font-bold text-sm mb-6">~€3.000 / Jahr</p>
             <button onClick={openCalendly} className="btn-primary w-full">
               Jetzt Termin buchen
             </button>
@@ -279,7 +279,7 @@ export default function PreisRechnerPage() {
           <h2 className="font-display text-display-md text-ink-900 dark:text-cream mb-8">Zum Preis</h2>
           <div className="space-y-3">
             {[
-              { q: 'Gibt es versteckte Kosten?', a: 'Nein. €6.990 ist alles für das erste Jahr. Ab Jahr 2 fällt nur die Jahreserneuerung (~€670) an. Keine Verwaltungsgebühren, kein Support-Abo.' },
+              { q: 'Gibt es versteckte Kosten?', a: 'Nein. €6.990 ist alles für das erste Jahr. Ab Jahr 2 fällt nur die Jahreserneuerung (~€3.000) an. Keine Verwaltungsgebühren, kein Support-Abo.' },
               { q: 'Was ist NICHT enthalten?', a: 'Steuer- und Rechtsberatung (dafür vermitteln wir Experten), Wohnungskosten in Ajman, Flug & Unterkunft, eventuelle persönliche Visas für Familienmitglieder.' },
               { q: 'Kann ich in Raten zahlen?', a: 'Aktuell nein — Einmalzahlung. Bei Fragen dazu gerne im Call ansprechen.' },
               { q: 'Was passiert, wenn ich die Lizenz nach Jahr 1 nicht verlängere?', a: 'Das Konto bleibt bestehen, aber keine neuen Transaktionen. Ajman bietet flexible Suspension ohne Strafgebühren an.' },

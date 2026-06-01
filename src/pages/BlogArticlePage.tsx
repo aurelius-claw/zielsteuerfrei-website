@@ -619,8 +619,8 @@ const BlogArticlePage: React.FC = () => {
           </thead>
           <tbody>
             <tr>
-              <td>Lizenzverlängerung</td>
-              <td>3.500 – 4.500 €</td>
+              <td>Jahreserneuerung</td>
+              <td>ca. 3.000 €</td>
             </tr>
             <tr>
               <td>Visum-Verlängerung (alle 2-3 Jahre)</td>
@@ -691,7 +691,7 @@ const BlogArticlePage: React.FC = () => {
         },
         {
           question: 'Was kostet die Erneuerung im Folgejahr?',
-          answer: 'Hauptposten: Lizenzverlängerung ca. 3.500–4.500 €, Buchhaltungskosten €1.000–3.000 jährlich (jetzt Pflicht), Bankkonto-Gebühren €200–500. Die Visum-Erneuerung ist alle 2-3 Jahre fällig. Gesamt realistisch: €5.000–8.000 pro Jahr ab Jahr 2.'
+          answer: 'Hauptposten: Jahreserneuerung ca. €3.000, Buchhaltungskosten €1.000–3.000 jährlich (jetzt Pflicht), Bankkonto-Gebühren €200–500. Die Visum-Erneuerung ist alle 2-3 Jahre fällig. Gesamt realistisch: €4.200–6.500 pro Jahr ab Jahr 2.'
         },
         {
           question: 'Lohnt sich das finanziell wirklich gegenüber Deutschland?',
