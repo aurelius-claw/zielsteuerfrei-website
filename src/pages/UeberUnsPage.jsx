@@ -28,7 +28,7 @@ const team = [
     name: 'Martin',
     role: 'IT & Versicherung',
     desc: 'IT-Experte und IHK-zugelassener Versicherungsmakler. Martin berät zur internationalen Krankenversicherung – dem Thema, das bei der Auswanderung oft unterschätzt wird.',
-    photo: '/images/pages/team-martin.png',
+    photo: '/images/pages/team-martin-boat.jpeg',
   },
 ]
 
