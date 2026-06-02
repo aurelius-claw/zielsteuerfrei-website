@@ -51,7 +51,7 @@ const values = [
   {
     icon: '⚖️',
     title: 'Ehrliche Einschätzung',
-    desc: 'Wenn Ajman für dich keinen Sinn ergibt, sagen wir das im Erstgespräch — bevor du einen Cent ausgibst.',
+    desc: 'Wenn eine VAE-Gründung für dich keinen Sinn ergibt, sagen wir das im Erstgespräch — bevor du einen Cent ausgibst.',
   },
 ]
 
@@ -87,7 +87,7 @@ export default function UeberUnsPage() {
             <span className="text-highlight">den Weg gegangen</span>
           </h1>
           <p className="text-lg text-ink-600 dark:text-ink-300 max-w-2xl mx-auto leading-relaxed animate-fade-up animation-delay-200">
-            Kein Berater-Team, das Ajman aus dem Lehrbuch kennt. 
+            Kein Berater-Team, das die VAE nur aus dem Lehrbuch kennt. 
             Wir haben es selbst durchlebt — und helfen jetzt anderen, es besser zu machen.
           </p>
         </div>
@@ -132,7 +132,7 @@ export default function UeberUnsPage() {
                     'Keine Steuerberater (wir vermitteln sie)',
                     'Keine Anwälte (wir vermitteln sie)',
                     'Keine Dubai-Marketer mit Hochglanz-Broschüren',
-                    'Kein Remote-Team, das Ajman nie gesehen hat',
+                    'Kein Remote-Team, das die VAE nie selbst erlebt hat',
                     'Kein Abo-Modell mit versteckten Jahreskosten',
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-sm text-ink-700 dark:text-ink-300">
@@ -146,7 +146,7 @@ export default function UeberUnsPage() {
               <div className="card p-6 border-gold/20">
                 <p className="text-sm text-ink-600 dark:text-ink-300 italic leading-relaxed">
                   "Wir nehmen keine Kunden an, für die wir nicht ehrlich sagen können: 
-                  Ajman wird deinen finanziellen Stress reduzieren — nicht erhöhen."
+                  dein VAE-Setup wird deinen finanziellen Stress reduzieren — nicht erhöhen."
                 </p>
                 <p className="text-xs font-semibold text-gold mt-3">— Martin, Gründer</p>
               </div>

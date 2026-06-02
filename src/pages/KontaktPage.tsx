@@ -45,7 +45,7 @@ export default function KontaktPage() {
             <span className="text-highlight">Beratungstermin</span>
           </h1>
           <p className="text-lg text-ink-600 dark:text-ink-300 max-w-2xl mx-auto leading-relaxed animate-fade-up animation-delay-200">
-            Du hast Fragen zum Prozess, zu Ajman oder zur Steuerfreiheit? Wir antworten innerhalb von 24 Stunden.
+            Du hast Fragen zum Prozess, zur VAE-Firmengründung oder zur Steuerfreiheit? Wir antworten innerhalb von 24 Stunden.
           </p>
         </div>
       </section>
@@ -167,7 +167,7 @@ export default function KontaktPage() {
                   <textarea
                     rows={5}
                     className="w-full px-4 py-3 rounded-xl bg-cream dark:bg-navy-800 border border-ink-100 dark:border-navy-700 text-ink-900 dark:text-cream placeholder-ink-400 dark:placeholder-ink-300 focus:outline-none focus:ring-2 focus:ring-gold/50 resize-none"
-                    placeholder="Hallo, ich interessiere mich für Ajman und habe folgende Fragen..."
+                    placeholder="Hallo, ich interessiere mich für eine VAE-Firmengründung und habe folgende Fragen..."
                     required
                   />
                 </div>
@@ -190,7 +190,7 @@ export default function KontaktPage() {
             Lieber direkt reden?
           </h2>
           <p className="text-ink-300 mb-8 max-w-lg mx-auto leading-relaxed">
-            Im kostenlosen Strategie-Call klären wir in 20 Minuten, ob Ajman für dich sinnvoll ist – ohne Druck.
+            Im kostenlosen Strategie-Call klären wir in 20 Minuten, ob eine VAE-Firmengründung für dich sinnvoll ist – ohne Druck.
           </p>
           <button onClick={openCalendly} className="btn-primary">
             🗓 Kostenlosen Call buchen

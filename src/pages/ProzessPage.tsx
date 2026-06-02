@@ -17,7 +17,7 @@ const steps = [
     icon: '🗣️',
     title: 'Strategie-Call',
     duration: '20 Min · Kostenlos',
-    desc: 'Wir klären deine Situation: Welches Einkommen, welche Struktur, welche Risiken (Wegzugssteuer, Betriebsstätte). Und ob die VAE – speziell Ajman – für dich wirklich Sinn ergibt.',
+    desc: 'Wir klären deine Situation: Welches Einkommen, welche Struktur, welche Risiken (Wegzugssteuer, Betriebsstätte). Und welche VAE Free Zone für dich wirklich Sinn ergibt.',
     items: [
       'Einkommenssituation besprechen',
       'Risiken aufzeigen (Wegzugssteuer, Lebensmittelpunkt)',
@@ -43,7 +43,7 @@ const steps = [
     icon: '🇦🇪',
     title: 'Anreise & Medical Check',
     duration: 'Tag 1 vor Ort',
-    desc: 'Du fliegst nach Ajman. Direkt am ersten Tag: Medical Check (Pflicht für Emirates ID). Dauert ca. 30–45 Minuten. Ergebnis meist noch am selben Tag.',
+    desc: 'Du reist in die VAE. Direkt am ersten Tag: Medical Check (Pflicht für Emirates ID). Dauert ca. 30–45 Minuten. Ergebnis meist noch am selben Tag.',
     items: [
       'Medizinische Untersuchung (~€135)',
       'Bluttest + Röntgen',
@@ -56,7 +56,7 @@ const steps = [
     icon: '🏢',
     title: 'Behördengänge & Trade License',
     duration: 'Tag 2–3',
-    desc: 'Gemeinsam zu den Ajman-Behörden. Trade License, Banktermin, Emirates ID Antrag — alles parallel. Wir kennen die Abläufe und sind dabei.',
+    desc: 'Gemeinsam zu den zuständigen Free-Zone-Behörden. Trade License, Banktermin, Emirates ID Antrag — alles parallel. Wir kennen die Abläufe und sind dabei.',
     items: [
       'Trade License Antrag + Genehmigung',
       'Bankkonto-Eröffnung (Emirates NBD, FAB)',
@@ -69,7 +69,7 @@ const steps = [
     icon: '✅',
     title: 'Firma live — 0% Steuern',
     duration: 'Tag 4–5',
-    desc: 'Trade License in der Hand, Emirates ID abgeholt, Bankkonto aktiv. Du bist offiziell VAE-Unternehmer. Ab jetzt: 0% Einkommensteuer auf deine Gewinne in Ajman.',
+    desc: 'Trade License in der Hand, Emirates ID abgeholt, Bankkonto aktiv. Du bist offiziell VAE-Unternehmer. Ab jetzt: 0% Einkommensteuer auf qualifizierte Free-Zone-Einkünfte.',
     items: [
       'Trade License + Certificate of Incorporation',
       'Emirates ID mit Residenz-Stempel',
@@ -81,7 +81,7 @@ const steps = [
 
 const timeline = [
   { phase: 'Vorbereitung', duration: '~1 Woche', what: 'Dokumente sammeln, Call buchen' },
-  { phase: 'Vor Ort Ajman', duration: '4–5 Tage', what: 'Behörden, Medical, Bank' },
+  { phase: 'Vor Ort VAE', duration: '4–5 Tage', what: 'Behörden, Medical, Bank' },
   { phase: 'Nachbereitung (DE)', duration: '2–3 Wochen', what: 'Abmeldung, Steuerberater, Finanzamt' },
 ]
 
@@ -239,7 +239,7 @@ export default function ProzessPage() {
           </h2>
           <div className="space-y-3">
             {[
-              { q: 'Muss ich persönlich nach Ajman kommen?', a: 'Ja, für Medical Check und Emirates ID ist deine physische Anwesenheit Pflicht. 4–5 Tage vor Ort sind realistisch.' },
+              { q: 'Muss ich persönlich in die VAE kommen?', a: 'Ja, für Medical Check und Emirates ID ist deine physische Anwesenheit Pflicht. 4–5 Tage vor Ort sind realistisch.' },
               { q: 'Kann ich auch alles alleine machen?', a: 'Theoretisch ja. Praktisch verlieren die meisten Kunden Zeit und machen vermeidbare Fehler (falsche Dokumente, vergessene Apostille). Deshalb begleiten wir.' },
               { q: 'Was wenn etwas schief geht?', a: '3 Monate WhatsApp-Support sind inklusive. Wir sind erreichbar, wenn unerwartete Fragen auftauchen.' },
               { q: 'Wann ist die Firma wirklich "aktiv"?', a: 'Mit der ausgehändigten Trade License. Das Bankkonto kann aber noch 1–2 Wochen zur vollständigen Aktivierung brauchen.' },

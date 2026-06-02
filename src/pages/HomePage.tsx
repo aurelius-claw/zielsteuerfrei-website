@@ -21,7 +21,7 @@ const leistungen = [
 const faqs = [
   {
     q: 'Lohnt sich das bei meinem Einkommen?',
-    a: 'Ab ca. €80.000 Jahresgewinn spart eine VAE-Firma spürbar. Bei €150.000 sind das ~€70.000 weniger Steuern pro Jahr gegenüber einer deutschen GmbH.',
+    a: 'Das hängt von Gewinn, Wohnsitz, Struktur und laufenden Kosten ab. Der Preis-Rechner zeigt dir live, wie sich dein Setup rechnen kann; im Strategie-Call prüfen wir ehrlich, ob die VAE für dich sinnvoll sind.',
   },
   {
     q: 'Muss ich dauerhaft in den VAE leben?',

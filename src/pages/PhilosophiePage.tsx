@@ -118,7 +118,7 @@ export default function PhilosophiePage() {
                 </h3>
                 <ul className="space-y-3">
                   {[
-                    'Wenn Ajman nicht zu dir passt, sagen wir das',
+                    'Wenn eine VAE-Gründung nicht zu dir passt, sagen wir das',
                     'Der Preis steht auf der Website — nicht erst im Gespräch',
                     'Wir beantworten Fragen auch nach dem Kauf',
                     'Steuerberatung vermitteln wir — wir machen sie nicht selbst',
@@ -135,7 +135,7 @@ export default function PhilosophiePage() {
               <div className="card p-6 border-gold/20">
                 <p className="text-sm text-ink-500 dark:text-ink-400 italic leading-relaxed">
                   "Wir nehmen nur Kunden an, für die wir ehrlich sagen können: 
-                  Ajman wird deinen finanziellen Stress reduzieren — nicht erhöhen."
+                  dein VAE-Setup wird deinen finanziellen Stress reduzieren — nicht erhöhen."
                 </p>
                 <p className="text-xs font-semibold text-gold mt-3">— Zielsteuerfrei Gründerteam</p>
               </div>
@@ -180,7 +180,7 @@ export default function PhilosophiePage() {
             Überzeuge dich selbst
           </h2>
           <p className="text-ink-300 text-lg mb-8 max-w-lg mx-auto">
-            20 Minuten. Kostenlos. Kein Druck. Wir klären ehrlich, ob Ajman zu dir passt — 
+            20 Minuten. Kostenlos. Kein Druck. Wir klären ehrlich, ob eine VAE-Gründung zu dir passt — 
             und was du dafür tun musst.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

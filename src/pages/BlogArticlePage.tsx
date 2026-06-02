@@ -695,7 +695,7 @@ const BlogArticlePage: React.FC = () => {
         },
         {
           question: 'Lohnt sich das finanziell wirklich gegenüber Deutschland?',
-          answer: 'Für jeden, der mehr als €80.000 Jahresgewinn macht: Ja, deutlich. Bei €150.000 Gewinn sparst du gegenüber Deutschland ca. €70.000 Steuern pro Jahr (47% effektiv). Die VAE-Gesamtkosten von €8.000–10.000/Jahr amortisieren sich in unter 8 Wochen. Unser Preis-Rechner zeigt das live für deine Zahlen.'
+          answer: 'Ob es sich lohnt, hängt von Gewinn, Wohnsitz, Struktur und laufenden Kosten ab. Bei höheren Gewinnen kann der Steuervorteil gegenüber Deutschland erheblich sein, aber die Entscheidung muss individuell geprüft werden. Unser Preis-Rechner zeigt das live für deine Zahlen.'
         }
       ]
     },
@@ -995,7 +995,7 @@ const BlogArticlePage: React.FC = () => {
         },
         {
           question: 'Kann eine bestehende deutsche GmbH steuerfrei in die VAE überführt werden?',
-          answer: 'Nein – das ist nicht möglich. Eine deutsche GmbH bleibt in Deutschland steuerpflichtig, solange sie dort eingetragen ist und ihre Geschäftsleitung dort ansässig ist. Der Weg ist: Neue Firma in Ajman gründen, GmbH geordnet abwickeln oder weiterführen. Beides erfordert steuerliche Beratung.'
+          answer: 'Nein – das ist nicht möglich. Eine deutsche GmbH bleibt in Deutschland steuerpflichtig, solange sie dort eingetragen ist und ihre Geschäftsleitung dort ansässig ist. Der Weg ist: Neue VAE-Firma gründen, GmbH geordnet abwickeln oder weiterführen. Beides erfordert steuerliche Beratung.'
         },
         {
           question: 'Wie lange bin ich nach Wegzug noch steuerpflichtig in Deutschland?',
@@ -1554,7 +1554,7 @@ const BlogArticlePage: React.FC = () => {
               Brauchst du persönliche Beratung?
             </h3>
             <p className="text-ink-600 dark:text-ink-300 mb-8 max-w-lg mx-auto leading-relaxed">
-              Jede Situation ist anders. In einem kostenlosen Strategie-Call klären wir, ob Ajman für dich passt – und wie du Steuern legal optimierst.
+              Jede Situation ist anders. In einem kostenlosen Strategie-Call klären wir, ob eine VAE-Firmengründung für dich passt – und wie du Steuern legal optimierst.
             </p>
             <button
               onClick={openCalendly}
