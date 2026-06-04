@@ -11,283 +11,316 @@ function openCalendly() {
   }
 }
 
-const leistungen = [
-  { icon: '🏢', title: 'Handelslizenz VAE Free Zone', desc: 'Offizielle Lizenz in 4 Tagen. Alle Behördengänge inklusive, keine Überraschungen.' },
-  { icon: '🏥', title: 'Medical Check & Emirates ID', desc: 'Pflichtuntersuchung und Ausweisantrag — wir begleiten dich persönlich vor Ort.' },
-  { icon: '🏦', title: 'Bankkonto-Einrichtung', desc: 'Kontoeröffnung bei Emirates NBD, FAB oder ADIB. Mit Begleitung, nicht Eigenitiative.' },
-  { icon: '💬', title: '3 Monate WhatsApp-Support', desc: 'Direkte Nummern zu uns und qualifizierten Steuerberatern. Keine Ticket-Queue.' },
+const expertise = [
+  {
+    image: '/images/pages/service-license-generated.png',
+    title: 'Firmengründung',
+    text: 'Free-Zone-Lizenz, Aktivitätsauswahl, Unterlagen und Koordination der Gründung in den VAE.',
+  },
+  {
+    image: '/images/pages/service-medical.jpg',
+    title: 'Aufenthalt & Emirates ID',
+    text: 'Planung der Termine vor Ort, Medical Check und Begleitung durch Juljana in den VAE.',
+  },
+  {
+    image: '/images/pages/service-banking-generated.png',
+    title: 'Bankkonto',
+    text: 'Vorbereitung der Kontoeröffnung und Unterstützung bei typischen Rückfragen der Bank.',
+  },
+  {
+    image: '/images/pages/service-support-generated.png',
+    title: 'Begleitung danach',
+    text: 'Drei Monate direkter Support für die praktischen Fragen nach der Gründung.',
+  },
 ]
 
-const faqs = [
+const process = [
   {
-    q: 'Lohnt sich das bei meinem Einkommen?',
-    a: 'Das hängt von Gewinn, Wohnsitz, Struktur und laufenden Kosten ab. Der Preis-Rechner zeigt dir live, wie sich dein Setup rechnen kann; im Strategie-Call prüfen wir ehrlich, ob die VAE für dich sinnvoll sind.',
+    title: 'Erstgespräch',
+    text: 'Neno klärt mit dir, ob eine VAE-Gründung zu Geschäftsmodell, Wohnsitz, Gewinn und Ziel passt.',
   },
   {
-    q: 'Muss ich dauerhaft in den VAE leben?',
-    a: 'Nein. Du brauchst eine UAE-Adresse und musst deinen Lebensmittelpunkt verlagern — aber kein dauerhaftes Wohnen. Viele unserer Kunden leben nomadisch.',
+    title: 'Vorbereitung',
+    text: 'Wir sammeln Unterlagen, strukturieren die nächsten Schritte und ziehen bei steuerlichen Detailfragen einen Steuerberater hinzu.',
   },
   {
-    q: 'Welche Free Zone ist die richtige für mich?',
-    a: 'Wir empfehlen Ajman Free Zone als bestes Preis-Leistungs-Verhältnis: ~60% günstiger als Dubai, gleiche 0% Steuern, weniger Bürokratie. Ob Ajman oder eine andere Free Zone ideal ist, klären wir im kostenlosen Erstgespräch.',
+    title: 'Gründung vor Ort',
+    text: 'Lizenz, Medical Check, Emirates ID und Bankkonto werden geplant und in den VAE begleitet.',
   },
   {
-    q: 'Was ist mit der Wegzugssteuer?',
-    a: 'Wer GmbH-Anteile oder Fonds hält, muss das vor dem Wegzug klären. Wir vermitteln spezialisierte Steuerberater, die genau das prüfen — bevor du zahlst.',
+    title: 'Nachbereitung',
+    text: 'Nach der Gründung bleiben wir erreichbar, damit Dokumente, Bankkonto und nächste To-dos sauber laufen.',
   },
+]
+
+const articles = [
+  { to: '/blog/183-tage-regel', topic: 'Wegzug', title: '183-Tage-Regel: was wirklich zählt' },
+  { to: '/blog/wegzugsbesteuerung', topic: 'Steuern', title: 'Wegzugssteuer vor der VAE-Gründung prüfen' },
+  { to: '/blog/ajman-vs-dubai', topic: 'Free Zone', title: 'Dubai oder Ajman: Kosten und Unterschiede' },
 ]
 
 export default function HomePage() {
   return (
     <div className="animate-fade-in">
       <Helmet>
-        <title>VAE Firma gründen | 0% Steuern ab €6.990 | Firmengründung UAE</title>
-        <meta name="description" content="Firmengründung in den VAE (UAE) – legal steuerfrei mit 0% Einkommensteuer. Komplettpaket ab €6.990: Lizenz, Medical, Emirates ID, Bankkonto. Deutsche Begleitung vom ersten Call bis zur fertigen Firma." />
-        <meta property="og:title" content="VAE Firma gründen | 0% Steuern ab €6.990 | Ziel:steuerfrei" />
-        <meta property="og:description" content="Steuerfrei mit einer VAE-Firma: 0% Einkommensteuer, Setup in 4 Tagen, alles aus einer Hand. Für deutsche Unternehmer – ehrlich, transparent, ohne Hype." />
+        <title>VAE Firma gründen | Begleitetes Setup für Unternehmer | Ziel:steuerfrei</title>
+        <meta
+          name="description"
+          content="Firmengründung in den VAE für deutsche Unternehmer: Erstgespräch, Free-Zone-Lizenz, Emirates ID, Bankkonto-Vorbereitung und Begleitung vor Ort."
+        />
+        <meta property="og:title" content="VAE Firma gründen | Ziel:steuerfrei" />
+        <meta
+          property="og:description"
+          content="Wir prüfen, ob eine VAE-Struktur zu deiner Situation passt, und begleiten die Umsetzung mit klaren Kosten und direktem Ansprechpartner."
+        />
         <meta property="og:url" content="https://zielsteuerfrei.de/" />
+        <meta property="og:image" content="https://zielsteuerfrei.de/images/pages/hero-dubai-real.jpg" />
         <meta property="og:type" content="website" />
       </Helmet>
 
-      {/* ── Hero ─────────────────────────────────────────── */}
-      <section className="relative pt-28 pb-28 overflow-hidden bg-cream dark:bg-navy-950">
-        <div className="absolute inset-0 bg-hero-gradient dark:bg-hero-gradient-dark pointer-events-none" />
+      <section className="relative min-h-[82vh] overflow-hidden bg-navy-950 pt-28 pb-20">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/pages/hero-home.png"
-            alt=""
-            className="w-full h-full object-cover opacity-[0.06] dark:opacity-[0.09]"
+            src="/images/pages/hero-dubai-real.jpg"
+            alt="Dubai Business Bay"
+            className="h-full w-full object-cover opacity-45"
           />
+          <div className="absolute inset-0 bg-navy-950/72" />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy-950/35 via-navy-950/60 to-navy-950" />
         </div>
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/[0.04] rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/[0.03] rounded-full blur-3xl pointer-events-none" />
 
-        <div className="max-w-wide mx-auto px-4 md:px-6 relative text-center">
-          <div className="eyebrow mb-6 justify-center animate-fade-up">
-            <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-            Für Unternehmer in ganz Deutschland
-          </div>
-
-          <h1 className="font-display text-display-xl text-ink-900 dark:text-cream mb-6 text-balance animate-fade-up animation-delay-100">
-            Steuerfrei leben —<br />
-            <span className="text-highlight">mit deinem VAE Setup</span>
+        <div className="relative z-10 mx-auto flex min-h-[calc(82vh-7rem)] max-w-content flex-col items-center justify-center px-4 text-center md:px-6">
+          <h1 className="font-display text-display-xl text-cream mb-6 text-balance">
+            Steuern optimieren.<br />
+            <span className="text-gold">VAE-Struktur aufbauen.</span>
           </h1>
-
-          <p className="text-lg md:text-xl text-ink-600 dark:text-ink-300 max-w-2xl mx-auto leading-relaxed mb-8 animate-fade-up animation-delay-200">
-            Legal. Fair. Bodenständig. Kein Hype.<br />
-            Firmengründung in den VAE — komplett begleitet, ab{' '}
-            <strong className="text-ink-900 dark:text-cream font-semibold">€6.990</strong>.
+          <p className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-ink-300 md:text-xl">
+            Wir prüfen, ob eine VAE-Firma zu deinem Geschäftsmodell und deinem Wegzug passt,
+            und begleiten die Gründung vor Ort. Paket ab <strong className="font-semibold text-cream">€6.990</strong>.
           </p>
-
-          <div className="flex flex-wrap gap-3 justify-center mb-10 animate-fade-up animation-delay-300">
-            {['0% Einkommensteuer', '4 Tage Setup', '€6.990 Komplettpaket', 'Kein Jahresbeitrag im 1. Jahr'].map(t => (
-              <span key={t} className="badge-gold">{t}</span>
-            ))}
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up animation-delay-400">
-            <button onClick={openCalendly} className="btn-primary text-base px-8 py-4">
-              🗓 Kostenlosen Strategie-Call buchen
+          <div className="flex flex-col justify-center gap-4 sm:flex-row">
+            <button onClick={openCalendly} className="btn-primary px-8 py-4 text-base">
+              Erstgespräch mit Neno buchen
             </button>
-            <Link to="/preis-rechner" className="btn-secondary text-base px-8 py-4">
-              Ersparnis berechnen →
+            <Link
+              to="/prozess"
+              className="inline-flex items-center justify-center rounded-2xl border border-cream/25 px-8 py-4 text-base font-semibold text-cream transition-colors hover:border-gold hover:text-gold"
+            >
+              Ablauf ansehen
             </Link>
           </div>
-          <p className="text-xs text-ink-400 dark:text-ink-500 mt-4">
-            Keine Verpflichtung · 20 Minuten · Wir klären ehrlich, ob eine VAE-Firma zu dir passt
-          </p>
         </div>
       </section>
 
-      {/* ── Trust bar ────────────────────────────────────── */}
-      <div className="bg-white dark:bg-navy-900 border-y border-ink-100 dark:border-navy-800">
-        <div className="max-w-wide mx-auto px-4 md:px-6">
-          <div className="trust-bar">
-            <span className="trust-item"><span className="text-gold">✓</span> Offizielle VAE Free Zone Lizenz</span>
-            <span className="trust-item"><span className="text-gold">✓</span> Transparenter Festpreis</span>
-            <span className="trust-item"><span className="text-gold">✓</span> Deutsche Beratung</span>
-            <span className="trust-item"><span className="text-gold">✓</span> Steuerberater-Netzwerk</span>
-            <span className="trust-item"><span className="text-gold">✓</span> 3 Monate Support</span>
-          </div>
-        </div>
-      </div>
-
-      {/* ── Savings ──────────────────────────────────────── */}
       <section className="section bg-cream dark:bg-navy-950">
-        <div className="max-w-content mx-auto px-4 md:px-6">
-          <div className="text-center mb-12">
-            <div className="eyebrow mb-3">Warum VAE</div>
-            <h2 className="font-display text-display-md text-ink-900 dark:text-cream">
-              Was du wirklich sparst
-            </h2>
-            <p className="text-ink-600 dark:text-ink-300 mt-3 text-sm">
-              Beispielrechnung bei €150.000 Jahresgewinn.{' '}
-              <Link to="/preis-rechner" className="text-gold font-semibold hover:underline">
-                Deine Zahlen berechnen →
-              </Link>
+        <div className="mx-auto grid max-w-wide gap-12 px-4 md:grid-cols-[0.9fr_1.1fr] md:px-6">
+          <div>
+            <p className="mb-4 font-mono text-xs font-semibold uppercase tracking-widest text-gold">
+              Ziel:steuerfrei
             </p>
+            <h2 className="font-display text-display-md text-ink-900 dark:text-cream mb-5">
+              Dein Partner für die VAE-Gründung.
+            </h2>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-5">
-            <div className="card p-7 text-center opacity-75">
-              <p className="text-xs font-bold uppercase tracking-wider text-ink-400 mb-3">Deutschland (GmbH)</p>
-              <p className="font-display text-5xl font-bold text-red-500 dark:text-red-400 mb-2">–€70.500</p>
-              <p className="text-xs text-ink-400">~47% KSt + GewSt + ESt Ausschüttung</p>
-            </div>
-
-            <div className="card p-7 text-center border-gold/30 relative overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gold" />
-              <p className="text-xs font-bold uppercase tracking-wider text-gold mb-3">VAE Free Zone</p>
-              <p className="font-display text-5xl font-bold text-green-600 dark:text-green-400 mb-2">€0</p>
-              <p className="text-xs text-ink-400">0% Einkommensteuer</p>
-            </div>
-
-            <div className="bg-gold/[0.08] dark:bg-navy-800 rounded-2xl p-7 text-center border border-gold/30">
-              <p className="text-xs font-bold uppercase tracking-wider text-gold mb-3">Jährliche Ersparnis</p>
-              <p className="font-display text-5xl font-bold text-gold mb-2">€70.500</p>
-              <p className="text-xs text-ink-600 dark:text-ink-400">Setup amortisiert in ~5 Wochen</p>
+          <div className="space-y-5 text-ink-600 dark:text-ink-300">
+            <p className="leading-relaxed">
+              Viele Unternehmer hören von den VAE, wissen aber nicht, ob das in ihrer Situation
+              wirklich Sinn ergibt. Genau dort setzen wir an: erst einordnen, dann gründen.
+            </p>
+            <div className="grid gap-5 border-t border-ink-100 pt-6 dark:border-navy-800 sm:grid-cols-3">
+              <div>
+                <h3 className="font-display text-xl font-semibold text-ink-900 dark:text-cream">Einordnung</h3>
+                <p className="mt-2 text-sm leading-relaxed">Passt der Weg zu Geschäft, Wohnsitz und Ziel?</p>
+              </div>
+              <div>
+                <h3 className="font-display text-xl font-semibold text-ink-900 dark:text-cream">Umsetzung</h3>
+                <p className="mt-2 text-sm leading-relaxed">Lizenz, Termine, Emirates ID und Bankkonto koordiniert.</p>
+              </div>
+              <div>
+                <h3 className="font-display text-xl font-semibold text-ink-900 dark:text-cream">Netzwerk</h3>
+                <p className="mt-2 text-sm leading-relaxed">Steuerberater vor Ort, wenn echte Beratung nötig ist.</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── Leistungen ───────────────────────────────────── */}
       <section className="section bg-white dark:bg-navy-900">
-        <div className="max-w-wide mx-auto px-4 md:px-6">
-          <div className="text-center mb-14">
-            <div className="eyebrow mb-3">Das Komplettpaket</div>
-            <h2 className="font-display text-display-md text-ink-900 dark:text-cream mb-3">
-              Alles für einen festen Preis
+        <div className="mx-auto grid max-w-wide gap-12 px-4 md:grid-cols-[1fr_0.9fr] md:px-6">
+          <div>
+            <h2 className="font-display text-display-md text-ink-900 dark:text-cream mb-5">
+              Wir verstehen die offenen Fragen vor dem Wegzug.
             </h2>
-            <p className="text-ink-600 dark:text-ink-300 max-w-lg mx-auto text-sm">
-              €6.990 einmalig. Was andere extra berechnen, ist bei uns inklusive.
+            <p className="mb-7 leading-relaxed text-ink-600 dark:text-ink-300">
+              Eine Auslandsgesellschaft ist nur dann sinnvoll, wenn sie in dein tatsächliches Leben passt.
+              Wir sprechen deshalb zuerst über Wohnsitz, Geschäftsleitung, laufende Kosten und steuerliche
+              Risiken, bevor du Geld für eine Gründung ausgibst.
+            </p>
+            <button onClick={openCalendly} className="btn-primary">
+              Kostenloses Erstgespräch buchen
+            </button>
+          </div>
+          <div className="border-y border-ink-100 dark:border-navy-800">
+            {[
+              'Keine Gründung ohne vorherige Einordnung',
+              'Keine Steuerberatung durch uns, sondern über passende Steuerberater',
+              'Kein Abo-Modell: Paketpreis im ersten Jahr, Renewal ab Jahr zwei',
+              'Persönliche Begleitung vor Ort durch Juljana',
+            ].map((item, index) => (
+              <div
+                key={item}
+                className={`py-5 text-sm leading-relaxed text-ink-700 dark:text-ink-300 ${
+                  index > 0 ? 'border-t border-ink-100 dark:border-navy-800' : ''
+                }`}
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-cream dark:bg-navy-950">
+        <div className="mx-auto max-w-wide px-4 md:px-6">
+          <div className="mb-12 md:flex md:items-end md:justify-between md:gap-10">
+            <div>
+              <p className="mb-4 font-mono text-xs font-semibold uppercase tracking-widest text-gold">
+                Leistungsfelder
+              </p>
+              <h2 className="font-display text-display-md text-ink-900 dark:text-cream">
+                Das Gründerpaket.
+              </h2>
+            </div>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-ink-600 dark:text-ink-300 md:mt-0">
+              Wenn du nach dem Erstgespräch starten möchtest, übernehmen wir die Koordination
+              der praktischen Schritte bis zur nutzbaren VAE-Struktur.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
-            {leistungen.map((item, i) => (
-              <div key={i} className="card p-6 flex flex-col gap-4 group">
-                <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-200">
-                  {item.icon}
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {expertise.map((item) => (
+              <div key={item.title} className="card overflow-hidden">
+                <div className="relative h-40 overflow-hidden bg-navy-900">
+                  <img src={item.image} alt="" className="h-full w-full object-cover opacity-85" loading="lazy" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-950/65 via-transparent to-transparent" />
                 </div>
-                <div>
-                  <h3 className="font-display text-lg font-semibold text-ink-900 dark:text-cream mb-2">
+                <div className="p-6">
+                  <h3 className="font-display text-xl font-semibold text-ink-900 dark:text-cream mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-ink-600 dark:text-ink-300 leading-relaxed">
-                    {item.desc}
-                  </p>
+                  <p className="text-sm leading-relaxed text-ink-600 dark:text-ink-300">{item.text}</p>
                 </div>
               </div>
             ))}
           </div>
-
-          <div className="max-w-xl mx-auto bg-gold/[0.06] dark:bg-navy-800 rounded-2xl p-8 text-center border border-gold/30">
-            <p className="text-xs font-bold tracking-widest uppercase text-gold mb-2">Komplettpaket · Einmalig</p>
-            <div className="flex items-baseline justify-center gap-2 mb-1">
-              <span className="font-display text-5xl font-bold text-ink-900 dark:text-cream">€6.990</span>
-            </div>
-            <p className="text-ink-600 dark:text-ink-400 text-sm mb-6">Ab Jahr 2 nur Jahreserneuerung (~€3.000)</p>
-            <button onClick={openCalendly} className="btn-primary">
-              Jetzt kostenlos beraten lassen
-            </button>
-          </div>
         </div>
       </section>
 
-      {/* ── Prozess ──────────────────────────────────────── */}
-      <section className="section bg-cream dark:bg-navy-950">
-        <div className="max-w-content mx-auto px-4 md:px-6">
-          <div className="text-center mb-14">
-            <div className="eyebrow mb-3">In 4 Tagen zur Firma</div>
-            <h2 className="font-display text-display-md text-ink-900 dark:text-cream">
-              So läuft es ab
-            </h2>
-          </div>
-
-          <div className="space-y-4">
-            {[
-              { n: '1', title: 'Strategie-Call (kostenlos)', desc: 'Wir klären deine Situation, welche Free Zone ideal ist, und welche Schritte konkret nötig sind.', time: '20 Min' },
-              { n: '2', title: 'Dokumente & Vorbereitung', desc: 'Reisepass, Geburtsurkunde, Aktivitätsbeschreibung. Wir sagen dir genau was du brauchst — kein Rätselraten.', time: '~1 Woche' },
-              { n: '3', title: 'Vor Ort in den VAE', desc: 'Medical Check, Behördengänge, Trade License, Bankkonto. Du wirst an jedem Tag begleitet.', time: '4–5 Tage' },
-              { n: '4', title: 'Firma live — 0% Steuern', desc: 'Offizielle Lizenz, Emirates ID, UAE-Bankkonto. Ab jetzt: 0% Einkommensteuer auf deine Gewinne.', time: 'Fertig ✓' },
-            ].map((step, i) => (
-              <div key={i} className="card flex gap-5 p-6 items-start">
-                <div className="step-number flex-shrink-0">{step.n}</div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-start justify-between gap-4">
-                    <h3 className="font-display text-lg font-semibold text-ink-900 dark:text-cream">
-                      {step.title}
-                    </h3>
-                    <span className="badge-gold flex-shrink-0 hidden sm:inline-flex">{step.time}</span>
-                  </div>
-                  <p className="text-sm text-ink-600 dark:text-ink-300 mt-1.5 leading-relaxed">
-                    {step.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-8">
-            <Link to="/prozess" className="text-sm font-semibold text-gold hover:underline">
-              Den kompletten Prozess ansehen →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── FAQ ──────────────────────────────────────────── */}
       <section className="section bg-white dark:bg-navy-900">
-        <div className="max-w-content mx-auto px-4 md:px-6">
-          <div className="text-center mb-12">
-            <div className="eyebrow mb-3">Häufige Fragen</div>
-            <h2 className="font-display text-display-md text-ink-900 dark:text-cream">
-              Was du wissen solltest
-            </h2>
-          </div>
-
-          <div className="space-y-3 mb-8">
-            {faqs.map((faq, i) => (
-              <div key={i} className="faq-item">
-                <h3 className="font-display text-lg font-semibold text-ink-900 dark:text-cream mb-2">
-                  {faq.q}
-                </h3>
-                <p className="text-sm text-ink-600 dark:text-ink-300 leading-relaxed">{faq.a}</p>
+        <div className="mx-auto max-w-content px-4 md:px-6">
+          <h2 className="font-display text-display-md text-ink-900 dark:text-cream mb-10 text-center">
+            Von der Einschätzung zur fertigen Struktur.
+          </h2>
+          <div className="border-y border-ink-100 dark:border-navy-800">
+            {process.map((step, index) => (
+              <div
+                key={step.title}
+                className={`grid gap-4 py-7 md:grid-cols-[72px_1fr] ${
+                  index > 0 ? 'border-t border-ink-100 dark:border-navy-800' : ''
+                }`}
+              >
+                <div className="font-mono text-xs font-semibold tracking-widest text-gold">
+                  {String(index + 1).padStart(2, '0')}
+                </div>
+                <div>
+                  <h3 className="font-display text-xl font-semibold text-ink-900 dark:text-cream mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-ink-600 dark:text-ink-300">{step.text}</p>
+                </div>
               </div>
             ))}
           </div>
-
-          <p className="text-center text-sm text-ink-500">
-            Mehr Details?{' '}
-            <Link to="/steuer-wissen" className="text-gold font-semibold hover:underline">
-              Zum Steuer-Wissen →
-            </Link>
-          </p>
-        </div>
-      </section>
-
-      {/* ── Final CTA ────────────────────────────────────── */}
-      <section className="section bg-navy-900 dark:bg-navy-950 border-t border-gold/10">
-        <div className="max-w-content mx-auto px-4 md:px-6 text-center">
-          <div className="eyebrow mb-4 justify-center text-gold">Nächster Schritt</div>
-          <h2 className="font-display text-display-lg text-cream mb-5">
-            Bereit für den Weg in die Steuerfreiheit?
-          </h2>
-          <p className="text-ink-300 text-lg mb-8 max-w-xl mx-auto">
-            In 20 Minuten klären wir alle Fragen — kostenlos, ohne Druck, ehrlich.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button onClick={openCalendly} className="btn-primary">
-              🗓 Kostenlosen Termin buchen
-            </button>
-            <Link to="/preis-rechner" className="btn-secondary">
-              💰 Preis-Rechner starten
+          <div className="mt-8 text-center">
+            <Link to="/prozess" className="text-sm font-semibold text-gold hover:underline">
+              Den Prozess im Detail ansehen
             </Link>
           </div>
         </div>
       </section>
 
+      <section className="section bg-cream dark:bg-navy-950">
+        <div className="mx-auto max-w-wide px-4 md:px-6">
+          <div className="mb-10 md:flex md:items-end md:justify-between md:gap-10">
+            <div>
+              <p className="mb-4 font-mono text-xs font-semibold uppercase tracking-widest text-gold">
+                Wissensdatenbank
+              </p>
+              <h2 className="font-display text-display-md text-ink-900 dark:text-cream">
+                Vor der Gründung verstehen.
+              </h2>
+            </div>
+            <Link to="/blog" className="mt-4 inline-block text-sm font-semibold text-gold hover:underline md:mt-0">
+              Alle Artikel ansehen
+            </Link>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-3">
+            {articles.map((article) => (
+              <Link key={article.to} to={article.to} className="card p-7 hover:border-gold/30">
+                <p className="mb-4 font-mono text-xs font-semibold uppercase tracking-widest text-gold">
+                  {article.topic}
+                </p>
+                <h3 className="font-display text-2xl font-semibold text-ink-900 dark:text-cream">
+                  {article.title}
+                </h3>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-white dark:bg-navy-900">
+        <div className="mx-auto grid max-w-wide gap-10 px-4 md:grid-cols-[0.9fr_1.1fr] md:items-center md:px-6">
+          <div className="overflow-hidden rounded-2xl border border-ink-100 dark:border-navy-800">
+            <img
+              src="/images/pages/team-neno.jpeg"
+              alt="Neno von Ziel:steuerfrei"
+              className="h-[420px] w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div>
+            <p className="mb-4 font-mono text-xs font-semibold uppercase tracking-widest text-gold">
+              Ansprechpartner
+            </p>
+            <h2 className="font-display text-display-md text-ink-900 dark:text-cream mb-5">
+              Erst sprechen. Dann entscheiden.
+            </h2>
+            <p className="mb-6 leading-relaxed text-ink-600 dark:text-ink-300">
+              Neno hatte die Idee zu Ziel:steuerfrei und führt die Erstgespräche. Juljana begleitet
+              die Termine vor Ort. Martin betreut IT, Prozesse und kann bei Versicherungsthemen helfen.
+            </p>
+            <Link to="/ueber-uns" className="text-sm font-semibold text-gold hover:underline">
+              Team kennenlernen
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section border-t border-gold/10 bg-navy-900 dark:bg-navy-950">
+        <div className="mx-auto max-w-content px-4 text-center md:px-6">
+          <h2 className="font-display text-display-lg text-cream mb-5">
+            Lassen wir deine Situation einmal einordnen.
+          </h2>
+          <p className="mx-auto mb-8 max-w-xl text-lg text-ink-300">
+            Das Erstgespräch ist kostenlos. Danach weißt du, ob eine VAE-Gründung in deinem Fall Sinn ergibt.
+          </p>
+          <button onClick={openCalendly} className="btn-primary">
+            Erstgespräch mit Neno buchen
+          </button>
+        </div>
+      </section>
     </div>
   )
 }

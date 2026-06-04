@@ -620,7 +620,7 @@ const BlogArticlePage: React.FC = () => {
           <tbody>
             <tr>
               <td>Jahreserneuerung</td>
-              <td>ca. 3.000 €</td>
+              <td>2.990 €</td>
             </tr>
             <tr>
               <td>Visum-Verlängerung (alle 2-3 Jahre)</td>
@@ -691,7 +691,7 @@ const BlogArticlePage: React.FC = () => {
         },
         {
           question: 'Was kostet die Erneuerung im Folgejahr?',
-          answer: 'Hauptposten: Jahreserneuerung ca. €3.000, Buchhaltungskosten €1.000–3.000 jährlich (jetzt Pflicht), Bankkonto-Gebühren €200–500. Die Visum-Erneuerung ist alle 2-3 Jahre fällig. Gesamt realistisch: €4.200–6.500 pro Jahr ab Jahr 2.'
+          answer: 'Hauptposten: Jahreserneuerung €2.990, Buchhaltungskosten €1.000–3.000 jährlich (jetzt Pflicht), Bankkonto-Gebühren €200–500. Die Visum-Erneuerung ist alle 2-3 Jahre fällig. Gesamt realistisch: €4.200–6.500 pro Jahr ab Jahr 2.'
         },
         {
           question: 'Lohnt sich das finanziell wirklich gegenüber Deutschland?',
@@ -1421,7 +1421,7 @@ const BlogArticlePage: React.FC = () => {
     "@type": "BlogPosting",
     "headline": article.title,
     "description": article.excerpt,
-    "image": "https://zielsteuerfrei.de/images/pages/blog.png",
+    "image": "https://zielsteuerfrei.de/images/pages/hero-business-bay-real.jpg",
     "datePublished": isoDate,
     "dateModified": isoDate,
     "inLanguage": "de",
@@ -1435,7 +1435,7 @@ const BlogArticlePage: React.FC = () => {
     "publisher": {
       "@type": "Organization",
       "name": "Ziel:steuerfrei",
-      "logo": { "@type": "ImageObject", "url": "https://zielsteuerfrei.de/images/pages/hero-home.png" }
+      "logo": { "@type": "ImageObject", "url": "https://zielsteuerfrei.de/images/pages/hero-dubai-real.jpg" }
     },
     "mainEntityOfPage": { "@type": "WebPage", "@id": `https://zielsteuerfrei.de/blog/${slug}` }
   }
@@ -1462,7 +1462,7 @@ const BlogArticlePage: React.FC = () => {
         <meta property="og:description" content={article.excerpt} />
         <meta property="og:url" content={`https://zielsteuerfrei.de/blog/${slug}`} />
         <meta property="og:type" content="article" />
-        <meta property="og:image" content="https://zielsteuerfrei.de/images/pages/blog.png" />
+        <meta property="og:image" content="https://zielsteuerfrei.de/images/pages/hero-business-bay-real.jpg" />
         <meta property="og:site_name" content="Ziel:steuerfrei" />
         <meta property="og:locale" content="de_DE" />
         {/* Article-specific */}
@@ -1474,7 +1474,7 @@ const BlogArticlePage: React.FC = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${article.title} | Ziel:steuerfrei`} />
         <meta name="twitter:description" content={article.excerpt} />
-        <meta name="twitter:image" content="https://zielsteuerfrei.de/images/pages/blog.png" />
+        <meta name="twitter:image" content="https://zielsteuerfrei.de/images/pages/hero-business-bay-real.jpg" />
         {/* BreadcrumbList schema */}
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -1560,7 +1560,7 @@ const BlogArticlePage: React.FC = () => {
               onClick={openCalendly}
               className="btn-primary"
             >
-              🗓 Kostenlosen Termin buchen
+              Kostenlosen Termin buchen
             </button>
           </div>
         </div>

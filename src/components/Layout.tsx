@@ -25,25 +25,25 @@ function MoonIcon() {
 const primaryLinks = [
   { path: '/', label: 'Home', exact: true },
   { path: '/preis-rechner', label: 'Preise' },
-  { path: '/ueber-uns', label: 'Über Uns' },
+  { path: '/ueber-uns', label: 'Team' },
 ]
 
 const menuLinks = [
-  { path: '/philosophie', label: 'Die Idee' },
+  { path: '/philosophie', label: 'Ansatz' },
   { path: '/free-zone-vergleich', label: 'Free Zone Vergleich' },
   { path: '/steuer-wissen', label: 'Steuer-Wissen' },
-  { path: '/prozess', label: 'Der Weg' },
+  { path: '/prozess', label: 'Ablauf' },
   { path: '/blog', label: 'Blog' },
   { path: '/kontakt', label: 'Kontakt' },
 ]
 
 const footerLinks = [
-  { path: '/philosophie', label: 'Die Idee' },
+  { path: '/philosophie', label: 'Ansatz' },
   { path: '/free-zone-vergleich', label: 'Free Zone Vergleich' },
   { path: '/steuer-wissen', label: 'Steuer-Wissen' },
-  { path: '/prozess', label: 'Der Weg' },
+  { path: '/prozess', label: 'Ablauf' },
   { path: '/preis-rechner', label: 'Preis-Rechner' },
-  { path: '/ueber-uns', label: 'Über Uns' },
+  { path: '/ueber-uns', label: 'Team' },
   { path: '/blog', label: 'Blog' },
 ]
 
@@ -110,8 +110,7 @@ export default function Layout({ children }: LayoutProps) {
           <div className="flex items-center justify-between h-16">
 
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2 flex-shrink-0" aria-label="Startseite">
-              <span className="text-xl leading-none select-none">🎯</span>
+            <Link to="/" className="flex items-center flex-shrink-0" aria-label="Startseite">
               <span className="font-display text-xl font-bold tracking-tight text-ink-900 dark:text-cream">
                 Ziel<span className="text-gold">:</span>steuerfrei
               </span>
@@ -241,7 +240,7 @@ export default function Layout({ children }: LayoutProps) {
                 onClick={openCalendly}
                 className="mt-3 btn-primary w-full text-sm py-3"
               >
-                🗓 Termin buchen
+                Termin buchen
               </button>
             </div>
           </div>
@@ -260,7 +259,7 @@ export default function Layout({ children }: LayoutProps) {
         <div className="bg-navy-900/96 dark:bg-navy-950/96 backdrop-blur-sm border-t border-gold/20 py-3 px-4">
           <div className="max-w-wide mx-auto flex items-center justify-between gap-4">
             <p className="hidden sm:block rounded-full border border-white/10 bg-navy-950/70 px-3 py-1.5 text-sm font-medium text-cream shadow-lg shadow-navy-950/20 backdrop-blur-sm">
-              🎯 Komplettpaket ab <span className="text-gold font-bold">€6.990</span> · 0% Steuern · 4 Tage Setup
+              VAE-Setup ab <span className="text-gold font-bold">€6.990</span> · Erst prüfen, dann gründen
             </p>
             <button onClick={openCalendly} className="btn-primary text-sm px-5 py-2.5 ml-auto">
               Kostenlosen Call buchen
@@ -275,16 +274,15 @@ export default function Layout({ children }: LayoutProps) {
           <div className="grid md:grid-cols-4 gap-10 mb-12">
 
             <div className="md:col-span-1">
-              <Link to="/" className="inline-flex items-center gap-2 mb-4">
-                <span className="text-lg leading-none">🎯</span>
+              <Link to="/" className="inline-flex items-center mb-4">
                 <span className="font-display text-xl font-bold text-cream">
                   Ziel<span className="text-gold">:</span>steuerfrei
                 </span>
               </Link>
               <p className="text-sm text-ink-400 leading-relaxed mb-4">
-                Deutschlands günstigster Weg zur Steuerfreiheit in den VAE. Fair. Transparent. Ohne Hype.
+                Firmengründung in den VAE, begleitet von Menschen, die den Ablauf vor Ort kennen.
               </p>
-              <p className="text-xs text-ink-500">Zuletzt aktualisiert: März 2026</p>
+              <p className="text-xs text-ink-500">Kontakt: info@zielsteuerfrei.de</p>
             </div>
 
             <div>
@@ -312,7 +310,7 @@ export default function Layout({ children }: LayoutProps) {
             <div>
               <h4 className="font-display text-base font-semibold text-cream mb-4">Strategie-Call</h4>
               <p className="text-sm text-ink-400 leading-relaxed mb-4">
-                20 Minuten. Kostenlos. Wir klären, ob eine VAE-Firma für dich passt.
+                Neno prüft mit dir, ob ein VAE-Setup zu deiner Situation passt.
               </p>
               <button onClick={openCalendly} className="btn-primary w-full text-sm py-3">
                 Termin buchen
@@ -322,7 +320,7 @@ export default function Layout({ children }: LayoutProps) {
 
           <div className="pt-8 border-t border-navy-800">
             <p className="text-xs text-ink-500 leading-relaxed mb-3 max-w-3xl">
-              ⚠️ Kein Steuer- oder Rechtsberatungsangebot. Ziel:steuerfrei übernimmt Firmengründung und strategische Begleitung. Für steuerliche Fragen empfehlen wir qualifizierte Steuerberater.
+              Hinweis: Ziel:steuerfrei erbringt keine Steuer- oder Rechtsberatung. Wir begleiten die Gründung und vermitteln bei Bedarf an qualifizierte Steuerberater oder Rechtsanwälte.
             </p>
             <p className="text-xs text-ink-600">© 2026 Happy Sales FZCO. Alle Rechte vorbehalten.</p>
           </div>

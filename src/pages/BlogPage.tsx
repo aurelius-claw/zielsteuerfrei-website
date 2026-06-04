@@ -7,7 +7,7 @@ const BlogPage: React.FC = () => {
     {
       slug: 'ajman-vs-dubai',
       title: 'Ajman vs Dubai: Ehrlicher Vergleich für deutsche Unternehmer',
-      excerpt: 'Ajman kostet 46% weniger als Dubai – mit derselben Legalität. Hier die echten Zahlen, ohne Marketing-Hype.',
+      excerpt: 'Dubai ist bekannt, Ajman ist oft günstiger. Hier stehen die Zahlen nebeneinander, damit du die Unterschiede einordnen kannst.',
       date: '15.02.2026',
       readTime: '8 Min',
       category: 'Kosten',
@@ -102,7 +102,7 @@ const BlogPage: React.FC = () => {
     <div className="animate-fade-in">
       <Helmet>
         <title>Blog | VAE Steuerwissen & Firmengründung UAE | Ziel:steuerfrei</title>
-        <meta name="description" content="Steuer-Know-how für Auswanderer und Unternehmer: 183-Tage-Regel, Wegzugssteuer, Firmengründung UAE und mehr. Ehrlich, verständlich, praxisnah." />
+        <meta name="description" content="Ratgeber für Unternehmer, die eine VAE-Firma oder einen Wegzug prüfen: 183-Tage-Regel, Wegzugssteuer, Free-Zone-Vergleich, Bankkonto und Corporate Tax." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://zielsteuerfrei.de/blog" />
         <meta property="og:title" content="Blog | VAE Steuerwissen & Firmengründung UAE" />
@@ -129,25 +129,26 @@ const BlogPage: React.FC = () => {
         <div className="absolute inset-0 bg-hero-gradient dark:bg-hero-gradient-dark pointer-events-none" />
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/pages/blog.png"
-            alt="Blog - Steuer-Wissen und Praxis für VAE Firmengründung"
-            className="w-full h-full object-cover opacity-[0.06] dark:opacity-[0.08]"
+            src="/images/pages/hero-business-bay-real.jpg"
+            alt="Dubai Business Bay als Hintergrund für VAE-Ratgeber"
+            className="w-full h-full object-cover opacity-[0.15] dark:opacity-[0.12]"
           />
+          <div className="absolute inset-0 bg-cream/78 dark:bg-navy-950/82" />
         </div>
 
         <div className="max-w-wide mx-auto px-4 md:px-6 text-center relative z-10">
           <div className="eyebrow mb-5 justify-center animate-fade-up">
-            Steuer‑Wissen & Praxis
+            Ratgeber für VAE-Gründer
           </div>
 
           <h1 className="font-display text-display-xl text-ink-900 dark:text-cream mb-6 text-balance animate-fade-up animation-delay-100">
-            Blog –<br />
-            <span className="text-highlight">Steuerfrei leben lernen</span>
+            Fragen klären,<br />
+            <span className="text-highlight">bevor du gründest</span>
           </h1>
 
           <p className="text-lg text-ink-600 dark:text-ink-300 max-w-2xl mx-auto leading-relaxed mb-10 animate-fade-up animation-delay-200">
-            Tiefgehende Artikel zu Steuern, Auswanderung, VAE Free Zone und rechtlichen Updates.
-            Kein Marketing-Hype, nur Fakten, die du brauchst.
+            Artikel zu Wegzug, Free Zones, Bankkonto, Corporate Tax und den typischen Fehlern
+            deutscher Unternehmer vor einer VAE-Gründung.
           </p>
 
           {/* Category Filter */}

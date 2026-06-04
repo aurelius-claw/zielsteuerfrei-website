@@ -14,8 +14,8 @@ function openCalendly() {
 const values = [
   {
     icon: '🎯',
-    title: 'Kein Hype',
-    desc: 'Wir verkaufen keine Träume. Ajman ist kein Geheimtipp mehr — es ist ein etablierter, rechtssicherer Weg. Den erklären wir nüchtern.',
+    title: 'Erst prüfen, dann gründen',
+    desc: 'Eine VAE-Firma ist kein Selbstzweck. Wir schauen zuerst auf Wohnsitz, Geschäftsmodell, Gewinn und mögliche Wegzugsthemen.',
   },
   {
     icon: '💬',
@@ -35,7 +35,7 @@ const values = [
   {
     icon: '🤝',
     title: 'Ehrliche Einschätzung',
-    desc: 'Wenn Ajman für dich nicht passt, sagen wir das im Erstgespräch — bevor du bezahlst. Das ist unser Versprechen.',
+    desc: 'Wenn eine VAE-Gründung für dich nicht passt, sagen wir das im Erstgespräch, bevor du bezahlst.',
   },
   {
     icon: '🔄',
@@ -48,8 +48,8 @@ export default function PhilosophiePage() {
   return (
     <div className="animate-fade-in">
       <Helmet>
-        <title>Unsere Philosophie | Ehrlich. Transparent. VAE-Firmengründung. | Ziel:steuerfrei</title>
-        <meta name="description" content="Kein Dubai-Hype, keine versteckten Kosten. Wir zeigen dir den echten Weg zur steuerfreien VAE-Firma – mit Ajman als smarte, günstige Free-Zone-Alternative." />
+        <title>Unser Ansatz | VAE-Firmengründung mit Vorprüfung | Ziel:steuerfrei</title>
+        <meta name="description" content="Wie wir VAE-Firmengründungen prüfen und begleiten: klare Kosten, persönliche Ansprechpartner und keine steuerlichen Abkürzungen ohne Prüfung." />
         <meta property="og:title" content="Unsere Philosophie | Firmengründung VAE | Ziel:steuerfrei" />
         <meta property="og:description" content="Die VAE bietet 0% Steuern für Unternehmer. Wir zeigen dir den ehrlichen Weg – transparent, fair, ohne versteckte Kosten." />
         <meta property="og:url" content="https://zielsteuerfrei.de/philosophie" />
@@ -60,24 +60,25 @@ export default function PhilosophiePage() {
         <div className="absolute inset-0 bg-hero-gradient dark:bg-hero-gradient-dark pointer-events-none" />
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/pages/philosophie.png"
-            alt=""
-            className="w-full h-full object-cover opacity-[0.06] dark:opacity-[0.09]"
+            src="/images/pages/hero-business-bay-real.jpg"
+            alt="Dubai Business Bay mit Hochhäusern"
+            className="w-full h-full object-cover opacity-[0.14] dark:opacity-[0.12]"
           />
+          <div className="absolute inset-0 bg-cream/78 dark:bg-navy-950/82" />
         </div>
         <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-gold/4 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-wide mx-auto px-4 md:px-6 relative text-center">
           <div className="eyebrow mb-5 justify-center animate-fade-up">
-            Die Idee hinter Ziel:steuerfrei
+            Unser Ansatz
           </div>
           <h1 className="font-display text-display-xl text-ink-900 dark:text-cream mb-6 text-balance animate-fade-up animation-delay-100">
-            Fair. Bodenständig.<br />
-            <span className="text-highlight">Nahbar.</span>
+            Erst die Lage prüfen.<br />
+            <span className="text-highlight">Dann gründen.</span>
           </h1>
           <p className="text-lg text-ink-600 dark:text-ink-300 max-w-2xl mx-auto leading-relaxed animate-fade-up animation-delay-200">
-            Kein Matrix-Hype, keine geheimen Tricks. Wir glauben an Transparenz, ehrliche Beratung 
-            und einen rechtlich sauberen Weg in die Steuerfreiheit.
+            Wir begleiten keine Briefkasten-Ideen. Eine VAE-Struktur muss zu deinem echten Leben,
+            deinem Geschäft und deiner steuerlichen Situation passen.
           </p>
         </div>
       </section>
@@ -94,9 +95,9 @@ export default function PhilosophiePage() {
               </h2>
               <div className="space-y-4 text-ink-600 dark:text-ink-300 leading-relaxed">
                 <p>
-                  Die meisten Anbieter in diesem Markt arbeiten mit Intransparenz. 
-                  Versteckte Kosten, unklare Leistungen, Versprechen die nicht gehalten werden. 
-                  Und Preise, die erst im Gespräch enthüllt werden — wenn du schon emotional invested bist.
+                In diesem Markt werden oft große Versprechen gemacht, bevor die Ausgangslage geprüft wurde.
+                Genau dort entstehen später Probleme: falsche Free Zone, ungeklärter Wegzug, zu späte
+                Steuerberatung oder Kosten, die erst nach dem Gespräch auftauchen.
                 </p>
                 <p>
                   Wir haben das selbst erlebt. Als Unternehmer, die diesen Weg gegangen sind, 
@@ -104,9 +105,8 @@ export default function PhilosophiePage() {
                   und was man wirklich braucht.
                 </p>
                 <p>
-                  Deshalb Ziel:steuerfrei: Ein Anbieter, der alle Karten auf den Tisch legt. 
-                  Fester Preis, klare Leistungen, echte Menschen — keine Versprechen, 
-                  die wir nicht einhalten können.
+                  Deshalb Ziel:steuerfrei: feste Kosten, klare Zuständigkeiten und eine Prüfung,
+                  bevor aus einer Idee ein teures Projekt wird.
                 </p>
               </div>
             </div>
@@ -185,7 +185,7 @@ export default function PhilosophiePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button onClick={openCalendly} className="btn-primary">
-              🗓 Kostenlosen Call buchen
+              Kostenlosen Call buchen
             </button>
             <Link to="/prozess" className="btn-secondary">
               Der Weg im Detail →

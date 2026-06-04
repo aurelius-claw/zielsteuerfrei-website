@@ -19,7 +19,7 @@ export default function KontaktPage() {
     <div className="animate-fade-in">
       <Helmet>
         <title>Kontakt | Kostenloser Strategie-Call in 20 Min. | Ziel:steuerfrei</title>
-        <meta name="description" content="Buche jetzt deinen kostenlosen 20-Minuten-Strategie-Call. Wir klären ehrlich, ob eine VAE-Firmengründung zu dir passt – ohne Druck, ohne Verpflichtung." />
+        <meta name="description" content="Buche ein kostenloses Erstgespräch mit Neno oder schreibe an info@zielsteuerfrei.de. Wir prüfen, ob eine VAE-Firmengründung zu deiner Situation passt." />
         <meta property="og:title" content="Kostenloser Strategie-Call | VAE Gründung | Ziel:steuerfrei" />
         <meta property="og:description" content="20 Minuten, kostenlos, ohne Verpflichtung. Wir klären, ob die VAE die richtige Lösung für deine Firmengründung ist." />
         <meta property="og:url" content="https://zielsteuerfrei.de/kontakt" />
@@ -30,22 +30,24 @@ export default function KontaktPage() {
         <div className="absolute inset-0 bg-hero-gradient dark:bg-hero-gradient-dark pointer-events-none" />
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/pages/kontakt.png"
-            alt="Kontakt"
-            className="w-full h-full object-cover opacity-[0.06] dark:opacity-[0.08]"
+            src="/images/pages/hero-dubai-real.jpg"
+            alt="Dubai Skyline als Hintergrund für Kontakt"
+            className="w-full h-full object-cover opacity-[0.16] dark:opacity-[0.13]"
           />
+          <div className="absolute inset-0 bg-cream/78 dark:bg-navy-950/82" />
         </div>
 
         <div className="max-w-content mx-auto px-4 md:px-6 text-center relative z-10">
           <div className="eyebrow mb-5 justify-center animate-fade-up">
-            Wir sind für dich da
+            Erstgespräch mit Neno
           </div>
           <h1 className="font-display text-display-xl text-ink-900 dark:text-cream mb-6 text-balance animate-fade-up animation-delay-100">
-            Kontakt &<br />
-            <span className="text-highlight">Beratungstermin</span>
+            Kurz sprechen,<br />
+            <span className="text-highlight">bevor du planst</span>
           </h1>
           <p className="text-lg text-ink-600 dark:text-ink-300 max-w-2xl mx-auto leading-relaxed animate-fade-up animation-delay-200">
-            Du hast Fragen zum Prozess, zur VAE-Firmengründung oder zur Steuerfreiheit? Wir antworten innerhalb von 24 Stunden.
+            Schreib uns oder buche direkt einen Termin. Im ersten Gespräch geht es darum,
+            ob eine VAE-Gründung für dich überhaupt der richtige nächste Schritt ist.
           </p>
         </div>
       </section>
@@ -67,15 +69,15 @@ export default function KontaktPage() {
                       🗓️
                     </div>
                     <div>
-                      <h4 className="font-semibold text-ink-900 dark:text-cream mb-1">Strategie‑Call</h4>
+                      <h4 className="font-semibold text-ink-900 dark:text-cream mb-1">Erstgespräch</h4>
                       <p className="text-ink-600 dark:text-ink-300 text-sm leading-relaxed">
-                        20 Minuten kostenlos. Kein Verkaufsgespräch, nur Klärung deiner Situation.
+                        20 Minuten kostenlos mit Neno. Wir prüfen Ausgangslage, Ziele und offene Steuerfragen.
                       </p>
                       <button
                         onClick={openCalendly}
                         className="mt-3 btn-primary text-sm px-5 py-2.5"
                       >
-                        🗓 Termin buchen
+                      Termin buchen
                       </button>
                     </div>
                   </li>
@@ -123,7 +125,7 @@ export default function KontaktPage() {
                     <span className="text-gold">✓</span> E-Mail: innerhalb von 24h (werktags)
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="text-gold">✓</span> Strategie-Call: Termine meist in 2-3 Tagen verfügbar
+                    <span className="text-gold">✓</span> Erstgespräch: Termine meist in 2-3 Tagen verfügbar
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-gold">✓</span> WhatsApp (Kunden): direkt erreichbar
@@ -190,10 +192,10 @@ export default function KontaktPage() {
             Lieber direkt reden?
           </h2>
           <p className="text-ink-300 mb-8 max-w-lg mx-auto leading-relaxed">
-            Im kostenlosen Strategie-Call klären wir in 20 Minuten, ob eine VAE-Firmengründung für dich sinnvoll ist – ohne Druck.
+            Im kostenlosen Erstgespräch klären wir in 20 Minuten, ob eine VAE-Firmengründung für dich sinnvoll ist.
           </p>
           <button onClick={openCalendly} className="btn-primary">
-            🗓 Kostenlosen Call buchen
+            Kostenlosen Call buchen
           </button>
         </div>
       </section>

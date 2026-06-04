@@ -112,10 +112,11 @@ export default function SteuerWissenPage() {
         <div className="absolute inset-0 bg-hero-gradient dark:bg-hero-gradient-dark pointer-events-none" />
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/pages/steueroptimierung.png"
-            alt=""
-            className="w-full h-full object-cover opacity-[0.06] dark:opacity-[0.09]"
+            src="/images/pages/hero-business-bay-real.jpg"
+            alt="Dubai Business Bay als Hintergrund für Steuer-Wissen"
+            className="w-full h-full object-cover opacity-[0.14] dark:opacity-[0.12]"
           />
+          <div className="absolute inset-0 bg-cream/78 dark:bg-navy-950/82" />
         </div>
         <div className="max-w-wide mx-auto px-4 md:px-6 relative text-center">
           <div className="eyebrow mb-5 justify-center">Steuer-Grundlagen für Auswanderer</div>
@@ -300,7 +301,7 @@ export default function SteuerWissenPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button onClick={openCalendly} className="btn-primary">
-              🗓 Kostenlosen Call buchen
+              Kostenlosen Call buchen
             </button>
             <Link to="/blog" className="btn-secondary">
               Blog lesen →

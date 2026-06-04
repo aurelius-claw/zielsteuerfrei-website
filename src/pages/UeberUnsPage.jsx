@@ -14,20 +14,20 @@ function openCalendly() {
 const team = [
   {
     name: 'Neno',
-    role: 'Gründer & Operations Ajman',
-    desc: 'Nenos Idee. Sein eigener Weg als Auswanderer in Dubai war der Startpunkt – heute hat er die richtigen Connections direkt in Ajman: Steuerberater, Behörden, Netzwerk.',
+    role: 'Gründer & VAE-Koordination',
+    desc: 'Neno hatte die Idee zu Ziel:steuerfrei. Er kennt die Abläufe in den VAE aus der Praxis und ist für Erstgespräche, Einordnung und lokale Koordination zuständig.',
     photo: '/images/pages/team-neno.jpeg',
   },
   {
     name: 'Juljana',
-    role: 'Behörden & Compliance',
-    desc: 'Juljana begleitet persönlich bei allen Behördengängen und Medical Checks vor Ort in Ajman – damit nichts verloren geht und alles reibungslos läuft.',
+    role: 'Vor-Ort-Begleitung',
+    desc: 'Juljana hilft vor Ort bei Terminen, Medical Check und Behördengängen. Sie ist die Person, die aus einem fremden Ablauf einen planbaren Tag macht.',
     photo: '/images/pages/team-juljana.jpeg',
   },
   {
     name: 'Martin',
-    role: 'IT & Versicherung',
-    desc: 'IT-Experte und IHK-zugelassener Versicherungsmakler. Martin berät zur internationalen Krankenversicherung – dem Thema, das bei der Auswanderung oft unterschätzt wird.',
+    role: 'IT & Versicherungen',
+    desc: 'Martin macht die IT und kann bei Versicherungsthemen helfen. Als Makler in Deutschland kennt er besonders die Fragen rund um Krankenversicherung und Absicherung beim Wegzug.',
     photo: '/images/pages/team-martin-boat.jpeg',
   },
 ]
@@ -35,8 +35,8 @@ const team = [
 const values = [
   {
     icon: '🎯',
-    title: 'Kein Hype',
-    desc: 'Wir versprechen, was wir liefern können. Keine Guaranteed-Returns, keine "steuerfreien Geheimtipps". Nur einen klar strukturierten, legal wasserdichten Weg.',
+    title: 'Keine Abkürzungen',
+    desc: 'Wir verkaufen keine Konstrukte, die nur auf dem Papier funktionieren. Wenn Steuerfragen offen sind, gehören sie vorab zu einem Steuerberater.',
   },
   {
     icon: '💬',
@@ -60,7 +60,7 @@ export default function UeberUnsPage() {
     <div className="animate-fade-in">
       <Helmet>
         <title>Über uns | VAE-Firmengründung aus Deutschland | Ziel:steuerfrei</title>
-        <meta name="description" content="Das Team hinter Ziel:steuerfrei: Neno und Juljana begleiten dich persönlich durch deine VAE-Gründung. Deutsche Beratung, direkte Kommunikation, echte Erfahrung mit Firmengründung UAE." />
+        <meta name="description" content="Das Team hinter Ziel:steuerfrei: Neno, Juljana und Martin begleiten VAE-Gründungen mit Erstgespräch, Vor-Ort-Hilfe, IT und Versicherungserfahrung." />
         <meta property="og:title" content="Unser Team | VAE Gründungsservice | Ziel:steuerfrei" />
         <meta property="og:description" content="Neno und Juljana – persönliche Begleitung bei deiner Firmengründung in den VAE. 0% Steuern, transparente Preise, deutsche Beratung." />
         <meta property="og:url" content="https://zielsteuerfrei.de/ueber-uns" />
@@ -71,10 +71,11 @@ export default function UeberUnsPage() {
         <div className="absolute inset-0 bg-hero-gradient dark:bg-hero-gradient-dark pointer-events-none" />
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/pages/ueber-uns.png"
-            alt=""
-            className="w-full h-full object-cover opacity-[0.06] dark:opacity-[0.09]"
+            src="/images/pages/hero-dubai-marina-real.jpg"
+            alt="Dubai Marina bei Abendlicht"
+            className="w-full h-full object-cover opacity-[0.16] dark:opacity-[0.13]"
           />
+          <div className="absolute inset-0 bg-cream/78 dark:bg-navy-950/82" />
         </div>
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/[0.04] rounded-full blur-3xl pointer-events-none" />
 
@@ -83,12 +84,12 @@ export default function UeberUnsPage() {
             Das Team hinter Ziel:steuerfrei
           </div>
           <h1 className="font-display text-display-xl text-ink-900 dark:text-cream mb-6 text-balance animate-fade-up animation-delay-100">
-            Wir sind selbst<br />
-            <span className="text-highlight">den Weg gegangen</span>
+            Drei Rollen,<br />
+            <span className="text-highlight">ein klarer Ablauf</span>
           </h1>
           <p className="text-lg text-ink-600 dark:text-ink-300 max-w-2xl mx-auto leading-relaxed animate-fade-up animation-delay-200">
-            Kein Berater-Team, das die VAE nur aus dem Lehrbuch kennt. 
-            Wir haben es selbst durchlebt — und helfen jetzt anderen, es besser zu machen.
+            Neno prüft mit dir den Einstieg. Juljana hilft vor Ort. Martin hält Technik,
+            Prozesse und Versicherungsthemen im Blick.
           </p>
         </div>
       </section>
@@ -104,20 +105,17 @@ export default function UeberUnsPage() {
               </h2>
               <div className="space-y-4 text-ink-600 dark:text-ink-300 leading-relaxed text-sm">
                 <p>
-                  Martin zahlte jahrelang über 40% seines Einkommens in Deutschland — 
-                  als Unternehmer mit komplett remote Business. 
-                  Irgendwann wurde die Frage unvermeidlich: Warum eigentlich?
+                  Die Idee kam von Neno: Viele Unternehmer hören von den VAE, wissen aber nicht,
+                  welche Schritte wirklich nötig sind und wo die steuerlichen Grenzen liegen.
                 </p>
                 <p>
-                  Der erste Versuch, das selbst zu lösen, war chaotisch. 
-                  Falsche Berater, unklare Informationen, verpasste Fristen. 
-                  Am Ende hat es funktioniert — aber mit doppelt so viel Aufwand wie nötig.
+                  Daraus wurde ein Prozess mit drei festen Rollen: Einordnung vorab,
+                  Begleitung vor Ort und saubere digitale Abläufe im Hintergrund.
                 </p>
                 <p>
-                  Neno war der lokale Anker in Ajman, der den Unterschied gemacht hat. 
-                  Juljana hat den bürokratischen Teil am Laufen gehalten. 
-                  Daraus ist Ziel:steuerfrei entstanden: Der Weg, den sich Martin 
-                  von Anfang an gewünscht hätte.
+                  Ziel ist nicht, jede Anfrage anzunehmen. Ziel ist, früh zu erkennen,
+                  ob eine VAE-Gründung passt, welche Fragen steuerlich geklärt werden müssen
+                  und wie der Weg danach praktisch aussieht.
                 </p>
               </div>
             </div>
@@ -242,7 +240,7 @@ export default function UeberUnsPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button onClick={openCalendly} className="btn-primary">
-              🗓 Kostenlosen Call buchen
+              Kostenlosen Call buchen
             </button>
             <Link to="/prozess" className="btn-secondary">
               Den Prozess ansehen →

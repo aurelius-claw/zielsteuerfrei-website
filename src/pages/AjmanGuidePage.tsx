@@ -13,7 +13,7 @@ function openCalendly() {
 
 const comparisonRows = [
   { label: 'Lizenz Setup (Jahr 1)', ajman: '€6.990 (All-inclusive)', dubai: '€12.000–18.000', highlight: true },
-  { label: 'Jahreserneuerung', ajman: '~€3.000', dubai: 'ab ~€5.000', highlight: false },
+  { label: 'Jahreserneuerung', ajman: '€2.990', dubai: 'ab ~€5.000', highlight: false },
   { label: 'Einkommensteuer', ajman: '0%', dubai: '0%', highlight: false },
   { label: 'Körperschaftsteuer', ajman: '0% (Freezone)', dubai: '0% (Freezone)', highlight: false },
   { label: 'Gründungsdauer', ajman: '4–5 Tage', dubai: '2–4 Wochen', highlight: true },
@@ -43,8 +43,8 @@ export default function AjmanGuidePage() {
   return (
     <div className="animate-fade-in">
       <Helmet>
-        <title>VAE Free Zone Vergleich 2026: Dubai vs Ajman – Wo gründest du smarter? | Ziel:steuerfrei</title>
-        <meta name="description" content="VAE Free Zone Vergleich: Dubai oder Ajman? Beide 0% Steuern, aber Ajman kostet 60% weniger. Ehrlicher Vergleich mit allen Kosten für deutsche Unternehmer – ohne Marketing-Hype." />
+        <title>VAE Free Zone Vergleich 2026: Dubai vs Ajman | Ziel:steuerfrei</title>
+        <meta name="description" content="VAE Free Zone Vergleich: Dubai oder Ajman? Kosten, Bürokratie, Gründungsdauer und laufende Gebühren für deutsche Unternehmer im Überblick." />
         <meta property="og:title" content="VAE Free Zone Vergleich 2026: Dubai vs Ajman" />
         <meta property="og:description" content="Welche Free Zone in den VAE ist die richtige? Dubai vs Ajman im ehrlichen Vergleich: Kosten, Bürokratie, Gründungsdauer – alle Zahlen auf einen Blick." />
         <meta property="og:url" content="https://zielsteuerfrei.de/free-zone-vergleich" />
@@ -55,10 +55,11 @@ export default function AjmanGuidePage() {
         <div className="absolute inset-0 bg-hero-gradient dark:bg-hero-gradient-dark pointer-events-none" />
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/pages/ajman-guide.png"
-            alt=""
-            className="w-full h-full object-cover opacity-[0.06] dark:opacity-[0.09]"
+            src="/images/pages/hero-dubai-marina-real.jpg"
+            alt="Dubai Marina bei Abendlicht"
+            className="w-full h-full object-cover opacity-[0.16] dark:opacity-[0.13]"
           />
+          <div className="absolute inset-0 bg-cream/78 dark:bg-navy-950/82" />
         </div>
 
         <div className="max-w-wide mx-auto px-4 md:px-6 relative text-center">
@@ -66,12 +67,12 @@ export default function AjmanGuidePage() {
             Der detaillierte Vergleich · 2026
           </div>
           <h1 className="font-display text-display-xl text-ink-900 dark:text-cream mb-6 text-balance animate-fade-up animation-delay-100">
-            VAE Free Zone Vergleich —<br />
-            <span className="text-highlight">Wo gründest du smarter?</span>
+            Dubai oder Ajman —<br />
+            <span className="text-highlight">was passt zu deinem Fall?</span>
           </h1>
           <p className="text-lg text-ink-600 dark:text-ink-300 max-w-2xl mx-auto leading-relaxed animate-fade-up animation-delay-200">
-            Steuerlich identisch. Kosten: Welten auseinander. Warum Smart-Gründer 
-            Dubai überspringen und über 5 Jahre rund <strong className="text-ink-900 dark:text-cream">€13.000–23.000</strong> sparen.
+            Viele denken zuerst an Dubai. Für kleinere Unternehmer kann eine andere Free Zone
+            wirtschaftlich sinnvoller sein. Hier stehen Kosten, Dauer und laufender Aufwand nebeneinander.
           </p>
         </div>
       </section>
@@ -84,8 +85,9 @@ export default function AjmanGuidePage() {
             Rechtlich sind sie identisch
           </h2>
           <p className="text-ink-600 dark:text-ink-300 leading-relaxed mb-6">
-            Wenn du bei Google "Firmengründung VAE" suchst, siehst du nur Dubai. 
-            Das liegt nicht daran, dass Dubai besser ist — sondern weil Dubai mehr Geld für Marketing hat.
+            Wer nach "Firmengründung VAE" sucht, landet schnell bei Dubai. Das ist nachvollziehbar,
+            aber für die Entscheidung nicht ausreichend. Wichtig ist, welche Free Zone zu Aktivität,
+            Budget, Visa-Anzahl und Bankanforderungen passt.
           </p>
 
           <div className="insight-box mb-8">
@@ -270,7 +272,7 @@ export default function AjmanGuidePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button onClick={openCalendly} className="btn-primary">
-              🗓 Kostenlosen Call buchen
+              Kostenlosen Call buchen
             </button>
             <Link to="/preis-rechner" className="btn-secondary">
               Ersparnis berechnen →
