@@ -84,6 +84,42 @@ function SectionBackdrop({
   )
 }
 
+function ResultIcon({ type }: { type: 'license' | 'id' | 'bank' | 'support' }) {
+  const paths = {
+    license: (
+      <>
+        <path d="M7 3.5h7l4 4V20.5H7z" />
+        <path d="M14 3.5v4h4M10 11h5M10 14h3" />
+        <path d="m13.5 18 1.5 1.5 3-3" />
+      </>
+    ),
+    id: (
+      <>
+        <rect x="3.5" y="5" width="17" height="14" rx="1" />
+        <circle cx="9" cy="11" r="2.2" />
+        <path d="M5.8 16c.7-1.7 1.8-2.5 3.2-2.5s2.5.8 3.2 2.5M14.5 10h3M14.5 13h3" />
+      </>
+    ),
+    bank: (
+      <>
+        <path d="m3 9 9-5 9 5M4.5 10.5h15M5.5 10.5v7M9.8 10.5v7M14.2 10.5v7M18.5 10.5v7M3.5 20h17" />
+      </>
+    ),
+    support: (
+      <>
+        <path d="M5 13v-2a7 7 0 0 1 14 0v2" />
+        <path d="M5 12H3.5v5H7v-4.5M19 12h1.5v5H17v-4.5M17 19c-1 1-2.4 1.5-4 1.5" />
+      </>
+    ),
+  }
+
+  return (
+    <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.55" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      {paths[type]}
+    </svg>
+  )
+}
+
 export default function HomePage() {
   useEffect(() => {
     const elements = document.querySelectorAll<HTMLElement>('[data-reveal]')
@@ -154,8 +190,19 @@ export default function HomePage() {
                 Leistungen und Ablauf
               </Link>
             </div>
-            <div className="mt-5 flex items-center justify-center gap-3 text-xs font-semibold text-[#123247]/75 dark:text-ink-300 lg:hidden">
-              <span>20 Min.</span><span className="text-gold">•</span><span>Kostenlos</span><span className="text-gold">•</span><span>Video-Call</span>
+            <div className="mx-auto mt-5 max-w-xl border-y border-[#123247]/15 bg-[#F8F6F2]/72 px-4 py-4 text-left backdrop-blur-sm dark:border-white/15 dark:bg-navy-950/45 lg:hidden">
+              <div className="mb-3 flex items-center justify-between gap-3">
+                <strong className="text-sm text-[#123247] dark:text-cream">Dein Strategiegespräch</strong>
+                <span className="text-xs font-semibold text-[#966B16] dark:text-gold">20 Min. · kostenlos</span>
+              </div>
+              <div className="grid grid-cols-3 gap-2 border-t border-[#123247]/10 pt-3 text-center text-[11px] leading-tight text-[#263C4A] dark:border-white/10 dark:text-ink-300">
+                {['Termin wählen', 'Ausgangslage klären', 'Fahrplan erhalten'].map((item, index) => (
+                  <div key={item} className={index ? 'border-l border-[#123247]/10 pl-2 dark:border-white/10' : ''}>
+                    <span className="mb-1 block font-bold text-[#966B16] dark:text-gold">0{index + 1}</span>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -213,20 +260,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden border-b border-ink-100/70 bg-[#123247] py-5 text-cream dark:border-navy-800" aria-label="Ergebnisse des Gründerpakets">
-        <div className="mx-auto grid max-w-wide grid-cols-2 gap-px bg-white/10 px-4 md:grid-cols-4 md:px-6">
+      <section className="relative overflow-hidden border-b border-ink-100/70 bg-[#123247] text-cream dark:border-navy-800" aria-label="Ergebnisse des Gründerpakets">
+        <div className="mx-auto grid max-w-wide grid-cols-2 border-x border-white/10 md:grid-cols-4">
           {[
-            ['/images/pages/service-license-generated.png', 'Trade License'],
-            ['/images/pages/service-medical.jpg', 'Emirates ID'],
-            ['/images/pages/service-banking-generated.png', 'Bankkonto'],
-            ['/images/pages/service-support-generated.png', 'Support'],
-          ].map(([image, label]) => (
-            <div key={label} className="group relative h-24 overflow-hidden bg-navy-900 md:h-28">
-              <img src={image} alt="" className="h-full w-full object-cover opacity-45 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-r from-navy-950/85 to-navy-950/35" />
-              <div className="absolute inset-0 flex items-center gap-3 px-4">
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gold text-sm font-bold text-white">✓</span>
-                <span className="text-sm font-semibold">{label}</span>
+            { type: 'license' as const, label: 'Trade License', detail: 'koordiniert' },
+            { type: 'id' as const, label: 'Emirates ID', detail: 'begleitet' },
+            { type: 'bank' as const, label: 'Bankkonto', detail: 'vorbereitet' },
+            { type: 'support' as const, label: '3 Monate Support', detail: 'inklusive' },
+          ].map(({ type, label, detail }, index) => (
+            <div
+              key={label}
+              className={`group flex min-h-28 items-center gap-4 px-4 py-5 transition-colors duration-500 hover:bg-white/[0.04] md:px-6 ${index % 2 ? 'border-l border-white/10' : ''} ${index > 1 ? 'border-t border-white/10 md:border-t-0' : ''} md:border-l md:first:border-l-0`}
+            >
+              <span className="flex h-12 w-12 flex-none items-center justify-center border border-gold/45 text-gold transition-colors duration-500 group-hover:bg-gold group-hover:text-white">
+                <ResultIcon type={type} />
+              </span>
+              <div>
+                <strong className="block text-sm font-semibold">{label}</strong>
+                <span className="mt-1 block text-xs text-cream/60">{detail}</span>
               </div>
             </div>
           ))}

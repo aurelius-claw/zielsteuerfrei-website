@@ -269,3 +269,8 @@
     }
   }
 }
+
+/* Calendly renders a second three-dot loader above its own embedded loader. */
+.calendly-overlay .calendly-popup .calendly-spinner {
+  display: none !important;
+}
