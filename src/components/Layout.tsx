@@ -307,7 +307,7 @@ export default function Layout({ children }: LayoutProps) {
             <div>
               <h4 className="font-display text-base font-semibold text-cream mb-4">Strategie-Call</h4>
               <p className="text-sm text-ink-400 leading-relaxed mb-4">
-                Neno prüft mit dir, ob ein VAE-Setup zu deiner Situation passt.
+                Wir prüfen mit dir, wie deine VAE-Struktur sinnvoll umgesetzt werden kann.
               </p>
               <button onClick={openCalendly} className="btn-primary w-full text-sm py-3">
                 Termin buchen

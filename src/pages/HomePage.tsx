@@ -20,7 +20,7 @@ const expertise = [
   {
     image: '/images/pages/service-medical.jpg',
     title: 'Aufenthalt & Emirates ID',
-    text: 'Planung der Termine vor Ort, Medical Check und Begleitung durch Juljana in den VAE.',
+    text: 'Planung der Termine vor Ort, Medical Check und persönliche Begleitung in den VAE.',
   },
   {
     image: '/images/pages/service-banking-generated.png',
@@ -37,7 +37,7 @@ const expertise = [
 const process = [
   {
     title: 'Erstgespräch',
-    text: 'Neno klärt mit dir, ob eine VAE-Gründung zu Geschäftsmodell, Wohnsitz, Gewinn und Ziel passt.',
+    text: 'Wir klären, welche VAE-Struktur zu Geschäftsmodell, Wohnsitz, Gewinn und Ziel passt.',
   },
   {
     title: 'Vorbereitung',
@@ -93,16 +93,15 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto flex min-h-[calc(78vh-7rem)] max-w-content flex-col items-center justify-center px-4 text-center md:px-6">
           <h1 className="mb-5 font-display text-[2.45rem] leading-[1.06] text-[#123247] dark:text-cream text-balance md:mb-6 md:text-display-xl">
             Deine Firma in den VAE.<br />
-            <span className="text-[#966B16] dark:text-gold">Von Anfang an begleitet.</span>
+            <span className="text-[#966B16] dark:text-gold">Für Unternehmer, die größer denken.</span>
           </h1>
           <p className="mx-auto mb-7 max-w-2xl text-base font-medium leading-relaxed text-[#263C4A] dark:text-ink-300 md:mb-8 md:text-xl">
-            Wir prüfen zuerst kostenlos, ob eine VAE-Gründung zu deinem Geschäftsmodell und
-            deinem Wegzug passt. Wenn du dich dafür entscheidest, begleiten wir dich bis zu
-            Lizenz, Emirates ID und Bankkonto.
+            Wir bringen deine VAE-Gründung von der ersten Strategie bis zur fertigen Struktur:
+            Lizenz, Emirates ID, Bankkonto und persönliche Begleitung vor Ort.
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <button onClick={openCalendly} className="btn-primary px-8 py-4 text-base">
-              Kostenloses Erstgespräch buchen
+              Kostenloses Strategiegespräch sichern
             </button>
             <Link
               to="/prozess"
@@ -114,8 +113,8 @@ export default function HomePage() {
 
           <div className="mt-7 grid w-full max-w-3xl grid-cols-2 border-y border-[#123247]/15 bg-[#F8F6F2]/62 text-left backdrop-blur-sm dark:border-white/15 dark:bg-navy-950/45 md:mt-10 md:grid-cols-4">
             {[
-              ['Kostenlos', 'Vorab-Check'],
-              ['Persönlich', 'Begleitung vor Ort'],
+              ['Hunderte', 'Firmengründungen'],
+              ['Vor Ort', 'in den VAE'],
               ['€6.990', 'Gründerpaket'],
               ['3 Monate', 'Support danach'],
             ].map(([value, label], index) => (
@@ -135,26 +134,27 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-wide gap-12 px-4 md:grid-cols-[0.9fr_1.1fr] md:px-6">
           <div>
             <h2 className="font-display text-display-md text-ink-900 dark:text-cream mb-5">
-              Erst Klarheit. Dann die Gründung.
+              Wir machen internationale Strukturen umsetzbar.
             </h2>
           </div>
           <div className="space-y-5 text-ink-600 dark:text-ink-300">
             <p className="leading-relaxed">
-              Im Erstgespräch bekommt Neno ein Gefühl für dein Geschäftsmodell, deinen Wohnsitz
-              und deine Pläne. So weißt du, ob der Weg für dich sinnvoll ist, bevor Kosten entstehen.
+              Unsere Erfahrung aus hunderten Firmengründungen bringt Tempo und Klarheit in einen
+              Prozess, bei dem jedes Detail zählt. Wir prüfen die Ausgangslage, koordinieren die
+              Gründung und begleiten die Umsetzung in den VAE.
             </p>
             <div className="grid gap-5 border-t border-ink-100 pt-6 dark:border-navy-800 sm:grid-cols-3">
               <div>
-                <h3 className="font-display text-xl font-semibold text-ink-900 dark:text-cream">Prüfen</h3>
-                <p className="mt-2 text-sm leading-relaxed">Passt eine VAE-Firma überhaupt zu deiner Situation?</p>
+                <h3 className="font-display text-xl font-semibold text-ink-900 dark:text-cream">Strategie</h3>
+                <p className="mt-2 text-sm leading-relaxed">Wir bestimmen den passenden Weg für dein Vorhaben.</p>
               </div>
               <div>
-                <h3 className="font-display text-xl font-semibold text-ink-900 dark:text-cream">Gründen</h3>
-                <p className="mt-2 text-sm leading-relaxed">Wir koordinieren Lizenz, Unterlagen und Termine.</p>
+                <h3 className="font-display text-xl font-semibold text-ink-900 dark:text-cream">Umsetzung</h3>
+                <p className="mt-2 text-sm leading-relaxed">Wir koordinieren Lizenz, Unterlagen und Behörden.</p>
               </div>
               <div>
-                <h3 className="font-display text-xl font-semibold text-ink-900 dark:text-cream">Ankommen</h3>
-                <p className="mt-2 text-sm leading-relaxed">Juljana begleitet dich vor Ort, wir bleiben erreichbar.</p>
+                <h3 className="font-display text-xl font-semibold text-ink-900 dark:text-cream">Wachstum</h3>
+                <p className="mt-2 text-sm leading-relaxed">Die Struktur steht. Du konzentrierst dich auf dein Geschäft.</p>
               </div>
             </div>
           </div>
@@ -165,23 +165,23 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-wide gap-12 px-4 md:grid-cols-[1fr_0.9fr] md:px-6">
           <div>
             <h2 className="font-display text-display-md text-ink-900 dark:text-cream mb-5">
-              Wir verstehen die offenen Fragen vor dem Wegzug.
+              Stark aufgestellt, bevor du startest.
             </h2>
             <p className="mb-7 leading-relaxed text-ink-600 dark:text-ink-300">
-              Eine Auslandsgesellschaft ist nur dann sinnvoll, wenn sie in dein tatsächliches Leben passt.
-              Wir sprechen deshalb zuerst über Wohnsitz, Geschäftsleitung, laufende Kosten und steuerliche
-              Risiken, bevor du Geld für eine Gründung ausgibst.
+              Wir verbinden Gründungserfahrung in den VAE mit einem Netzwerk für steuerliche,
+              rechtliche und praktische Spezialfragen. So entsteht nicht nur eine Lizenz, sondern
+              eine Struktur, mit der du tatsächlich arbeiten kannst.
             </p>
             <button onClick={openCalendly} className="btn-primary">
-              Kostenloses Erstgespräch buchen
+              Strategiegespräch starten
             </button>
           </div>
           <div className="border-y border-ink-100 dark:border-navy-800">
             {[
-              'Keine Gründung ohne vorherige Einordnung',
-              'Keine Steuerberatung durch uns, sondern über passende Steuerberater',
-              'Kein Abo-Modell: Paketpreis im ersten Jahr, Renewal ab Jahr zwei',
-              'Persönliche Begleitung vor Ort durch Juljana',
+              'Strategische Vorprüfung deiner Ausgangslage',
+              'Zugang zu spezialisierten Steuerberatern und Rechtsanwälten',
+              'Transparenter Paketpreis statt offener Kostenkette',
+              'Persönliche Begleitung bei den Terminen vor Ort',
             ].map((item, index) => (
               <div
                 key={item}
@@ -297,43 +297,33 @@ export default function HomePage() {
       </section>
 
       <section className="section bg-cream-50 dark:bg-navy-900">
-        <div className="mx-auto grid max-w-wide gap-10 px-4 md:grid-cols-[0.9fr_1.1fr] md:items-center md:px-6">
-          <div className="overflow-hidden rounded-2xl border border-ink-100 dark:border-navy-800">
-            <img
-              src="/images/pages/team-neno.jpeg"
-              alt="Neno von Ziel:steuerfrei"
-              className="h-[420px] w-full object-cover"
-              loading="lazy"
-            />
-          </div>
-          <div>
-            <p className="mb-4 font-mono text-xs font-semibold uppercase tracking-widest text-gold">
-              Ansprechpartner
-            </p>
-            <h2 className="font-display text-display-md text-ink-900 dark:text-cream mb-5">
-              Erst sprechen. Dann entscheiden.
-            </h2>
-            <p className="mb-6 leading-relaxed text-ink-600 dark:text-ink-300">
-              Neno hatte die Idee zu Ziel:steuerfrei und führt die Erstgespräche. Juljana begleitet
-              die Termine vor Ort. Martin betreut IT, Prozesse und kann bei Versicherungsthemen helfen.
-            </p>
-            <Link to="/ueber-uns" className="text-sm font-semibold text-gold hover:underline">
-              Team kennenlernen
-            </Link>
-          </div>
+        <div className="mx-auto max-w-wide px-4 text-center md:px-6">
+          <p className="mb-4 font-mono text-xs font-semibold uppercase tracking-widest text-gold">
+            Ziel:steuerfrei
+          </p>
+          <h2 className="mx-auto mb-5 max-w-3xl font-display text-display-md text-ink-900 dark:text-cream">
+            Wir bauen die Struktur. Du baust das Unternehmen.
+          </h2>
+          <p className="mx-auto mb-7 max-w-2xl leading-relaxed text-ink-600 dark:text-ink-300">
+            Von der Auswahl der passenden Free Zone bis zu Emirates ID, Bankkonto und den ersten
+            Monaten danach: Unser Team hält den Prozess zusammen und bleibt erreichbar.
+          </p>
+          <Link to="/ueber-uns" className="text-sm font-semibold text-gold hover:underline">
+            Unsere Expertise kennenlernen
+          </Link>
         </div>
       </section>
 
       <section className="section border-t border-gold/10 bg-navy-900 dark:bg-navy-950">
         <div className="mx-auto max-w-content px-4 text-center md:px-6">
           <h2 className="font-display text-display-lg text-cream mb-5">
-            Lassen wir deine Situation einmal einordnen.
+            Bereit für deine VAE-Struktur?
           </h2>
           <p className="mx-auto mb-8 max-w-xl text-lg text-ink-300">
-            Das Erstgespräch ist kostenlos. Danach weißt du, ob eine VAE-Gründung in deinem Fall Sinn ergibt.
+            Im kostenlosen Strategiegespräch klären wir den schnellsten sinnvollen Weg zu deiner Gründung.
           </p>
           <button onClick={openCalendly} className="btn-primary">
-            Erstgespräch mit Neno buchen
+            Kostenloses Strategiegespräch sichern
           </button>
         </div>
       </section>
