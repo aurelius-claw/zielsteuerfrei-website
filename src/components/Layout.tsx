@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useTheme } from '../context/ThemeContext'
+import BrandLogo from './BrandLogo'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -111,9 +112,7 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Logo */}
             <Link to="/" className="flex items-center flex-shrink-0" aria-label="Startseite">
-              <span className="font-display text-xl font-bold tracking-tight text-ink-900 dark:text-cream">
-                Ziel<span className="text-gold">:</span>steuerfrei
-              </span>
+              <BrandLogo />
             </Link>
 
             {/* Desktop nav */}
@@ -275,9 +274,7 @@ export default function Layout({ children }: LayoutProps) {
 
             <div className="md:col-span-1">
               <Link to="/" className="inline-flex items-center mb-4">
-                <span className="font-display text-xl font-bold text-cream">
-                  Ziel<span className="text-gold">:</span>steuerfrei
-                </span>
+                <BrandLogo inverse />
               </Link>
               <p className="text-sm text-ink-400 leading-relaxed mb-4">
                 Firmengründung in den VAE, begleitet von Menschen, die den Ablauf vor Ort kennen.

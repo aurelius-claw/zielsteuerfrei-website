@@ -1435,7 +1435,7 @@ const BlogArticlePage: React.FC = () => {
     "publisher": {
       "@type": "Organization",
       "name": "Ziel:steuerfrei",
-      "logo": { "@type": "ImageObject", "url": "https://zielsteuerfrei.de/images/pages/hero-dubai-real.jpg" }
+      "logo": { "@type": "ImageObject", "url": "https://zielsteuerfrei.de/brand/logo-light.svg" }
     },
     "mainEntityOfPage": { "@type": "WebPage", "@id": `https://zielsteuerfrei.de/blog/${slug}` }
   }

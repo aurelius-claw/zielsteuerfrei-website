@@ -286,7 +286,7 @@ const BlogPage: React.FC = () => {
           "publisher": {
             "@type": "Organization",
             "name": "Ziel:steuerfrei",
-            "logo": "https://zielsteuerfrei.de/logo.png"
+            "logo": "https://zielsteuerfrei.de/brand/logo-light.svg"
           },
           "blogPost": articles.map(article => ({
             "@type": "BlogPosting",
