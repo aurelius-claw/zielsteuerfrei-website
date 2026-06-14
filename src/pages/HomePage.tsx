@@ -87,7 +87,7 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-[#F0ECE5]/68 dark:bg-navy-950/66" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#F0ECE5]/38 via-[#F0ECE5]/68 to-[#F0ECE5] dark:from-navy-950/30 dark:via-navy-950/62 dark:to-navy-950" />
-          <div className="absolute inset-y-0 left-1/2 w-full max-w-4xl -translate-x-1/2 bg-gradient-to-r from-transparent via-[#F0ECE5]/48 to-transparent dark:hidden" />
+          <div className="absolute inset-y-0 left-1/2 w-full max-w-4xl -translate-x-1/2 bg-gradient-to-r from-transparent via-[#F0ECE5]/75 to-transparent dark:hidden" />
         </div>
 
         <div className="relative z-10 mx-auto flex min-h-[calc(78vh-7rem)] max-w-content flex-col items-center justify-center px-4 text-center md:px-6">
