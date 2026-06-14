@@ -83,18 +83,19 @@ export default function HomePage() {
           <img
             src="/images/pages/hero-dubai-real.jpg"
             alt="Dubai Business Bay"
-            className="h-full w-full object-cover object-center opacity-28 dark:opacity-55"
+            className="h-full w-full object-cover object-center opacity-20 dark:opacity-55"
           />
           <div className="absolute inset-0 bg-[#F0ECE5]/68 dark:bg-navy-950/66" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#F0ECE5]/38 via-[#F0ECE5]/68 to-[#F0ECE5] dark:from-navy-950/30 dark:via-navy-950/62 dark:to-navy-950" />
+          <div className="absolute inset-y-0 left-1/2 w-full max-w-4xl -translate-x-1/2 bg-gradient-to-r from-transparent via-[#F0ECE5]/95 to-transparent dark:hidden" />
         </div>
 
         <div className="relative z-10 mx-auto flex min-h-[calc(78vh-7rem)] max-w-content flex-col items-center justify-center px-4 text-center md:px-6">
           <h1 className="mb-5 font-display text-[2.45rem] leading-[1.06] text-[#123247] dark:text-cream text-balance md:mb-6 md:text-display-xl">
             Deine Firma in den VAE.<br />
-            <span className="text-gold">Von Anfang an begleitet.</span>
+            <span className="text-[#966B16] dark:text-gold">Von Anfang an begleitet.</span>
           </h1>
-          <p className="mx-auto mb-7 max-w-2xl text-base leading-relaxed text-ink-700 dark:text-ink-300 md:mb-8 md:text-xl">
+          <p className="mx-auto mb-7 max-w-2xl text-base font-medium leading-relaxed text-[#263C4A] dark:text-ink-300 md:mb-8 md:text-xl">
             Wir prüfen zuerst kostenlos, ob eine VAE-Gründung zu deinem Geschäftsmodell und
             deinem Wegzug passt. Wenn du dich dafür entscheidest, begleiten wir dich bis zu
             Lizenz, Emirates ID und Bankkonto.
