@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 
@@ -60,6 +61,24 @@ const articles = [
 ]
 
 export default function HomePage() {
+  useEffect(() => {
+    const elements = document.querySelectorAll<HTMLElement>('[data-reveal]')
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal-visible')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' },
+    )
+
+    elements.forEach(element => observer.observe(element))
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <div className="animate-fade-in">
       <Helmet>
@@ -131,7 +150,7 @@ export default function HomePage() {
       </section>
 
       <section className="section bg-cream-50 dark:bg-navy-900">
-        <div className="mx-auto grid max-w-wide gap-12 px-4 md:grid-cols-[0.9fr_1.1fr] md:px-6">
+        <div data-reveal className="scroll-reveal mx-auto grid max-w-wide gap-12 px-4 md:grid-cols-[0.9fr_1.1fr] md:px-6">
           <div>
             <h2 className="font-display text-display-md text-ink-900 dark:text-cream mb-5">
               Wir machen internationale Strukturen umsetzbar.
@@ -162,7 +181,7 @@ export default function HomePage() {
       </section>
 
       <section className="section bg-cream-50 dark:bg-navy-900">
-        <div className="mx-auto grid max-w-wide gap-12 px-4 md:grid-cols-[1fr_0.9fr] md:px-6">
+        <div data-reveal className="scroll-reveal mx-auto grid max-w-wide gap-12 px-4 md:grid-cols-[1fr_0.9fr] md:px-6">
           <div>
             <h2 className="font-display text-display-md text-ink-900 dark:text-cream mb-5">
               Stark aufgestellt, bevor du startest.
@@ -198,7 +217,7 @@ export default function HomePage() {
 
       <section className="section bg-cream dark:bg-navy-950">
         <div className="mx-auto max-w-wide px-4 md:px-6">
-          <div className="mb-12 md:flex md:items-end md:justify-between md:gap-10">
+          <div data-reveal className="scroll-reveal mb-12 md:flex md:items-end md:justify-between md:gap-10">
             <div>
               <p className="mb-4 font-mono text-xs font-semibold uppercase tracking-widest text-gold">
                 Leistungsfelder
@@ -214,8 +233,13 @@ export default function HomePage() {
           </div>
 
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {expertise.map((item) => (
-              <div key={item.title} className="card overflow-hidden">
+            {expertise.map((item, index) => (
+              <div
+                key={item.title}
+                data-reveal
+                className="scroll-reveal card overflow-hidden"
+                style={{ transitionDelay: `${index * 90}ms` }}
+              >
                 <div className="relative h-40 overflow-hidden bg-navy-900">
                   <img src={item.image} alt="" className="h-full w-full object-cover opacity-85" loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-950/65 via-transparent to-transparent" />
@@ -233,19 +257,22 @@ export default function HomePage() {
       </section>
 
       <section className="section bg-cream-50 dark:bg-navy-900">
-        <div className="mx-auto max-w-content px-4 md:px-6">
+        <div data-reveal className="scroll-reveal process-reveal mx-auto max-w-content px-4 md:px-6">
           <h2 className="font-display text-display-md text-ink-900 dark:text-cream mb-10 text-center">
             Von der Einschätzung zur fertigen Struktur.
           </h2>
-          <div className="border-y border-ink-100 dark:border-navy-800">
+          <div className="relative border-y border-ink-100 dark:border-navy-800">
+            <div className="process-line absolute bottom-0 left-[21px] top-0 hidden w-px origin-top bg-gold/70 md:block" />
             {process.map((step, index) => (
               <div
                 key={step.title}
-                className={`grid gap-4 py-7 md:grid-cols-[72px_1fr] ${
+                data-reveal
+                className={`scroll-reveal relative grid gap-4 py-7 md:grid-cols-[72px_1fr] ${
                   index > 0 ? 'border-t border-ink-100 dark:border-navy-800' : ''
                 }`}
+                style={{ transitionDelay: `${index * 110}ms` }}
               >
-                <div className="font-mono text-xs font-semibold tracking-widest text-gold">
+                <div className="relative z-10 font-mono text-xs font-semibold tracking-widest text-gold">
                   {String(index + 1).padStart(2, '0')}
                 </div>
                 <div>
@@ -267,7 +294,7 @@ export default function HomePage() {
 
       <section className="section bg-cream dark:bg-navy-950">
         <div className="mx-auto max-w-wide px-4 md:px-6">
-          <div className="mb-10 md:flex md:items-end md:justify-between md:gap-10">
+          <div data-reveal className="scroll-reveal mb-10 md:flex md:items-end md:justify-between md:gap-10">
             <div>
               <p className="mb-4 font-mono text-xs font-semibold uppercase tracking-widest text-gold">
                 Wissensdatenbank
@@ -282,8 +309,14 @@ export default function HomePage() {
           </div>
 
           <div className="grid gap-5 md:grid-cols-3">
-            {articles.map((article) => (
-              <Link key={article.to} to={article.to} className="card p-7 hover:border-gold/30">
+            {articles.map((article, index) => (
+              <Link
+                key={article.to}
+                to={article.to}
+                data-reveal
+                className="scroll-reveal card p-7 hover:border-gold/30"
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
                 <p className="mb-4 font-mono text-xs font-semibold uppercase tracking-widest text-gold">
                   {article.topic}
                 </p>
@@ -297,7 +330,7 @@ export default function HomePage() {
       </section>
 
       <section className="section bg-cream-50 dark:bg-navy-900">
-        <div className="mx-auto max-w-wide px-4 text-center md:px-6">
+        <div data-reveal className="scroll-reveal mx-auto max-w-wide px-4 text-center md:px-6">
           <p className="mb-4 font-mono text-xs font-semibold uppercase tracking-widest text-gold">
             Ziel:steuerfrei
           </p>
@@ -315,7 +348,7 @@ export default function HomePage() {
       </section>
 
       <section className="section border-t border-gold/10 bg-navy-900 dark:bg-navy-950">
-        <div className="mx-auto max-w-content px-4 text-center md:px-6">
+        <div data-reveal className="scroll-reveal mx-auto max-w-content px-4 text-center md:px-6">
           <h2 className="font-display text-display-lg text-cream mb-5">
             Bereit für deine VAE-Struktur?
           </h2>
