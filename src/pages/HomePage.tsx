@@ -78,23 +78,23 @@ export default function HomePage() {
         <meta property="og:type" content="website" />
       </Helmet>
 
-      <section className="relative min-h-[78vh] overflow-hidden bg-navy-950 pt-24 pb-12 md:pt-28 md:pb-20">
+      <section className="relative min-h-[78vh] overflow-hidden bg-[#E8DED0] pt-24 pb-12 dark:bg-navy-950 md:pt-28 md:pb-20">
         <div className="absolute inset-0 z-0">
           <img
             src="/images/pages/hero-dubai-real.jpg"
             alt="Dubai Business Bay"
-            className="h-full w-full object-cover object-center opacity-55"
+            className="h-full w-full object-cover object-center opacity-35 dark:opacity-55"
           />
-          <div className="absolute inset-0 bg-navy-950/66" />
-          <div className="absolute inset-0 bg-gradient-to-b from-navy-950/30 via-navy-950/62 to-navy-950" />
+          <div className="absolute inset-0 bg-[#E8DED0]/72 dark:bg-navy-950/66" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#E8DED0]/45 via-[#E8DED0]/72 to-[#E8DED0] dark:from-navy-950/30 dark:via-navy-950/62 dark:to-navy-950" />
         </div>
 
         <div className="relative z-10 mx-auto flex min-h-[calc(78vh-7rem)] max-w-content flex-col items-center justify-center px-4 text-center md:px-6">
-          <h1 className="mb-5 font-display text-[2.45rem] leading-[1.06] text-cream text-balance md:mb-6 md:text-display-xl">
+          <h1 className="mb-5 font-display text-[2.45rem] leading-[1.06] text-[#123247] dark:text-cream text-balance md:mb-6 md:text-display-xl">
             Deine Firma in den VAE.<br />
             <span className="text-gold">Von Anfang an begleitet.</span>
           </h1>
-          <p className="mx-auto mb-7 max-w-2xl text-base leading-relaxed text-ink-300 md:mb-8 md:text-xl">
+          <p className="mx-auto mb-7 max-w-2xl text-base leading-relaxed text-ink-700 dark:text-ink-300 md:mb-8 md:text-xl">
             Wir prüfen zuerst kostenlos, ob eine VAE-Gründung zu deinem Geschäftsmodell und
             deinem Wegzug passt. Wenn du dich dafür entscheidest, begleiten wir dich bis zu
             Lizenz, Emirates ID und Bankkonto.
@@ -105,13 +105,13 @@ export default function HomePage() {
             </button>
             <Link
               to="/prozess"
-              className="inline-flex items-center justify-center border-b border-cream/70 px-3 py-4 text-base font-semibold text-cream transition-colors hover:border-gold hover:text-gold"
+              className="inline-flex items-center justify-center border-b border-[#123247]/65 px-3 py-4 text-base font-semibold text-[#123247] transition-colors hover:border-gold hover:text-gold dark:border-cream/70 dark:text-cream"
             >
               Leistungen und Ablauf
             </Link>
           </div>
 
-          <div className="mt-7 grid w-full max-w-3xl grid-cols-2 border-y border-white/15 bg-navy-950/45 text-left backdrop-blur-sm md:mt-10 md:grid-cols-4">
+          <div className="mt-7 grid w-full max-w-3xl grid-cols-2 border-y border-[#123247]/15 bg-[#F0E9DE]/60 text-left backdrop-blur-sm dark:border-white/15 dark:bg-navy-950/45 md:mt-10 md:grid-cols-4">
             {[
               ['Kostenlos', 'Vorab-Check'],
               ['Persönlich', 'Begleitung vor Ort'],
@@ -120,10 +120,10 @@ export default function HomePage() {
             ].map(([value, label], index) => (
               <div
                 key={label}
-                className={`px-4 py-4 ${index % 2 ? 'border-l border-white/10' : ''} ${index > 1 ? 'border-t border-white/10 md:border-t-0' : ''} md:border-l md:border-white/10 md:first:border-l-0`}
+                className={`px-4 py-4 ${index % 2 ? 'border-l border-[#123247]/10 dark:border-white/10' : ''} ${index > 1 ? 'border-t border-[#123247]/10 dark:border-white/10 md:border-t-0' : ''} md:border-l md:border-[#123247]/10 md:first:border-l-0 md:dark:border-white/10`}
               >
-                <strong className="block text-sm font-bold text-cream">{value}</strong>
-                <span className="mt-1 block text-xs leading-snug text-ink-300">{label}</span>
+                <strong className="block text-sm font-bold text-[#123247] dark:text-cream">{value}</strong>
+                <span className="mt-1 block text-xs leading-snug text-ink-600 dark:text-ink-300">{label}</span>
               </div>
             ))}
           </div>

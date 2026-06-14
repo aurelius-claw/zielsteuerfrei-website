@@ -22,10 +22,10 @@ export default {
         },
         // Off-white / cream
         cream: {
-          DEFAULT: '#F1EDE4',
-          50: '#F7F4EE',
-          100: '#E9E3D8',
-          200: '#DDD5C7',
+          DEFAULT: '#E8E0D4',
+          50: '#F0E9DE',
+          100: '#DED4C5',
+          200: '#CFC2B0',
         },
         // Slate grays
         ink: {

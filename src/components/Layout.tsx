@@ -149,7 +149,7 @@ export default function Layout({ children }: LayoutProps) {
                 </button>
 
                 {/* Dropdown */}
-                <div className={`absolute right-0 top-full mt-2 w-52 rounded-2xl border border-ink-100 dark:border-navy-700 bg-white dark:bg-navy-900 shadow-card-hover transition-all duration-200 origin-top-right ${
+                <div className={`absolute right-0 top-full mt-2 w-52 rounded-2xl border border-ink-100 dark:border-navy-700 bg-cream-50 dark:bg-navy-900 shadow-card-hover transition-all duration-200 origin-top-right ${
                   menuOpen ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'
                 }`}>
                   <div className="p-2">
