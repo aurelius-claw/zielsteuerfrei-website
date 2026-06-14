@@ -78,15 +78,15 @@ export default function HomePage() {
         <meta property="og:type" content="website" />
       </Helmet>
 
-      <section className="relative min-h-[78vh] overflow-hidden bg-[#E8DED0] pt-24 pb-12 dark:bg-navy-950 md:pt-28 md:pb-20">
+      <section className="relative min-h-[78vh] overflow-hidden bg-[#F0ECE5] pt-24 pb-12 dark:bg-navy-950 md:pt-28 md:pb-20">
         <div className="absolute inset-0 z-0">
           <img
             src="/images/pages/hero-dubai-real.jpg"
             alt="Dubai Business Bay"
-            className="h-full w-full object-cover object-center opacity-35 dark:opacity-55"
+            className="h-full w-full object-cover object-center opacity-28 dark:opacity-55"
           />
-          <div className="absolute inset-0 bg-[#E8DED0]/72 dark:bg-navy-950/66" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#E8DED0]/45 via-[#E8DED0]/72 to-[#E8DED0] dark:from-navy-950/30 dark:via-navy-950/62 dark:to-navy-950" />
+          <div className="absolute inset-0 bg-[#F0ECE5]/68 dark:bg-navy-950/66" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#F0ECE5]/38 via-[#F0ECE5]/68 to-[#F0ECE5] dark:from-navy-950/30 dark:via-navy-950/62 dark:to-navy-950" />
         </div>
 
         <div className="relative z-10 mx-auto flex min-h-[calc(78vh-7rem)] max-w-content flex-col items-center justify-center px-4 text-center md:px-6">
@@ -111,7 +111,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="mt-7 grid w-full max-w-3xl grid-cols-2 border-y border-[#123247]/15 bg-[#F0E9DE]/60 text-left backdrop-blur-sm dark:border-white/15 dark:bg-navy-950/45 md:mt-10 md:grid-cols-4">
+          <div className="mt-7 grid w-full max-w-3xl grid-cols-2 border-y border-[#123247]/15 bg-[#F8F6F2]/62 text-left backdrop-blur-sm dark:border-white/15 dark:bg-navy-950/45 md:mt-10 md:grid-cols-4">
             {[
               ['Kostenlos', 'Vorab-Check'],
               ['Persönlich', 'Begleitung vor Ort'],
