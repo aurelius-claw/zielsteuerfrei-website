@@ -83,7 +83,7 @@ export default function HomePage() {
           <img
             src="/images/pages/hero-dubai-real.jpg"
             alt="Dubai Business Bay"
-            className="h-full w-full object-cover object-center opacity-20 dark:opacity-55"
+            className="h-full w-full object-cover object-center opacity-30 dark:opacity-65"
           />
           <div className="absolute inset-0 bg-[#F0ECE5]/68 dark:bg-navy-950/66" />
           <div className="absolute inset-0 bg-gradient-to-b from-[#F0ECE5]/38 via-[#F0ECE5]/68 to-[#F0ECE5] dark:from-navy-950/30 dark:via-navy-950/62 dark:to-navy-950" />
