@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { useTheme } from '../context/ThemeContext'
 import BrandLogo from './BrandLogo'
+import { trackEvent } from '../utils/tracking'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -49,6 +50,7 @@ const footerLinks = [
 ]
 
 function openCalendly() {
+  trackEvent('calendly_cta_click', { source: 'global_navigation' })
   // @ts-ignore
   if (typeof Calendly !== 'undefined') {
     // @ts-ignore
@@ -71,6 +73,18 @@ export default function Layout({ children }: LayoutProps) {
     setMobileOpen(false)
     setMenuOpen(false)
   }, [location])
+
+  useEffect(() => {
+    const onCalendlyEvent = (event: MessageEvent) => {
+      if (event.origin !== 'https://calendly.com') return
+      if (event.data?.event === 'calendly.event_scheduled') {
+        trackEvent('calendly_event_scheduled', { page_path: location.pathname })
+      }
+    }
+
+    window.addEventListener('message', onCalendlyEvent)
+    return () => window.removeEventListener('message', onCalendlyEvent)
+  }, [location.pathname])
 
   useEffect(() => {
     const onScroll = () => {

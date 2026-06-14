@@ -1,8 +1,10 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import { trackEvent } from '../utils/tracking'
 
-function openCalendly() {
+function openCalendly(source = 'homepage') {
+  trackEvent('calendly_cta_click', { source })
   // @ts-ignore
   if (typeof Calendly !== 'undefined') {
     // @ts-ignore
@@ -131,28 +133,68 @@ export default function HomePage() {
           <div className="absolute inset-y-0 left-1/2 w-full max-w-4xl -translate-x-1/2 bg-gradient-to-r from-transparent via-[#F0ECE5]/75 to-transparent dark:hidden" />
         </div>
 
-        <div className="relative z-10 mx-auto flex min-h-[calc(78vh-7rem)] max-w-content flex-col items-center justify-center px-4 text-center md:px-6">
-          <h1 className="mb-5 font-display text-[2.45rem] leading-[1.06] text-[#123247] dark:text-cream text-balance md:mb-6 md:text-display-xl">
-            Deine Firma in den VAE.<br />
-            <span className="text-[#966B16] dark:text-gold">Für Unternehmer, die größer denken.</span>
-          </h1>
-          <p className="mx-auto mb-7 max-w-2xl text-base font-medium leading-relaxed text-[#263C4A] dark:text-ink-300 md:mb-8 md:text-xl">
-            Wir bringen deine VAE-Gründung von der ersten Strategie bis zur fertigen Struktur:
-            Lizenz, Emirates ID, Bankkonto und persönliche Begleitung vor Ort.
-          </p>
-          <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <button onClick={openCalendly} className="btn-primary px-8 py-4 text-base">
-              Kostenloses Strategiegespräch sichern
-            </button>
-            <Link
-              to="/prozess"
-              className="inline-flex items-center justify-center border-b border-[#123247]/65 px-3 py-4 text-base font-semibold text-[#123247] transition-colors hover:border-gold hover:text-gold dark:border-cream/70 dark:text-cream"
-            >
-              Leistungen und Ablauf
-            </Link>
+        <div className="relative z-10 mx-auto grid min-h-[calc(78vh-7rem)] max-w-wide items-center gap-10 px-4 md:px-6 lg:grid-cols-[1.12fr_0.88fr] lg:text-left">
+          <div className="text-center lg:text-left">
+            <h1 className="mb-5 font-display text-[2.45rem] leading-[1.06] text-[#123247] dark:text-cream text-balance md:mb-6 md:text-display-xl">
+              Deine Firma in den VAE.<br />
+              <span className="text-[#966B16] dark:text-gold">Für Unternehmer, die größer denken.</span>
+            </h1>
+            <p className="mx-auto mb-7 max-w-2xl text-base font-medium leading-relaxed text-[#263C4A] dark:text-ink-300 md:mb-8 md:text-xl lg:mx-0">
+              Wir bringen deine VAE-Gründung von der ersten Strategie bis zur fertigen Struktur:
+              Lizenz, Emirates ID, Bankkonto und persönliche Begleitung vor Ort.
+            </p>
+            <div className="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
+              <button onClick={() => openCalendly('hero_primary')} className="btn-primary px-8 py-4 text-base">
+                Kostenloses Strategiegespräch sichern
+              </button>
+              <Link
+                to="/prozess"
+                className="inline-flex items-center justify-center border-b border-[#123247]/65 px-3 py-4 text-base font-semibold text-[#123247] transition-colors hover:border-gold hover:text-gold dark:border-cream/70 dark:text-cream"
+              >
+                Leistungen und Ablauf
+              </Link>
+            </div>
+            <div className="mt-5 flex items-center justify-center gap-3 text-xs font-semibold text-[#123247]/75 dark:text-ink-300 lg:hidden">
+              <span>20 Min.</span><span className="text-gold">•</span><span>Kostenlos</span><span className="text-gold">•</span><span>Video-Call</span>
+            </div>
           </div>
 
-          <div className="mt-7 grid w-full max-w-3xl grid-cols-2 border-y border-[#123247]/15 bg-[#F8F6F2]/62 text-left backdrop-blur-sm dark:border-white/15 dark:bg-navy-950/45 md:mt-10 md:grid-cols-4">
+          <aside className="mx-auto hidden w-full max-w-md border border-[#123247]/15 bg-[#F8F6F2]/88 p-7 text-left shadow-[0_24px_70px_rgba(18,50,71,0.14)] backdrop-blur-md dark:border-white/15 dark:bg-navy-900/88 lg:block">
+            <div className="mb-6 flex items-start justify-between gap-4 border-b border-[#123247]/10 pb-5 dark:border-white/10">
+              <div>
+                <p className="mb-1 text-xs font-bold uppercase tracking-widest text-[#966B16] dark:text-gold">Strategiegespräch</p>
+                <h2 className="font-display text-2xl font-semibold text-[#123247] dark:text-cream">Dein nächster Schritt</h2>
+              </div>
+              <div className="flex h-12 w-12 flex-none items-center justify-center border border-gold/35 bg-gold/10 text-gold" aria-hidden="true">
+                <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  <path d="M7 3v3M17 3v3M4 9h16M5 5h14a1 1 0 0 1 1 1v13H4V6a1 1 0 0 1 1-1Z" />
+                  <path d="m9 14 2 2 4-4" />
+                </svg>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-3 border-y border-[#123247]/10 py-4 text-center dark:border-white/10">
+              <div><strong className="block text-sm text-[#123247] dark:text-cream">20 Min.</strong><span className="text-xs text-ink-500 dark:text-ink-300">Video-Call</span></div>
+              <div className="border-x border-[#123247]/10 dark:border-white/10"><strong className="block text-sm text-[#123247] dark:text-cream">Kostenlos</strong><span className="text-xs text-ink-500 dark:text-ink-300">unverbindlich</span></div>
+              <div><strong className="block text-sm text-[#123247] dark:text-cream">Direkt</strong><span className="text-xs text-ink-500 dark:text-ink-300">Termin wählen</span></div>
+            </div>
+
+            <ol className="my-6 space-y-3 text-sm text-ink-700 dark:text-ink-300">
+              {['Termin online auswählen', 'Ausgangslage besprechen', 'Nächste Schritte festlegen'].map((item, index) => (
+                <li key={item} className="flex items-center gap-3">
+                  <span className="flex h-7 w-7 flex-none items-center justify-center border border-gold/35 bg-gold/10 text-xs font-bold text-[#966B16] dark:text-gold">{index + 1}</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ol>
+
+            <button onClick={() => openCalendly('hero_booking_panel')} className="btn-primary w-full py-4 text-base">
+              Freien Termin auswählen
+            </button>
+            <p className="mt-3 text-center text-xs text-ink-500 dark:text-ink-300">Keine Vorbereitung erforderlich.</p>
+          </aside>
+
+          <div className="grid w-full grid-cols-2 border-y border-[#123247]/15 bg-[#F8F6F2]/62 text-left backdrop-blur-sm dark:border-white/15 dark:bg-navy-950/45 md:grid-cols-4 lg:col-span-2">
             {[
               ['Hunderte', 'Firmengründungen'],
               ['Vor Ort', 'in den VAE'],
@@ -168,6 +210,26 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden border-b border-ink-100/70 bg-[#123247] py-5 text-cream dark:border-navy-800" aria-label="Ergebnisse des Gründerpakets">
+        <div className="mx-auto grid max-w-wide grid-cols-2 gap-px bg-white/10 px-4 md:grid-cols-4 md:px-6">
+          {[
+            ['/images/pages/service-license-generated.png', 'Trade License'],
+            ['/images/pages/service-medical.jpg', 'Emirates ID'],
+            ['/images/pages/service-banking-generated.png', 'Bankkonto'],
+            ['/images/pages/service-support-generated.png', 'Support'],
+          ].map(([image, label]) => (
+            <div key={label} className="group relative h-24 overflow-hidden bg-navy-900 md:h-28">
+              <img src={image} alt="" className="h-full w-full object-cover opacity-45 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-r from-navy-950/85 to-navy-950/35" />
+              <div className="absolute inset-0 flex items-center gap-3 px-4">
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gold text-sm font-bold text-white">✓</span>
+                <span className="text-sm font-semibold">{label}</span>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
