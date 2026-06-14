@@ -60,6 +60,28 @@ const articles = [
   { to: '/blog/ajman-vs-dubai', topic: 'Free Zone', title: 'Dubai oder Ajman: Kosten und Unterschiede' },
 ]
 
+function SectionBackdrop({
+  src,
+  position = 'center',
+  opacity = 'opacity-[0.08]',
+}: {
+  src: string
+  position?: string
+  opacity?: string
+}) {
+  return (
+    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+      <img
+        src={src}
+        alt=""
+        className={`h-full w-full scale-[1.02] object-cover ${opacity}`}
+        style={{ objectPosition: position }}
+        loading="lazy"
+      />
+    </div>
+  )
+}
+
 export default function HomePage() {
   useEffect(() => {
     const elements = document.querySelectorAll<HTMLElement>('[data-reveal]')
@@ -149,8 +171,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section bg-cream-50 dark:bg-navy-900">
-        <div data-reveal className="scroll-reveal mx-auto grid max-w-wide gap-12 px-4 md:grid-cols-[0.9fr_1.1fr] md:px-6">
+      <section className="section relative overflow-hidden border-b border-ink-100/70 bg-cream-50 dark:border-navy-800 dark:bg-navy-900">
+        <SectionBackdrop src="/images/pages/hero-business-bay-real.jpg" position="72% center" opacity="opacity-[0.11] dark:opacity-[0.08]" />
+        <div className="absolute inset-y-0 right-0 hidden w-[38%] border-l border-gold/15 bg-gold/[0.035] md:block" aria-hidden="true" />
+        <div data-reveal className="scroll-reveal relative z-10 mx-auto grid max-w-wide gap-12 px-4 md:grid-cols-[0.9fr_1.1fr] md:px-6">
           <div>
             <h2 className="font-display text-display-md text-ink-900 dark:text-cream mb-5">
               Wir machen internationale Strukturen umsetzbar.
@@ -180,8 +204,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section bg-cream-50 dark:bg-navy-900">
-        <div data-reveal className="scroll-reveal mx-auto grid max-w-wide gap-12 px-4 md:grid-cols-[1fr_0.9fr] md:px-6">
+      <section className="section relative overflow-hidden bg-cream-50 dark:bg-navy-900">
+        <SectionBackdrop src="/images/pages/service-license-generated.png" position="12% center" opacity="opacity-[0.075] dark:opacity-[0.06]" />
+        <div className="absolute inset-y-0 left-0 hidden w-[44%] border-r border-ink-900/[0.06] bg-cream/35 dark:border-white/[0.06] dark:bg-navy-950/20 md:block" aria-hidden="true" />
+        <div data-reveal className="scroll-reveal relative z-10 mx-auto grid max-w-wide gap-12 px-4 md:grid-cols-[1fr_0.9fr] md:px-6">
           <div>
             <h2 className="font-display text-display-md text-ink-900 dark:text-cream mb-5">
               Stark aufgestellt, bevor du startest.
@@ -215,8 +241,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section bg-cream dark:bg-navy-950">
-        <div className="mx-auto max-w-wide px-4 md:px-6">
+      <section className="section relative overflow-hidden border-y border-gold/10 bg-cream dark:bg-navy-950">
+        <SectionBackdrop src="/images/pages/hero-dubai-marina-real.jpg" position="center 65%" opacity="opacity-[0.09] dark:opacity-[0.06]" />
+        <div className="relative z-10 mx-auto max-w-wide px-4 md:px-6">
           <div data-reveal className="scroll-reveal mb-12 md:flex md:items-end md:justify-between md:gap-10">
             <div>
               <p className="mb-4 font-mono text-xs font-semibold uppercase tracking-widest text-gold">
@@ -256,8 +283,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section bg-cream-50 dark:bg-navy-900">
-        <div data-reveal className="scroll-reveal process-reveal mx-auto max-w-content px-4 md:px-6">
+      <section className="section relative overflow-hidden bg-cream-50 dark:bg-navy-900">
+        <SectionBackdrop src="/images/pages/service-banking-generated.png" position="78% center" opacity="opacity-[0.065] dark:opacity-[0.05]" />
+        <div className="absolute inset-y-0 right-0 hidden w-1/3 border-l border-gold/10 bg-gold/[0.025] md:block" aria-hidden="true" />
+        <div data-reveal className="scroll-reveal process-reveal relative z-10 mx-auto max-w-content px-4 md:px-6">
           <h2 className="font-display text-display-md text-ink-900 dark:text-cream mb-10 text-center">
             Von der Einschätzung zur fertigen Struktur.
           </h2>
@@ -292,8 +321,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section bg-cream dark:bg-navy-950">
-        <div className="mx-auto max-w-wide px-4 md:px-6">
+      <section className="section relative overflow-hidden border-y border-ink-100/70 bg-cream dark:border-navy-800 dark:bg-navy-950">
+        <SectionBackdrop src="/images/pages/blog.png" position="center" opacity="opacity-[0.08] dark:opacity-[0.055]" />
+        <div className="relative z-10 mx-auto max-w-wide px-4 md:px-6">
           <div data-reveal className="scroll-reveal mb-10 md:flex md:items-end md:justify-between md:gap-10">
             <div>
               <p className="mb-4 font-mono text-xs font-semibold uppercase tracking-widest text-gold">
@@ -329,8 +359,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section bg-cream-50 dark:bg-navy-900">
-        <div data-reveal className="scroll-reveal mx-auto max-w-wide px-4 text-center md:px-6">
+      <section className="section relative overflow-hidden bg-cream-50 dark:bg-navy-900">
+        <SectionBackdrop src="/images/pages/service-support-generated.png" position="center 38%" opacity="opacity-[0.1] dark:opacity-[0.07]" />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-gold/25" aria-hidden="true" />
+        <div data-reveal className="scroll-reveal relative z-10 mx-auto max-w-wide px-4 text-center md:px-6">
           <p className="mb-4 font-mono text-xs font-semibold uppercase tracking-widest text-gold">
             Ziel:steuerfrei
           </p>
