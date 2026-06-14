@@ -78,67 +78,82 @@ export default function HomePage() {
         <meta property="og:type" content="website" />
       </Helmet>
 
-      <section className="relative min-h-[82vh] overflow-hidden bg-navy-950 pt-28 pb-20">
+      <section className="relative min-h-[78vh] overflow-hidden bg-cream pt-24 pb-12 dark:bg-navy-950 md:pt-28 md:pb-20">
         <div className="absolute inset-0 z-0">
           <img
             src="/images/pages/hero-dubai-real.jpg"
             alt="Dubai Business Bay"
-            className="h-full w-full object-cover opacity-45"
+            className="h-full w-full object-cover object-center opacity-25 dark:opacity-35"
           />
-          <div className="absolute inset-0 bg-navy-950/72" />
-          <div className="absolute inset-0 bg-gradient-to-b from-navy-950/35 via-navy-950/60 to-navy-950" />
+          <div className="absolute inset-0 bg-cream/72 dark:bg-navy-950/76" />
+          <div className="absolute inset-0 bg-gradient-to-b from-cream/50 via-cream/70 to-cream dark:from-navy-950/45 dark:via-navy-950/65 dark:to-navy-950" />
         </div>
 
-        <div className="relative z-10 mx-auto flex min-h-[calc(82vh-7rem)] max-w-content flex-col items-center justify-center px-4 text-center md:px-6">
-          <h1 className="font-display text-display-xl text-cream mb-6 text-balance">
-            Steuern optimieren.<br />
-            <span className="text-gold">VAE-Struktur aufbauen.</span>
+        <div className="relative z-10 mx-auto flex min-h-[calc(78vh-7rem)] max-w-content flex-col items-center justify-center px-4 text-center md:px-6">
+          <h1 className="mb-5 font-display text-[2.45rem] leading-[1.06] text-ink-900 dark:text-cream text-balance md:mb-6 md:text-display-xl">
+            Deine Firma in den VAE.<br />
+            <span className="text-gold">Von Anfang an begleitet.</span>
           </h1>
-          <p className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-ink-300 md:text-xl">
-            Wir prüfen, ob eine VAE-Firma zu deinem Geschäftsmodell und deinem Wegzug passt,
-            und begleiten die Gründung vor Ort. Paket ab <strong className="font-semibold text-cream">€6.990</strong>.
+          <p className="mx-auto mb-7 max-w-2xl text-base leading-relaxed text-ink-700 dark:text-ink-300 md:mb-8 md:text-xl">
+            Neno prüft zuerst kostenlos, ob eine VAE-Gründung zu deinem Geschäftsmodell und
+            deinem Wegzug passt. Wenn du dich dafür entscheidest, begleiten wir dich bis zu
+            Lizenz, Emirates ID und Bankkonto.
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <button onClick={openCalendly} className="btn-primary px-8 py-4 text-base">
-              Erstgespräch mit Neno buchen
+              Kostenlos mit Neno sprechen
             </button>
             <Link
               to="/prozess"
-              className="inline-flex items-center justify-center rounded-2xl border border-cream/25 px-8 py-4 text-base font-semibold text-cream transition-colors hover:border-gold hover:text-gold"
+              className="inline-flex items-center justify-center border-b border-ink-900 px-3 py-4 text-base font-semibold text-ink-900 transition-colors hover:border-gold hover:text-gold dark:border-cream dark:text-cream dark:hover:border-gold dark:hover:text-gold"
             >
-              Ablauf ansehen
+              Leistungen und Ablauf
             </Link>
+          </div>
+
+          <div className="mt-7 grid w-full max-w-3xl grid-cols-2 border-y border-ink-900/15 bg-cream/55 text-left backdrop-blur-sm dark:border-white/15 dark:bg-navy-950/45 md:mt-10 md:grid-cols-4">
+            {[
+              ['Kostenlos', 'Vorab-Check'],
+              ['Persönlich', 'Begleitung vor Ort'],
+              ['€6.990', 'Gründerpaket'],
+              ['3 Monate', 'Support danach'],
+            ].map(([value, label], index) => (
+              <div
+                key={label}
+                className={`px-4 py-4 ${index % 2 ? 'border-l border-ink-900/10 dark:border-white/10' : ''} ${index > 1 ? 'border-t border-ink-900/10 dark:border-white/10 md:border-t-0' : ''} md:border-l md:border-ink-900/10 md:first:border-l-0 md:dark:border-white/10`}
+              >
+                <strong className="block text-sm font-bold text-ink-900 dark:text-cream">{value}</strong>
+                <span className="mt-1 block text-xs leading-snug text-ink-600 dark:text-ink-300">{label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="section bg-cream dark:bg-navy-950">
+      <section className="section bg-white dark:bg-navy-900">
         <div className="mx-auto grid max-w-wide gap-12 px-4 md:grid-cols-[0.9fr_1.1fr] md:px-6">
           <div>
-            <p className="mb-4 font-mono text-xs font-semibold uppercase tracking-widest text-gold">
-              Ziel:steuerfrei
-            </p>
             <h2 className="font-display text-display-md text-ink-900 dark:text-cream mb-5">
-              Dein Partner für die VAE-Gründung.
+              Erst Klarheit. Dann die Gründung.
             </h2>
           </div>
           <div className="space-y-5 text-ink-600 dark:text-ink-300">
             <p className="leading-relaxed">
-              Viele Unternehmer hören von den VAE, wissen aber nicht, ob das in ihrer Situation
-              wirklich Sinn ergibt. Genau dort setzen wir an: erst einordnen, dann gründen.
+              Im Erstgespräch bekommt Neno ein Gefühl für dein Geschäftsmodell, deinen Wohnsitz
+              und deine Pläne. So weißt du, ob der Weg für dich sinnvoll ist, bevor Kosten entstehen.
             </p>
             <div className="grid gap-5 border-t border-ink-100 pt-6 dark:border-navy-800 sm:grid-cols-3">
               <div>
-                <h3 className="font-display text-xl font-semibold text-ink-900 dark:text-cream">Einordnung</h3>
-                <p className="mt-2 text-sm leading-relaxed">Passt der Weg zu Geschäft, Wohnsitz und Ziel?</p>
+                <h3 className="font-display text-xl font-semibold text-ink-900 dark:text-cream">Prüfen</h3>
+                <p className="mt-2 text-sm leading-relaxed">Passt eine VAE-Firma überhaupt zu deiner Situation?</p>
               </div>
               <div>
-                <h3 className="font-display text-xl font-semibold text-ink-900 dark:text-cream">Umsetzung</h3>
-                <p className="mt-2 text-sm leading-relaxed">Lizenz, Termine, Emirates ID und Bankkonto koordiniert.</p>
+                <h3 className="font-display text-xl font-semibold text-ink-900 dark:text-cream">Gründen</h3>
+                <p className="mt-2 text-sm leading-relaxed">Wir koordinieren Lizenz, Unterlagen und Termine.</p>
               </div>
               <div>
-                <h3 className="font-display text-xl font-semibold text-ink-900 dark:text-cream">Netzwerk</h3>
-                <p className="mt-2 text-sm leading-relaxed">Steuerberater vor Ort, wenn echte Beratung nötig ist.</p>
+                <h3 className="font-display text-xl font-semibold text-ink-900 dark:text-cream">Ankommen</h3>
+                <p className="mt-2 text-sm leading-relaxed">Juljana begleitet dich vor Ort, wir bleiben erreichbar.</p>
               </div>
             </div>
           </div>
