@@ -246,7 +246,7 @@ export default function HomePage() {
               ['Hunderte', 'Firmengründungen'],
               ['Vor Ort', 'in den VAE'],
               ['€6.990', 'Gründerpaket'],
-              ['Jahrzehnte', 'Steuererfahrung im Netzwerk'],
+              ['Steuernetzwerk', 'mit jahrelanger Erfahrung'],
             ].map(([value, label], index) => (
               <div
                 key={label}
