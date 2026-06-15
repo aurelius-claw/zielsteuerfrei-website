@@ -14,6 +14,7 @@ import BlogArticlePage from './pages/BlogArticlePage'
 import KontaktPage from './pages/KontaktPage'
 import ImpressumPage from './pages/ImpressumPage'
 import DatenschutzPage from './pages/DatenschutzPage'
+import TerminBestaetigtPage from './pages/TerminBestaetigtPage'
 
 export default function App() {
   return (
@@ -34,6 +35,7 @@ export default function App() {
             <Route path="/kontakt" element={<KontaktPage />} />
             <Route path="/impressum" element={<ImpressumPage />} />
             <Route path="/datenschutz" element={<DatenschutzPage />} />
+            <Route path="/termin-bestaetigt" element={<TerminBestaetigtPage />} />
           </Routes>
         </Layout>
       </Router>

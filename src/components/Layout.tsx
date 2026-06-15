@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
-import { Link, NavLink, useLocation } from 'react-router-dom'
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { useTheme } from '../context/ThemeContext'
 import BrandLogo from './BrandLogo'
-import { trackEvent } from '../utils/tracking'
+import { rememberBookingConfirmation, trackEvent } from '../utils/tracking'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -67,24 +67,40 @@ export default function Layout({ children }: LayoutProps) {
   const [scrolled, setScrolled] = useState(false)
   const [stickyVisible, setStickyVisible] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
   const menuRef = useRef<HTMLDivElement>(null)
+  const lastCalendlyEventAt = useRef(0)
+  const isBookingConfirmation = location.pathname === '/termin-bestaetigt'
 
   useEffect(() => {
     setMobileOpen(false)
     setMenuOpen(false)
+    if (location.pathname === '/termin-bestaetigt') {
+      window.scrollTo({ top: 0, behavior: 'auto' })
+    }
   }, [location])
 
   useEffect(() => {
     const onCalendlyEvent = (event: MessageEvent) => {
       if (event.origin !== 'https://calendly.com') return
       if (event.data?.event === 'calendly.event_scheduled') {
-        trackEvent('calendly_event_scheduled', { page_path: location.pathname })
+        const now = Date.now()
+        if (now - lastCalendlyEventAt.current < 2000) return
+        lastCalendlyEventAt.current = now
+
+        const confirmation = rememberBookingConfirmation(location.pathname)
+        trackEvent('calendly_event_scheduled', {
+          page_path: location.pathname,
+          booking_reference: confirmation.reference,
+        })
+
+        window.setTimeout(() => navigate('/termin-bestaetigt'), 250)
       }
     }
 
     window.addEventListener('message', onCalendlyEvent)
     return () => window.removeEventListener('message', onCalendlyEvent)
-  }, [location.pathname])
+  }, [location.pathname, navigate])
 
   useEffect(() => {
     const onScroll = () => {
@@ -129,6 +145,24 @@ export default function Layout({ children }: LayoutProps) {
               <BrandLogo />
             </Link>
 
+            {isBookingConfirmation ? (
+              <div className="flex items-center gap-3">
+                <Link
+                  to="/"
+                  className="hidden text-sm font-medium text-ink-700 transition-colors hover:text-gold dark:text-ink-300 sm:inline"
+                >
+                  Zur Website
+                </Link>
+                <button
+                  onClick={toggleTheme}
+                  aria-label="Farbmodus wechseln"
+                  className="w-9 h-9 rounded-lg flex items-center justify-center text-ink-700 dark:text-ink-300 hover:bg-ink-100/60 dark:hover:bg-navy-800 transition-colors"
+                >
+                  {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+                </button>
+              </div>
+            ) : (
+              <>
             {/* Desktop nav */}
             <nav className="hidden md:flex items-center gap-1">
 
@@ -226,10 +260,12 @@ export default function Layout({ children }: LayoutProps) {
                 </svg>
               </button>
             </div>
+              </>
+            )}
           </div>
 
           {/* Mobile menu — alle Links */}
-          <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          {!isBookingConfirmation && <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
             mobileOpen ? 'max-h-[700px] opacity-100 pb-4' : 'max-h-0 opacity-0'
           }`}>
             <div className="flex flex-col gap-0.5 pt-3 border-t border-ink-100/60 dark:border-navy-800/60">
@@ -256,7 +292,7 @@ export default function Layout({ children }: LayoutProps) {
                 Termin buchen
               </button>
             </div>
-          </div>
+          </div>}
         </div>
       </header>
 
@@ -266,7 +302,7 @@ export default function Layout({ children }: LayoutProps) {
       </main>
 
       {/* ── Sticky CTA ──────────────────────────────────── */}
-      <div className={`fixed bottom-0 inset-x-0 z-40 transition-transform duration-300 ${
+      {!isBookingConfirmation && <div className={`fixed bottom-0 inset-x-0 z-40 transition-transform duration-300 ${
         stickyVisible ? 'translate-y-0' : 'translate-y-full'
       }`}>
         <div className="bg-navy-900/96 dark:bg-navy-950/96 backdrop-blur-sm border-t border-gold/20 py-3 px-4">
@@ -279,9 +315,21 @@ export default function Layout({ children }: LayoutProps) {
             </button>
           </div>
         </div>
-      </div>
+      </div>}
 
       {/* ── Footer ──────────────────────────────────────── */}
+      {isBookingConfirmation ? (
+        <footer className="border-t border-navy-800 bg-navy-900 text-ink-300 dark:bg-navy-950">
+          <div className="mx-auto flex max-w-wide flex-col gap-5 px-4 py-8 sm:flex-row sm:items-center sm:justify-between md:px-6">
+            <BrandLogo inverse />
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-ink-400">
+              <a href="mailto:info@zielsteuerfrei.de" className="transition-colors hover:text-gold">info@zielsteuerfrei.de</a>
+              <NavLink to="/impressum" className="transition-colors hover:text-gold">Impressum</NavLink>
+              <NavLink to="/datenschutz" className="transition-colors hover:text-gold">Datenschutz</NavLink>
+            </div>
+          </div>
+        </footer>
+      ) : (
       <footer className="bg-navy-900 dark:bg-navy-950 text-ink-300 border-t border-navy-800">
         <div className="max-w-wide mx-auto px-4 md:px-6 py-16">
           <div className="grid md:grid-cols-4 gap-10 mb-12">
@@ -337,6 +385,7 @@ export default function Layout({ children }: LayoutProps) {
           </div>
         </div>
       </footer>
+      )}
     </div>
   )
 }
