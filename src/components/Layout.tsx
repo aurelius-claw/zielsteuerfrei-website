@@ -2,7 +2,15 @@ import { useState, useEffect, useRef } from 'react'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { useTheme } from '../context/ThemeContext'
 import BrandLogo from './BrandLogo'
-import { rememberBookingConfirmation, trackEvent } from '../utils/tracking'
+import ConsentBanner from './ConsentBanner'
+import {
+  captureMarketingAttribution,
+  openCalendlyWidget,
+  rememberBookingConfirmation,
+  trackEvent,
+  trackGenerateLead,
+  trackPageView,
+} from '../utils/tracking'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -50,14 +58,7 @@ const footerLinks = [
 ]
 
 function openCalendly() {
-  trackEvent('calendly_cta_click', { source: 'global_navigation' })
-  // @ts-ignore
-  if (typeof Calendly !== 'undefined') {
-    // @ts-ignore
-    Calendly.initPopupWidget({ url: 'https://calendly.com/nenope82/30min' })
-  } else {
-    window.open('https://calendly.com/nenope82/30min', '_blank')
-  }
+  openCalendlyWidget('global_navigation')
 }
 
 export default function Layout({ children }: LayoutProps) {
@@ -75,6 +76,8 @@ export default function Layout({ children }: LayoutProps) {
   useEffect(() => {
     setMobileOpen(false)
     setMenuOpen(false)
+    captureMarketingAttribution()
+    trackPageView(location.pathname)
     if (location.pathname === '/termin-bestaetigt') {
       window.scrollTo({ top: 0, behavior: 'auto' })
     }
@@ -83,6 +86,12 @@ export default function Layout({ children }: LayoutProps) {
   useEffect(() => {
     const onCalendlyEvent = (event: MessageEvent) => {
       if (event.origin !== 'https://calendly.com') return
+      if (event.data?.event === 'calendly.date_and_time_selected') {
+        trackEvent('booking_started', {
+          source: 'calendly',
+          page_path: location.pathname,
+        })
+      }
       if (event.data?.event === 'calendly.event_scheduled') {
         const now = Date.now()
         if (now - lastCalendlyEventAt.current < 2000) return
@@ -91,6 +100,10 @@ export default function Layout({ children }: LayoutProps) {
         const confirmation = rememberBookingConfirmation(location.pathname)
         trackEvent('calendly_event_scheduled', {
           page_path: location.pathname,
+          booking_reference: confirmation.reference,
+        })
+        trackGenerateLead({
+          lead_type: 'calendly_booking',
           booking_reference: confirmation.reference,
         })
 
@@ -300,6 +313,8 @@ export default function Layout({ children }: LayoutProps) {
       <main className="flex-1 pt-16">
         {children}
       </main>
+
+      <ConsentBanner />
 
       {/* ── Sticky CTA ──────────────────────────────────── */}
       {!isBookingConfirmation && <div className={`fixed bottom-0 inset-x-0 z-40 transition-transform duration-300 ${

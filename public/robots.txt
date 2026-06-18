@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zielsteuerfrei.de/sitemap.xml

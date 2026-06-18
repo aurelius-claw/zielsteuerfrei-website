@@ -1,14 +1,9 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
+import { openCalendlyWidget, trackEvent } from '../utils/tracking'
 
 function openCalendly() {
-  // @ts-ignore
-  if (typeof Calendly !== 'undefined') {
-    // @ts-ignore
-    Calendly.initPopupWidget({ url: 'https://calendly.com/nenope82/30min' })
-  } else {
-    window.open('https://calendly.com/nenope82/30min', '_blank')
-  }
+  openCalendlyWidget('price_calculator')
 }
 
 function fmt(n: number) {
@@ -42,6 +37,13 @@ export default function PreisRechnerPage() {
   const [profit, setProfit] = useState(120000)
   const [years, setYears] = useState(3)
   const [structure, setStructure] = useState<Structure>('einzel')
+  const calculatorStarted = useRef(false)
+
+  const markCalculatorStarted = (field: string) => {
+    if (calculatorStarted.current) return
+    calculatorStarted.current = true
+    trackEvent('price_calculator_started', { field })
+  }
 
   const calc = useMemo(() => {
     const selected = structures[structure]
@@ -129,7 +131,11 @@ export default function PreisRechnerPage() {
                   <button
                     key={key}
                     type="button"
-                    onClick={() => setStructure(key)}
+                    onClick={() => {
+                      markCalculatorStarted('structure')
+                      setStructure(key)
+                      trackEvent('price_calculator_changed', { field: 'structure', value: key })
+                    }}
                     className={`w-full rounded-xl border px-4 py-3 text-left text-sm transition-colors ${
                       structure === key
                         ? 'border-gold bg-gold/10 text-ink-900 dark:text-cream'
@@ -158,7 +164,12 @@ export default function PreisRechnerPage() {
                 max={500000}
                 step={5000}
                 value={profit}
-                onChange={(e) => setProfit(Number(e.target.value))}
+                onChange={(e) => {
+                  markCalculatorStarted('profit')
+                  setProfit(Number(e.target.value))
+                }}
+                onMouseUp={() => trackEvent('price_calculator_changed', { field: 'profit', value: profit })}
+                onTouchEnd={() => trackEvent('price_calculator_changed', { field: 'profit', value: profit })}
                 className="h-2 w-full cursor-pointer appearance-none rounded-full bg-ink-100 accent-gold dark:bg-navy-700"
               />
               <div className="mt-2 flex justify-between text-xs text-ink-400">
@@ -180,7 +191,12 @@ export default function PreisRechnerPage() {
                 max={10}
                 step={1}
                 value={years}
-                onChange={(e) => setYears(Number(e.target.value))}
+                onChange={(e) => {
+                  markCalculatorStarted('years')
+                  setYears(Number(e.target.value))
+                }}
+                onMouseUp={() => trackEvent('price_calculator_changed', { field: 'years', value: years })}
+                onTouchEnd={() => trackEvent('price_calculator_changed', { field: 'years', value: years })}
                 className="h-2 w-full cursor-pointer appearance-none rounded-full bg-ink-100 accent-gold dark:bg-navy-700"
               />
               <div className="mt-2 flex justify-between text-xs text-ink-400">
@@ -268,7 +284,19 @@ export default function PreisRechnerPage() {
                   Wenn die Bandbreite interessant ist, klären wir im Erstgespräch, ob die Struktur
                   fachlich überhaupt passt.
                 </p>
-                <button onClick={openCalendly} className="btn-primary w-full">
+                <button
+                  onClick={() => {
+                    trackEvent('price_calculator_completed', {
+                      profit,
+                      years,
+                      structure,
+                      potential_low: calc.potentialLow,
+                      potential_high: calc.potentialHigh,
+                    })
+                    openCalendly()
+                  }}
+                  className="btn-primary w-full"
+                >
                   Erstgespräch buchen
                 </button>
               </div>

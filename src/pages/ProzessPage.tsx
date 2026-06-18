@@ -1,14 +1,9 @@
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import { openCalendlyWidget } from '../utils/tracking'
 
 function openCalendly() {
-  // @ts-ignore
-  if (typeof Calendly !== 'undefined') {
-    // @ts-ignore
-    Calendly.initPopupWidget({ url: 'https://calendly.com/nenope82/30min' })
-  } else {
-    window.open('https://calendly.com/nenope82/30min', '_blank')
-  }
+  openCalendlyWidget('process_page')
 }
 
 const steps = [

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import { openCalendlyWidget } from '../utils/tracking'
 
 // Converts German date "15. Februar 2026" → "2026-02-15" for schema.org
 function germanDateToISO(date: string): string {
@@ -17,13 +18,7 @@ function germanDateToISO(date: string): string {
 }
 
 function openCalendly() {
-  // @ts-ignore
-  if (typeof Calendly !== 'undefined') {
-    // @ts-ignore
-    Calendly.initPopupWidget({ url: 'https://calendly.com/nenope82/30min' })
-  } else {
-    window.open('https://calendly.com/nenope82/30min', '_blank')
-  }
+  openCalendlyWidget('blog_article')
 }
 
 const BlogArticlePage: React.FC = () => {

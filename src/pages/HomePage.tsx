@@ -1,17 +1,10 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { trackEvent } from '../utils/tracking'
+import { openCalendlyWidget } from '../utils/tracking'
 
 function openCalendly(source = 'homepage') {
-  trackEvent('calendly_cta_click', { source })
-  // @ts-ignore
-  if (typeof Calendly !== 'undefined') {
-    // @ts-ignore
-    Calendly.initPopupWidget({ url: 'https://calendly.com/nenope82/30min' })
-  } else {
-    window.open('https://calendly.com/nenope82/30min', '_blank')
-  }
+  openCalendlyWidget(source)
 }
 
 const expertise = [

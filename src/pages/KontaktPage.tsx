@@ -1,17 +1,15 @@
 import React from 'react'
 import { Helmet } from 'react-helmet-async'
+import { openCalendlyWidget, trackEvent, trackGenerateLead } from '../utils/tracking'
 
-function openCalendly() {
-  if (typeof (window as any).Calendly !== 'undefined') {
-    (window as any).Calendly.initPopupWidget({ url: 'https://calendly.com/nenope82/30min' })
-  } else {
-    window.open('https://calendly.com/nenope82/30min', '_blank')
-  }
+function openCalendly(source = 'contact_page') {
+  openCalendlyWidget(source)
 }
 
 export default function KontaktPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    trackGenerateLead({ lead_type: 'contact_form' })
     alert('Nachricht gesendet! Wir melden uns innerhalb von 24 Stunden.')
   }
 
@@ -74,7 +72,7 @@ export default function KontaktPage() {
                         20 Minuten kostenlos mit Neno. Wir prüfen Ausgangslage, Ziele und offene Steuerfragen.
                       </p>
                       <button
-                        onClick={openCalendly}
+                        onClick={() => openCalendly('contact_card')}
                         className="mt-3 btn-primary text-sm px-5 py-2.5"
                       >
                       Termin buchen
@@ -93,6 +91,7 @@ export default function KontaktPage() {
                       </p>
                       <a
                         href="mailto:info@zielsteuerfrei.de"
+                        onClick={() => trackEvent('email_click', { source: 'contact_page' })}
                         className="mt-2 text-gold hover:underline text-sm block font-semibold"
                       >
                         info@zielsteuerfrei.de
@@ -194,7 +193,7 @@ export default function KontaktPage() {
           <p className="text-ink-300 mb-8 max-w-lg mx-auto leading-relaxed">
             Im kostenlosen Erstgespräch klären wir in 20 Minuten, ob eine VAE-Firmengründung für dich sinnvoll ist.
           </p>
-          <button onClick={openCalendly} className="btn-primary">
+          <button onClick={() => openCalendly('contact_bottom_cta')} className="btn-primary">
             Kostenlosen Call buchen
           </button>
         </div>
