@@ -90,7 +90,7 @@ export default function PreisRechnerPage() {
       <section className="relative overflow-hidden bg-cream pt-28 pb-16 dark:bg-navy-950">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/pages/service-banking-generated.png"
+            src="/images/pages/service-banking-generated.webp"
             alt="Banking-Dashboard mit Unterlagen"
             className="h-full w-full object-cover opacity-[0.16] dark:opacity-[0.13]"
           />

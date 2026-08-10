@@ -9,22 +9,22 @@ function openCalendly(source = 'homepage') {
 
 const expertise = [
   {
-    image: '/images/pages/service-license-generated.png',
+    image: '/images/pages/service-license-generated.webp',
     title: 'Firmengründung',
     text: 'Free-Zone-Lizenz, Aktivitätsauswahl, Unterlagen und Koordination der Gründung in den VAE.',
   },
   {
-    image: '/images/pages/service-medical.jpg',
+    image: '/images/pages/service-medical.webp',
     title: 'Aufenthalt & Emirates ID',
     text: 'Planung der Termine vor Ort, Medical Check und persönliche Begleitung in den VAE.',
   },
   {
-    image: '/images/pages/service-banking-generated.png',
+    image: '/images/pages/service-banking-generated.webp',
     title: 'Bankkonto',
     text: 'Vorbereitung der Kontoeröffnung und Unterstützung bei typischen Rückfragen der Bank.',
   },
   {
-    image: '/images/pages/service-support-generated.png',
+    image: '/images/pages/service-support-generated.webp',
     title: 'Begleitung danach',
     text: 'Drei Monate direkter Support für die praktischen Fragen nach der Gründung.',
   },
@@ -146,14 +146,16 @@ export default function HomePage() {
           content="Wir prüfen, ob eine VAE-Struktur zu deiner Situation passt, und begleiten die Umsetzung mit klaren Kosten und direktem Ansprechpartner."
         />
         <meta property="og:url" content="https://zielsteuerfrei.de/" />
-        <meta property="og:image" content="https://zielsteuerfrei.de/images/pages/hero-dubai-real.jpg" />
+        <meta property="og:image" content="https://zielsteuerfrei.de/images/og/og-default.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:type" content="website" />
       </Helmet>
 
       <section className="relative min-h-[78vh] overflow-hidden bg-[#F0ECE5] pt-24 pb-12 dark:bg-navy-950 md:pt-28 md:pb-20">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/pages/hero-dubai-real.jpg"
+            src="/images/pages/hero-dubai-real.webp"
             alt="Dubai Business Bay"
             className="h-full w-full object-cover object-center opacity-30 dark:opacity-65"
           />
@@ -278,7 +280,7 @@ export default function HomePage() {
       </section>
 
       <section className="section relative overflow-hidden border-b border-ink-100/70 bg-cream-50 dark:border-navy-800 dark:bg-navy-900">
-        <SectionBackdrop src="/images/pages/hero-business-bay-real.jpg" position="72% center" opacity="opacity-[0.11] dark:opacity-[0.08]" />
+        <SectionBackdrop src="/images/pages/hero-business-bay-real.webp" position="72% center" opacity="opacity-[0.11] dark:opacity-[0.08]" />
         <div className="absolute inset-y-0 right-0 hidden w-[38%] border-l border-gold/15 bg-gold/[0.035] md:block" aria-hidden="true" />
         <div data-reveal className="scroll-reveal relative z-10 mx-auto grid max-w-wide gap-12 px-4 md:grid-cols-[0.9fr_1.1fr] md:px-6">
           <div>
@@ -311,7 +313,7 @@ export default function HomePage() {
       </section>
 
       <section className="section relative overflow-hidden bg-cream-50 dark:bg-navy-900">
-        <SectionBackdrop src="/images/pages/service-license-generated.png" position="12% center" opacity="opacity-[0.075] dark:opacity-[0.06]" />
+        <SectionBackdrop src="/images/pages/service-license-generated.webp" position="12% center" opacity="opacity-[0.075] dark:opacity-[0.06]" />
         <div className="absolute inset-y-0 left-0 hidden w-[44%] border-r border-ink-900/[0.06] bg-cream/35 dark:border-white/[0.06] dark:bg-navy-950/20 md:block" aria-hidden="true" />
         <div data-reveal className="scroll-reveal relative z-10 mx-auto grid max-w-wide gap-12 px-4 md:grid-cols-[1fr_0.9fr] md:px-6">
           <div>
@@ -323,7 +325,7 @@ export default function HomePage() {
               rechtliche und praktische Spezialfragen. So entsteht nicht nur eine Lizenz, sondern
               eine Struktur, mit der du tatsächlich arbeiten kannst.
             </p>
-            <button onClick={openCalendly} className="btn-primary">
+            <button onClick={() => openCalendly('about_section')} className="btn-primary">
               Strategiegespräch starten
             </button>
           </div>
@@ -348,7 +350,7 @@ export default function HomePage() {
       </section>
 
       <section className="section relative overflow-hidden border-y border-gold/10 bg-cream dark:bg-navy-950">
-        <SectionBackdrop src="/images/pages/hero-dubai-marina-real.jpg" position="center 65%" opacity="opacity-[0.09] dark:opacity-[0.06]" />
+        <SectionBackdrop src="/images/pages/hero-dubai-marina-real.webp" position="center 65%" opacity="opacity-[0.09] dark:opacity-[0.06]" />
         <div className="relative z-10 mx-auto max-w-wide px-4 md:px-6">
           <div data-reveal className="scroll-reveal mb-12 md:flex md:items-end md:justify-between md:gap-10">
             <div>
@@ -390,7 +392,7 @@ export default function HomePage() {
       </section>
 
       <section className="section relative overflow-hidden bg-cream-50 dark:bg-navy-900">
-        <SectionBackdrop src="/images/pages/service-banking-generated.png" position="78% center" opacity="opacity-[0.065] dark:opacity-[0.05]" />
+        <SectionBackdrop src="/images/pages/service-banking-generated.webp" position="78% center" opacity="opacity-[0.065] dark:opacity-[0.05]" />
         <div className="absolute inset-y-0 right-0 hidden w-1/3 border-l border-gold/10 bg-gold/[0.025] md:block" aria-hidden="true" />
         <div data-reveal className="scroll-reveal process-reveal relative z-10 mx-auto max-w-content px-4 md:px-6">
           <h2 className="font-display text-display-md text-ink-900 dark:text-cream mb-10 text-center">
@@ -428,7 +430,7 @@ export default function HomePage() {
       </section>
 
       <section className="section relative overflow-hidden border-y border-ink-100/70 bg-cream dark:border-navy-800 dark:bg-navy-950">
-        <SectionBackdrop src="/images/pages/blog.png" position="center" opacity="opacity-[0.08] dark:opacity-[0.055]" />
+        <SectionBackdrop src="/images/pages/blog.webp" position="center" opacity="opacity-[0.08] dark:opacity-[0.055]" />
         <div className="relative z-10 mx-auto max-w-wide px-4 md:px-6">
           <div data-reveal className="scroll-reveal mb-10 md:flex md:items-end md:justify-between md:gap-10">
             <div>
@@ -466,7 +468,7 @@ export default function HomePage() {
       </section>
 
       <section className="section relative overflow-hidden bg-cream-50 dark:bg-navy-900">
-        <SectionBackdrop src="/images/pages/service-support-generated.png" position="center 38%" opacity="opacity-[0.1] dark:opacity-[0.07]" />
+        <SectionBackdrop src="/images/pages/service-support-generated.webp" position="center 38%" opacity="opacity-[0.1] dark:opacity-[0.07]" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-gold/25" aria-hidden="true" />
         <div data-reveal className="scroll-reveal relative z-10 mx-auto max-w-wide px-4 text-center md:px-6">
           <p className="mb-4 font-mono text-xs font-semibold uppercase tracking-widest text-gold">
@@ -493,7 +495,7 @@ export default function HomePage() {
           <p className="mx-auto mb-8 max-w-xl text-lg text-ink-300">
             Im kostenlosen Strategiegespräch klären wir den schnellsten sinnvollen Weg zu deiner Gründung.
           </p>
-          <button onClick={openCalendly} className="btn-primary">
+          <button onClick={() => openCalendly('final_cta')} className="btn-primary">
             Kostenloses Strategiegespräch sichern
           </button>
         </div>

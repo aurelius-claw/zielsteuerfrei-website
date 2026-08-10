@@ -96,7 +96,7 @@ export default function ProzessPage() {
         <div className="absolute inset-0 bg-hero-gradient dark:bg-hero-gradient-dark pointer-events-none" />
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/pages/service-license-generated.png"
+            src="/images/pages/service-license-generated.webp"
             alt="Vorbereitete Gründungsunterlagen auf einem Schreibtisch"
             className="w-full h-full object-cover opacity-[0.16] dark:opacity-[0.13]"
           />

@@ -11,19 +11,19 @@ const team = [
     name: 'Neno',
     role: 'Gründer & VAE-Koordination',
     desc: 'Neno hatte die Idee zu Ziel:steuerfrei. Er kennt die Abläufe in den VAE aus der Praxis und ist für Erstgespräche, Einordnung und lokale Koordination zuständig.',
-    photo: '/images/pages/team-neno.jpeg',
+    photo: '/images/pages/team-neno.webp',
   },
   {
     name: 'Juljana',
     role: 'Vor-Ort-Begleitung',
     desc: 'Juljana hilft vor Ort bei Terminen, Medical Check und Behördengängen. Sie ist die Person, die aus einem fremden Ablauf einen planbaren Tag macht.',
-    photo: '/images/pages/team-juljana.jpeg',
+    photo: '/images/pages/team-juljana.webp',
   },
   {
     name: 'Martin',
     role: 'IT & Versicherungen',
     desc: 'Martin macht die IT und kann bei Versicherungsthemen helfen. Als Makler in Deutschland kennt er besonders die Fragen rund um Krankenversicherung und Absicherung beim Wegzug.',
-    photo: '/images/pages/team-martin-boat.jpeg',
+    photo: '/images/pages/team-martin-boat.webp',
   },
 ]
 
@@ -66,7 +66,7 @@ export default function UeberUnsPage() {
         <div className="absolute inset-0 bg-hero-gradient dark:bg-hero-gradient-dark pointer-events-none" />
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/pages/hero-dubai-marina-real.jpg"
+            src="/images/pages/hero-dubai-marina-real.webp"
             alt="Dubai Marina bei Abendlicht"
             className="w-full h-full object-cover opacity-[0.16] dark:opacity-[0.13]"
           />

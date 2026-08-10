@@ -40,7 +40,7 @@ const Features = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/images/pages/leistungen.png" 
+          src="/images/pages/leistungen.webp" 
           alt="Leistungen - Komplettpaket für VAE Firmengründung"
           className="w-full h-full object-cover opacity-10"
         />

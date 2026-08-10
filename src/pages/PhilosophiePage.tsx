@@ -55,7 +55,7 @@ export default function PhilosophiePage() {
         <div className="absolute inset-0 bg-hero-gradient dark:bg-hero-gradient-dark pointer-events-none" />
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/pages/hero-business-bay-real.jpg"
+            src="/images/pages/hero-business-bay-real.webp"
             alt="Dubai Business Bay mit Hochhäusern"
             className="w-full h-full object-cover opacity-[0.14] dark:opacity-[0.12]"
           />

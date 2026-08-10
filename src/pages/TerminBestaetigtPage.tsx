@@ -32,17 +32,17 @@ const team = [
   {
     name: 'Neno',
     role: 'Erstgespräch und Gründungsstrategie',
-    image: '/images/pages/team-neno.jpeg',
+    image: '/images/pages/team-neno.webp',
   },
   {
     name: 'Juljana',
     role: 'Begleitung und Termine vor Ort',
-    image: '/images/pages/team-juljana.jpeg',
+    image: '/images/pages/team-juljana.webp',
   },
   {
     name: 'Martin',
     role: 'IT, Prozesse und Versicherungsfragen',
-    image: '/images/pages/team-martin-boat.jpeg',
+    image: '/images/pages/team-martin-boat.webp',
   },
 ]
 
@@ -90,7 +90,7 @@ export default function TerminBestaetigtPage() {
       <section className="relative overflow-hidden border-b border-[#123247]/10 bg-[#F0ECE5] py-16 dark:border-white/10 dark:bg-navy-950 md:py-24">
         <div className="absolute inset-0" aria-hidden="true">
           <img
-            src="/images/pages/hero-dubai-marina-real.jpg"
+            src="/images/pages/hero-dubai-marina-real.webp"
             alt=""
             className="h-full w-full object-cover opacity-[0.12] dark:opacity-25"
           />

@@ -28,7 +28,7 @@ export default function KontaktPage() {
         <div className="absolute inset-0 bg-hero-gradient dark:bg-hero-gradient-dark pointer-events-none" />
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/pages/hero-dubai-real.jpg"
+            src="/images/pages/hero-dubai-real.webp"
             alt="Dubai Skyline als Hintergrund für Kontakt"
             className="w-full h-full object-cover opacity-[0.16] dark:opacity-[0.13]"
           />

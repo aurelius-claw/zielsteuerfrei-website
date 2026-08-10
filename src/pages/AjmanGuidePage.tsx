@@ -50,7 +50,7 @@ export default function AjmanGuidePage() {
         <div className="absolute inset-0 bg-hero-gradient dark:bg-hero-gradient-dark pointer-events-none" />
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/pages/hero-dubai-marina-real.jpg"
+            src="/images/pages/hero-dubai-marina-real.webp"
             alt="Dubai Marina bei Abendlicht"
             className="w-full h-full object-cover opacity-[0.16] dark:opacity-[0.13]"
           />
