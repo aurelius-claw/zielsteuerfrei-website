@@ -1,102 +1,35 @@
-import React from 'react'
+import React, { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import {
+  articles,
+  categories,
+  type CategoryFilter,
+  formatDateShort,
+  formatReadTimeShort,
+} from '../data/articles'
 
 const BlogPage: React.FC = () => {
-  const articles = [
-    {
-      slug: 'ajman-vs-dubai',
-      title: 'Ajman vs Dubai: Ehrlicher Vergleich für deutsche Unternehmer',
-      excerpt: 'Dubai ist bekannt, Ajman ist oft günstiger. Hier stehen die Zahlen nebeneinander, damit du die Unterschiede einordnen kannst.',
-      date: '15.02.2026',
-      readTime: '8 Min',
-      category: 'Kosten',
-      featured: true
-    },
-    {
-      slug: 'wegzugsbesteuerung',
-      title: 'Wegzugssteuer 2026: Neue Regeln für Investmentfonds',
-      excerpt: 'Die Reform 2025/2026 ändert, wie Fonds bei Auswanderung besteuert werden. So schützt du dein Vermögen.',
-      date: '10.02.2026',
-      readTime: '10 Min',
-      category: 'Steuern',
-      featured: true
-    },
-    {
-      slug: '183-tage-regel',
-      title: '183‑Tage‑Regel: So funktioniert sie wirklich',
-      excerpt: 'Die Regel gilt nicht immer. Hier erfährst du, wann sie greift – und wann du sie clever nutzen kannst.',
-      date: '05.02.2026',
-      readTime: '7 Min',
-      category: 'Steuern'
-    },
-    {
-      slug: 'paypal-stripe-uae',
-      title: 'PayPal & Stripe in den VAE nutzen – geht das?',
-      excerpt: 'Als Unternehmer in den VAE brauchst du Zahlungsabwicklung. So richtest du sie für internationale Kunden ein.',
-      date: '01.02.2026',
-      readTime: '6 Min',
-      category: 'Praktisch'
-    },
-    {
-      slug: 'ajman-freezone-kosten-2026',
-      title: 'Ajman Free Zone Kosten 2026: Komplett transparent',
-      excerpt: 'Alle Gebühren aufgeschlüsselt – inklusive der versteckten Posten, die andere nicht nennen.',
-      date: '25.01.2026',
-      readTime: '9 Min',
-      category: 'Kosten'
-    },
-    {
-      slug: 'steuerfalle-183-tage',
-      title: 'Steuerfalle 183‑Tage‑Regel: Der Lebensmittelpunkt zählt',
-      excerpt: 'Nicht die reine Tag-Zählung entscheidet, sondern wo dein Leben wirklich stattfindet. So beweist du es.',
-      date: '20.01.2026',
-      readTime: '8 Min',
-      category: 'Steuern'
-    },
-    {
-      slug: 'dubai-mythos-vs-ajman-realitaet',
-      title: 'Dubai-Mythos vs Ajman-Realität: Was wirklich zählt',
-      excerpt: 'Prestige oder Pragmatismus? Für deutsche Unternehmer ist die Antwort oft klarer als gedacht.',
-      date: '15.01.2026',
-      readTime: '7 Min',
-      category: 'Vergleich'
-    },
-    {
-      slug: 'steuerfallen',
-      title: '5 Steuerfallen für deutsche Auswanderer',
-      excerpt: 'Diese Fehler kosten dich schnell fünfstellige Beträge. So vermeidest du sie von Anfang an.',
-      date: '10.01.2026',
-      readTime: '11 Min',
-      category: 'Steuern'
-    },
-    {
-      slug: 'dokumente-checkliste',
-      title: 'Dokumenten-Checkliste: Alles für die VAE-Gründung',
-      excerpt: 'Von der Passkopie bis zur Aktivitätsbeschreibung – hier fehlt nichts. Inklusive Download-PDF.',
-      date: '05.01.2026',
-      readTime: '5 Min',
-      category: 'Praktisch'
-    },
-    {
-      slug: 'vae-firma-gruenden',
-      title: 'VAE Firma gründen: Schritt für Schritt',
-      excerpt: 'Der komplette Prozess von der Idee bis zur aktiven Lizenz – realistisch, ohne Beschönigung.',
-      date: '01.01.2026',
-      readTime: '12 Min',
-      category: 'Prozess'
-    },
-    {
-      slug: 'uae-corporate-tax',
-      title: 'UAE Corporate Tax: Was deutsche Unternehmer wissen müssen',
-      excerpt: 'Seit 2023 gibt es Körperschaftsteuer in den VAE. Aber mit 0% für viele – hier die Details.',
-      date: '28.12.2025',
-      readTime: '9 Min',
-      category: 'Steuern'
-    }
-  ]
+  const [activeCategory, setActiveCategory] = useState<CategoryFilter>('Alle')
+  const [newsletterState, setNewsletterState] = useState<'idle' | 'sent'>('idle')
+  const [email, setEmail] = useState('')
 
-  const categories = ['Alle', 'Steuern', 'Kosten', 'Praktisch', 'Prozess', 'Vergleich']
+  const visibleArticles = useMemo(
+    () => (activeCategory === 'Alle' ? articles : articles.filter(a => a.category === activeCategory)),
+    [activeCategory]
+  )
+
+  const featured = articles.filter(a => a.featured)
+
+  const handleNewsletter = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const subject = encodeURIComponent('Newsletter-Anmeldung')
+    const body = encodeURIComponent(
+      `Bitte tragt mich in den Newsletter ein.\n\nE-Mail: ${email}`
+    )
+    window.location.href = `mailto:info@zielsteuerfrei.de?subject=${subject}&body=${body}`
+    setNewsletterState('sent')
+  }
 
   return (
     <div className="animate-fade-in">
@@ -106,21 +39,48 @@ const BlogPage: React.FC = () => {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://zielsteuerfrei.de/blog" />
         <meta property="og:title" content="Blog | VAE Steuerwissen & Firmengründung UAE" />
-        <meta property="og:description" content="Aktuelle Artikel zu Steuern, UAE-Firmengründung, Freiverkehrszone und rechtlichen Updates für deutsche Unternehmer." />
+        <meta property="og:description" content="Aktuelle Artikel zu Steuern, UAE-Firmengründung, Free Zones und rechtlichen Updates für deutsche Unternehmer." />
         <meta property="og:url" content="https://zielsteuerfrei.de/blog" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://zielsteuerfrei.de/images/pages/blog.png" />
+        <meta property="og:image" content="https://zielsteuerfrei.de/images/og/og-default.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Blog | VAE Steuerwissen & Firmengründung UAE | Ziel:steuerfrei" />
         <meta name="twitter:description" content="Steuer-Know-how für Auswanderer: 183-Tage-Regel, Wegzugssteuer, UAE Free Zone Vergleich." />
-        <meta name="twitter:image" content="https://zielsteuerfrei.de/images/pages/blog.png" />
+        <meta name="twitter:image" content="https://zielsteuerfrei.de/images/og/og-default.jpg" />
         <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zielsteuerfrei.de" },
-            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://zielsteuerfrei.de/blog" }
-          ]
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://zielsteuerfrei.de' },
+            { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://zielsteuerfrei.de/blog' },
+          ],
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Blog',
+          name: 'Ziel:steuerfrei Blog',
+          description: 'Artikel zu Steuern, Auswanderung, VAE Free Zones und rechtlichen Updates.',
+          url: 'https://zielsteuerfrei.de/blog',
+          inLanguage: 'de',
+          publisher: {
+            '@type': 'Organization',
+            name: 'Ziel:steuerfrei',
+            logo: {
+              '@type': 'ImageObject',
+              url: 'https://zielsteuerfrei.de/brand/logo-light.svg',
+            },
+          },
+          blogPost: articles.map(article => ({
+            '@type': 'BlogPosting',
+            headline: article.title,
+            description: article.excerpt,
+            datePublished: article.isoDate,
+            dateModified: article.isoUpdated ?? article.isoDate,
+            url: `https://zielsteuerfrei.de/blog/${article.slug}`,
+            author: { '@type': 'Organization', name: 'Ziel:steuerfrei' },
+          })),
         })}</script>
       </Helmet>
 
@@ -129,9 +89,13 @@ const BlogPage: React.FC = () => {
         <div className="absolute inset-0 bg-hero-gradient dark:bg-hero-gradient-dark pointer-events-none" />
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/pages/hero-business-bay-real.jpg"
+            src="/images/pages/hero-business-bay-real.webp"
             alt="Dubai Business Bay als Hintergrund für VAE-Ratgeber"
             className="w-full h-full object-cover opacity-[0.15] dark:opacity-[0.12]"
+            width={1920}
+            height={1080}
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-cream/78 dark:bg-navy-950/82" />
         </div>
@@ -148,24 +112,38 @@ const BlogPage: React.FC = () => {
 
           <p className="text-lg text-ink-600 dark:text-ink-300 max-w-2xl mx-auto leading-relaxed mb-10 animate-fade-up animation-delay-200">
             Artikel zu Wegzug, Free Zones, Bankkonto, Corporate Tax und den typischen Fehlern
-            deutscher Unternehmer vor einer VAE-Gründung.
+            deutscher Unternehmer vor einer VAE-Gründung. Mit Quellenangaben und Rechtsstand.
           </p>
 
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-3 animate-fade-up animation-delay-300">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                className="px-5 py-2 rounded-full text-sm font-semibold border border-gold/30 text-ink-700 dark:text-ink-300 hover:border-gold hover:text-gold dark:hover:text-gold transition-all duration-200"
-              >
-                {cat}
-              </button>
-            ))}
+          {/* Kategorie-Filter */}
+          <div
+            className="flex flex-wrap justify-center gap-3 animate-fade-up animation-delay-300"
+            role="group"
+            aria-label="Artikel nach Kategorie filtern"
+          >
+            {categories.map(cat => {
+              const isActive = activeCategory === cat
+              return (
+                <button
+                  key={cat}
+                  type="button"
+                  onClick={() => setActiveCategory(cat)}
+                  aria-pressed={isActive}
+                  className={`px-5 py-2 rounded-full text-sm font-semibold border transition-all duration-200 ${
+                    isActive
+                      ? 'border-gold bg-gold text-white shadow-gold'
+                      : 'border-gold/30 text-ink-700 dark:text-ink-300 hover:border-gold hover:text-gold dark:hover:text-gold'
+                  }`}
+                >
+                  {cat}
+                </button>
+              )
+            })}
           </div>
         </div>
       </section>
 
-      {/* Featured Articles */}
+      {/* Empfohlene Artikel */}
       <section className="section bg-white dark:bg-navy-900">
         <div className="max-w-wide mx-auto px-4 md:px-6">
           <div className="eyebrow mb-3">Ausgewählt</div>
@@ -174,16 +152,16 @@ const BlogPage: React.FC = () => {
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {articles.filter(a => a.featured).map((article) => (
+            {featured.map(article => (
               <Link
                 key={article.slug}
                 to={`/blog/${article.slug}`}
                 className="group card p-8 hover:border-gold/30"
               >
-                <div className="flex items-center gap-3 mb-5">
+                <div className="flex flex-wrap items-center gap-3 mb-5">
                   <span className="badge-gold">{article.category}</span>
                   <span className="text-sm text-ink-500 dark:text-ink-300">
-                    {article.date} · {article.readTime}
+                    {formatDateShort(article.isoDate)} · {formatReadTimeShort(article.readTimeMinutes)}
                   </span>
                 </div>
 
@@ -197,7 +175,7 @@ const BlogPage: React.FC = () => {
 
                 <span className="inline-flex items-center gap-2 text-gold font-semibold group-hover:gap-3 transition-all duration-200">
                   Weiterlesen
-                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
                 </span>
@@ -207,16 +185,20 @@ const BlogPage: React.FC = () => {
         </div>
       </section>
 
-      {/* All Articles Grid */}
+      {/* Alle Artikel */}
       <section className="section bg-cream dark:bg-navy-950">
         <div className="max-w-wide mx-auto px-4 md:px-6">
-          <div className="eyebrow mb-3">Alle {articles.length} Artikel</div>
+          <div className="eyebrow mb-3" aria-live="polite">
+            {activeCategory === 'Alle'
+              ? `Alle ${articles.length} Artikel`
+              : `${visibleArticles.length} Artikel in „${activeCategory}“`}
+          </div>
           <h2 className="font-display text-display-md text-ink-900 dark:text-cream mb-10">
-            Gesamtes Archiv
+            {activeCategory === 'Alle' ? 'Gesamtes Archiv' : activeCategory}
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {articles.map((article) => (
+            {visibleArticles.map(article => (
               <Link
                 key={article.slug}
                 to={`/blog/${article.slug}`}
@@ -224,7 +206,7 @@ const BlogPage: React.FC = () => {
               >
                 <div className="flex items-center justify-between mb-4">
                   <span className="badge-gold">{article.category}</span>
-                  <span className="text-xs text-ink-500 dark:text-ink-300">{article.readTime}</span>
+                  <span className="text-xs text-ink-500 dark:text-ink-300">{formatReadTimeShort(article.readTimeMinutes)}</span>
                 </div>
 
                 <h3 className="font-display text-lg font-bold text-ink-900 dark:text-cream mb-3 group-hover:text-gold transition-colors line-clamp-2">
@@ -236,16 +218,18 @@ const BlogPage: React.FC = () => {
                 </p>
 
                 <div className="flex items-center justify-between pt-4 border-t border-ink-100 dark:border-navy-800">
-                  <span className="text-xs text-ink-500 dark:text-ink-300">{article.date}</span>
-                  <span className="text-gold text-sm font-semibold group-hover:gap-2 transition-all">
-                    Lesen →
+                  <span className="text-xs text-ink-500 dark:text-ink-300">
+                    {article.isoUpdated
+                      ? `Aktualisiert ${formatDateShort(article.isoUpdated)}`
+                      : formatDateShort(article.isoDate)}
                   </span>
+                  <span className="text-gold text-sm font-semibold">Lesen →</span>
                 </div>
               </Link>
             ))}
           </div>
 
-          {/* Newsletter CTA */}
+          {/* Newsletter */}
           <div className="mt-16 pt-12 border-t border-ink-100 dark:border-navy-800">
             <div className="max-w-2xl mx-auto text-center">
               <div className="eyebrow mb-3 justify-center">Newsletter</div>
@@ -253,55 +237,54 @@ const BlogPage: React.FC = () => {
                 Neue Artikel direkt ins Postfach
               </h3>
               <p className="text-ink-600 dark:text-ink-300 mb-8 leading-relaxed">
-                Erhalte monatlich die wichtigsten Updates zu Steuern, UAE-Firmengründung und Auswanderung – ohne Spam.
+                Wir schreiben nur, wenn sich etwas Relevantes ändert – etwa an der Wegzugsbesteuerung
+                oder an den Free-Zone-Regeln. Kein fester Rhythmus, kein Verkaufsdruck.
               </p>
 
-              <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input
-                  type="email"
-                  placeholder="Deine E-Mail-Adresse"
-                  className="flex-1 px-5 py-3 rounded-xl bg-white dark:bg-navy-800 border border-ink-100 dark:border-navy-700 text-ink-900 dark:text-cream placeholder-ink-500 dark:placeholder-ink-300 focus:outline-none focus:ring-2 focus:ring-gold/50"
-                />
-                <button type="submit" className="btn-primary whitespace-nowrap">
-                  Anmelden
-                </button>
-              </form>
+              {newsletterState === 'sent' ? (
+                <div className="card-gold p-6 text-left">
+                  <p className="font-semibold text-ink-900 dark:text-cream">
+                    Fast geschafft
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-600 dark:text-ink-300">
+                    Dein E-Mail-Programm sollte sich mit einer vorbereiteten Nachricht geöffnet haben.
+                    Schick sie einfach ab – wir tragen dich dann persönlich ein. Falls nichts passiert
+                    ist, schreib uns direkt an{' '}
+                    <a href="mailto:info@zielsteuerfrei.de" className="text-gold hover:underline">
+                      info@zielsteuerfrei.de
+                    </a>.
+                  </p>
+                </div>
+              ) : (
+                <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto" onSubmit={handleNewsletter}>
+                  <label htmlFor="newsletter-email" className="sr-only">
+                    Deine E-Mail-Adresse
+                  </label>
+                  <input
+                    id="newsletter-email"
+                    type="email"
+                    name="email"
+                    required
+                    autoComplete="email"
+                    value={email}
+                    onChange={event => setEmail(event.target.value)}
+                    placeholder="Deine E-Mail-Adresse"
+                    className="flex-1 px-5 py-3 rounded-xl bg-white dark:bg-navy-800 border border-ink-100 dark:border-navy-700 text-ink-900 dark:text-cream placeholder-ink-500 dark:placeholder-ink-300 focus:outline-none focus:ring-2 focus:ring-gold/50"
+                  />
+                  <button type="submit" className="btn-primary whitespace-nowrap">
+                    Anmelden
+                  </button>
+                </form>
+              )}
 
               <p className="text-sm text-ink-500 dark:text-ink-300 mt-4">
-                Kein Spam. Jederzeit abbestellbar. DSGVO-konform.
+                Die Anmeldung läuft per E-Mail an uns. Wir nutzen deine Adresse ausschließlich für
+                den Newsletter und du kannst jederzeit widersprechen.
               </p>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Schema.org JSON-LD */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Blog",
-          "name": "Ziel:steuerfrei Blog",
-          "description": "Tiefgehende Artikel zu Steuern, Auswanderung, VAE Free Zone und rechtlichen Updates.",
-          "url": "https://zielsteuerfrei.de/blog",
-          "publisher": {
-            "@type": "Organization",
-            "name": "Ziel:steuerfrei",
-            "logo": "https://zielsteuerfrei.de/brand/logo-light.svg"
-          },
-          "blogPost": articles.map(article => ({
-            "@type": "BlogPosting",
-            "headline": article.title,
-            "description": article.excerpt,
-            "datePublished": article.date,
-            "dateModified": article.date,
-            "url": `https://zielsteuerfrei.de/blog/${article.slug}`,
-            "author": {
-              "@type": "Organization",
-              "name": "Ziel:steuerfrei"
-            }
-          }))
-        })}
-      </script>
     </div>
   )
 }
