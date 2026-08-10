@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
-import { useTheme } from '../context/ThemeContext'
+import { useTheme } from '../context/useTheme'
 import BrandLogo from './BrandLogo'
 import ConsentBanner from './ConsentBanner'
 import {
@@ -73,15 +73,21 @@ export default function Layout({ children }: LayoutProps) {
   const lastCalendlyEventAt = useRef(0)
   const isBookingConfirmation = location.pathname === '/termin-bestaetigt'
 
-  useEffect(() => {
+  const [lastPathname, setLastPathname] = useState(location.pathname)
+  if (lastPathname !== location.pathname) {
+    setLastPathname(location.pathname)
     setMobileOpen(false)
     setMenuOpen(false)
+  }
+
+  useEffect(() => {
     captureMarketingAttribution()
     trackPageView(location.pathname)
-    if (location.pathname === '/termin-bestaetigt') {
-      window.scrollTo({ top: 0, behavior: 'auto' })
-    }
   }, [location])
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' })
+  }, [location.pathname])
 
   useEffect(() => {
     const onCalendlyEvent = (event: MessageEvent) => {

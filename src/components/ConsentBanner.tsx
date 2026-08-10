@@ -2,16 +2,11 @@ import { useEffect, useState } from 'react'
 import { getStoredConsent, trackPageView, updateConsent } from '../utils/tracking'
 
 export default function ConsentBanner() {
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(() => !getStoredConsent())
 
   useEffect(() => {
     const stored = getStoredConsent()
-    if (stored) {
-      updateConsent(stored)
-      return
-    }
-
-    setVisible(true)
+    if (stored) updateConsent(stored)
   }, [])
 
   if (!visible) return null

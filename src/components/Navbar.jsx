@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { SunIcon, MoonIcon } from './SVGIcons';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../context/useTheme';
 
 const MENU_ITEMS = [
   { label: 'Über Uns', to: '/ueber-uns' },
