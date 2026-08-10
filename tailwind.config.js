@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import typography from '@tailwindcss/typography'
+
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
@@ -30,9 +32,13 @@ export default {
         // Slate grays
         ink: {
           900: '#1A1F2E',
+          800: '#262D40',
           700: '#3A4255',
+          600: '#4E5670',
           500: '#6B7390',
+          400: '#8A91A8',
           300: '#A8AFBF',
+          200: '#C2C7D4',
           100: '#DDE0E8',
         },
         // Near-black scale (used in BlogPage dark mode)
@@ -130,5 +136,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [typography],
 }

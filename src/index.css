@@ -279,3 +279,268 @@
   margin: 0 !important;
   transform: translate(-50%, -50%) !important;
 }
+
+
+/* ─── Artikel-Visualisierungen (CSS-Diagramme) ──────────── */
+@layer components {
+
+  /* Rahmen für jedes Diagramm */
+  .viz {
+    @apply my-8 rounded-2xl border border-ink-100 bg-cream-50 p-5 md:p-6
+           dark:border-navy-800 dark:bg-navy-900;
+  }
+
+  .viz-title {
+    @apply font-sans text-sm font-bold uppercase tracking-wider
+           text-ink-900 dark:text-cream;
+  }
+
+  .viz-sub {
+    @apply mt-1 text-xs leading-relaxed text-ink-500 dark:text-ink-300;
+  }
+
+  .viz-body {
+    @apply mt-5;
+  }
+
+  .viz-note {
+    @apply mt-4 border-t border-ink-100 pt-3 text-xs leading-relaxed
+           text-ink-500 dark:border-navy-800 dark:text-ink-300;
+  }
+
+  /* ── Balkendiagramm ── */
+  .bar-chart {
+    @apply flex flex-col gap-4;
+  }
+
+  .bar-row {
+    @apply flex flex-col gap-1.5;
+  }
+
+  .bar-head {
+    @apply flex items-baseline justify-between gap-3;
+  }
+
+  .bar-label {
+    @apply text-sm font-semibold text-ink-900 dark:text-cream;
+  }
+
+  .bar-value {
+    @apply font-sans text-sm font-bold tabular-nums text-ink-700 dark:text-ink-300;
+  }
+
+  .bar-track {
+    @apply relative h-3 w-full overflow-hidden rounded-full
+           bg-ink-100 dark:bg-navy-800;
+  }
+
+  .bar-fill {
+    @apply block h-full rounded-full bg-gold;
+    width: var(--bar, 0%);
+  }
+
+  .bar-fill--muted {
+    @apply bg-ink-500/70 dark:bg-ink-300/50;
+  }
+
+  .bar-fill--navy {
+    @apply bg-navy-700 dark:bg-navy-600;
+  }
+
+  .bar-fill--danger {
+    @apply bg-[#B4472F];
+  }
+
+  .bar-caption {
+    @apply text-xs leading-relaxed text-ink-500 dark:text-ink-300;
+  }
+
+  /* ── Gestapelter Balken (Kostenaufbau) ── */
+  .stack {
+    @apply flex h-8 w-full overflow-hidden rounded-lg;
+  }
+
+  .stack-seg {
+    @apply flex items-center justify-center text-[10px] font-bold text-white/95;
+    width: var(--seg, 0%);
+  }
+
+  .stack-seg--1 { @apply bg-navy-800; }
+  .stack-seg--2 { @apply bg-navy-600; }
+  .stack-seg--3 { @apply bg-gold; }
+  .stack-seg--4 { @apply bg-gold-light text-ink-900; }
+
+  .legend {
+    @apply mt-3 flex flex-wrap gap-x-5 gap-y-2;
+  }
+
+  .legend-item {
+    @apply flex items-center gap-2 text-xs text-ink-600 dark:text-ink-300;
+  }
+
+  .legend-dot {
+    @apply h-2.5 w-2.5 shrink-0 rounded-sm;
+  }
+
+  .legend-dot--1 { @apply bg-navy-800; }
+  .legend-dot--2 { @apply bg-navy-600; }
+  .legend-dot--3 { @apply bg-gold; }
+  .legend-dot--4 { @apply bg-gold-light; }
+
+  /* ── Stufen-/Schwellenskala ── */
+  .tier {
+    @apply flex flex-col gap-0;
+  }
+
+  .tier-row {
+    @apply flex items-stretch gap-4 border-l-2 border-dashed border-ink-100 pl-4
+           dark:border-navy-700;
+  }
+
+  .tier-row:first-child { @apply border-l-2 border-solid border-gold; }
+
+  .tier-rate {
+    @apply w-16 shrink-0 py-3 font-display text-2xl font-bold leading-none text-gold;
+  }
+
+  .tier-desc {
+    @apply py-3 text-sm leading-relaxed text-ink-600 dark:text-ink-300;
+  }
+
+  /* ── Entscheidungsbaum / Flow ── */
+  .flow {
+    @apply flex flex-col items-stretch gap-0;
+  }
+
+  .flow-step {
+    @apply rounded-xl border border-ink-100 bg-white px-4 py-3 text-sm font-semibold
+           text-ink-900 dark:border-navy-700 dark:bg-navy-800 dark:text-cream;
+  }
+
+  .flow-step--q {
+    @apply border-gold/40 bg-gold/5 dark:bg-gold/10;
+  }
+
+  .flow-step--ok {
+    @apply border-[#3E7C59]/40 bg-[#3E7C59]/10 text-[#2F6146] dark:text-[#8FCBA8];
+  }
+
+  .flow-step--stop {
+    @apply border-[#B4472F]/40 bg-[#B4472F]/10 text-[#8E3623] dark:text-[#F0A38F];
+  }
+
+  .flow-arrow {
+    @apply mx-auto h-5 w-px bg-ink-100 dark:bg-navy-700;
+  }
+
+  .flow-split {
+    @apply grid gap-3 md:grid-cols-2;
+  }
+
+  .flow-tag {
+    @apply mb-1 inline-block rounded-full bg-ink-100 px-2 py-0.5 text-[10px]
+           font-bold uppercase tracking-wider text-ink-700
+           dark:bg-navy-700 dark:text-ink-300;
+  }
+
+  /* ── Timeline ── */
+  .timeline {
+    @apply relative flex flex-col gap-0 pl-6;
+  }
+
+  .timeline::before {
+    content: '';
+    @apply absolute bottom-3 left-[7px] top-3 w-px bg-ink-100 dark:bg-navy-700;
+  }
+
+  .timeline-item {
+    @apply relative py-3;
+  }
+
+  .timeline-item::before {
+    content: '';
+    @apply absolute left-[-21px] top-[18px] h-[9px] w-[9px] rounded-full
+           bg-gold ring-4 ring-cream-50 dark:ring-navy-900;
+  }
+
+  .timeline-when {
+    @apply text-xs font-bold uppercase tracking-wider text-gold;
+  }
+
+  .timeline-what {
+    @apply mt-0.5 text-sm font-semibold text-ink-900 dark:text-cream;
+  }
+
+  .timeline-desc {
+    @apply mt-0.5 text-sm leading-relaxed text-ink-600 dark:text-ink-300;
+  }
+
+  /* ── Kennzahlen-Kacheln ── */
+  .stat-grid {
+    @apply grid grid-cols-2 gap-3 md:grid-cols-4;
+  }
+
+  .stat-card {
+    @apply rounded-xl border border-ink-100 bg-white p-4 text-center
+           dark:border-navy-700 dark:bg-navy-800;
+  }
+
+  .stat-value {
+    @apply font-display text-2xl font-bold leading-none text-gold;
+  }
+
+  .stat-label {
+    @apply mt-2 block text-xs leading-snug text-ink-600 dark:text-ink-300;
+  }
+
+  /* ── Hinweisboxen ── */
+  .callout {
+    @apply my-6 rounded-r-xl border border-l-4 p-5 text-sm leading-relaxed;
+  }
+
+  .callout-title {
+    @apply mb-1 block font-bold;
+  }
+
+  .callout--warn {
+    @apply border-[#B4472F]/25 border-l-[#B4472F] bg-[#B4472F]/[0.06]
+           text-ink-700 dark:text-ink-300;
+  }
+
+  .callout--warn .callout-title { @apply text-[#8E3623] dark:text-[#F0A38F]; }
+
+  .callout--ok {
+    @apply border-[#3E7C59]/25 border-l-[#3E7C59] bg-[#3E7C59]/[0.06]
+           text-ink-700 dark:text-ink-300;
+  }
+
+  .callout--ok .callout-title { @apply text-[#2F6146] dark:text-[#8FCBA8]; }
+
+  /* ── Quellenangabe ── */
+  .source-list {
+    @apply mt-3 flex flex-col gap-1.5 text-xs leading-relaxed
+           text-ink-500 dark:text-ink-300;
+  }
+
+  .source-list a {
+    @apply text-gold underline-offset-2 hover:underline;
+  }
+}
+
+/* Diagramm-Balken beim Einblenden animieren */
+@media (prefers-reduced-motion: no-preference) {
+  .bar-fill,
+  .stack-seg {
+    animation: barGrow 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @keyframes barGrow {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+
+  .bar-fill,
+  .stack-seg {
+    transform-origin: left center;
+  }
+}
